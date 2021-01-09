@@ -55,7 +55,7 @@
     "not dead"
   ],
   "description": "## Project setup ``` yarn install ```",
-  "main": "babel.config.js",
+  "main": "./dist/aurora-vue.common.js",
   "author": "",
   "license": "ISC"
 }
