@@ -1,3 +1,2 @@
-import { AButton } from './Atoms';
-
-export { AButton };
+export * from './Atoms';
+export * from './Molecules';
