@@ -2,11 +2,12 @@
   <component
     :is="tag"
     :class="{
-      ['v-title']: true,
-      [`v-title--size-${size}`]: size != 'inherit',
-      [`v-title--color-${color}`]: color != 'inherit',
-      [`v-title--align-${align}`]: align != 'inherit',
-      [`v-title--weight-${weight}`]: weight,
+      ['a-title']: true,
+      [`a-title--size-${size}`]: size != 'inherit',
+      [`a-title--color-${color}`]: color != 'inherit',
+      [`a-title--align-${align}`]: align != 'inherit',
+      [`a-title--weight-${weight}`]: weight,
+      [`a-title--italic`]: italic,
     }"
   >
     <slot />
@@ -59,6 +60,10 @@ export default {
         "regular",
       ]),
     },
+    italic: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -66,7 +71,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/utils/breakpoints.scss';
 
-.v-title {
+.a-title {
   &--weight {
     &-bold {
       font-weight: 700;
@@ -152,6 +157,10 @@ export default {
       text-align: justify;
       text-justify: inter-word;
     }
+  }
+
+  &--italic {
+    font-style: italic;
   }
 }
 </style>

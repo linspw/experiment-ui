@@ -23,6 +23,20 @@ export const withWeight = () => ({
   }
 })
 
+export const withItalic = () => ({
+  render() {
+    return (
+      <div>
+        <ATitle italic weight="regular">With JSX</ATitle>
+        <p />
+        <ATitle italic weight="medium">With JSX</ATitle>
+        <p />
+        <ATitle italic weight="bold">With JSX</ATitle>
+      </div>
+    );
+  }
+})
+
 export const withColors = () => ({
   render() {
     return (

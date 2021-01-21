@@ -3,15 +3,19 @@
     :class="{
       [`a-button`]: true,
       [`a-button--behavior-${behavior}`]: behavior,
+      [`a-button--behavior-is-loading`]: isLoading,
       [`a-button--variant-${variant}`]: variant,
     }"
     @click="$emit('click')"
   >
-    <AIcon :icon="icon" v-if="icon" />
-    <span :class="{
-      'a-button__text': true,
-      'a-button__text--icon': icon      
-    }">
+    <AIcon :icon="isLoading ? 'fas fa-circle-notch fa-spin' : icon" v-if="icon || isLoading" />
+    <span
+      :class="{
+        'a-button__text': true,
+        'a-button__text--icon': icon      
+      }"
+      v-if="!isLoading"
+    >
       <slot />
     </span>
   </button>
@@ -35,6 +39,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
     },
   },
 }
@@ -104,6 +112,10 @@ export default {
   &--behavior {
     &-block {
       width: 100%;
+    }
+
+    &-is-loading {
+      width: initial;
     }
   }
 

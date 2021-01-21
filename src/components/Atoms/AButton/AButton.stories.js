@@ -31,6 +31,12 @@ export const withIcon = () => ({
   }
 })
 
+export const isLoading = () => ({
+  render() {
+    return <AButton icon="fas fa-user" isLoading={true}>With JSX</AButton>;
+  }
+})
+
 export const withBehavior = () => ({
   render() {
     return (
