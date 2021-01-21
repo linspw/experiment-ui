@@ -1,0 +1,8 @@
+body {
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+:focus {
+  outline: none;
+  box-shadow: #ffffffcc 0px 0px 0px var(--size-micro), #4B4A64 0px 0px 0px var(--size-extra-small) !important;
+}

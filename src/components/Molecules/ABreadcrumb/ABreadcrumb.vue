@@ -1,5 +1,5 @@
 <template>
-  <nav class="v-breadcrumb">
+  <nav class="a-breadcrumb">
     <VTitle
       v-for="(item, index) in items"
       :key="index"
@@ -7,7 +7,7 @@
       tag="a"
       :weight="(index === (items.length -1)) ? 'regular' : 'light'"
       :href="item.url"
-      class="v-breadcrumb__item"
+      class="a-breadcrumb__item"
     >
       {{ (index === (items.length -1)) ? item.text: `${item.text} /` }}
     </VTitle>
@@ -25,8 +25,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.v-breadcrumb {
+<style lang="scss" scoped>
+.a-breadcrumb {
   display: flex;
 
   &__item {

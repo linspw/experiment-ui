@@ -73,10 +73,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.v-text {
-  font-family: 'Lato', sans-serif;
+<style lang="scss" scoped>
+@import '@/styles/utils/breakpoints.scss';
 
+.v-text {
   &--weight {
     &-bold {
       font-weight: 700;

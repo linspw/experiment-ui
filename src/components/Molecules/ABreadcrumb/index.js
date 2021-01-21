@@ -1,3 +1,3 @@
-import { ABreadcrumb } from './ABreadcrumb';
+import ABreadcrumb from './ABreadcrumb';
 
 export { ABreadcrumb };

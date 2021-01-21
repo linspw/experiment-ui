@@ -9,17 +9,17 @@ export default {
 
 export const withText = () => ({
   components: { AButton },
-  template: '<a-button @click="action">Hello Button</a-button>',
+  template: '<a-button icon="fas fa-user" @click="action">Hello Button</a-button>',
   methods: { action: action('clicked') }
 })
 
 export const withJSX = () => ({
   render() {
-    return <AButton onClick={linkTo('Button', 'With Some Emoji')}>With JSX</AButton>;
+    return <AButton onClick={linkTo('AButton', 'With Some Emoji')}>With JSX</AButton>;
   }
 })
 
 export const withSomeEmoji = () => ({
   components: { AButton },
-  template: '<a-button>💯 😀 😎 👍 💯</a-button>'
+  template: '<a-button icon="fas fa-user" behavior="block">💯 😀 😎 👍 💯</a-button>'
 })

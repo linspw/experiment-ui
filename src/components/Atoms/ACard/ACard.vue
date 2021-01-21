@@ -4,7 +4,7 @@
       [`a-card`]: true,
       [`a-card--${variant}`]: variant,
       [`a-card--${size}`]: size,
-      [`a-card--${elevation}`]: elevation,
+      [`a-card--elevation-${elevation}`]: elevation,
     }"
     :is="tag"
   >
@@ -17,19 +17,19 @@ export default {
   props: {
     variant: {
       type: String,
-      default: "",
+      default: '',
     },
     size: {
       type: String,
-      default: "",
+      default: '',
     },
     elevation: {
       type: String,
-      default: "",
+      default: 'medium',
     },
     tag: {
       type: String,
-      default: "div",
+      default: 'div',
     },
   },
 };
@@ -37,14 +37,23 @@ export default {
 
 <style lang="scss">
 .a-card {
-  box-shadow: 0px 3px 6px rgba(156, 156, 156, 0.25);
   background-color: var(--colors-original-white);
   border-radius: 10px;
   padding: 24px;
   position: relative;
 
-  &--high {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.16);
+  &--elevation {
+    &-low {
+      box-shadow: var(--shadow-elevation-01);
+    }
+
+    &-medium {
+      box-shadow: var(--shadow-elevation-02);
+    }
+
+    &-high {
+      box-shadow: var(--shadow-elevation-03);
+    }
   }
 }
 </style>
