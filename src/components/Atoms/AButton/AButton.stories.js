@@ -4,7 +4,7 @@ import { linkTo } from '@storybook/addon-links';
 import { AButton } from '.';
 
 export default {
-  title: 'Button',
+  title: 'AButton',
 }
 
 export const withText = () => ({

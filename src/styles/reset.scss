@@ -1,0 +1,42 @@
+textarea, input {
+  outline: none;
+  -webkit-appearance: none;
+  border: none;
+}
+
+button {
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: inherit;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+  text-align: inherit;
+  width: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}

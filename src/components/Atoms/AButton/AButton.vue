@@ -1,35 +1,35 @@
 <template>
-  <button class="button is-primary" @click="onClick">
-    <!-- @slot default inner button content -->
-    <slot></slot>
+  <button
+    :class="{
+      [`a-button`]: true,
+      [`a-button--variant-${variant}`]: variant,
+    }"
+    @click="$emit('click')"
+  >
+    <slot />
   </button>
 </template>
 
 <script>
 export default {
-  name: 'my-button',
-
-  methods: {
-    onClick() {
-      /**
-       * Click event
-       *
-       * @event click
-       */
-      this.$emit('click')
-    }
-  }
+  name: 'a-button',
+  props: {
+    variant: {
+      type: String,
+      default: 'primary',
+    },
+  },
 }
 </script>
 
-<style scoped>
-button {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  background-color: #ffffff;
-  cursor: pointer;
-  font-size: 15pt;
-  padding: 3px 10px;
-  margin: 10px;
+<style lang="scss" scoped>
+.a-button {
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: 0;
+
+  &--variant-primary {
+    background-color: white;
+  }
 }
 </style>
