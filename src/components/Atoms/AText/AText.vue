@@ -38,6 +38,7 @@ export default {
         "primary",
         "secundary",
         "tertiary",
+        "interactive",
         "inverse",
         "grey",
       ]),
@@ -62,11 +63,8 @@ export default {
       default: "regular",
       validator: shouldBeOneOf([
         "bold",
-        "semi-bold",
         "medium",
         "regular",
-        "light",
-        "thin",
       ]),
     },
   },
@@ -81,20 +79,11 @@ export default {
     &-bold {
       font-weight: 700;
     }
-    &-semi-bold {
-      font-weight: 600;
-    }
     &-medium {
       font-weight: 500;
     }
     &-regular {
       font-weight: 400;
-    }
-    &-light {
-      font-weight: 300;
-    }
-    &-thin {
-      font-weight: 100;
     }
   }
 
@@ -103,10 +92,13 @@ export default {
       color: var(--colors-major-black);
     }
     &-secundary {
-      color: var(--colors-interactive-blue);
+      color: var(--colors-minor-dark-blue);
     }
     &-tertiary {
-      color: var(--main-dark-blue);
+      color: var(--colors-normal-dark-blue);
+    }
+    &-interactive {
+      color: var(--colors-interactive-blue);
     }
     &-inverse {
       color: var(--colors-original-white);
@@ -166,6 +158,7 @@ export default {
     }
     &-justify {
       text-align: justify;
+      text-justify: inter-word;
     }
   }
 }

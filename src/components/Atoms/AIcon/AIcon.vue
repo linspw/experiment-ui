@@ -23,4 +23,9 @@ export default {
 @import '~@/styles/font-awesome/css/fontawesome.min.css';
 @import '~@/styles/font-awesome/css/brands.min.css';
 @import '~@/styles/font-awesome/css/solid.min.css';
+
+.a-icon {
+  position: relative;
+  display: inline-block;
+}
 </style>

@@ -2,7 +2,7 @@
   <component
     :class="{
       [`a-card`]: true,
-      [`a-card--${variant}`]: variant,
+      [`a-card--variant-${variant}`]: variant,
       [`a-card--${size}`]: size,
       [`a-card--elevation-${elevation}`]: elevation,
     }"
@@ -53,6 +53,28 @@ export default {
 
     &-high {
       box-shadow: var(--shadow-elevation-03);
+    }
+  }
+
+  &--variant {
+    &-success {
+      background-color: var(--colors-interactive-green);
+    }
+
+    &-info {
+      background-color: var(--colors-major-blue);
+    }
+
+    &-danger {
+      background-color: var(--colors-interactive-normal-red);
+    }
+
+    &-alert {
+      background-color: var(--colors-normal-yellow);
+    }
+
+    &-dark {
+      background-color: var(--colors-minor-dark-blue);
     }
   }
 }

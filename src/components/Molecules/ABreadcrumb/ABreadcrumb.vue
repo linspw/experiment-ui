@@ -1,21 +1,33 @@
 <template>
   <nav class="a-breadcrumb">
-    <VTitle
-      v-for="(item, index) in items"
-      :key="index"
-      size="extra-small"
-      tag="a"
-      :weight="(index === (items.length -1)) ? 'regular' : 'light'"
+    <ATitle
       :href="item.url"
+      :key="index"
+      :weight="(index === 0) ? 'medium' : 'regular'"
       class="a-breadcrumb__item"
+      size="large"
+      tag="a"
+      v-for="(item, index) in items"
     >
-      {{ (index === (items.length -1)) ? item.text: `${item.text} /` }}
-    </VTitle>
+      <template v-if="(index === (items.length -1))">
+        {{ item.text }}
+      </template>
+      <template v-else>
+        {{ item.text }} <AIcon icon="fas fa-chevron-right" class="a-breadcrumb__icon" />
+      </template>
+    </ATitle>
   </nav>
 </template>
 
 <script>
+import { ATitle } from '@/components/Atoms/ATitle';
+import { AIcon } from '@/components/Atoms/AIcon';
+
 export default {
+  components: {
+    ATitle,
+    AIcon,
+  },
   props: {
     items: {
       type: Array,
@@ -31,8 +43,13 @@ export default {
 
   &__item {
     white-space: nowrap;
-    margin-left: 4px;
-    text-transform: uppercase;
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+  }
+
+  &__icon {
+    margin-left: 24px;
   }
 }
 </style>

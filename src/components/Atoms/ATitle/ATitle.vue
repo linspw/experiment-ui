@@ -33,7 +33,7 @@ export default {
     color: {
       type: String,
       default: "inherit",
-      validator: shouldBeOneOf(["inherit", "primary", "secundary", "tertiary", "inverse"]),
+      validator: shouldBeOneOf(["inherit", "primary", "secundary", "tertiary", "interactive", "inverse", "grey"]),
     },
     tag: {
       type: String,
@@ -54,13 +54,9 @@ export default {
       type: String,
       default: "bold",
       validator: shouldBeOneOf([
-        "extra-bold",
         "bold",
-        "semi-bold",
         "medium",
         "regular",
-        "light",
-        "thin",
       ]),
     },
   },
@@ -72,26 +68,14 @@ export default {
 
 .v-title {
   &--weight {
-    &-extra-bold {
-      font-weight: 900;
-    }
     &-bold {
       font-weight: 700;
-    }
-    &-semi-bold {
-      font-weight: 600;
     }
     &-medium {
       font-weight: 500;
     }
     &-regular {
       font-weight: 400;
-    }
-    &-light {
-      font-weight: 300;
-    }
-    &-thin {
-      font-weight: 300;
     }
   }
 
@@ -100,13 +84,19 @@ export default {
       color: var(--colors-major-black);
     }
     &-secundary {
-      color: var(--colors-interactive-blue);
+      color: var(--colors-minor-dark-blue);
     }
     &-tertiary {
-      color: var(--main-dark-blue);
+      color: var(--colors-normal-dark-blue);
+    }
+    &-interactive {
+      color: var(--colors-interactive-blue);
     }
     &-inverse {
       color: var(--colors-original-white);
+    }
+    &-grey {
+      color: var(--colors-scale-grey-medium);
     }
   }
 
@@ -160,6 +150,7 @@ export default {
     }
     &-justify {
       text-align: justify;
+      text-justify: inter-word;
     }
   }
 }

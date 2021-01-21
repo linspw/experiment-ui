@@ -30,7 +30,7 @@ export default {
     },
     variant: {
       type: String,
-      default: 'primary',
+      default: 'quaternary',
     },
     icon: {
       type: String,
@@ -52,6 +52,43 @@ export default {
 
   &--variant {
     &-primary {
+      background-color: var(--colors-major-black);
+      box-shadow: var(--shadow-elevation-02);
+      color: var(--colors-original-white);
+      &:hover {
+        background-color: #CFDAE3;
+      }
+      &:active {
+        background-color: #839fb6;
+      }
+    }
+
+    &-secondary {
+      background-color: var(--colors-original-white);
+      box-shadow: var(--shadow-elevation-02);
+      border: var(--size-micro) solid var(--colors-major-black);
+      color: var(--colors-major-black);
+      &:hover {
+        background-color: #CFDAE3;
+      }
+      &:active {
+        background-color: #839fb6;
+      }
+    }
+
+    &-tertiary {
+      background-color: transparent;
+      color: var(--colors-major-black);
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        color: #839fb6;
+        text-decoration: underline;
+      }
+    }
+
+    &-quaternary {
       background-color: var(--colors-original-white);
       box-shadow: var(--shadow-elevation-02);
       color: var(--colors-normal-dark-blue);

@@ -5,7 +5,7 @@
     :value="value"
     :step="step"
     @change="handleSlider"
-    class="v-slider"
+    class="a-slider"
     type="range"
   />
 </template>
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-.v-slider {
+.a-slider {
   -webkit-appearance: none;
   -webkit-transition: .2s;
   -webkit-transition: opacity .2s;

@@ -1,24 +1,44 @@
-import { action } from '@storybook/addon-actions';
-
 import { ACard } from '.';
 
 export default {
-  title: 'ACard',
+  title: 'Design System/Atoms/ACard',
 }
 
 export const withText = () => ({
   components: { ACard },
-  template: '<a-card icon="fas fa-user" @click="action">Hello Button</a-card>',
-  methods: { action: action('clicked') }
+  template: '<a-card icon="fas fa-user">Hello Button</a-card>',
 })
 
-export const withJSX = () => ({
+export const withElevation = () => ({
   render() {
-    return <ACard elevation="low">With JSX</ACard>;
+    return (
+      <div>
+        <ACard elevation="low">With JSX</ACard>
+        <p />
+        <ACard>With JSX</ACard>
+        <p />
+        <ACard elevation="high">With JSX</ACard>
+      </div>
+    );
   }
 })
 
-export const withSomeEmoji = () => ({
-  components: { ACard },
-  template: '<a-card elevation="high">💯 😀 😎 👍 💯</a-card>'
+export const withVariantInfo = () => ({
+  render() {
+    return (
+      <div>
+        <ACard elevation="low">With JSX</ACard>
+        <p />
+        <ACard elevation="low" variant="success">With JSX</ACard>
+        <p />
+        <ACard elevation="low" variant="info">With JSX</ACard>
+        <p />
+        <ACard elevation="low" variant="danger">With JSX</ACard>
+        <p />
+        <ACard elevation="low" variant="alert">With JSX</ACard>
+        <p />
+        <ACard elevation="low" variant="dark">With JSX</ACard>
+      </div>
+    );
+  }
 })

@@ -1,25 +1,31 @@
 <template>
   <div
     :class="{
-      ['v-input']: true,
-      [`v-input--${behavior}`]: behavior != 'default',
-      [`v-input--${size}`]: size,
+      ['a-input']: true,
+      [`a-input--behavior-${behavior}`]: behavior != 'default',
+      [`a-input--size-${size}`]: size,
+      [`a-input--icon`]: icon,
     }"
   >
+    <AIcon :icon="icon" v-if="icon" />
     <input
-      type="text"
-      class="v-input__field"
       :placeholder="placeholder"
       :value="value"
       @input="handleInput"
+      class="a-input__field"
+      type="text"
     />
   </div>
 </template>
 
 <script>
 import { shouldBeOneOf } from "vue-prop-validation-helper";
+import { AIcon } from '@/components/Atoms/AIcon';
 
 export default {
+  components: {
+    AIcon,
+  },
   props: {
     size: {
       type: String,
@@ -43,6 +49,10 @@ export default {
       type: String,
       default: "",
     },
+    icon: {
+      type: String,
+      default: '',
+    },
   },
   methods: {
     handleInput(event) {
@@ -52,41 +62,69 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.v-input {
-  border-radius: 4px;
-  border: solid 2px #f1f3f4;
+<style lang="scss" scoped>
+.a-input {
+  display: inline-block;
+  min-width: 160px;
+  border-radius: var(--border-radius-normal);
   position: relative;
-  width: 100%;
 
-  &--medium {
-    min-height: 40px;
-
-    & > .v-input__field {
-      padding: 10px;
-      font-size: 16px;
+  &--icon {
+    & > .a-icon {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      padding-left: var(--size-medium);
+      padding-right: var(--size-medium);
+      position: absolute;
+      z-index: 10;
+    }
+    & > .a-input__field {
+      padding-left: var(--size-jumbo) !important;
     }
   }
 
-  &--large {
-    min-height: 50px;
-
-    & > .v-input__field {
-      padding: 20px;
-      font-size: 16px;
+  &--behavior {
+    &-block {
+      width: 100%;
     }
   }
+
+  &--size {
+    &-medium {
+      min-height: var(--size-jumbo);
+
+      & > .a-input__field {
+        padding: var(--size-medium);
+      }
+    }
+    
+    &-large {
+      min-height: 50px;
+
+      & > .a-input__field {
+        padding: 24px;
+      }
+    }
+  }
+
+
 
   &__field {
-    width: 100%;
+    font-family: 'Red Hat Text';
+    background-color: var(--colorr-scale-grey-normal);
+    border-radius: var(--border-radius-normal);
+    font-weight: 500;
     height: 100%;
-    position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
+    width: 100%;
+    color: var(--colors-major-black);
 
     &::placeholder {
-      color: #262626;
-      opacity: 0.5;
+      color: var(--colors-scale-grey-dark);
+      font-weight: 500;
     }
   }
 }
