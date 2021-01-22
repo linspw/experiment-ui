@@ -35,11 +35,15 @@ export default {
       validator: shouldBeOneOf([
         "inherit",
         "primary",
-        "secundary",
+        "secondary",
         "tertiary",
         "interactive",
-        "inverse",
         "grey",
+        "success",
+        "danger",
+        "warn",
+        "info",
+        "inverse",
       ]),
     },
   },
@@ -80,22 +84,34 @@ export default {
 
   &--color {
     &-primary {
-      color: var(--colors-major-black);
+      color: var(--color-theme-primary);
     }
-    &-secundary {
-      color: var(--colors-minor-dark-blue);
+    &-secondary {
+      color: var(--color-theme-secondary);
     }
     &-tertiary {
-      color: var(--colors-normal-dark-blue);
+      color: var(--color-theme-tertiary);
     }
     &-interactive {
-      color: var(--colors-interactive-blue);
-    }
-    &-inverse {
-      color: var(--colors-original-white);
+      color: var(--color-theme-interactive);
     }
     &-grey {
-      color: var(--colors-scale-grey-medium);
+      color: var(--color-theme-grey);
+    }
+    &-success {
+      color: var(--color-theme-success);
+    }
+    &-danger {
+      color: var(--color-theme-danger);
+    }
+    &-warn {
+      color: var(--color-theme-warn);
+    }
+    &-info {
+      color: var(--color-theme-info);
+    }
+    &-inverse {
+      color: var(--color-theme-inverse);
     }
   }
 }

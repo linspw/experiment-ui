@@ -17,15 +17,23 @@ export const withColors = () => ({
         <p />
         <AIcon color="primary" icon="fas fa-home" />
         <p />
-        <AIcon color="secundary" icon="fas fa-home" />
+        <AIcon color="secondary" icon="fas fa-home" />
         <p />
         <AIcon color="tertiary" icon="fas fa-home" />
         <p />
         <AIcon color="interactive" icon="fas fa-home" />
         <p />
-        <AIcon color="inverse" icon="fas fa-home" />
-        <p />
         <AIcon color="grey" icon="fas fa-home" />
+        <p />
+        <AIcon color="success" icon="fas fa-home" />
+        <p />
+        <AIcon color="danger" icon="fas fa-home" />
+        <p />
+        <AIcon color="warn" icon="fas fa-home" />
+        <p />
+        <AIcon color="info" icon="fas fa-home" />
+        <p />
+        <AIcon color="inverse" icon="fas fa-home" />
       </div>
     );
   }
