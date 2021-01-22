@@ -66,6 +66,7 @@ export default {
 .a-input {
   display: inline-block;
   min-width: 160px;
+  height: fit-content;
   border-radius: var(--border-radius-normal);
   position: relative;
 
