@@ -7,5 +7,7 @@ import { ASelect } from './ASelect';
 import { ASlider } from './ASlider';
 import { AText } from './AText';
 import { ATitle } from './ATitle';
+import { ALink } from './ALink';
+import { ADisplay } from './ADisplay';
 
-export { AIcon, AButton, ACard, ADivider, AInput, ASelect, ASlider, AText, ATitle };
+export { AIcon, AButton, ACard, ADivider, AInput, ASelect, ASlider, AText, ATitle, ALink, ADisplay };
