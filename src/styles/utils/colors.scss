@@ -1,30 +1,46 @@
 :root{
-    --colors-original-black: #000000;
-    --colors-original-white: #FFFFFF;
-    --colors-original-red: #FF5B5B;
+  --colors-original-black: #000000;
+  --colors-original-white: #FFFFFF;
+  --colors-original-red: #FF5B5B;
 
-    --colors-major-black: #303349;
+  --colors-major-black: #303349;
 
-    --colors-normal-dark-blue: #4B4A64;
-    --colors-minor-dark-blue: #001469;
+  --colors-normal-dark-blue: #4B4A64;
+  --colors-minor-dark-blue: #001469;
 
-    --colors-major-blue: #1D3CC0;
-    --colors-interactive-blue: #0B39FF;
-  
-    --colors-interactive-normal-red: #FF5454;
-    --colors-interactive-minor-red: #FF8989;
+  --colors-major-blue: #1D3CC0;
+  --colors-interactive-blue: #0B39FF;
 
-    --colors-normal-yellow: #ffd300;
-  
-    --colors-interactive-gold: #FFC75B;
-    --colors-interactive-green: #48B66A;
-  
-    --colors-scale-grey-dark: #8593AB;
-    --colors-scale-grey-medium: #C4C4C4;
-    --colorr-scale-grey-normal: #E5EEF4;
-    --colors-scale-grey-light: #EBEBEB;
-    --colors-scale-grey-lightest: #FFFBFB;
-  
-    --color-social-media-facebook: #4267B2;
-    --color-social-media-google: #4688f1;
-  }
+  --colors-interactive-normal-red: #FF5454;
+  --colors-interactive-minor-red: #FF8989;
+
+  --colors-normal-yellow: #ffd300;
+
+  --colors-interactive-gold: #FFC75B;
+  --colors-interactive-green: #48B66A;
+
+
+  /* Themed */
+
+  --colors-scale-grey-major: #3C4A61;
+  --colors-scale-grey-darkest: #586780;
+  --colors-scale-grey-dark: #6F7E98;
+  --colors-scale-grey-medium: #A1AEC6;
+  --colorr-scale-grey-normal: #B9C5DB;
+  --colors-scale-grey-light: #D2DEF4;
+  --colors-scale-grey-lightest: #D7E4EF;
+
+  --color-social-media-facebook: #4267B2;
+  --color-social-media-google: #4688f1;
+
+  --color-theme-primary: #303349;
+  --color-theme-secondary: #6F7E98;
+  --color-theme-tertiary: #001469;
+  --color-theme-interactive: #0B39FF;
+  --color-theme-grey: #B9C5DB;
+  --color-theme-success: #48B66A;
+  --color-theme-danger: #FF5454;
+  --color-theme-warn: #FFC75B;
+  --color-theme-info: #1D3CC0;
+  --color-theme-inverse: #FFFFFF;
+}

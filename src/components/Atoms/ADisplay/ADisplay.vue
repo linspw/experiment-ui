@@ -2,12 +2,12 @@
   <component
     :is="tag"
     :class="{
-      ['a-text']: true,
-      [`a-text--size-${size}`]: size != 'inherit',
-      [`a-text--color-${color}`]: color != 'inherit',
-      [`a-text--align-${align}`]: align != 'inherit',
-      [`a-text--weight-${weight}`]: weight,
-      [`a-text--italic`]: italic,
+      ['a-display']: true,
+      [`a-display--size-${size}`]: size != 'inherit',
+      [`a-display--color-${color}`]: color != 'inherit',
+      [`a-display--align-${align}`]: align != 'inherit',
+      [`a-display--weight-${weight}`]: weight,
+      [`a-display--italic`]: italic,
     }"
   >
     <slot />
@@ -21,7 +21,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: "inherit",
+      default: "medium",
       validator: shouldBeOneOf([
         "inherit",
         "micro",
@@ -51,7 +51,7 @@ export default {
     },
     tag: {
       type: String,
-      default: "p",
+      default: "strong",
     },
     align: {
       type: String,
@@ -66,7 +66,7 @@ export default {
     },
     weight: {
       type: String,
-      default: "regular",
+      default: "bold",
       validator: shouldBeOneOf([
         "bold",
         "medium",
@@ -84,7 +84,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/utils/breakpoints.scss';
 
-.a-text {
+.a-display {
   &--weight {
     &-bold {
       font-weight: 700;
@@ -132,22 +132,22 @@ export default {
 
   &--size {
     &-micro {
-      font-size: 10px;
+      font-size: 30px;
     }
     &-extra-small {
-      font-size: 12px;
+      font-size: 32px;
     }
     &-small {
-      font-size: 14px;
+      font-size: 34px;
     }
     &-medium {
-      font-size: 16px;
+      font-size: 36px;
     }
     &-large {
-      font-size: 18px;
+      font-size: 38px;
     }
     &-extra-large {
-      font-size: 20px;
+      font-size: 40px;
     }
   }
 

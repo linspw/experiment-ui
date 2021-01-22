@@ -69,7 +69,7 @@ export default {
       background-color: var(--colors-interactive-normal-red);
     }
 
-    &-alert {
+    &-warn {
       background-color: var(--colors-normal-yellow);
     }
 

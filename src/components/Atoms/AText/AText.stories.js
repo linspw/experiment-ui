@@ -45,15 +45,23 @@ export const withColors = () => ({
         <p />
         <AText color="primary">primary</AText>
         <p />
-        <AText color="secundary">secundary</AText>
+        <AText color="secondary">secondary</AText>
         <p />
         <AText color="tertiary">tertiary</AText>
         <p />
         <AText color="interactive">interactive</AText>
         <p />
-        <AText color="inverse">inverse</AText>
-        <p />
         <AText color="grey">grey</AText>
+        <p />
+        <AText color="success">success</AText>
+        <p />
+        <AText color="danger">danger</AText>
+        <p />
+        <AText color="warn">warn</AText>
+        <p />
+        <AText color="info">info</AText>
+        <p />
+        <AText color="inverse">inverse</AText>
       </div>
     );
   }

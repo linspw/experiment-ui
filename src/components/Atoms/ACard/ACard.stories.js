@@ -35,7 +35,7 @@ export const withVariantInfo = () => ({
         <p />
         <ACard elevation="low" variant="danger">With JSX</ACard>
         <p />
-        <ACard elevation="low" variant="alert">With JSX</ACard>
+        <ACard elevation="low" variant="warn">With JSX</ACard>
         <p />
         <ACard elevation="low" variant="dark">With JSX</ACard>
       </div>

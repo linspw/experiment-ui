@@ -24,6 +24,7 @@ export default {
       default: "inherit",
       validator: shouldBeOneOf([
         "inherit",
+        "micro",
         "extra-small",
         "small",
         "medium",
@@ -34,7 +35,19 @@ export default {
     color: {
       type: String,
       default: "inherit",
-      validator: shouldBeOneOf(["inherit", "primary", "secundary", "tertiary", "interactive", "inverse", "grey"]),
+      validator: shouldBeOneOf([
+        "inherit",
+        "primary",
+        "secondary",
+        "tertiary",
+        "interactive",
+        "grey",
+        "success",
+        "danger",
+        "warn",
+        "info",
+        "inverse",
+      ]),
     },
     tag: {
       type: String,
@@ -86,60 +99,55 @@ export default {
 
   &--color {
     &-primary {
-      color: var(--colors-major-black);
+      color: var(--color-theme-primary);
     }
-    &-secundary {
-      color: var(--colors-minor-dark-blue);
+    &-secondary {
+      color: var(--color-theme-secondary);
     }
     &-tertiary {
-      color: var(--colors-normal-dark-blue);
+      color: var(--color-theme-tertiary);
     }
     &-interactive {
-      color: var(--colors-interactive-blue);
-    }
-    &-inverse {
-      color: var(--colors-original-white);
+      color: var(--color-theme-interactive);
     }
     &-grey {
-      color: var(--colors-scale-grey-medium);
+      color: var(--color-theme-grey);
+    }
+    &-success {
+      color: var(--color-theme-success);
+    }
+    &-danger {
+      color: var(--color-theme-danger);
+    }
+    &-warn {
+      color: var(--color-theme-warn);
+    }
+    &-info {
+      color: var(--color-theme-info);
+    }
+    &-inverse {
+      color: var(--color-theme-inverse);
     }
   }
 
   &--size {
-    &-extra-small {
+    &-micro {
       font-size: 16px;
-
-      @media (min-width: $screen-desktop) {
-        font-size: 18px;
-      }
+    }
+    &-extra-small {
+      font-size: 18px;
     }
     &-small {
-      font-size: 18px;
-
-      @media (min-width: $screen-desktop) {
-        font-size: 20px;
-      }
+      font-size: 20px;
     }
     &-medium {
-      font-size: 20px;
-
-      @media (min-width: $screen-desktop) {
-        font-size: 22px;
-      }
+      font-size: 22px;
     }
     &-large {
-      font-size: 22px;
-
-      @media (min-width: $screen-desktop) {
-        font-size: 24px;
-      }
+      font-size: 24px;
     }
     &-extra-large {
       font-size: 26px;
-
-      @media (min-width: $screen-desktop) {
-        font-size: 28px;
-      }
     }
   }
 
