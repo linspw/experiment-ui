@@ -27,7 +27,15 @@ export const variant = () => ({
 
 export const withIcon = () => ({
   render() {
-    return <AButton icon="fas fa-user">With JSX</AButton>;
+    return (
+      <div>
+        <AButton icon="fas fa-user" icon-color="success">With JSX</AButton>
+        <p />
+        <AButton icon="fas fa-user" icon-color="warn">With JSX</AButton>
+        <p />
+        <AButton icon="fas fa-user" icon-color="danger" behavior="block">With JSX</AButton>
+      </div>
+    );
   }
 })
 

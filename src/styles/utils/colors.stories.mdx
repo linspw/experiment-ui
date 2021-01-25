@@ -1,0 +1,50 @@
+import { Meta, ArgsTable, Story, Canvas, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Tokens/Colors" />
+
+# Colors
+
+Essa secção define as cores da nossa aplicação.
+
+## Main Pallete
+
+<ColorPalette>
+  <ColorItem title="primary" subtitle="var(--color-theme-primary)" colors={['#303349']} />
+
+  <ColorItem title="secondary" subtitle="var(--color-theme-secondary)" colors={['#6F7E98']} />
+
+  <ColorItem title="tertiary" subtitle="var(--color-theme-tertiary)" colors={['#001469']} />
+
+  <ColorItem title="interactive" subtitle="var(--color-theme-interactive)" colors={['#0B39FF']} />
+
+  <ColorItem title="grey" subtitle="var(--color-theme-grey)" colors={['#B9C5DB']} />
+
+  <ColorItem title="success" subtitle="var(--color-theme-success)" colors={['#48B66A']} />
+
+  <ColorItem title="danger" subtitle="var(--color-theme-danger)" colors={['#FF5454']} />
+
+  <ColorItem title="warn" subtitle="var(--color-theme-warn)" colors={['#FFC75B']} />
+
+  <ColorItem title="info" subtitle="var(--color-theme-info)" colors={['#1D3CC0']} />
+
+  <ColorItem title="inverse" subtitle="var(--color-theme-inverse)" colors={['#FFFFFF']} />
+</ColorPalette>
+
+
+## Grey Scale
+
+<ColorPalette>
+  <ColorItem title="major" subtitle="var(--colors-scale-grey-major)" colors={['#3C4A61']} />
+
+  <ColorItem title="darkest" subtitle="var(--colors-scale-grey-darkest)" colors={['#586780']} />
+
+  <ColorItem title="dark" subtitle="var(--colors-scale-grey-dark)" colors={['#6F7E98']} />
+
+  <ColorItem title="medium" subtitle="var(--colors-scale-grey-medium)" colors={['#A1AEC6']} />
+
+  <ColorItem title="normal" subtitle="var(--colors-scale-grey-normal)" colors={['#B9C5DB']} />
+
+  <ColorItem title="light" subtitle="var(--colors-scale-grey-light)" colors={['#D2DEF4']} />
+
+  <ColorItem title="lightest" subtitle="var(--colors-scale-grey-lightest)" colors={['#D7E4EF']} />
+</ColorPalette>

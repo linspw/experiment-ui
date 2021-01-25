@@ -8,13 +8,13 @@
     }"
     @click="$emit('click')"
   >
-    <AIcon :icon="isLoading ? 'fas fa-circle-notch fa-spin' : icon" v-if="icon || isLoading" />
+    <AIcon :icon="icon" v-if="icon" :color="iconColor" class="a-button__icon"/>
+    <AIcon icon="fas fa-circle-notch fa-spin" v-if="isLoading" class="a-button__icon a-button__icon--is-loading"/>
     <span
       :class="{
         'a-button__text': true,
         'a-button__text--icon': icon      
       }"
-      v-if="!isLoading"
     >
       <slot />
     </span>
@@ -40,6 +40,10 @@ export default {
       type: String,
       default: '',
     },
+    iconColor: {
+      type: String,
+      default: '',
+    },
     isLoading: {
       type: Boolean,
       default: false,
@@ -57,6 +61,8 @@ export default {
   padding: var(--size-small) var(--size-large);
   transition: background-color 250ms, opacity 250ms;
   font-weight: 500;
+  min-height: 40px;
+  position: relative;
 
   &--variant {
     &-primary {
@@ -115,13 +121,35 @@ export default {
     }
 
     &-is-loading {
-      width: initial;
+      & > .a-button__text {
+        opacity: 0;
+      }
+
+      & > .a-button__icon {
+        opacity: 0;
+      }
+
+      & > .a-button__icon--is-loading {
+        position: absolute;
+        height: auto;
+        width: auto;
+        opacity: 1;
+      }
     }
   }
 
+  &__icon {
+    height: 100%;
+    width: 40px;
+  }
+
   &__text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &--icon {
-      margin-left: var(--size-small);
+      margin-right: 32px;
     }
   }
 }
