@@ -9,6 +9,21 @@ export const withText = () => ({
   template: '<a-input icon="fas fa-search">Hello input</a-input>',
 })
 
+export const types = () => ({
+  render() {
+    return (
+      <div>
+        <AInput type="text" placeholder="text"/>
+        <p />
+        <AInput type="password" placeholder="password"/>
+        <p />
+        <AInput type="email" placeholder="email"/>
+        <p />
+      </div>
+    );
+  }
+})
+
 export const placeholder = () => ({
   render() {
     return (

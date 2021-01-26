@@ -10,10 +10,10 @@
     <AIcon :icon="icon" v-if="icon" />
     <input
       :placeholder="placeholder"
+      :type="type"
       :value="value"
       @input="handleInput"
       class="a-input__field"
-      type="text"
       v-on="$listeners"
     />
   </div>
