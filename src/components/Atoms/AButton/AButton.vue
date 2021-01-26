@@ -13,7 +13,7 @@
     <span
       :class="{
         'a-button__text': true,
-        'a-button__text--icon': icon      
+        'a-button__text--icon': icon
       }"
     >
       <slot />
@@ -49,7 +49,7 @@ export default {
       default: false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

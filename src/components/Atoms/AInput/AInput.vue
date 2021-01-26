@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from "vue-prop-validation-helper";
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { AIcon } from '@/components/Atoms/AIcon';
 
 export default {
@@ -30,13 +30,13 @@ export default {
   props: {
     size: {
       type: String,
-      default: "medium",
-      validator: shouldBeOneOf(["small", "medium", "large"]),
+      default: 'medium',
+      validator: shouldBeOneOf(['small', 'medium', 'large']),
     },
     behavior: {
       type: String,
-      default: "default",
-      validator: shouldBeOneOf(["default", "block"]),
+      default: 'default',
+      validator: shouldBeOneOf(['default', 'block']),
     },
     isLoading: {
       type: Boolean,
@@ -44,11 +44,11 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: String,
-      default: "",
+      default: '',
     },
     icon: {
       type: String,
@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     handleInput(event) {
-      this.$emit("input", event.target.value);
+      this.$emit('input', event.target.value);
     },
   },
 };
@@ -105,7 +105,7 @@ export default {
         padding: var(--size-medium);
       }
     }
-    
+
     &-large {
       min-height: 50px;
 
@@ -114,8 +114,6 @@ export default {
       }
     }
   }
-
-
 
   &__field {
     font-family: 'Red Hat Text';

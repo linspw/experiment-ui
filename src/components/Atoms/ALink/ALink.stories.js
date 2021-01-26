@@ -2,12 +2,12 @@ import { ALink } from '.';
 
 export default {
   title: 'Design System/Atoms/ALink',
-}
+};
 
 export const withText = () => ({
   components: { ALink },
   template: '<a-link>Hello Button</a-link>',
-})
+});
 
 export const withWeight = () => ({
   render() {
@@ -20,5 +20,5 @@ export const withWeight = () => ({
         <ALink weight="bold">With JSX</ALink>
       </div>
     );
-  }
-})
+  },
+});

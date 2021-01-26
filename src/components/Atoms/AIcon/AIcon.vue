@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from "vue-prop-validation-helper";
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
   props: {
@@ -19,31 +19,31 @@ export default {
     },
     size: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "extra-small",
-        "small",
-        "medium",
-        "large",
-        "extra-large",
+        'inherit',
+        'extra-small',
+        'small',
+        'medium',
+        'large',
+        'extra-large',
       ]),
     },
     color: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "primary",
-        "secondary",
-        "tertiary",
-        "interactive",
-        "grey",
-        "success",
-        "danger",
-        "warn",
-        "info",
-        "inverse",
+        'inherit',
+        'primary',
+        'secondary',
+        'tertiary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
       ]),
     },
   },

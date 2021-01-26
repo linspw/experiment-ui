@@ -31,7 +31,7 @@
 export default {
   props: {
     size: {
-      default: "medium",
+      default: 'medium',
       type: String,
     },
     options: {
@@ -41,7 +41,7 @@ export default {
       type: Array,
     },
     placeholder: {
-      default: "",
+      default: '',
       type: String,
     },
     name: {

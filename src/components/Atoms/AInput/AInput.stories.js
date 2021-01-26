@@ -2,12 +2,12 @@ import { AInput } from '.';
 
 export default {
   title: 'Design System/Atoms/AInput',
-}
+};
 
 export const withText = () => ({
   components: { AInput },
   template: '<a-input icon="fas fa-search">Hello input</a-input>',
-})
+});
 
 export const types = () => ({
   render() {
@@ -21,8 +21,8 @@ export const types = () => ({
         <p />
       </div>
     );
-  }
-})
+  },
+});
 
 export const placeholder = () => ({
   render() {
@@ -34,8 +34,8 @@ export const placeholder = () => ({
         <p />
       </div>
     );
-  }
-})
+  },
+});
 
 export const behavior = () => ({
   render() {
@@ -47,8 +47,8 @@ export const behavior = () => ({
         <p />
       </div>
     );
-  }
-})
+  },
+});
 
 export const icon = () => ({
   render() {
@@ -57,5 +57,5 @@ export const icon = () => ({
         <AInput icon="fas fa-user" placeholder="default" />
       </div>
     );
-  }
-})
+  },
+});

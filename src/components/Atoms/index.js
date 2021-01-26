@@ -10,4 +10,6 @@ import { ATitle } from './ATitle';
 import { ALink } from './ALink';
 import { ADisplay } from './ADisplay';
 
-export { AIcon, AButton, ACard, ADivider, AInput, ASelect, ASlider, AText, ATitle, ALink, ADisplay };
+export {
+  AIcon, AButton, ACard, ADivider, AInput, ASelect, ASlider, AText, ATitle, ALink, ADisplay,
+};

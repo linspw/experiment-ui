@@ -2,12 +2,12 @@ import { ATitle } from '.';
 
 export default {
   title: 'Design System/Atoms/ATitle',
-}
+};
 
 export const withText = () => ({
   components: { ATitle },
   template: '<a-title>Hello Button</a-title>',
-})
+});
 
 export const withWeight = () => ({
   render() {
@@ -20,8 +20,8 @@ export const withWeight = () => ({
         <ATitle weight="bold">With JSX</ATitle>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withItalic = () => ({
   render() {
@@ -34,8 +34,8 @@ export const withItalic = () => ({
         <ATitle italic weight="bold">With JSX</ATitle>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withColors = () => ({
   render() {
@@ -64,8 +64,8 @@ export const withColors = () => ({
         <ATitle color="inverse">inverse</ATitle>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withSize = () => ({
   render() {
@@ -84,8 +84,8 @@ export const withSize = () => ({
         <ATitle size="extra-large">extra-large</ATitle>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withAlign = () => ({
   render() {
@@ -100,5 +100,5 @@ export const withAlign = () => ({
         <ATitle align="justify" tag="h3">Justificando o texto.</ATitle>
       </div>
     );
-  }
-})
+  },
+});

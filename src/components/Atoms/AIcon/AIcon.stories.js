@@ -2,12 +2,12 @@ import { AIcon } from '.';
 
 export default {
   title: 'Design System/Atoms/AIcon',
-}
+};
 
 export const withText = () => ({
   components: { AIcon },
   template: '<a-icon icon="fas fa-home" />',
-})
+});
 
 export const withColors = () => ({
   render() {
@@ -36,8 +36,8 @@ export const withColors = () => ({
         <AIcon color="inverse" icon="fas fa-home" />
       </div>
     );
-  }
-})
+  },
+});
 
 export const withSize = () => ({
   render() {
@@ -56,8 +56,8 @@ export const withSize = () => ({
         <AIcon size="extra-large" icon="fas fa-home" />
       </div>
     );
-  }
-})
+  },
+});
 
 export const withAnimation = () => ({
   render() {
@@ -71,5 +71,5 @@ export const withAnimation = () => ({
         <AIcon size="medium" icon="fas fa-stroopwafel fa-spin" />
       </div>
     );
-  }
-})
+  },
+});

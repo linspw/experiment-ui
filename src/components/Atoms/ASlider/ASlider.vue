@@ -32,10 +32,10 @@ export default {
   },
   methods: {
     handleSlider(event) {
-      this.$emit("change", parseInt(event.target.value));
+      this.$emit('change', parseInt(event.target.value));
     },
   },
-}
+};
 </script>
 
 <style lang="scss">

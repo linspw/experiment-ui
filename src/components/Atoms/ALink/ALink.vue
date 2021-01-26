@@ -11,20 +11,20 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from "vue-prop-validation-helper";
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
   props: {
     size: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "extra-small",
-        "small",
-        "medium",
-        "large",
-        "extra-large",
+        'inherit',
+        'extra-small',
+        'small',
+        'medium',
+        'large',
+        'extra-large',
       ]),
     },
   },

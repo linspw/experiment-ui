@@ -2,18 +2,29 @@
   "name": "@hyper-enterprise/aurora-vue",
   "version": "0.2.10",
   "private": false,
+  "description": "## Project setup ``` yarn install ```",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name aurora-vue ./src/components/index.js",
     "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name aurora-vue ./src/components/index.js",
+    "publish:new": "npm publish --access=public",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
-    "publish:new": "npm publish --access=public"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
   },
+  "main": "./dist/aurora-vue.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-prop-validation-helper": "^3.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^6.0.26",
@@ -22,25 +33,19 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.0.1",
     "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "sass-resources-loader": "^2.1.1",
     "style-loader": "^2.0.0",
     "vue-cli-plugin-storybook": "~2.0.0",
-    "vue-prop-validation-helper": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
-  "files": [
-    "dist/*",
-    "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
-  ],
   "eslintConfig": {
     "root": true,
     "env": {
@@ -48,7 +53,8 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/airbnb"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
@@ -60,8 +66,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "description": "## Project setup ``` yarn install ```",
-  "main": "./dist/aurora-vue.common.js",
-  "author": "",
   "license": "ISC"
 }

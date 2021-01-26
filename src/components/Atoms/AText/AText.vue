@@ -15,62 +15,62 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from "vue-prop-validation-helper";
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
   props: {
     size: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "micro",
-        "extra-small",
-        "small",
-        "medium",
-        "large",
-        "extra-large",
+        'inherit',
+        'micro',
+        'extra-small',
+        'small',
+        'medium',
+        'large',
+        'extra-large',
       ]),
     },
     color: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "primary",
-        "secondary",
-        "tertiary",
-        "interactive",
-        "grey",
-        "success",
-        "danger",
-        "warn",
-        "info",
-        "inverse",
+        'inherit',
+        'primary',
+        'secondary',
+        'tertiary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
       ]),
     },
     tag: {
       type: String,
-      default: "p",
+      default: 'p',
     },
     align: {
       type: String,
-      default: "inherit",
+      default: 'inherit',
       validator: shouldBeOneOf([
-        "inherit",
-        "left",
-        "right",
-        "center",
-        "justify",
+        'inherit',
+        'left',
+        'right',
+        'center',
+        'justify',
       ]),
     },
     weight: {
       type: String,
-      default: "regular",
+      default: 'regular',
       validator: shouldBeOneOf([
-        "bold",
-        "medium",
-        "regular",
+        'bold',
+        'medium',
+        'regular',
       ]),
     },
     italic: {

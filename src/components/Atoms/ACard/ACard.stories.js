@@ -2,12 +2,12 @@ import { ACard } from '.';
 
 export default {
   title: 'Design System/Atoms/ACard',
-}
+};
 
 export const withText = () => ({
   components: { ACard },
   template: '<a-card icon="fas fa-user">Hello Button</a-card>',
-})
+});
 
 export const withElevation = () => ({
   render() {
@@ -20,8 +20,8 @@ export const withElevation = () => ({
         <ACard elevation="high">With JSX</ACard>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withVariantInfo = () => ({
   render() {
@@ -40,5 +40,5 @@ export const withVariantInfo = () => ({
         <ACard elevation="low" variant="dark">With JSX</ACard>
       </div>
     );
-  }
-})
+  },
+});

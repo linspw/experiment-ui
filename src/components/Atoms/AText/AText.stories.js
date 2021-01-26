@@ -2,12 +2,12 @@ import { AText } from '.';
 
 export default {
   title: 'Design System/Atoms/AText',
-}
+};
 
 export const withText = () => ({
   components: { AText },
   template: '<a-text>Hello Button</a-text>',
-})
+});
 
 export const withWeight = () => ({
   render() {
@@ -20,8 +20,8 @@ export const withWeight = () => ({
         <AText weight="bold">With JSX</AText>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withItalic = () => ({
   render() {
@@ -34,8 +34,8 @@ export const withItalic = () => ({
         <AText italic weight="bold">With JSX</AText>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withColors = () => ({
   render() {
@@ -64,8 +64,8 @@ export const withColors = () => ({
         <AText color="inverse">inverse</AText>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withSize = () => ({
   render() {
@@ -84,8 +84,8 @@ export const withSize = () => ({
         <AText size="extra-large">extra-large</AText>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withAlign = () => ({
   render() {
@@ -100,5 +100,5 @@ export const withAlign = () => ({
         <AText align="justify">Justificando o texto.</AText>
       </div>
     );
-  }
-})
+  },
+});

@@ -2,12 +2,12 @@ import { AButton } from '.';
 
 export default {
   title: 'Design System/Atoms/AButton',
-}
+};
 
 export const withText = () => ({
   components: { AButton },
   template: '<a-button icon="fas fa-user">Hello Button</a-button>',
-})
+});
 
 export const variant = () => ({
   render() {
@@ -22,8 +22,8 @@ export const variant = () => ({
         <AButton variant="quaternary">With JSX</AButton>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withIcon = () => ({
   render() {
@@ -36,14 +36,14 @@ export const withIcon = () => ({
         <AButton icon="fas fa-user" icon-color="danger" behavior="block">With JSX</AButton>
       </div>
     );
-  }
-})
+  },
+});
 
 export const isLoading = () => ({
   render() {
     return <AButton icon="fas fa-user" isLoading={true}>With JSX</AButton>;
-  }
-})
+  },
+});
 
 export const withBehavior = () => ({
   render() {
@@ -54,5 +54,5 @@ export const withBehavior = () => ({
         <AButton behavior="block">💯 😀 😎 👍 💯</AButton>
       </div>
     );
-  }
-})
+  },
+});

@@ -2,12 +2,12 @@ import { ADisplay } from '.';
 
 export default {
   title: 'Design System/Atoms/ADisplay',
-}
+};
 
 export const withText = () => ({
   components: { ADisplay },
   template: '<a-display>Hello Button</a-display>',
-})
+});
 
 export const withWeight = () => ({
   render() {
@@ -20,8 +20,8 @@ export const withWeight = () => ({
         <ADisplay weight="bold">With JSX</ADisplay>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withItalic = () => ({
   render() {
@@ -34,8 +34,8 @@ export const withItalic = () => ({
         <ADisplay italic weight="bold">With JSX</ADisplay>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withColors = () => ({
   render() {
@@ -64,8 +64,8 @@ export const withColors = () => ({
         <ADisplay color="inverse">inverse</ADisplay>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withSize = () => ({
   render() {
@@ -84,8 +84,8 @@ export const withSize = () => ({
         <ADisplay size="extra-large">extra-large</ADisplay>
       </div>
     );
-  }
-})
+  },
+});
 
 export const withAlign = () => ({
   render() {
@@ -100,5 +100,5 @@ export const withAlign = () => ({
         <ADisplay align="justify" tag="h3">Justificando o texto.</ADisplay>
       </div>
     );
-  }
-})
+  },
+});
