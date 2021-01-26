@@ -8,8 +8,17 @@
     }"
     @click="$emit('click')"
   >
-    <AIcon :icon="icon" v-if="icon" :color="iconColor" class="a-button__icon"/>
-    <AIcon icon="fas fa-circle-notch fa-spin" v-if="isLoading" class="a-button__icon a-button__icon--is-loading"/>
+    <AIcon
+      v-if="icon"
+      :icon="icon"
+      :color="iconColor"
+      class="a-button__icon"
+    />
+    <AIcon
+      v-if="isLoading"
+      icon="fas fa-circle-notch fa-spin"
+      class="a-button__icon a-button__icon--is-loading"
+    />
     <span
       :class="{
         'a-button__text': true,
@@ -25,7 +34,7 @@
 import { AIcon } from '@/components/Atoms/AIcon';
 
 export default {
-  name: 'a-button',
+  name: 'AButton',
   components: { AIcon },
   props: {
     behavior: {

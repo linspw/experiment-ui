@@ -2,12 +2,12 @@
   <input
     :max="max"
     :min="min"
-    :value="value"
     :step="step"
-    @change="handleSlider"
+    :value="value"
     class="a-slider"
     type="range"
-  />
+    @change="handleSlider"
+  >
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     handleSlider(event) {
-      this.$emit('change', parseInt(event.target.value));
+      this.$emit('change', parseInt(event.target.value, 10));
     },
   },
 };
