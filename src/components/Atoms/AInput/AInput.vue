@@ -14,6 +14,7 @@
       @input="handleInput"
       class="a-input__field"
       type="text"
+      v-on="$listeners"
     />
   </div>
 </template>
@@ -52,6 +53,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    type: {
+      type: String,
+      default: 'text',
     },
   },
   methods: {
