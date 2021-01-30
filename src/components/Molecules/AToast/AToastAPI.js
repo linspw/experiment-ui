@@ -1,5 +1,5 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-console */
 import AToastInstance from './AToastInstance.vue';
 
 const AToastAPI = (Vue, globalOptions = {}) => ({
@@ -18,9 +18,7 @@ const AToastAPI = (Vue, globalOptions = {}) => ({
   },
   create(options = { duration: 0 }) {
     if (Vue.prototype.$toastInstance) {
-      console.log(options);
       if (options && (options.duration || options.duration === 0)) {
-        // eslint-disable-next-line no-param-reassign
         Vue.prototype.$toastInstance.duration = options.duration;
       }
       return;
@@ -32,7 +30,6 @@ const AToastAPI = (Vue, globalOptions = {}) => ({
 
     this.setupContainer();
 
-    // eslint-disable-next-line no-param-reassign
     Vue.prototype.$toastInstance = new ComponentClass({
       el: '#a-toast',
       propsData,
