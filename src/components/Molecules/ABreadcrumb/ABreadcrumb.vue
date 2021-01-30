@@ -1,19 +1,22 @@
 <template>
   <nav class="a-breadcrumb">
     <ATitle
-      :href="item.url"
+      v-for="(item, index) in items"
       :key="index"
+      :href="item.url"
       :weight="(index === 0) ? 'medium' : 'regular'"
       class="a-breadcrumb__item"
       size="large"
       tag="a"
-      v-for="(item, index) in items"
     >
       <template v-if="(index === (items.length -1))">
         {{ item.text }}
       </template>
       <template v-else>
-        {{ item.text }} <AIcon icon="fas fa-chevron-right" class="a-breadcrumb__icon" />
+        {{ item.text }} <AIcon
+          icon="fas fa-chevron-right"
+          class="a-breadcrumb__icon"
+        />
       </template>
     </ATitle>
   </nav>

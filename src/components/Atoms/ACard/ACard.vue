@@ -1,12 +1,12 @@
 <template>
   <component
+    :is="tag"
     :class="{
       [`a-card`]: true,
       [`a-card--variant-${variant}`]: variant,
       [`a-card--${size}`]: size,
       [`a-card--elevation-${elevation}`]: elevation,
     }"
-    :is="tag"
   >
     <slot />
   </component>
@@ -35,11 +35,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .a-card {
+  --a-card--padding: 24px;
   background-color: var(--colors-original-white);
   border-radius: 10px;
-  padding: 24px;
+  padding: var(--a-card--padding);
   position: relative;
 
   &--elevation {
@@ -58,23 +59,35 @@ export default {
 
   &--variant {
     &-success {
-      background-color: var(--colors-interactive-green);
+      background-color: var(--color-theme-success);
     }
 
     &-info {
-      background-color: var(--colors-major-blue);
+      background-color: var(--color-theme-info);
     }
 
     &-danger {
-      background-color: var(--colors-interactive-normal-red);
+      background-color: var(--color-theme-danger);
     }
 
     &-warn {
-      background-color: var(--colors-normal-yellow);
+      background-color: var(--color-theme-warn);
     }
 
-    &-dark {
-      background-color: var(--colors-minor-dark-blue);
+    &-primary {
+      background-color: var(--color-theme-primary);
+    }
+
+    &-secondary {
+      background-color: var(--color-theme-secondary);
+    }
+
+    &-tertiary {
+      background-color: var(--color-theme-tertiary);
+    }
+
+    &-interactive {
+      background-color: var(--color-theme-interactive);
     }
   }
 }

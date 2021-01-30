@@ -23,11 +23,14 @@
   ],
   "dependencies": {
     "core-js": "^3.6.5",
+    "timer-queue": "^1.1.0",
     "vue": "^2.6.11",
     "vue-prop-validation-helper": "^3.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-controls": "^6.1.15",
     "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-knobs": "^6.1.15",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/vue": "^6.0.26",
     "@vue/cli-plugin-babel": "~4.5.0",

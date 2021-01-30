@@ -7,15 +7,18 @@
       [`a-input--icon`]: icon,
     }"
   >
-    <AIcon :icon="icon" v-if="icon" />
+    <AIcon
+      v-if="icon"
+      :icon="icon"
+    />
     <input
       :placeholder="placeholder"
       :type="type"
       :value="value"
-      @input="handleInput"
       class="a-input__field"
+      @input="handleInput"
       v-on="$listeners"
-    />
+    >
   </div>
 </template>
 

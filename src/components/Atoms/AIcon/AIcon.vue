@@ -1,10 +1,12 @@
 <template>
-  <div :class="{
-    'a-icon': true,
-    [`a-icon--size-${size}`]: size,
-    [`a-icon--color-${color}`]: color,
-  }">
-    <i :class="icon"></i>
+  <div
+    :class="{
+      'a-icon': true,
+      [`a-icon--size-${size}`]: size,
+      [`a-icon--color-${color}`]: color,
+    }"
+  >
+    <i :class="icon" />
   </div>
 </template>
 

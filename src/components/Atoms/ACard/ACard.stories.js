@@ -29,15 +29,21 @@ export const withVariantInfo = () => ({
       <div>
         <ACard elevation="low">With JSX</ACard>
         <p />
-        <ACard elevation="low" variant="success">With JSX</ACard>
+        <ACard elevation="low" variant="success">success</ACard>
         <p />
-        <ACard elevation="low" variant="info">With JSX</ACard>
+        <ACard elevation="low" variant="info">info</ACard>
         <p />
-        <ACard elevation="low" variant="danger">With JSX</ACard>
+        <ACard elevation="low" variant="danger">danger</ACard>
         <p />
-        <ACard elevation="low" variant="warn">With JSX</ACard>
+        <ACard elevation="low" variant="warn">warn</ACard>
         <p />
-        <ACard elevation="low" variant="dark">With JSX</ACard>
+        <ACard elevation="low" variant="interactive">interactive</ACard>
+        <p />
+        <ACard elevation="low" variant="primary">primary</ACard>
+        <p />
+        <ACard elevation="low" variant="secondary">secondary</ACard>
+        <p />
+        <ACard elevation="low" variant="tertiary">tertiary</ACard>
       </div>
     );
   },
