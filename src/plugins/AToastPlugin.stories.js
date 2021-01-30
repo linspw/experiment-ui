@@ -1,4 +1,4 @@
-import { AToast } from ".";
+import { AToast } from "@/components/Molecules/AToast";
 import { AButton } from "@/components/Atoms/AButton";
 
 export default {

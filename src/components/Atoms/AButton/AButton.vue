@@ -51,7 +51,7 @@ export default {
     },
     iconColor: {
       type: String,
-      default: '',
+      default: 'inherit',
     },
     isLoading: {
       type: Boolean,

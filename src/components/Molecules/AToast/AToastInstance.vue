@@ -31,6 +31,7 @@ export default {
   },
   mounted() {
     this.timer = new TimerQueue({
+      timeout: 3000,
       autoStart: true,
     });
   },
@@ -39,10 +40,10 @@ export default {
       this.items.push(itemOptions);
       if (this.duration) {
         this.timer.push(() => {
-          console.log('foi');
-
-          this.removeItem();
-        }, 3000);
+          setTimeout(() => {
+            this.removeItem();
+          }, 3000);
+        });
       }
     },
     removeItem(index = 0) {
