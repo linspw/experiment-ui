@@ -1,24 +1,32 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import AToastInstance from './AToastInstance.vue';
 
 const AToastAPI = (Vue, globalOptions = {}) => ({
-  add(options) {
-    if (!options || (typeof options !== 'object')) return;
+  add(itemOptions, toastOptions) {
+    if (!itemOptions || (typeof itemOptions !== 'object')) return;
 
-    const itemOptions = !options.id ? { ...options, id: Date.now() } : options;
-    this.create();
+    const newItem = !itemOptions.id ? { ...itemOptions, id: Date.now() } : itemOptions;
+    this.create(toastOptions);
 
-    Vue.prototype.$toastInstance.pushItem(itemOptions);
+    Vue.prototype.$toastInstance.pushItem(newItem);
   },
   remove(itemIndex = 0) {
     this.create();
 
     return Vue.prototype.$toastInstance.removeItem(itemIndex);
   },
-  create(options) {
-    if (Vue.prototype.$toastInstance) return;
+  create(options = { duration: 0 }) {
+    if (Vue.prototype.$toastInstance) {
+      console.log(options);
+      if (options && (options.duration || options.duration === 0)) {
+        // eslint-disable-next-line no-param-reassign
+        Vue.prototype.$toastInstance.duration = options.duration;
+      }
+      return;
+    }
 
-    const propsData = { ...globalOptions, ...options };
+    const propsData = Vue.observable({ ...globalOptions, ...options });
 
     const ComponentClass = Vue.extend(AToastInstance);
 

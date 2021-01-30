@@ -20,7 +20,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 3000,
+      default: 0,
     },
   },
   data: () => ({
@@ -31,7 +31,7 @@ export default {
   },
   mounted() {
     this.timer = new TimerQueue({
-      timeout: 3000,
+      timeout: this.duration,
       autoStart: true,
     });
   },
@@ -41,10 +41,16 @@ export default {
       if (this.duration) {
         this.timer.push(() => {
           setTimeout(() => {
-            this.removeItem();
-          }, 3000);
+            this.removeItemById(itemOptions.id);
+          }, this.duration);
         });
       }
+    },
+    removeItemById(id) {
+      if (!this.items.length) return undefined;
+      const index = this.items.findIndex((element) => element.id === id);
+      if (index >= 0) return this.removeItem(index);
+      return undefined;
     },
     removeItem(index = 0) {
       if (!this.items.length) return undefined;
