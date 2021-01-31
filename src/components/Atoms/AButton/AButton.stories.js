@@ -45,6 +45,12 @@ export const isLoading = () => ({
   },
 });
 
+export const onlyIcon = () => ({
+  render() {
+    return <AButton icon="fas fa-user" />;
+  },
+});
+
 export const withBehavior = () => ({
   render() {
     return (

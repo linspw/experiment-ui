@@ -12,7 +12,7 @@
       v-if="icon"
       :icon="icon"
       :color="iconColor"
-      class="a-button__icon"
+      :class="{'a-button__icon': slotPassed}"
     />
     <AIcon
       v-if="isLoading"
@@ -20,6 +20,7 @@
       class="a-button__icon a-button__icon--is-loading"
     />
     <span
+      v-if="slotPassed"
       :class="{
         'a-button__text': true,
         'a-button__text--icon': icon
@@ -58,6 +59,11 @@ export default {
       default: false,
     },
   },
+  computed: {
+    slotPassed() {
+      return !!this.$slots.default;
+    },
+  },
 };
 </script>
 
@@ -66,12 +72,12 @@ export default {
   align-items: center;
   border-radius: var(--border-radius-normal);
   display: inline-flex;
-  justify-content: center;
-  padding: var(--size-small) var(--size-large);
-  transition: background-color 250ms, opacity 250ms;
   font-weight: 500;
+  justify-content: center;
   min-height: 40px;
+  padding: var(--size-small) var(--size-large);
   position: relative;
+  transition: background-color 250ms, opacity 250ms;
 
   &--variant {
     &-primary {

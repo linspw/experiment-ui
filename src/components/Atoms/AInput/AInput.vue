@@ -16,6 +16,7 @@
       :type="type"
       :value="value"
       class="a-input__field"
+      required
       @input="handleInput"
     >
   </div>
@@ -119,14 +120,20 @@ export default {
 
   &__field {
     font-family: 'Red Hat Text';
-    background-color: var(--colorr-scale-grey-normal);
     border-radius: var(--border-radius-normal);
     font-weight: 500;
     height: 100%;
     left: 0;
     top: 0;
     width: 100%;
-    color: var(--colors-major-black);
+    color: var(--colors-scale-grey-normal);
+    background-color: var(--colors-scale-grey-lightest);
+    transition: background-color 250ms, color 250ms;
+
+    &:valid {
+      color: var(--colors-major-black);
+      background-color: var(--colors-scale-grey-normal);
+    }
 
     &::placeholder {
       color: var(--colors-scale-grey-dark);
