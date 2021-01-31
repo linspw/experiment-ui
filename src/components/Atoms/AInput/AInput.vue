@@ -17,7 +17,6 @@
       :value="value"
       class="a-input__field"
       @input="handleInput"
-      v-on="$listeners"
     >
   </div>
 </template>
