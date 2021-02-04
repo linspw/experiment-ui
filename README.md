@@ -2,7 +2,6 @@
 
 Is a UI - Library write in Vue.js
 
-
 ### Installation
 
 ```
@@ -33,3 +32,8 @@ export default {
   <AButton>Foi</AButton>
 </template>
 ```
+
+### Contributing
+
+Guides:
+[Click here, and discovery how to develop](CONTRIBUTING.md)
