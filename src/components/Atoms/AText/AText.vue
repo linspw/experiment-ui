@@ -72,6 +72,7 @@ export default {
         'extra-bold',
         'bold',
         'medium',
+        'semi-bold',
         'regular',
         'light',
         'extra-light',
@@ -99,6 +100,9 @@ export default {
     }
     &-bold {
       font-weight: 700;
+    }
+    &-semi-bold {
+      font-weight: 600;
     }
     &-medium {
       font-weight: 500;

@@ -23,6 +23,8 @@ export const withWeight = () => ({
         <p />
         <ADisplay weight="medium">With JSX</ADisplay>
         <p />
+        <ADisplay weight="semi-bold">With JSX</ADisplay>
+        <p />
         <ADisplay weight="bold">With JSX</ADisplay>
         <p />
         <ADisplay weight="extra-bold">With JSX</ADisplay>
