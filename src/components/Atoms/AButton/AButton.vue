@@ -167,8 +167,8 @@ export default {
     align-items: center;
     display: flex;
     height: 100%;
-    margin-right: 16px;
-    width: fit-content;
+    width: 16px;
+    margin-right: 8px;
   }
 
   &__text {
@@ -177,7 +177,7 @@ export default {
     justify-content: center;
     align-items: center;
     &--icon {
-      margin-right: 32px;
+      margin-right: 24px;
     }
   }
 }
