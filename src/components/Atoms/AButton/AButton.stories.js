@@ -27,6 +27,16 @@ export const variant = () => ({
   },
 });
 
+export const withSize = () => ({
+  render() {
+    return (
+      <div>
+        <AButton size="medium">With JSX</AButton>
+      </div>
+    );
+  },
+});
+
 export const withIcon = () => ({
   render() {
     return (

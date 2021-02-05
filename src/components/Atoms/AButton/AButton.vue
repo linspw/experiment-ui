@@ -6,6 +6,7 @@
       ['a-button--behavior-is-rounded']: isRounded,
       [`a-button--behavior-is-loading`]: isLoading,
       [`a-button--variant-${variant}`]: variant,
+      [`a-button--size-${size}`]: size,
     }"
     @click="$emit('click')"
   >
@@ -47,6 +48,10 @@ export default {
       type: String,
       default: 'primary',
     },
+    size: {
+      type: String,
+      default: 'medium',
+    },
     icon: {
       type: String,
       default: '',
@@ -79,7 +84,6 @@ export default {
   display: inline-flex;
   font-weight: 600;
   justify-content: center;
-  min-height: 40px;
   padding: var(--size-small) var(--size-large);
   position: relative;
   transition: background-color 250ms, opacity 250ms;
@@ -90,22 +94,27 @@ export default {
   &:active {
     background-color: #839fb6;
   }
+
+  &--size {
+    &-medium {
+      min-height: 40px;
+      height: fit-content;
+    }
+  }
+
   &--variant {
     &-primary {
       background-color: var(--colors-major-black);
       color: var(--colors-original-white);
     }
-
     &-secondary {
       background-color: var(--color-theme-interactive);
       color: var(--colors-original-white);
     }
-
     &-tertiary {
       background-color: transparent;
       color: var(--colors-major-black);
       box-shadow: none;
-
       &:hover {
         text-decoration: underline;
       }
@@ -114,12 +123,10 @@ export default {
         text-decoration: underline;
       }
     }
-
     &-quaternary {
       background-color: var(--colors-original-white);
       color: var(--colors-normal-dark-blue);
     }
-
     &-quintenary {
       background-color: var(--colors-original-white);
       border: var(--size-micro) solid var(--colors-major-black);
