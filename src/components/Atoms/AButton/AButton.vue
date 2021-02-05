@@ -14,6 +14,7 @@
       v-if="icon"
       :icon="icon"
       :color="iconColor"
+      size="small"
       :class="{'a-button__icon': slotPassed}"
     />
     <AIcon
@@ -164,6 +165,8 @@ export default {
   &__icon {
     height: 100%;
     width: 40px;
+    display: flex;
+    align-items: center;
   }
 
   &__text {
