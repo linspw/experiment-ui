@@ -13,11 +13,21 @@ export const withWeight = () => ({
   render() {
     return (
       <div>
+        <AText weight="thin">With JSX</AText>
+        <p />
+        <AText weight="extra-light">With JSX</AText>
+        <p />
+        <AText weight="light">With JSX</AText>
+        <p />
         <AText weight="regular">With JSX</AText>
         <p />
         <AText weight="medium">With JSX</AText>
         <p />
         <AText weight="bold">With JSX</AText>
+        <p />
+        <AText weight="extra-bold">With JSX</AText>
+        <p />
+        <AText weight="black">With JSX</AText>
       </div>
     );
   },

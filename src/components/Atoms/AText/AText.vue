@@ -68,9 +68,14 @@ export default {
       type: String,
       default: 'regular',
       validator: shouldBeOneOf([
+        'black',
+        'extra-bold',
         'bold',
         'medium',
         'regular',
+        'light',
+        'extra-light',
+        'thin',
       ]),
     },
     italic: {
@@ -86,6 +91,12 @@ export default {
 
 .a-text {
   &--weight {
+    &-black {
+      font-weight: 900;
+    }
+    &-extra-bold {
+      font-weight: 800;
+    }
     &-bold {
       font-weight: 700;
     }
@@ -94,6 +105,15 @@ export default {
     }
     &-regular {
       font-weight: 400;
+    }
+    &-light {
+      font-weight: 300;
+    }
+    &-extra-light {
+      font-weight: 200;
+    }
+    &-thin {
+      font-weight: 100;
     }
   }
 

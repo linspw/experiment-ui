@@ -72,10 +72,11 @@ export default {
 
 <style lang="scss" scoped>
 .a-input {
-  display: inline-block;
-  min-width: 160px;
-  height: fit-content;
   border-radius: var(--border-radius-normal);
+  box-shadow: var(--shadow-elevation-02);
+  display: inline-block;
+  height: fit-content;
+  min-width: 160px;
   position: relative;
 
   &--icon {
@@ -119,7 +120,7 @@ export default {
   }
 
   &__field {
-    font-family: 'Red Hat Text';
+    font-family: 'Montserrat', sans-serif;
     border-radius: var(--border-radius-normal);
     font-weight: 500;
     height: 100%;
@@ -127,7 +128,7 @@ export default {
     top: 0;
     width: 100%;
     color: var(--colors-scale-grey-normal);
-    background-color: var(--colors-scale-grey-lightest);
+    background-color: var(--colors-original-white);
     transition: background-color 250ms, color 250ms;
 
     &:valid {
