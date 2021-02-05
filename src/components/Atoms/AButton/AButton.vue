@@ -158,15 +158,17 @@ export default {
         height: auto;
         width: auto;
         opacity: 1;
+        margin: 0;
       }
     }
   }
 
   &__icon {
-    height: 100%;
-    width: 40px;
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 100%;
+    margin-right: 16px;
+    width: fit-content;
   }
 
   &__text {
