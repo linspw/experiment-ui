@@ -13,13 +13,15 @@ export const variant = () => ({
   render() {
     return (
       <div>
-        <AButton variant="primary">With JSX</AButton>
+        <AButton variant="primary">primary</AButton>
         <p />
-        <AButton variant="secondary">With JSX</AButton>
+        <AButton variant="secondary">secondary</AButton>
         <p />
-        <AButton variant="tertiary">With JSX</AButton>
+        <AButton variant="tertiary">tertiary</AButton>
         <p />
-        <AButton variant="quaternary">With JSX</AButton>
+        <AButton variant="quaternary">quaternary</AButton>
+        <p />
+        <AButton variant="quintenary">quintenary</AButton>
       </div>
     );
   },
@@ -36,6 +38,12 @@ export const withIcon = () => ({
         <AButton icon="fas fa-user" icon-color="danger" behavior="block">With JSX</AButton>
       </div>
     );
+  },
+});
+
+export const isRounded = () => ({
+  render() {
+    return <AButton icon="fas fa-user" isRounded={true}>With JSX</AButton>;
   },
 });
 

@@ -3,6 +3,7 @@
     :class="{
       [`a-button`]: true,
       [`a-button--behavior-${behavior}`]: behavior,
+      ['a-button--behavior-is-rounded']: isRounded,
       [`a-button--behavior-is-loading`]: isLoading,
       [`a-button--variant-${variant}`]: variant,
     }"
@@ -44,7 +45,7 @@ export default {
     },
     variant: {
       type: String,
-      default: 'quaternary',
+      default: 'primary',
     },
     icon: {
       type: String,
@@ -57,6 +58,10 @@ export default {
     isLoading: {
       type: Boolean,
       default: false,
+    },
+    isRounded: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {
@@ -72,42 +77,35 @@ export default {
   align-items: center;
   border-radius: var(--border-radius-normal);
   display: inline-flex;
-  font-weight: 500;
+  font-weight: 600;
   justify-content: center;
   min-height: 40px;
   padding: var(--size-small) var(--size-large);
   position: relative;
   transition: background-color 250ms, opacity 250ms;
-
+  box-shadow: var(--shadow-elevation-02);
+  &:hover {
+    background-color: #CFDAE3;
+  }
+  &:active {
+    background-color: #839fb6;
+  }
   &--variant {
     &-primary {
       background-color: var(--colors-major-black);
-      box-shadow: var(--shadow-elevation-02);
       color: var(--colors-original-white);
-      &:hover {
-        background-color: #CFDAE3;
-      }
-      &:active {
-        background-color: #839fb6;
-      }
     }
 
     &-secondary {
-      background-color: var(--colors-original-white);
-      box-shadow: var(--shadow-elevation-02);
-      border: var(--size-micro) solid var(--colors-major-black);
-      color: var(--colors-major-black);
-      &:hover {
-        background-color: #CFDAE3;
-      }
-      &:active {
-        background-color: #839fb6;
-      }
+      background-color: var(--color-theme-interactive);
+      color: var(--colors-original-white);
     }
 
     &-tertiary {
       background-color: transparent;
       color: var(--colors-major-black);
+      box-shadow: none;
+
       &:hover {
         text-decoration: underline;
       }
@@ -119,20 +117,23 @@ export default {
 
     &-quaternary {
       background-color: var(--colors-original-white);
-      box-shadow: var(--shadow-elevation-02);
       color: var(--colors-normal-dark-blue);
-      &:hover {
-        background-color: #CFDAE3;
-      }
-      &:active {
-        background-color: #839fb6;
-      }
+    }
+
+    &-quintenary {
+      background-color: var(--colors-original-white);
+      border: var(--size-micro) solid var(--colors-major-black);
+      color: var(--colors-major-black);
     }
   }
 
   &--behavior {
     &-block {
       width: 100%;
+    }
+
+    &-is-rounded {
+      border-radius: var(--border-radius-high);
     }
 
     &-is-loading {
