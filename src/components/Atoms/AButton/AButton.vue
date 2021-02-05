@@ -14,7 +14,6 @@
       v-if="icon"
       :icon="icon"
       :color="iconColor"
-      size="small"
       :class="{'a-button__icon': slotPassed}"
     />
     <AIcon
@@ -24,10 +23,7 @@
     />
     <span
       v-if="slotPassed"
-      :class="{
-        'a-button__text': true,
-        'a-button__text--icon': icon
-      }"
+      :class="{ 'a-button__text': true }"
     >
       <slot />
     </span>
@@ -176,9 +172,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    &--icon {
-      margin-right: 24px;
-    }
   }
 }
 </style>
