@@ -39,6 +39,8 @@ export default {
 .a-card {
   --a-card--padding: 24px;
   background-color: var(--colors-original-white);
+
+  --a-card--background-color: var(--a-card--background-color);
   border-radius: 10px;
   padding: var(--a-card--padding);
   position: relative;
@@ -59,35 +61,35 @@ export default {
 
   &--variant {
     &-success {
-      background-color: var(--color-theme-success);
+      --a-card--background-color: var(--color-theme-success);
     }
 
     &-info {
-      background-color: var(--color-theme-info);
+      --a-card--background-color: var(--color-theme-info);
     }
 
     &-danger {
-      background-color: var(--color-theme-danger);
+      --a-card--background-color: var(--color-theme-danger);
     }
 
     &-warn {
-      background-color: var(--color-theme-warn);
+      --a-card--background-color: var(--color-theme-warn);
     }
 
     &-primary {
-      background-color: var(--color-theme-primary);
+      --a-card--background-color: var(--color-theme-primary);
     }
 
     &-secondary {
-      background-color: var(--color-theme-secondary);
+      --a-card--background-color: var(--color-theme-secondary);
     }
 
     &-tertiary {
-      background-color: var(--color-theme-tertiary);
+      --a-card--background-color: var(--color-theme-tertiary);
     }
 
     &-interactive {
-      background-color: var(--color-theme-interactive);
+      --a-card--background-color: var(--color-theme-interactive);
     }
   }
 }
