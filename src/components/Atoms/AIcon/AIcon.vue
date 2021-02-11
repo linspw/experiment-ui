@@ -52,11 +52,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import '~@/styles/font-awesome/css/fontawesome.min.css';
-@import '~@/styles/font-awesome/css/brands.min.css';
-@import '~@/styles/font-awesome/css/solid.min.css';
-
+<style lang="scss">
 .a-icon {
   position: relative;
   display: inline-flex;
