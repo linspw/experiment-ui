@@ -4,3 +4,13 @@ import Vue from 'vue';
 import { AToastPlugin } from '@/plugins/ToastPlugin';
 
 Vue.use(AToastPlugin);
+
+export const parameters = {
+  options: {
+    storySort: {
+      method: '',
+      order: ['Aurora-Vue'],
+      locales: '',
+    },
+  },
+};
