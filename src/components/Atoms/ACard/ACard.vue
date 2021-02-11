@@ -37,11 +37,11 @@ export default {
 
 <style lang="scss" scoped>
 .a-card {
-  --a-card--padding: 24px;
-  background-color: var(--colors-original-white);
+  --a-card--padding: var(--size-large);
+  --a-card--background-color: var(--colors-original-white);
 
-  --a-card--background-color: var(--a-card--background-color);
-  border-radius: 10px;
+  background-color: var(--a-card--background-color);
+  border-radius: var(--border-radius-normal);
   padding: var(--a-card--padding);
   position: relative;
 
