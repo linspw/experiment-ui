@@ -66,7 +66,7 @@ export default {
     },
     weight: {
       type: String,
-      default: 'regular',
+      default: 'bold',
       validator: shouldBeOneOf([
         'black',
         'extra-bold',

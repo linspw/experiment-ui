@@ -1,41 +1,41 @@
 <template>
-  <div class="a-toast">
-    <transition-group
-      name="fade"
-      mode="out-in"
+  <transition-group
+    name="fade"
+    mode="out-in"
+    class="a-toast"
+    tag="div"
+  >
+    <ACard
+      v-for="(item, index) in items"
+      :key="item.text + item.title + item.variant + item.id"
+      :class="item.variant && 'a-toast__item--inverse'"
+      :variant="item.variant"
+      class="a-toast__item"
+      tag="button"
+      @click.native="handleClick(index)"
     >
-      <ACard
-        v-for="(item, index) in items"
-        :key="item.text + item.title + item.variant + item.id"
-        :class="item.variant && 'a-toast__item--inverse'"
-        :variant="item.variant"
-        class="a-toast__item"
-        tag="button"
-        @click.native="handleClick(index)"
-      >
-        <div class="a-toast__icon">
-          <AIcon
-            v-if="item.icon"
-            :icon="item.icon"
-            size="medium"
-          />
-        </div>
+      <div class="a-toast__icon">
+        <AIcon
+          v-if="item.icon"
+          :icon="item.icon"
+          size="medium"
+        />
+      </div>
 
-        <div class="a-toast__content">
-          <ATitle v-if="item.title">
-            {{ item.title }}
-          </ATitle>
+      <div class="a-toast__content">
+        <ATitle v-if="item.title">
+          {{ item.title }}
+        </ATitle>
 
-          <AText
-            v-if="item.text"
-            tag="span"
-          >
-            {{ item.text }}
-          </AText>
-        </div>
-      </ACard>
-    </transition-group>
-  </div>
+        <AText
+          v-if="item.text"
+          tag="span"
+        >
+          {{ item.text }}
+        </AText>
+      </div>
+    </ACard>
+  </transition-group>
 </template>
 
 <script>
@@ -114,6 +114,6 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
-  transform: translateX(200px);
+  transform: translateX(100%);
 }
 </style>
