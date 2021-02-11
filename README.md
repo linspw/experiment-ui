@@ -1,6 +1,7 @@
-<h2 align="center">Aurora Vue</h2>
+<h1 align="center">Welcome to Aurora-Vue!</h1>
 
-Is a UI - Library write in Vue.js
+Aurora-Vue is UI - Library write in Vue.js that will assist you in your project, 
+providing visual components to facilitate the development of your application.
 
 ### Installation
 
@@ -33,6 +34,8 @@ export default {
 </template>
 ```
 
+### Documentation
+[Aurora-Vue Doc](https://aurora-vue.netlify.app/)
 ### Contributing
 
 Guides:
