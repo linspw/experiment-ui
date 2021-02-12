@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable no-underscore-dangle */
-import AToastInstance from './AToastInstance.vue';
+import AToastWrapper from './AToastWrapper.vue';
 
 const AToastAPI = (Vue, globalOptions = {}) => ({
   add(itemOptions, toastOptions) {
@@ -17,16 +16,11 @@ const AToastAPI = (Vue, globalOptions = {}) => ({
     return Vue.prototype.$toastInstance.removeItem(itemIndex);
   },
   create(options = { duration: 0 }) {
-    if (Vue.prototype.$toastInstance) {
-      if (options && (options.duration || options.duration === 0)) {
-        Vue.prototype.$toastInstance.duration = options.duration;
-      }
-      return;
-    }
+    if (Vue.prototype.$toastInstance) return;
 
     const propsData = Vue.observable({ ...globalOptions, ...options });
 
-    const ComponentClass = Vue.extend(AToastInstance);
+    const ComponentClass = Vue.extend(AToastWrapper);
 
     this.setupContainer();
 

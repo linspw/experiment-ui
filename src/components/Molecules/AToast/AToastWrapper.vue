@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import TimerQueue from 'timer-queue';
 import AToast from './AToast.vue';
 
 export default {
@@ -25,26 +24,24 @@ export default {
   },
   data: () => ({
     items: [],
+    timer: [],
+    counter: 0,
   }),
   beforeDestroy() {
     this.$off('click');
   },
-  mounted() {
-    this.timer = new TimerQueue({
-      timeout: this.duration,
-      autoStart: true,
-    });
-  },
   methods: {
     pushItem(itemOptions) {
       this.items.push(itemOptions);
-      if (this.duration) {
-        this.timer.push(() => {
-          setTimeout(() => {
-            this.removeItemById(itemOptions.id);
-          }, this.duration);
-        });
-      }
+      if (!this.duration && !itemOptions.duration) return;
+
+      this.timer.push(
+        setTimeout(() => {
+          this.removeItemById(itemOptions.id);
+          // eslint-disable-next-line no-plusplus
+          clearTimeout(this.timer[this.counter++]);
+        }, itemOptions.duration || this.duration),
+      );
     },
     removeItemById(id) {
       if (!this.items.length) return undefined;

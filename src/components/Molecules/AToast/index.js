@@ -1,5 +1,5 @@
 import AToast from './AToast.vue';
-import AToastInstance from './AToastInstance.vue';
+import AToastWrapper from './AToastWrapper.vue';
 import { AToastAPI } from './AToastAPI';
 
-export { AToast, AToastInstance, AToastAPI };
+export { AToast, AToastWrapper, AToastAPI };

@@ -23,7 +23,6 @@
   ],
   "dependencies": {
     "core-js": "^3.6.5",
-    "timer-queue": "^1.1.0",
     "vue": "^2.6.11",
     "vue-prop-validation-helper": "^3.0.0"
   },

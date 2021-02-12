@@ -74,8 +74,8 @@ export const withDuration = () => ({
         title: 'Home',
         text: 'Testando',
         icon: 'fas fa-location-arrow',
-        variant: this.variants[Math.floor(Math.random() * this.variants.length)],
-      }, { duration: 3000 });
+        variant: this.variants[Math.floor(Math.random() * this.variants.length)], duration: 3000,
+      });
       this.$toastInstance.$on('click', (msg) => console.log(msg));
     },
     removeItem(index = 0) {
