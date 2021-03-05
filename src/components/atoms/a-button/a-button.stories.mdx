@@ -96,7 +96,7 @@ import AButton from './AButton.vue';
         components: { AButton },
         template: `
         <div>
-          <a-button @click="action" is-loading="true">Loading</a-button>
+          <a-button @click="action" :is-loading="true">Loading</a-button>
         </div>
         `,
         methods: { action: action("clicked") }
