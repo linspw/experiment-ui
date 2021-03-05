@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { AToastWrapper, AToastAPI } from '@/components/Molecules/AToast';
+import { AToastWrapper, AToastAPI } from '@/components/molecules/a-toast';
 
 const API = (Vue, options = {}) => {
   const methods = AToastAPI(Vue, options);

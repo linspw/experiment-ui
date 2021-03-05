@@ -1,4 +1,4 @@
-import { ATooltipDirective } from '@/components/Atoms/ATooltip';
+import { ATooltipDirective } from '@/components/atoms/a-tooltip';
 
 const ATooltipPlugin = {
   install(Vue) {

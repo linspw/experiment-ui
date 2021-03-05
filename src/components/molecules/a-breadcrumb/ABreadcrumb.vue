@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { ATitle } from '@/components/Atoms/ATitle';
-import { AIcon } from '@/components/Atoms/AIcon';
+import { ATitle } from '@/components/atoms/a-title';
+import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
   components: {

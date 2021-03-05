@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import { AText } from '@/components/Atoms/AText';
-import { ATitle } from '@/components/Atoms/ATitle';
-import { AIcon } from '@/components/Atoms/AIcon';
-import { ACard } from '@/components/Atoms/ACard';
+import { AText } from '@/components/atoms/a-text';
+import { ATitle } from '@/components/atoms/a-title';
+import { AIcon } from '@/components/atoms/a-icon';
+import { ACard } from '@/components/atoms/a-card';
 
 export default {
   components: {

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { AIcon } from '@/components/Atoms/AIcon';
+import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
   name: 'AButton',

@@ -1,5 +1,5 @@
-import { AToast } from "@/components/Molecules/AToast";
-import { AButton } from "@/components/Atoms/AButton";
+import { AToast } from "@/components/molecules/a-toast";
+import { AButton } from "@/components/atoms/a-button";
 
 export default {
   title: "Design System/Molecules/AToast/Plugin",

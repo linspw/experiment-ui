@@ -1,5 +1,5 @@
 import { ATooltip } from '.';
-import { AButton } from '@/components/Atoms/AButton';
+import { AButton } from '@/components/atoms/a-button';
 
 export default {
   title: 'Design System/Atoms/ATooltip',
