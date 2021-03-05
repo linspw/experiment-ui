@@ -1,0 +1,90 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import ACard from './ACard.vue';
+
+<Meta title="Design System/Atoms/ACard" component={ACard} />
+
+## ACard
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { ACard },
+        template: '<a-card>Hello Card</a-card>',
+    }}
+  </Story>
+</Canvas>
+
+### Variants:
+
+<Canvas>
+  <Story name="Variants">
+    {{
+        components: { ACard },
+        template: `
+        <div>
+          <a-card elevation="low">With JSX</a-card>
+          <p />
+          <a-card elevation="low" variant="success">success</a-card>
+          <p />
+          <a-card elevation="low" variant="info">info</a-card>
+          <p />
+          <a-card elevation="low" variant="danger">danger</a-card>
+          <p />
+          <a-card elevation="low" variant="warn">warn</a-card>
+          <p />
+          <a-card elevation="low" variant="interactive">interactive</a-card>
+          <p />
+          <a-card elevation="low" variant="primary">primary</a-card>
+          <p />
+          <a-card elevation="low" variant="secondary">secondary</a-card>
+          <p />
+          <a-card elevation="low" variant="tertiary">tertiary</a-card>
+        </div>
+        `,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Shadows:
+
+<Canvas>
+  <Story name="Shadows">
+    {{
+        components: { ACard },
+        template: `
+        <div>
+          <a-card elevation="low">With JSX</a-card>
+          <p />
+          <a-card elevation="medium">success</a-card>
+          <p />
+          <a-card elevation="high">info</a-card>
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Tag:
+
+<Canvas>
+  <Story name="Tag">
+    {{
+        components: { ACard },
+        template: `
+        <div>
+          <a-card tag="div">With JSX</a-card>
+          <p />
+          <a-card tag="button">success</a-card>
+          <p />
+          <a-card tag="article">info</a-card>
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ACard} />

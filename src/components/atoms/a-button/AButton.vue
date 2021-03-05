@@ -97,7 +97,7 @@ export default {
 
   &--size {
     &-medium {
-      min-height: 40px;
+      min-height: var(--size-jumbo);
       height: fit-content;
     }
   }
@@ -167,7 +167,7 @@ export default {
     display: flex;
     height: 100%;
     width: 16px;
-    margin-right: 8px;
+    margin-right: var(--size-small);
   }
 
   &__text {
