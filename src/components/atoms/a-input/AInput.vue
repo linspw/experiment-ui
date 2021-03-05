@@ -3,8 +3,9 @@
     :class="{
       ['a-input']: true,
       [`a-input--behavior-${behavior}`]: behavior != 'default',
-      [`a-input--size-${size}`]: size,
+      [`a-input--behavior-${shadow}`]: shadow,
       [`a-input--icon`]: icon,
+      [`a-input--size-${size}`]: size,
     }"
   >
     <AIcon
@@ -12,11 +13,10 @@
       :icon="icon"
     />
     <input
-      :placeholder="placeholder"
+      v-bind="$attrs"
       :type="type"
       :value="value"
       class="a-input__field"
-      required
       @input="handleInput"
     >
   </div>
@@ -30,6 +30,7 @@ export default {
   components: {
     AIcon,
   },
+  inheritAttrs: false,
   props: {
     size: {
       type: String,
@@ -45,10 +46,6 @@ export default {
       type: Boolean,
       default: true,
     },
-    placeholder: {
-      type: String,
-      default: '',
-    },
     value: {
       type: String,
       default: '',
@@ -60,6 +57,10 @@ export default {
     type: {
       type: String,
       default: 'text',
+    },
+    shadow: {
+      type: String,
+      default: '',
     },
   },
   methods: {
@@ -73,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .a-input {
   border-radius: var(--border-radius-normal);
-  box-shadow: var(--shadow-elevation-02);
+  border: var(--size-micro) solid var(--colors-scale-grey-medium);
   display: inline-block;
   height: fit-content;
   min-width: 160px;
@@ -82,6 +83,7 @@ export default {
   &--icon {
     & > .a-icon {
       align-items: center;
+      color: var(--colors-scale-grey-medium);
       display: flex;
       height: 100%;
       justify-content: center;
@@ -98,6 +100,9 @@ export default {
   &--behavior {
     &-block {
       width: 100%;
+    }
+    &-shadow {
+      box-shadow: var(--shadow-elevation-02);
     }
   }
 
@@ -127,14 +132,9 @@ export default {
     left: 0;
     top: 0;
     width: 100%;
-    color: var(--colors-scale-grey-normal);
+    color: var(--colors-major-black);
     background-color: var(--colors-original-white);
     transition: background-color 250ms, color 250ms;
-
-    &:valid {
-      color: var(--colors-major-black);
-      background-color: var(--colors-scale-grey-normal);
-    }
 
     &::placeholder {
       color: var(--colors-scale-grey-dark);

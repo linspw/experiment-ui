@@ -5,6 +5,7 @@
       [`a-icon--size-${size}`]: size,
       [`a-icon--color-${color}`]: color,
     }"
+    v-bind="$attrs"
   >
     <i :class="icon" />
   </div>
@@ -14,6 +15,7 @@
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
+  inheritAttrs: false,
   props: {
     icon: {
       type: String,

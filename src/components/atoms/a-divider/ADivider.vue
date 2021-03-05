@@ -1,10 +1,13 @@
 <template>
-  <hr class="a-divider">
+  <hr
+    class="a-divider"
+    v-bind="$attrs"
+  >
 </template>
 
 <script>
 export default {
-
+  inheritAttrs: false,
 };
 </script>
 

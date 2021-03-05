@@ -8,6 +8,7 @@
       [`a-button--variant-${variant}`]: variant,
       [`a-button--size-${size}`]: size,
     }"
+    v-bind="$attrs"
     @click="$emit('click')"
   >
     <AIcon
@@ -36,6 +37,7 @@ import { AIcon } from '@/components/atoms/a-icon';
 export default {
   name: 'AButton',
   components: { AIcon },
+  inheritAttrs: false,
   props: {
     behavior: {
       type: String,
@@ -85,6 +87,7 @@ export default {
   position: relative;
   transition: background-color 250ms, opacity 250ms;
   box-shadow: var(--shadow-elevation-02);
+
   &:hover {
     background-color: #CFDAE3;
   }
