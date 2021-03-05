@@ -1,5 +1,5 @@
 <template>
-  <hr class="a-divider" />
+  <hr class="a-divider">
 </template>
 
 <script>

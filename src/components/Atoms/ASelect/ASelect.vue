@@ -12,7 +12,11 @@
       v-bind="$attrs"
       v-on="$listeners"
     >
-      <option v-if="placeholder" value="" selected>
+      <option
+        v-if="placeholder"
+        value=""
+        selected
+      >
         {{ placeholder }}
       </option>
 
