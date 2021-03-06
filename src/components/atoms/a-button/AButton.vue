@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
@@ -46,10 +47,21 @@ export default {
     variant: {
       type: String,
       default: 'primary',
+      validator: shouldBeOneOf([
+        'primary',
+        'secondary',
+        'tertiary',
+        'quaternary',
+        'quintenary',
+      ]),
     },
     size: {
       type: String,
-      default: 'medium',
+      default: 'small',
+      validator: shouldBeOneOf([
+        'small',
+        'medium',
+      ]),
     },
     icon: {
       type: String,
@@ -81,12 +93,11 @@ export default {
   align-items: center;
   border-radius: var(--border-radius-normal);
   display: inline-flex;
-  font-weight: 600;
+  font-weight: 500;
   justify-content: center;
   padding: var(--size-small) var(--size-large);
   position: relative;
   transition: background-color 250ms, opacity 250ms;
-  box-shadow: var(--shadow-elevation-02);
 
   &:hover {
     background-color: #CFDAE3;
@@ -96,41 +107,51 @@ export default {
   }
 
   &--size {
+    &-small {
+      min-height: var(--size-extra-large);
+      height: fit-content;
+      & > .a-button__text {
+        font-size: 14px;
+      }
+    }
     &-medium {
       min-height: var(--size-jumbo);
       height: fit-content;
+      & > .a-button__text {
+        font-size: 18px;
+      }
     }
   }
 
   &--variant {
     &-primary {
-      background-color: var(--colors-major-black);
+      background-color: var(--color-theme-primary);
       color: var(--colors-original-white);
     }
     &-secondary {
-      background-color: var(--color-theme-interactive);
+      background-color: var(--color-theme-secondary);
       color: var(--colors-original-white);
     }
     &-tertiary {
-      background-color: transparent;
-      color: var(--colors-major-black);
-      box-shadow: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      &:active {
-        color: #839fb6;
-        text-decoration: underline;
-      }
+      background-color: var(--colors-original-white);
+      border: var(--size-micro) solid var(--color-theme-secondary);
+      color: var(--color-theme-secondary);
     }
     &-quaternary {
-      background-color: var(--colors-original-white);
-      color: var(--colors-normal-dark-blue);
+      background-color: transparent;
+      color: var(--color-theme-secondary);
+      &:hover {
+        text-decoration: underline;
+        background-color: transparent;
+      }
+      &:active {
+        text-decoration: underline;
+        background-color: transparent;
+      }
     }
     &-quintenary {
-      background-color: var(--colors-original-white);
-      border: var(--size-micro) solid var(--colors-major-black);
-      color: var(--colors-major-black);
+      background-color: var(--color-theme-primary);
+      color: var(--color-theme-secondary);
     }
   }
 
