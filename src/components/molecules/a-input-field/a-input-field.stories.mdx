@@ -1,0 +1,23 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import { AInput } from '@/components/atoms/a-input';
+import AInputField from './a-input-field.vue';
+
+<Meta title="Design System/Molecules/AInputField" component={AInputField} />
+
+## AInputField
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { AInputField, AInput },
+        template: `<a-input-field rules="required|email">
+          <a-input type="text" />  
+        </a-input-field>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AInputField} />

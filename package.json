@@ -24,6 +24,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "url-join": "^4.0.1",
+    "vee-validate": "^3.4.5",
     "vue": "^2.6.11",
     "vue-prop-validation-helper": "^3.0.0"
   },
