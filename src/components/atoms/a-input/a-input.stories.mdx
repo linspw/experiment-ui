@@ -1,0 +1,122 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import AInput from './AInput.vue';
+
+<Meta title="Design System/Atoms/AInput" component={AInput} />
+
+## AInput
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { AInput },
+        template: '<a-input type="text" />',
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Sizes:
+
+<Canvas>
+  <Story name="Sizes">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" size="small" placeholder="small" />
+          <span />
+          <a-input type="text" size="medium" placeholder="medium" />
+        </div>`,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Attributes (placeholder):
+
+<Canvas>
+  <Story name="Attributes">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" placeholder="example1" />
+        </div>`,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Icons:
+
+<Canvas>
+  <Story name="Attributdsades">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" icon="fas fa-user" />
+          <a-input type="text" icon="fas fa-user" icon-color="success" />
+        </div>`,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Types :
+
+<Canvas>
+  <Story name="Types">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" placeholder="example" />
+          <a-input type="number" placeholder="1000" />
+          <a-input type="date" initial-value="2021-03-31"/>
+        </div>`,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Behaviors:
+
+<Canvas>
+  <Story name="Behaviors">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" icon="fas fa-user" behavior="default" placeholder="default" />
+          <a-input type="text" icon="fas fa-user" behavior="block" placeholder="block" />
+        </div>`,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### With Value and Listenner (controll use):
+
+<Canvas>
+  <Story name="Value and Listenner">
+    {{
+        components: { AInput },
+        template: `<div>
+          <a-input type="text" :value="usingNormalData" @input="handleInput" placeholder="default" />
+          <a-input type="text" v-model="usingVmodel" placeholder="v-model" />
+        </div>`,
+        data(){
+          return {
+            usingNormalData: '',
+            usingVmodel: '',
+          };
+        },
+        methods: {
+          handleInput(value) {
+            this.usingNormalData = value;
+          },
+        },
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AInput} />

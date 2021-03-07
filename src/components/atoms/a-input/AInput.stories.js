@@ -1,12 +1,12 @@
 import { AInput } from '.';
 
 export default {
-  title: 'Design System/Atoms/AInput',
+  title: 'Design System/Atoms/AInput2',
 };
 
 export const withText = () => ({
   components: { AInput },
-  template: '<a-input icon="fas fa-search">Hello input</a-input>',
+  template: '<a-input type="text" />',
 });
 
 export const types = () => ({

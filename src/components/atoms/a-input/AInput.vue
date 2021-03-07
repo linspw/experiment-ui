@@ -4,13 +4,16 @@
       ['a-input']: true,
       [`a-input--behavior-${behavior}`]: behavior != 'default',
       [`a-input--behavior-${shadow}`]: shadow,
+      [`a-input--behavior-has-value`]: hasValue,
       [`a-input--icon`]: icon,
       [`a-input--size-${size}`]: size,
     }"
   >
     <AIcon
       v-if="icon"
+      :color="iconColor"
       :icon="icon"
+      class="a-input-icon"
     />
     <input
       v-bind="$attrs"
@@ -35,7 +38,12 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: shouldBeOneOf(['small', 'medium', 'large']),
+      validator: shouldBeOneOf(['small', 'medium']),
+    },
+    variants: {
+      type: String,
+      default: 'primary',
+      validator: shouldBeOneOf(['primary']),
     },
     behavior: {
       type: String,
@@ -54,6 +62,10 @@ export default {
       type: String,
       default: '',
     },
+    iconColor: {
+      type: String,
+      default: 'inherit',
+    },
     type: {
       type: String,
       default: 'text',
@@ -63,27 +75,33 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      hasValue: !!this.value,
+    };
+  },
   methods: {
     handleInput(event) {
-      this.$emit('input', event.target.value);
+      const targetValue = event.target.value;
+      this.hasValue = !!targetValue;
+      this.$emit('input', this.type === 'number' ? Number(targetValue) : targetValue);
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-input {
   border-radius: var(--border-radius-normal);
   border: var(--size-micro) solid var(--colors-scale-grey-medium);
-  display: inline-block;
+  color: var(--colors-scale-grey-medium);
+  display: inline-flex;
   height: fit-content;
-  min-width: 160px;
   position: relative;
 
   &--icon {
-    & > .a-icon {
+    & > .a-input-icon {
       align-items: center;
-      color: var(--colors-scale-grey-medium);
       display: flex;
       height: 100%;
       justify-content: center;
@@ -101,43 +119,45 @@ export default {
     &-block {
       width: 100%;
     }
-    &-shadow {
-      box-shadow: var(--shadow-elevation-02);
+    &-has-value {
+      border-color: var(--colors-scale-grey-dark);
+      color: var(--colors-scale-grey-dark);
+      & > .a-input__field {
+        background-color: var(--colors-scale-grey-lightest);
+      }
     }
   }
 
   &--size {
-    &-medium {
-      min-height: var(--size-jumbo);
-
+    &-small {
       & > .a-input__field {
-        padding: var(--size-medium);
+        min-height: var(--size-extra-large);
+        font-size: var(--size-scalable-micro);
       }
     }
-
-    &-large {
-      min-height: 50px;
-
+    &-medium {
       & > .a-input__field {
-        padding: 24px;
+        min-height: var(--size-jumbo);
+        font-size: var(--size-scalable-extra-small);
       }
     }
   }
 
   &__field {
-    font-family: 'Montserrat', sans-serif;
+    background-color: var(--colors-original-white);
     border-radius: var(--border-radius-normal);
+    color: var(--colors-scale-grey-dark);
+    flex: 1;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     height: 100%;
     left: 0;
     top: 0;
-    width: 100%;
-    color: var(--colors-major-black);
-    background-color: var(--colors-original-white);
     transition: background-color 250ms, color 250ms;
-
+    padding-left: var(--size-medium);
+    padding-right: var(--size-medium);
     &::placeholder {
-      color: var(--colors-scale-grey-dark);
+      color: var(--colors-scale-grey-medium);
       font-weight: 500;
     }
   }
