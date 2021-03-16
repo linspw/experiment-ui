@@ -87,7 +87,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/styles/utils/breakpoints.scss';
 
 .a-text {

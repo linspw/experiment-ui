@@ -13,9 +13,14 @@ import AInputField from './a-input-field.vue';
   <Story name="Default use">
     {{
         components: { AInputField, AInput },
-        template: `<a-input-field rules="required|email">
-          <a-input type="text" />  
+        template: `<a-input-field rules="required" label="Example" :has-error="true" error-message="Esse campo está com error">
+          <a-input type="text" v-model="example" />  
         </a-input-field>`,
+        data(){
+          return {
+            example: 'Validation',
+          };
+        },
     }}
   </Story>
 </Canvas>

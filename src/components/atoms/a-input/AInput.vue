@@ -21,6 +21,7 @@
       :value="value"
       class="a-input__field"
       @input="handleInput"
+      v-on="listeners"
     >
   </div>
 </template>
@@ -79,6 +80,16 @@ export default {
     return {
       hasValue: !!this.value,
     };
+  },
+  computed: {
+    listeners() {
+      const listeners = { ...this.$listeners };
+      delete listeners.input;
+      return listeners;
+    },
+  },
+  mounted() {
+    console.log(this.listeners);
   },
   methods: {
     handleInput(event) {

@@ -12,7 +12,7 @@ import AInput from './AInput.vue';
   <Story name="Default use">
     {{
         components: { AInput },
-        template: '<a-input type="text" />',
+        template: `<a-input type="text" />`,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -24,11 +24,13 @@ import AInput from './AInput.vue';
   <Story name="Sizes">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" size="small" placeholder="small" />
           <span />
           <a-input type="text" size="medium" placeholder="medium" />
-        </div>`,
+        </div>
+        `,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -40,9 +42,11 @@ import AInput from './AInput.vue';
   <Story name="Attributes">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" placeholder="example1" />
-        </div>`,
+        </div>
+        `,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -54,10 +58,12 @@ import AInput from './AInput.vue';
   <Story name="Attributdsades">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" icon="fas fa-user" />
           <a-input type="text" icon="fas fa-user" icon-color="success" />
-        </div>`,
+        </div>
+        `,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -69,11 +75,13 @@ import AInput from './AInput.vue';
   <Story name="Types">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" placeholder="example" />
           <a-input type="number" placeholder="1000" />
-          <a-input type="date" initial-value="2021-03-31"/>
-        </div>`,
+          <a-input type="date" />
+        </div>
+      `,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -85,10 +93,12 @@ import AInput from './AInput.vue';
   <Story name="Behaviors">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" icon="fas fa-user" behavior="default" placeholder="default" />
           <a-input type="text" icon="fas fa-user" behavior="block" placeholder="block" />
-        </div>`,
+        </div>
+        `,
         methods: { action: action("clicked") }
     }}
   </Story>
@@ -100,10 +110,14 @@ import AInput from './AInput.vue';
   <Story name="Value and Listenner">
     {{
         components: { AInput },
-        template: `<div>
+        template: `
+        <div>
           <a-input type="text" :value="usingNormalData" @input="handleInput" placeholder="default" />
+          {{ usingNormalData }}
           <a-input type="text" v-model="usingVmodel" placeholder="v-model" />
-        </div>`,
+          {{ usingVmodel }}
+        </div>
+        `,
         data(){
           return {
             usingNormalData: '',

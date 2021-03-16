@@ -1,37 +1,66 @@
 <template>
-  <ValidationProvider
-    #default="validation"
+  <div
     :rules="rules"
+    div="a-input-field"
   >
-    <slot v-bind="validation" />
-    <AText v-if="Boolean(validation.errors.length)">
-      foi
-      {{ validation.errors[0] }}
+    <AText
+      v-if="label"
+      weight="medium"
+      class="a-input-field__label"
+      size="medium"
+    >
+      {{ label }}
     </AText>
-  </ValidationProvider>
+    <slot
+      v-bind="{hasError}"
+    />
+    <AText
+      v-if="Boolean(hasError && errorMessage)"
+      :color="'danger'"
+      class="a-input-field__error-label"
+      size="small"
+    >
+      {{ errorMessage }}
+    </AText>
+  </div>
 </template>
 
 <script>
 import { AText } from '@/components/atoms/a-text';
-import { ValidationProvider } from 'vee-validate';
 
 export default {
   components: {
     AText,
-    ValidationProvider,
   },
   props: {
     rules: {
       type: [Object, String],
       default: null,
     },
-  },
-  mounted() {
-    console.log(this);
+    label: {
+      type: String,
+      default: null,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
 
-<style>
-
+<style lang="scss">
+.a-input-field {
+  &__label {
+    color: var(--colors-scale-grey-dark);
+    margin-bottom: var(--size-micro);
+  }
+  &__error-label {
+    margin-top: var(--size-micro);
+  }
+}
 </style>
