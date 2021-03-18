@@ -1,0 +1,84 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import AAvatar from './a-avatar.vue';
+
+<Meta title="Design System/Atoms/AAvatar" component={AAvatar} />
+
+## AVatar
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { AAvatar },
+        template: '<a-avatar />',
+    }}
+  </Story>
+</Canvas>
+
+### Gender variation:
+
+<Canvas>
+  <Story name="Gender variation">
+    {{
+        components: { AAvatar },
+        template: `<div>
+          <a-avatar gender="male" />
+          <a-avatar gender="female" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Src use:
+
+<Canvas>
+  <Story name="Src use">
+    {{
+        components: { AAvatar },
+        template: `<div>
+          <a-avatar src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Tag use:
+
+<Canvas>
+  <Story name="Tag use">
+    {{
+        components: { AAvatar },
+        template: `<div>
+          <a-avatar tag="button" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Size variation:
+
+<Canvas>
+  <Story name="Size variation">
+    {{
+        components: { AAvatar },
+        template: `<div>
+          <a-avatar size="medium" />
+          <a-avatar size="large" />
+          <a-avatar size="extra-large" />
+          <a-avatar size="jumbo" />
+          <a-avatar size="extra-jumbo" />
+          <a-avatar size="giant" />
+          <a-avatar size="extra-giant" />
+          <a-avatar size="colossal" />
+          <a-avatar size="extra-colossal" />
+          <a-avatar size="mega" />
+          <a-avatar size="extra-mega" />
+          <a-avatar size="immense" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AAvatar} />

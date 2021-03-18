@@ -1,3 +1,3 @@
-import ALogo from './ALogo.vue';
+import ALogo from './a-logo.vue';
 
 export { ALogo };
