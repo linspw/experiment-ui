@@ -1,3 +1,3 @@
-import ADivider from './ADivider.vue';
+import ADivider from './a-divider.vue';
 
 export { ADivider };

@@ -89,13 +89,6 @@ export default {
     &--inverse {
       color: var(--color-theme-inverse);
     }
-
-    &:hover {
-      opacity: 0.8;
-    }
-    &:active {
-      opacity: 0.6;
-    }
   }
 
   &__icon {
@@ -112,6 +105,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: all 500ms;
 }
+
 .fade-enter, .fade-leave-to {
   transform: translateX(100%);
 }

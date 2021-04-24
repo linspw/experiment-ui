@@ -1,3 +1,3 @@
-import ACard from './ACard.vue';
+import ACard from './a-card.vue';
 
 export { ACard };

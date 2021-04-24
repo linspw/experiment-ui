@@ -123,6 +123,7 @@ export default {
     }
     & > .a-input__field {
       padding-left: var(--size-jumbo) !important;
+      width: 100%;
     }
   }
 
