@@ -43,7 +43,6 @@ export const withText = () => ({
       });
     },
     removeItem(index = 0) {
-      console.log(index)
       this.items.splice(index, 1);
     },
   },

@@ -9,7 +9,6 @@ export const ATooltipDirective = {
     const parent = document.createElement('span');
     const initialPosition = el.style.position;
     const propsData = Vue.observable(options);
-    console.log(binding.value, typeof binding.value, options);
 
     let tooltip = null;
     el.style.position = initialPosition || 'relative';
