@@ -2,14 +2,14 @@
   <component
     :is="tag"
     :class="{
-      'a-logo': true,
-      [`a-logo--size-${size}`]: size,
-      [`a-logo--behavior-${behavior}`]: behavior,
+      'a-avatar': true,
+      [`a-avatar--size-${size}`]: size,
+      [`a-avatar--behavior-${behavior}`]: behavior,
     }"
   >
     <img
       :src="srcParsed"
-      class="a-logo__image"
+      class="a-avatar__image"
     >
     <figcaption v-if="caption">
       {{ caption }}
@@ -62,8 +62,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.a-logo {
+<style lang="scss">
+.a-avatar {
   margin: 0;
   position: relative;
   height: fit-content;
