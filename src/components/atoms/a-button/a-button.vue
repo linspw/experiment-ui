@@ -98,6 +98,7 @@ export default {
   padding: var(--size-small) var(--size-large);
   position: relative;
   transition: background-color 250ms, opacity 250ms;
+  white-space: nowrap;
 
   &:hover {
     background-color: #CFDAE3;
@@ -192,10 +193,11 @@ export default {
   }
 
   &__text {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    white-space: nowrap;
   }
 }
 </style>
