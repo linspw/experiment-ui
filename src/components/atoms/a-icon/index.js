@@ -1,3 +1,3 @@
-import AIcon from './AIcon.vue';
+import AIcon from './a-icon.vue';
 
 export { AIcon };
