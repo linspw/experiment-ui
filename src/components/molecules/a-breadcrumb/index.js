@@ -1,3 +1,3 @@
-import ABreadcrumb from './ABreadcrumb.vue';
+import ABreadcrumb from './a-breadcrumb.vue';
 
 export { ABreadcrumb };

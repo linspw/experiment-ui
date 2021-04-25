@@ -3,20 +3,15 @@
     <ATitle
       v-for="(item, index) in items"
       :key="index"
+      :color="(index === 0) ? 'primary' : 'tertiary'"
       :href="item.url"
-      :weight="(index === 0) ? 'medium' : 'regular'"
       class="a-breadcrumb__item"
-      size="large"
+      :size="(index === 0) ? 'small' : 'extra-small'"
       tag="a"
+      :weight="(index === 0) ? 'extra-bold' : 'bold'"
     >
-      <template v-if="(index === (items.length -1))">
+      <template>
         {{ item.text }}
-      </template>
-      <template v-else>
-        {{ item.text }} <AIcon
-          icon="fas fa-chevron-right"
-          class="a-breadcrumb__icon"
-        />
       </template>
     </ATitle>
   </nav>
@@ -24,12 +19,10 @@
 
 <script>
 import { ATitle } from '@/components/atoms/a-title';
-import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
   components: {
     ATitle,
-    AIcon,
   },
   props: {
     items: {
@@ -40,19 +33,18 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-breadcrumb {
   display: flex;
 
   &__item {
+    align-items: center;
+    display: flex;
     white-space: nowrap;
-    &:not(:first-child) {
-      margin-left: 24px;
-    }
-  }
 
-  &__icon {
-    margin-left: 24px;
+    &:not(:first-child) {
+      margin-left: var(--size-scalable-jumbo);
+    }
   }
 }
 </style>
