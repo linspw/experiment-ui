@@ -20,7 +20,6 @@ export const withText = () => ({
       "primary",
       "secondary",
       "tertiary",
-      "interactive",
       "",
     ],
   }),
@@ -59,7 +58,6 @@ export const withVariants = () => ({
       { title: "primary", text: "name", icon: "fas fa-location-arrow", variant: "primary" },
       { title: "secondary", text: "name", icon: "fas fa-location-arrow", variant: "secondary" },
       { title: "tertiary", text: "name", icon: "fas fa-location-arrow", variant: "tertiary" },
-      { title: "interactive", text: "name", icon: "fas fa-location-arrow", variant: "interactive" },
     ],
     variants: [
       "success",
@@ -69,7 +67,6 @@ export const withVariants = () => ({
       "primary",
       "secondary",
       "tertiary",
-      "interactive",
       "",
     ],
   }),

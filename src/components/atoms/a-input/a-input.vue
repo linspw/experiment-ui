@@ -16,10 +16,10 @@
       class="a-input-icon"
     />
     <input
-      v-bind="$attrs"
       :type="type"
       :value="value"
       class="a-input__field"
+      v-bind="$attrs"
       @input="handleInput"
       v-on="listeners"
     >
@@ -66,6 +66,19 @@ export default {
     iconColor: {
       type: String,
       default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'primary',
+        'secondary',
+        'tertiary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
+      ]),
     },
     type: {
       type: String,
@@ -87,9 +100,6 @@ export default {
       delete listeners.input;
       return listeners;
     },
-  },
-  mounted() {
-    console.log(this.listeners);
   },
   methods: {
     handleInput(event) {

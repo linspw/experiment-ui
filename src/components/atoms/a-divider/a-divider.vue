@@ -17,7 +17,7 @@ export default {
   height: auto;
   margin: 0;
   width: auto;
-  border-width: 1px;
+  border-width: var(--size-nano);
   border-style: solid;
   border-color: var(--colors-scale-grey-light);
 }

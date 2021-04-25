@@ -1,3 +1,3 @@
-import ASelect from './ASelect.vue';
+import ASelect from './a-select.vue';
 
 export { ASelect };

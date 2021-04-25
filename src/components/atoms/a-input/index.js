@@ -1,3 +1,3 @@
-import AInput from './AInput.vue';
+import AInput from './a-input.vue';
 
 export { AInput };

@@ -31,7 +31,7 @@ export default {
     this.$off('click');
   },
   methods: {
-    pushItem(itemOptions) {
+    addItem(itemOptions) {
       this.items.push(itemOptions);
       if (!this.duration && !itemOptions.duration) return;
 

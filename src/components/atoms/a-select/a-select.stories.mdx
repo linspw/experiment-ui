@@ -1,0 +1,54 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import ASelect from './a-select.vue';
+
+<Meta title="Design System/Atoms/ASelect" component={ASelect} />
+
+## ASelect
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { ASelect },
+        template: `<a-select :options="[{ value: 'example1', text: 'Example' }]" placeholder="Testando"/>`,
+    }}
+  </Story>
+</Canvas>
+
+### Sizes:
+
+<Canvas>
+  <Story name="Sizes">
+    {{
+        components: { ASelect },
+        template: `
+        <div>
+          <a-select placeholder="small" size="small" />
+          <p />
+          <a-select placeholder="medium" size="medium" />
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Behavior:
+
+<Canvas>
+  <Story name="Behavior">
+    {{
+        components: { ASelect },
+        template: `
+        <div>
+          <a-select placeholder="default" behavior="default" />
+          <p />
+          <a-select placeholder="block" behavior="block" />
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ASelect} />

@@ -87,10 +87,6 @@ export default {
     &-tertiary {
       --a-card--background-color: var(--color-theme-tertiary);
     }
-
-    &-interactive {
-      --a-card--background-color: var(--color-theme-interactive);
-    }
   }
 }
 </style>

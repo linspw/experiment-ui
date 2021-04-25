@@ -8,7 +8,10 @@
     <ACard
       v-for="(item, index) in items"
       :key="item.text + item.title + item.variant + item.id"
-      :class="item.variant && 'a-toast__item--inverse'"
+      :class="{
+        ['a-toast__item--inverse']: item.variant && item.variant !== 'warn',
+        [`${item.variant}`]: item.variant
+      }"
       :variant="item.variant"
       class="a-toast__item"
       tag="button"

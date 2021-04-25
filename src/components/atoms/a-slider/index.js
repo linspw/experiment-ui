@@ -1,3 +1,3 @@
-import ASlider from './ASlider.vue';
+import ASlider from './a-slider.vue';
 
 export { ASlider };

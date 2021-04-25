@@ -1,3 +1,3 @@
-import ADisplay from './ADisplay.vue';
+import ADisplay from './a-display.vue';
 
 export { ADisplay };
