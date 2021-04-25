@@ -1,6 +1,6 @@
 {
   "name": "@hyper-enterprise/aurora-vue",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": false,
   "description": "Aurora-Vue is UI - Library write in Vue.js",
   "author": "Jessé Correia Lins",
