@@ -17,6 +17,17 @@ import ASelect from './a-select.vue';
   </Story>
 </Canvas>
 
+### Options use:
+
+<Canvas>
+  <Story name="Options use">
+    {{
+        components: { ASelect },
+        template: `<a-select :options="[{ value: 'example1', text: 'Example 1' }, { value: 'example2', text: 'Example 2' }]" placeholder="Testando"/>`,
+    }}
+  </Story>
+</Canvas>
+
 ### Sizes:
 
 <Canvas>

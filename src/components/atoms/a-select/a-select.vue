@@ -16,6 +16,8 @@
       <option
         v-if="placeholder"
         :value="placeholder"
+        disabled
+        hidden
         selected
       >
         {{ placeholder }}
