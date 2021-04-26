@@ -103,10 +103,11 @@ export default {
     font-weight: 500;
     height: 100%;
     left: 0;
-    top: 0;
-    transition: background-color 250ms, color 250ms;
     padding-left: var(--size-medium);
     padding-right: var(--size-medium);
+    top: 0;
+    transition: background-color 250ms, color 250ms;
+    width: 100%;
     &::placeholder {
       color: var(--colors-scale-grey-medium);
       font-weight: 500;
