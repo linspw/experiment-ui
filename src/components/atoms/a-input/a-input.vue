@@ -1,10 +1,10 @@
 <template>
   <div
+    ref="input"
     :class="{
       ['a-input']: true,
       [`a-input--behavior-${behavior}`]: behavior != 'default',
       [`a-input--behavior-${shadow}`]: shadow,
-      [`a-input--behavior-has-value`]: hasValue,
       [`a-input--icon`]: icon,
       [`a-input--size-${size}`]: size,
     }"
@@ -101,10 +101,22 @@ export default {
       return listeners;
     },
   },
+  mounted() {
+    this.handleHasValue(this.value);
+  },
   methods: {
+    handleHasValue(value) {
+      if (value) {
+        this.$refs.input.classList.add('a-input--behavior-has-value');
+      } else {
+        this.$refs.input.classList.remove('a-input--behavior-has-value');
+      }
+    },
     handleInput(event) {
       const targetValue = event.target.value;
-      this.hasValue = !!targetValue;
+
+      this.handleHasValue(targetValue);
+
       this.$emit('input', this.type === 'number' ? Number(targetValue) : targetValue);
     },
   },
