@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { AToastAPI } from './AToastAPI';
+import { AToastAPI } from './a-toast-api';
 
 class AToastPlugin {
   static install(Render, globalOptions = {}) {

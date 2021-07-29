@@ -155,7 +155,10 @@ export default {
     &-has-value {
       border-color: var(--colors-scale-grey-dark);
       color: var(--colors-scale-grey-dark);
-      & > .a-input__field, & > input:-webkit-autofill, & > input:-internal-autofill-selected {
+
+      & > .a-input__field,
+      & > input:-webkit-autofill,
+      & > input:-internal-autofill-selected {
         background-color: var(--colors-scale-grey-lightest);
       }
     }

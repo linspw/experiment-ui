@@ -1,4 +1,4 @@
-import AToast from './AToast.vue';
-import AToastWrapper from './AToastWrapper.vue';
+import AToast from './a-toast.vue';
+import AToastWrapper from './a-toast-wrapper.vue';
 
 export { AToast, AToastWrapper };

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import AToast from './AToast.vue';
+import AToast from './a-toast.vue';
 
 export default {
   components: {
