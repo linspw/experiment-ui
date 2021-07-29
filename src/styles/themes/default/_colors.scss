@@ -3,8 +3,24 @@
   --colors-original-white: #FFFFFF;
   --colors-original-red: #FF5B5B;
 
-  /* Themed */
+  /**
+  * @tokens Colors - Base
+  * @presenter Color
+  */
+  --color-theme-primary: #1C1C1C;
+  --color-theme-secondary: #0B39FF;
+  --color-theme-tertiary: #BBC7DD;
+  --color-theme-grey: #CCD5E5  ;
+  --color-theme-success: #4BB587;
+  --color-theme-danger: #F25355;
+  --color-theme-warn: #FFF03C;
+  --color-theme-info: #4D9AFF;
+  --color-theme-inverse: #FFFFFF;
 
+  /**
+  * @tokens Colors - Gray Scale
+  * @presenter Color
+  */
   --colors-scale-grey-darkest: #778FBB;
   --colors-scale-grey-dark: #889DC3;
   --colors-scale-grey-high: #AAB9D4;
@@ -14,18 +30,10 @@
   --colors-scale-grey-light: #EEF1F6;
   --colors-scale-grey-lightest: #F8F9FC;
 
+  /**
+  * @tokens Colors - Social
+  * @presenter Color
+  */
   --color-social-media-facebook: #4267B2;
   --color-social-media-google: #4688f1;
-
-  --color-theme-primary: #1C1C1C;
-  --color-theme-secondary: #0B39FF;
-  --color-theme-tertiary: #BBC7DD;
-
-  --color-theme-grey: #CCD5E5  ;
-  --color-theme-success: #4BB587;
-  --color-theme-danger: #F25355;
-  --color-theme-warn: #FFF03C;
-  --color-theme-info: #4D9AFF;
-
-  --color-theme-inverse: #FFFFFF;
 }
