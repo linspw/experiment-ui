@@ -1,3 +1,3 @@
-import ALink from './ALink.vue';
+import ALink from './a-link.vue';
 
 export { ALink };

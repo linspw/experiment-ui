@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import ATooltipContent from './ATooltipContent.vue';
+import ATooltipContent from './a-tooltip-content.vue';
 
 export default {
   components: {

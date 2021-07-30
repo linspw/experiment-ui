@@ -5,14 +5,17 @@ import {
   ACard,
   ADisplay,
   AIcon,
+  AImage,
   AInput,
   AInputField,
   ALink,
   ALogo,
   ASelect,
+  ASlider,
   AText,
   ATitle,
   AToastPlugin,
+  ATooltip,
   ATooltipPlugin,
 } from '@/export';
 
@@ -30,7 +33,11 @@ const AuroraPlugin = {
     Vue.component('a-logo', ALogo);
     Vue.component('a-select', ASelect);
     Vue.component('a-text', AText);
+    Vue.component('a-title', AImage);
+    Vue.component('a-title', ASlider);
     Vue.component('a-title', ATitle);
+    Vue.component('a-title', ATooltip);
+
     Vue.use(AToastPlugin);
     Vue.use(ATooltipPlugin);
   },

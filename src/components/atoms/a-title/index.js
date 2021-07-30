@@ -1,3 +1,3 @@
-import ATitle from './ATitle.vue';
+import ATitle from './a-title.vue';
 
 export { ATitle };

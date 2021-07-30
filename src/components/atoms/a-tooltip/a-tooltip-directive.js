@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
-import ATooltipContent from './ATooltipContent.vue';
+import ATooltipContent from './a-tooltip-content.vue';
 
-export const ATooltipDirective = {
+const ATooltipDirective = {
   bind(el, binding) {
     const options = (typeof binding.value === 'string') ? { content: binding.value } : { ...binding.value };
     const uniqueID = `a-tooltip${Math.random().toString(36).substr(2, 9)}`;
@@ -27,3 +27,5 @@ export const ATooltipDirective = {
     });
   },
 };
+
+export { ATooltipDirective };

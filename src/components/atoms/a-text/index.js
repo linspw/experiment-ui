@@ -1,3 +1,3 @@
-import AText from './AText.vue';
+import AText from './a-text.vue';
 
 export { AText };

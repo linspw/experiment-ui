@@ -1,5 +1,5 @@
-import ATooltip from './ATooltip.vue';
-import ATooltipContent from './ATooltipContent.vue';
-import { ATooltipDirective } from './ATooltipDirective';
+import ATooltip from './a-tooltip.vue';
+import ATooltipContent from './a-tooltip-content.vue';
+import { ATooltipDirective } from './a-tooltip-directive';
 
 export { ATooltip, ATooltipContent, ATooltipDirective };
