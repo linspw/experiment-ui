@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-button {
   align-items: center;
   border-radius: var(--border-radius-normal);

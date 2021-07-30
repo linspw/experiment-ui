@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-select {
   border-radius: var(--border-radius-normal);
   border: var(--size-micro) solid var(--colors-scale-grey-medium);

@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .a-divider {
   align-self: stretch;
   height: auto;

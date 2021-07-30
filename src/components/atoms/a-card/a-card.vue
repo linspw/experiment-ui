@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-card {
   --a-card--padding: var(--size-large);
   --a-card--background-color: var(--colors-original-white);

@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-link {
   color: var(--colors-interactive-blue);
   transition: color 250mx;
