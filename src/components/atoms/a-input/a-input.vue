@@ -184,7 +184,7 @@ export default {
     border-radius: var(--border-radius-normal);
     color: var(--colors-scale-grey-dark);
     flex: 1;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     font-weight: 500;
     height: 100%;
     left: 0;

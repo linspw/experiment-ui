@@ -69,7 +69,7 @@ export default {
   border: var(--size-micro) solid var(--colors-scale-grey-medium);
   color: var(--colors-scale-grey-medium);
   display: inline-flex;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   height: fit-content;
   position: relative;
   width: 303px;
@@ -101,7 +101,7 @@ export default {
     border: none;
     color: var(--colors-scale-grey-dark);
     flex: 1;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     font-weight: 500;
     height: 100%;
     left: 0;
