@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
-import ATooltipContent from './a-tooltip-content.vue';
+import { ATooltipContent } from '@/components/atoms/a-tooltip';
 
 const ATooltipDirective = {
   bind(el, binding) {

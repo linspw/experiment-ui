@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .a-toast {
   overflow: hidden;
   position: fixed;
