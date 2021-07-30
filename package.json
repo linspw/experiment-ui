@@ -1,9 +1,10 @@
 {
-  "name": "@hyper-enterprise/aurora-vue",
+  "name": "@hyone-labs/aurora-vue",
   "version": "1.0.0",
   "private": false,
   "description": "Aurora-Vue is UI - Library write in Vue.js",
   "author": "Jessé Correia Lins",
+  "homepage": "https://github.com/hyone-labs/aurora-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -71,5 +72,19 @@
     "last 2 versions",
     "not dead"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyone-labs/aurora-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "ui",
+    "lib",
+    "design",
+    "system"
+  ],
+  "bugs": {
+    "url": "https://github.com/hyone-labs/aurora-vue/issues"
+  }
 }
