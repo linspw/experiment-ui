@@ -1,6 +1,5 @@
 module.exports = {
   verbose: true,
-  preset: '@vue/cli-plugin-unit-jest',
   globals: {
     'vue-jest': {
       babelConfig: '<rootDir>/babel.config.js',
@@ -25,4 +24,5 @@ module.exports = {
     'json',
     'vue',
   ],
+  testEnvironment: 'jsdom',
 };
