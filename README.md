@@ -34,9 +34,9 @@ export default {
 </template>
 ```
 
-### Documentation
+### Live documentation
 [Aurora-Vue Doc](https://aurora-vue.netlify.app/)
 ### Contributing
 
 Guides:
-[Click here, and discovery how to develop](CONTRIBUTING.md)
+[Click here, and discovery how to develop](docs/CONTRIBUTING.md)
