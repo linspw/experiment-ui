@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/vue';
+import { render } from '@testing-library/vue';
 import AButton from '../a-button.vue';
 
 describe('AButton', () => {
