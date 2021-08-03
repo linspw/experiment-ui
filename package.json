@@ -1,6 +1,6 @@
 {
   "name": "@hyone-labs/aurora-vue",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "private": false,
   "description": "Aurora-Vue is UI - Library write in Vue.js",
   "author": "Jessé Correia Lins",
@@ -12,7 +12,9 @@
     "build-bundle": "vue-cli-service build --target lib --name aurora-vue ./src/export.js",
     "publish:new": "npm publish --access=public",
     "storybook:build": "vue-cli-service storybook:build -c .storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook",
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "main": "./dist/aurora-vue.common.js",
   "files": [
@@ -34,23 +36,30 @@
     "@storybook/addon-knobs": "^6.3.0",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/vue": "^6.3.6",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/vue": "^5.8.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.0.1",
-    "eslint": "^6.7.2",
+    "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-vue": "^6.2.2",
+    "jest": "^27.0.6",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "sass-resources-loader": "^2.1.1",
     "storybook-design-token": "^1.2.0",
     "style-loader": "^2.0.0",
     "vue-cli-plugin-storybook": "~2.1.0",
+    "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "webpack-bundle-analyzer": "^4.4.0",
+    "semantic-release": "^17.4.4"
   },
   "eslintConfig": {
     "root": true,
@@ -75,7 +84,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyone-labs/aurora-vue.git"
+    "url": "https://github.com/hyone-labs/aurora-vue.git"
   },
   "keywords": [
     "vue",
