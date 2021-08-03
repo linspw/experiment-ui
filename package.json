@@ -1,6 +1,6 @@
 {
   "name": "@hyone-labs/aurora-vue",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "private": false,
   "description": "Aurora-Vue is UI - Library write in Vue.js",
   "author": "Jessé Correia Lins",
@@ -13,7 +13,8 @@
     "publish:new": "npm publish --access=public",
     "storybook:build": "vue-cli-service storybook:build -c .storybook",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "main": "./dist/aurora-vue.common.js",
   "files": [
@@ -57,7 +58,8 @@
     "vue-cli-plugin-storybook": "~2.1.0",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "webpack-bundle-analyzer": "^4.4.0",
+    "semantic-release": "^17.4.4"
   },
   "eslintConfig": {
     "root": true,
@@ -82,7 +84,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyone-labs/aurora-vue.git"
+    "url": "https://github.com/hyone-labs/aurora-vue.git"
   },
   "keywords": [
     "vue",
