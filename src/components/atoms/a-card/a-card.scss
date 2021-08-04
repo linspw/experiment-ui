@@ -1,0 +1,63 @@
+.a-card {
+  --a-card--background-color: transparent;
+  --a-card--border: none;
+  --a-card--box-shadow: none;
+  --a-card--padding: var(--size-large);
+  --a-card--color: inherit;
+
+  background-color: var(--a-card--background-color);
+  border: var(--a-card--border);
+  border-radius: var(--border-radius-normal);
+  box-shadow: var(--a-card--box-shadow);
+  color: var(--a-card--color);
+  padding: var(--a-card--padding);
+  position: relative;
+
+  &--elevation {
+    &-low {
+      --a-card--box-shadow: var(--shadow-elevation-01);
+    }
+
+    &-medium {
+      --a-card--box-shadow: var(--shadow-elevation-02);
+    }
+
+    &-high {
+      --a-card--box-shadow: var(--shadow-elevation-03);
+    }
+  }
+
+  &--variant {
+    &-default {
+      --a-card--background-color: var(--colors-original-white);
+    }
+
+    &-success {
+      --a-card--background-color: var(--color-theme-success);
+    }
+
+    &-info {
+      --a-card--background-color: var(--color-theme-info);
+    }
+
+    &-danger {
+      --a-card--background-color: var(--color-theme-danger);
+    }
+
+    &-warn {
+      --a-card--background-color: var(--color-theme-warn);
+    }
+
+    &-primary {
+      --a-card--background-color: var(--color-theme-primary);
+    }
+
+    &-secondary {
+      --a-card--background-color: var(--color-theme-secondary);
+    }
+
+    &-tertiary {
+      --a-card--background-color: var(--color-theme-tertiary);
+    }
+  }
+}
