@@ -25,7 +25,7 @@ import ACard from './a-card.vue';
         components: { ACard },
         template: `
         <div>
-          <a-card elevation="low">With JSX</a-card>
+          <a-card elevation="low" variant="default">default</a-card>
           <p />
           <a-card elevation="low" variant="success">success</a-card>
           <p />
@@ -55,11 +55,11 @@ import ACard from './a-card.vue';
         components: { ACard },
         template: `
         <div>
-          <a-card elevation="low">With JSX</a-card>
+          <a-card elevation="low">low</a-card>
           <p />
-          <a-card elevation="medium">success</a-card>
+          <a-card elevation="medium">medium</a-card>
           <p />
-          <a-card elevation="high">info</a-card>
+          <a-card elevation="high">high</a-card>
         </div>
         `,
     }}
@@ -74,11 +74,11 @@ import ACard from './a-card.vue';
         components: { ACard },
         template: `
         <div>
-          <a-card tag="div">With JSX</a-card>
+          <a-card tag="div">div</a-card>
           <p />
-          <a-card tag="button">success</a-card>
+          <a-card tag="button">button</a-card>
           <p />
-          <a-card tag="article">info</a-card>
+          <a-card tag="article">article</a-card>
         </div>
         `,
     }}
