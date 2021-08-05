@@ -4,7 +4,6 @@
     :class="{
       [`a-card`]: true,
       [`a-card--variant-${variant}`]: variant,
-      [`a-card--${size}`]: size,
       [`a-card--elevation-${elevation}`]: elevation,
     }"
   >
@@ -13,19 +12,32 @@
 </template>
 
 <script>
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
+
 export default {
   props: {
     variant: {
       type: String,
-      default: '',
-    },
-    size: {
-      type: String,
-      default: '',
+      default: 'default',
+      validator: shouldBeOneOf([
+        'default',
+        'primary',
+        'secondary',
+        'tertiary',
+        'warn',
+        'success',
+        'danger',
+        'info',
+      ]),
     },
     elevation: {
       type: String,
       default: 'medium',
+      validator: shouldBeOneOf([
+        'low',
+        'medium',
+        'high',
+      ]),
     },
     tag: {
       type: String,
@@ -34,59 +46,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.a-card {
-  --a-card--padding: var(--size-large);
-  --a-card--background-color: var(--colors-original-white);
-
-  background-color: var(--a-card--background-color);
-  border-radius: var(--border-radius-normal);
-  padding: var(--a-card--padding);
-  position: relative;
-
-  &--elevation {
-    &-low {
-      box-shadow: var(--shadow-elevation-01);
-    }
-
-    &-medium {
-      box-shadow: var(--shadow-elevation-02);
-    }
-
-    &-high {
-      box-shadow: var(--shadow-elevation-03);
-    }
-  }
-
-  &--variant {
-    &-success {
-      --a-card--background-color: var(--color-theme-success);
-    }
-
-    &-info {
-      --a-card--background-color: var(--color-theme-info);
-    }
-
-    &-danger {
-      --a-card--background-color: var(--color-theme-danger);
-    }
-
-    &-warn {
-      --a-card--background-color: var(--color-theme-warn);
-    }
-
-    &-primary {
-      --a-card--background-color: var(--color-theme-primary);
-    }
-
-    &-secondary {
-      --a-card--background-color: var(--color-theme-secondary);
-    }
-
-    &-tertiary {
-      --a-card--background-color: var(--color-theme-tertiary);
-    }
-  }
-}
-</style>

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/vue';
+import { render, screen, fireEvent } from '@testing-library/vue';
 import AButton from '../a-button.vue';
 
 describe('AButton', () => {
@@ -22,10 +22,37 @@ describe('AButton', () => {
         size: 'small',
         icon: 'fas fa-circle',
         iconColor: 'primary',
-        isRounded: true,
+        isRounded: false,
       },
     });
     expect(html()).toMatchSnapshot();
-    //    expect(getByText('My first button').closest('button')).toHaveAttribute('disabled');
+  });
+
+  it('render correctly with attrs', () => {
+    const { html } = render(AButton, {
+      slots: {
+        default: 'With many Itens',
+      },
+      attrs: {
+        id: 'my-first-component',
+        'data-test-id': 'secondary',
+      },
+    });
+    expect(html()).toMatchSnapshot();
+  });
+
+  it('when click active event', async () => {
+    const handleClick = jest.fn();
+    render(AButton, {
+      slots: {
+        default: 'Event',
+      },
+      listeners: {
+        click: handleClick,
+      },
+    });
+
+    await fireEvent.click(screen.getByText('Event'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });

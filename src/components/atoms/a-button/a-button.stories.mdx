@@ -137,4 +137,20 @@ import AButton from './a-button.vue';
   </Story>
 </Canvas>
 
+### All html attrs and disabled:
+
+<Canvas>
+  <Story name="All html attrs and disabled">
+    {{
+        components: { AButton },
+        template: `
+        <div>
+          <a-button id="my-specific-component">Behavior</a-button>
+          <a-button disabled>Behavior</a-button>
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
 <ArgsTable of={AButton} />
