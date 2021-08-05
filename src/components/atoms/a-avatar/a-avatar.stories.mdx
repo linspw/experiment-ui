@@ -4,7 +4,7 @@ import AAvatar from './a-avatar.vue';
 
 <Meta title="Design System/Atoms/AAvatar" component={AAvatar} />
 
-## AVatar
+## AAvatar
 
 ### Default use:
 
@@ -16,6 +16,18 @@ import AAvatar from './a-avatar.vue';
     }}
   </Story>
 </Canvas>
+
+### Caption use:
+
+<Canvas>
+  <Story name="Caption">
+    {{
+        components: { AAvatar },
+        template: '<a-avatar caption="Male" />',
+    }}
+  </Story>
+</Canvas>
+
 
 ### Gender variation:
 
@@ -52,6 +64,20 @@ import AAvatar from './a-avatar.vue';
         components: { AAvatar },
         template: `<div>
           <a-avatar tag="button" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Behavior:
+
+<Canvas>
+  <Story name="Behavior">
+    {{
+        components: { AAvatar },
+        template: `<div>
+          <a-avatar tag="button" behavior="rounded" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+          <a-avatar tag="button" behavior="square" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
         </div>`,
     }}
   </Story>
