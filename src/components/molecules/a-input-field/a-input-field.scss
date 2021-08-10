@@ -1,0 +1,15 @@
+.a-input-field {
+  --a-input-field__label-color: var(--colors-scale-grey-dark);
+  --a-input-field__label-margin-bottom: var(--size-micro);
+  --a-input-field__error-label-margin-top: var(--size-micro);
+
+  display: block;
+
+  &__label {
+    color: var(--a-input-field__label-color);
+    margin-bottom: var(--a-input-field__label-margin-bottom);
+  }
+  &__error-label {
+    margin-top: var(--a-input-field__error-label-margin-top);
+  }
+}
