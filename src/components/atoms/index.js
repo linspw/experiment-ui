@@ -3,6 +3,7 @@ import { AButton } from './a-button';
 import { ACard } from './a-card';
 import { ADisplay } from './a-display';
 import { ADivider } from './a-divider';
+import { AGridContainer, AGridItem } from './a-grid';
 import { AIcon } from './a-icon';
 import { AImage } from './a-image';
 import { AInput } from './a-input';
@@ -20,6 +21,8 @@ export {
   ACard,
   ADisplay,
   ADivider,
+  AGridContainer,
+  AGridItem,
   AIcon,
   AImage,
   AInput,
