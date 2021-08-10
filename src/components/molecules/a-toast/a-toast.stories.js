@@ -20,7 +20,7 @@ export const withText = () => ({
       "primary",
       "secondary",
       "tertiary",
-      "",
+      "default",
     ],
   }),
   template: `

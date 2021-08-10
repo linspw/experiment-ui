@@ -9,7 +9,10 @@
       v-for="(item, index) in items"
       :key="item.text + item.title + item.variant + item.id"
       :class="{
-        ['a-toast__item--inverse']: item.variant && item.variant !== 'warn',
+        ['a-toast__item--inverse']: item.variant
+          && (item.variant !== 'warn')
+          && (item.variant !== 'default')
+          && (item.variant !== 'tertiary'),
         [`${item.variant}`]: item.variant
       }"
       :variant="item.variant"
