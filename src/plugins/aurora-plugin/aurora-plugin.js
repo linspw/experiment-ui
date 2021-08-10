@@ -4,6 +4,9 @@ import {
   AButton,
   ACard,
   ADisplay,
+  ADivider,
+  AGridContainer,
+  AGridItem,
   AIcon,
   AImage,
   AInput,
@@ -26,6 +29,9 @@ const AuroraPlugin = {
     Vue.component('a-button', AButton);
     Vue.component('a-card', ACard);
     Vue.component('a-display', ADisplay);
+    Vue.component('a-divider', ADivider);
+    Vue.component('a-grid-container', AGridContainer);
+    Vue.component('a-grid-item', AGridItem);
     Vue.component('a-icon', AIcon);
     Vue.component('a-input', AInput);
     Vue.component('a-inputField', AInputField);

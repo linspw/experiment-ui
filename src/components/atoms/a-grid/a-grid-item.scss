@@ -1,0 +1,36 @@
+@import '@/styles/utils/index';
+
+.a-grid-item {
+  position: relative;
+}
+
+@for $i from 1 through 12 {
+  .a-grid-item--column-#{$i} {
+    grid-column: span #{$i};
+
+    @include for-tablet-down {
+      @if $i >= 6 {
+        grid-column: span 12;
+      } @else {
+        grid-column: span 6;
+      }
+    }
+    @include for-mobile-down {
+      grid-column: span 12;
+    }
+  }
+  .a-grid-item--row-#{$i} {
+    grid-row: span #{$i};
+  }
+}
+
+.a-grid-item--behavior-horizontal {
+  align-items: flex-start;
+  display: flex;
+}
+
+.a-grid-item--behavior-vertical {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
