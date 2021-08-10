@@ -31,6 +31,7 @@ import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
+  name: 'AInput',
   components: {
     AIcon,
   },
@@ -39,7 +40,10 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: shouldBeOneOf(['small', 'medium']),
+      validator: shouldBeOneOf([
+        'small',
+        'medium',
+      ]),
     },
     variants: {
       type: String,
@@ -49,7 +53,10 @@ export default {
     behavior: {
       type: String,
       default: 'default',
-      validator: shouldBeOneOf(['default', 'block']),
+      validator: shouldBeOneOf([
+        'default',
+        'block',
+      ]),
     },
     isLoading: {
       type: Boolean,
@@ -91,7 +98,7 @@ export default {
   },
   data() {
     return {
-      hasValue: !!this.value,
+      hasValue: Boolean(this.value),
     };
   },
   computed: {
@@ -122,81 +129,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.a-input {
-  border-radius: var(--border-radius-normal);
-  border: var(--size-micro) solid var(--colors-scale-grey-medium);
-  color: var(--colors-scale-grey-medium);
-  display: inline-flex;
-  height: fit-content;
-  position: relative;
-
-  &--icon {
-    & > .a-input-icon {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      padding-left: var(--size-medium);
-      padding-right: var(--size-medium);
-      position: absolute;
-      z-index: 10;
-    }
-    & > .a-input__field {
-      padding-left: var(--size-jumbo) !important;
-    }
-  }
-
-  &--behavior {
-    &-block {
-      width: 100%;
-    }
-    &-has-value {
-      border-color: var(--colors-scale-grey-dark);
-      color: var(--colors-scale-grey-dark);
-
-      & > .a-input__field,
-      & > input:-webkit-autofill,
-      & > input:-internal-autofill-selected {
-        background-color: var(--colors-scale-grey-lightest);
-      }
-    }
-  }
-
-  &--size {
-    &-small {
-      & > .a-input__field {
-        min-height: var(--size-extra-large);
-        font-size: var(--size-scalable-micro);
-      }
-    }
-    &-medium {
-      & > .a-input__field {
-        min-height: var(--size-jumbo);
-        font-size: var(--size-scalable-extra-small);
-      }
-    }
-  }
-
-  &__field {
-    background-color: var(--colors-original-white);
-    border-radius: var(--border-radius-normal);
-    color: var(--colors-scale-grey-dark);
-    flex: 1;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 500;
-    height: 100%;
-    left: 0;
-    padding-left: var(--size-medium);
-    padding-right: var(--size-medium);
-    top: 0;
-    transition: background-color 250ms, color 250ms;
-    width: 100%;
-    &::placeholder {
-      color: var(--colors-scale-grey-medium);
-      font-weight: 500;
-    }
-  }
-}
-</style>

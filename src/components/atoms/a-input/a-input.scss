@@ -1,0 +1,91 @@
+.a-input {
+  --a-input-border-color: var(--colors-scale-grey-medium);
+  --a-input-border-radius: var(--border-radius-normal);
+  --a-input-border-style:  solid;
+  --a-input-border-width: var(--size-micro);
+  --a-input-color: var(--colors-scale-grey-medium);
+  --a-input-width: auto;
+
+  --a-input__field-background-color: none;
+  --a-input__field-border-radius: var(--border-radius-normal);
+  --a-input__field-color--placeholder: var(--colors-scale-grey-medium);
+  --a-input__field-color: var(--colors-scale-grey-dark);
+  --a-input__field-font-family: 'Red Hat Text', sans-serif;
+  --a-input__field-font-size: inherit;
+  --a-input__field-font-weight--placeholder: 500;
+  --a-input__field-font-weight: 500;
+  --a-input__field-min-height: auto;
+  --a-input__field-padding-left: var(--size-medium);
+  --a-input__field-padding-right: var(--size-medium);
+
+  border-color: var(--a-input-border-color);
+  border-radius: var(--a-input-border-radius);
+  border-style: var(--a-input-border-style);
+  border-width: var(--a-input-border-width);
+  color: var(--a-input-color);
+  display: inline-flex;
+  height: fit-content;
+  width: var(--a-input-width);
+  position: relative;
+
+  &--icon {
+    --a-input__field-padding-left: var(--size-jumbo);
+  }
+
+  &--behavior {
+    &-block {
+      --a-input-width: 100%;
+    }
+    &-has-value {
+      --a-input-border-color: var(--colors-scale-grey-dark);
+      --a-input-color: var(--colors-scale-grey-dark);
+
+      --a-input__field-background-color: var(--colors-scale-grey-lightest);
+    }
+  }
+
+  &--size {
+    &-small {
+      --a-input__field-font-size: var(--size-scalable-micro);
+      --a-input__field-min-height: var(--size-extra-large);
+    }
+    &-medium {
+      --a-input__field-font-size: var(--size-scalable-extra-small);
+      --a-input__field-min-height: var(--size-jumbo);
+    }
+  }
+}
+
+.a-input-icon {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding-left: var(--size-medium);
+  padding-right: var(--size-medium);
+  position: absolute;
+  z-index: 10;
+}
+
+.a-input__field {
+  background-color: var(--a-input__field-background-color);
+  border-radius: var(--a-input__field-border-radius);
+  color: var(--a-input__field-color);
+  flex: 1;
+  font-family: var(--a-input__field-font-family);
+  font-size: var(--a-input__field-font-size);
+  font-weight: var(--a-input__field-font-weight);
+  height: 100%;
+  left: 0;
+  min-height: var(--a-input__field-min-height);
+  padding-left: var(--a-input__field-padding-left);
+  padding-right: var(--a-input__field-padding-right);
+  top: 0;
+  transition: background-color 250ms, color 250ms;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--a-input__field-color--placeholder);
+    font-weight: var(--a-input__field-font-weight--placeholder);
+  }
+}
