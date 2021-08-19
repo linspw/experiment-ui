@@ -11,6 +11,8 @@
     <div
       class="a-select__field"
       :class="{ 'a-select__field--open': open }"
+      aria-haspopup="listbox"
+      aria-selected="true"
       @click="open = !open"
     >
       {{ selected }}
@@ -24,14 +26,16 @@
       @click.native="open = !open"
     />
 
-    <div
+    <ul
       v-if="options && options.length"
       class="a-select__list-items"
       :class="{ 'a-select__list-items--hide': !open }"
+      :aria-expanded="open"
     >
-      <div
+      <li
         v-for="(option, index) of options"
         :key="index"
+        role="option"
         class="a-select__item"
         @click="
           selected = option;
@@ -40,8 +44,8 @@
         "
       >
         {{ option }}
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -170,10 +174,6 @@ export default {
   transition: background-color 250ms, color 250ms;
   user-select: none;
   width: 100%;
-
-  &--open {
-    border: var(--size-nano) solid var(--color-theme-secondary);
-  }
 }
 
 .a-select__icon {
@@ -209,6 +209,10 @@ export default {
   font-weight: 500;
   cursor: pointer;
   user-select: none;
+
+  &:not(:last-child) {
+    border-bottom: var(--size-micro) solid var(--colors-scale-grey-medium);
+  }
 
   &:hover {
     background-color: var(--colors-scale-grey-light);
