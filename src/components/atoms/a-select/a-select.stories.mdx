@@ -12,18 +12,20 @@ import ASelect from './a-select.vue';
   <Story name="Default use">
     {{
         components: { ASelect },
-        template: `<a-select :options="[{ value: 'example1', text: 'Example' }]" placeholder="Testando"/>`,
-    }}
-  </Story>
-</Canvas>
-
-### Options use:
-
-<Canvas>
-  <Story name="Options use">
-    {{
-        components: { ASelect },
-        template: `<a-select :options="[{ value: 'example1', text: 'Example 1' }, { value: 'example2', text: 'Example 2' }]" placeholder="Testando"/>`,
+        data() {
+          return {
+            selected: 'blah',
+          };
+        },
+        template: `
+        <div style="height: 40vh;">
+          <a-select
+            v-model="selected"
+            :options="['example1', 'Example 1']"
+          />
+          {{ selected }}
+        </div>
+        `,
     }}
   </Story>
 </Canvas>

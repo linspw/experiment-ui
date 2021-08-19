@@ -1,69 +1,123 @@
 <template>
   <div
+    class="a-select"
     :class="{
-      'a-select': true,
-      [`a-select--behavior-${behavior}`]: behavior != 'default',
       [`a-select--size-${size}`]: size,
+      [`a-select--behavior-${behavior}`]: behavior != 'default',
     }"
+    :tabindex="tabindex"
+    @blur="open = false"
   >
-    <select
-      :class="{
-        'a-select__field': true,
-      }"
-      v-bind="$attrs"
-      v-on="$listeners"
+    <div
+      class="a-select__field"
+      :class="{ 'a-select__field--open': open }"
+      @click="open = !open"
     >
-      <option
-        v-if="placeholder"
-        :value="placeholder"
-        disabled
-        hidden
-        selected
-      >
-        {{ placeholder }}
-      </option>
+      {{ selected }}
+    </div>
 
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
+    <AIcon
+      v-if="icon"
+      :icon="icon"
+      :color="iconColor"
+      class="a-select__icon"
+      @click.native="open = !open"
+    />
+
+    <div
+      v-if="options && options.length"
+      class="a-select__list-items"
+      :class="{ 'a-select__list-items--hide': !open }"
+    >
+      <div
+        v-for="(option, index) of options"
+        :key="index"
+        class="a-select__item"
+        @click="
+          selected = option;
+          open = false;
+          $emit('input', option);
+        "
       >
-        {{ option.text }}
-      </option>
-    </select>
+        {{ option }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { AIcon } from '@/components/atoms/a-icon';
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
+  components: {
+    AIcon,
+  },
   props: {
+    placeholder: {
+      type: String,
+      default: null,
+    },
+    icon: {
+      type: String,
+      default: 'fas fa-chevron-down',
+    },
+    iconColor: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'primary',
+        'secondary',
+        'tertiary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
+      ]),
+    },
     behavior: {
       type: String,
       default: 'default',
       validator: shouldBeOneOf(['default', 'block']),
     },
-    size: {
-      default: 'medium',
-      type: String,
-      validator: shouldBeOneOf(['small', 'medium']),
-    },
     options: {
-      default() {
-        return [];
-      },
       type: Array,
+      default: () => [],
     },
-    placeholder: {
-      default: '',
+    value: {
       type: String,
+      required: false,
+      default: null,
     },
+    tabindex: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    size: {
+      type: String,
+      default: 'medium',
+    },
+  },
+  data() {
+    return {
+      selected: null,
+      open: false,
+    };
+  },
+  mounted() {
+    this.selected = this.value || this.placeholder;
+
+    this.$emit('input', this.selected);
   },
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .a-select {
   border-radius: var(--border-radius-normal);
   border: var(--size-micro) solid var(--colors-scale-grey-medium);
@@ -94,26 +148,71 @@ export default {
       width: 100%;
     }
   }
+}
 
-  &__field {
-    background-color: var(--colors-original-white);
-    border-radius: var(--border-radius-normal);
-    border: none;
-    color: var(--colors-scale-grey-dark);
-    flex: 1;
-    font-family: 'Red Hat Text', sans-serif;
-    font-weight: 500;
-    height: 100%;
-    left: 0;
-    padding-left: var(--size-medium);
-    padding-right: var(--size-medium);
-    top: 0;
-    transition: background-color 250ms, color 250ms;
-    width: 100%;
-    &::placeholder {
-      color: var(--colors-scale-grey-medium);
-      font-weight: 500;
-    }
+.a-select__field {
+  align-items: center;
+  background-color: var(--colors-original-white);
+  border-radius: var(--border-radius-normal);
+  border: none;
+  color: var(--colors-scale-grey-dark);
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 500;
+  height: 100%;
+  left: 0;
+  padding-left: var(--size-medium);
+  padding-right: var(--size-medium);
+  position: relative;
+  top: 0;
+  transition: background-color 250ms, color 250ms;
+  user-select: none;
+  width: 100%;
+
+  &--open {
+    border: var(--size-nano) solid var(--color-theme-secondary);
   }
 }
+
+.a-select__icon {
+  color: var(--colors-scale-grey-dark);
+  position: absolute;
+  right: var(--size-extra-small);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.a-select__list-items {
+  background-color: var(--colors-original-white);
+  border-radius: var(--border-radius-normal);
+  border: var(--size-micro) solid var(--color-theme-primary);
+  color: var(--color-theme-secondary);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120%;
+  z-index: 1;
+}
+
+.a-select__list-items--hide {
+  display: none;
+}
+
+.a-select__item {
+  color: var(--color-theme-secondary);
+  padding: var(--size-small) var(--size-medium);
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--colors-scale-grey-light);
+  }
+}
+
 </style>
