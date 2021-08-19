@@ -34,7 +34,7 @@ const AuroraPlugin = {
     Vue.component('a-grid-item', AGridItem);
     Vue.component('a-icon', AIcon);
     Vue.component('a-input', AInput);
-    Vue.component('a-inputField', AInputField);
+    Vue.component('a-input-field', AInputField);
     Vue.component('a-link', ALink);
     Vue.component('a-logo', ALogo);
     Vue.component('a-select', ASelect);
