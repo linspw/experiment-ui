@@ -8,14 +8,14 @@
   .a-grid-item--column-#{$i} {
     grid-column: span #{$i};
 
-    @include for-tablet-down {
+    @include for-medium-desktop-down{
       @if $i >= 6 {
         grid-column: span 12;
       } @else {
         grid-column: span 6;
       }
     }
-    @include for-mobile-down {
+    @include for-large-tablet-down {
       grid-column: span 12;
     }
   }

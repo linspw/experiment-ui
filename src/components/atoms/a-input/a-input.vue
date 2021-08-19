@@ -113,6 +113,7 @@ export default {
   },
   methods: {
     handleHasValue(value) {
+      if (!this.$refs.input) return;
       if (value) {
         this.$refs.input.classList.add('a-input--behavior-has-value');
       } else {
