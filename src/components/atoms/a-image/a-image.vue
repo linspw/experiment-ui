@@ -2,14 +2,14 @@
   <component
     :is="tag"
     :class="{
-      'a-logo': true,
-      [`a-logo--behavior-${behavior}`]: behavior,
+      'a-image': true,
+      [`a-image--behavior-${behavior}`]: behavior,
     }"
     :style="{width, height}"
   >
     <img
       :src="src"
-      class="a-logo__image"
+      class="a-image__image"
     >
     <figcaption v-if="caption">
       {{ caption }}
@@ -24,10 +24,6 @@ export default {
     tag: {
       type: String,
       default: 'figure',
-    },
-    type: {
-      type: String,
-      default: 'svg',
     },
     caption: {
       type: String,
@@ -54,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss">
-.a-logo {
+.a-image {
   margin: 0;
   position: relative;
   display: inline-block;
