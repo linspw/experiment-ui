@@ -1,3 +1,5 @@
+import { AToastWrapper } from '@/components/molecules/a-toast';
+
 /* eslint-disable consistent-return */
 const AToastAPI = (Render, globalOptions) => {
   const { InstanceLocal, tagId } = globalOptions;
@@ -25,23 +27,13 @@ const AToastAPI = (Render, globalOptions) => {
       if (InstanceLocal.$toastInstance) return;
       this.setupContainer(tagId);
 
-      if ((Render.name === 'Vue' || Render.name === 'VueComponent') && !globalOptions.create) {
-        const propsData = Render.observable({ ...globalOptions, ...options });
-        const { AToastWrapper: Component } = await import('@/components/molecules/a-toast');
-        const ComponentClass = Render.extend(Component);
-        InstanceLocal.$toastInstance = new ComponentClass({
-          el: `#${tagId}`,
-          propsData,
-        });
-        return true;
-      }
+      const propsData = Render.observable({ ...globalOptions, ...options });
 
-      if (globalOptions.create) {
-        globalOptions.create(tagId);
-        return true;
-      }
-
-      return false;
+      const ComponentClass = Render.extend(AToastWrapper);
+      InstanceLocal.$toastInstance = await new ComponentClass({
+        el: `#${tagId}`,
+        propsData,
+      });
     },
     async setupContainer(elementId) {
       this.parent = document.getElementById(elementId);

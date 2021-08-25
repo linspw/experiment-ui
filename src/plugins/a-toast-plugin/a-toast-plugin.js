@@ -3,9 +3,7 @@ import { AToastAPI } from './a-toast-api';
 
 class AToastPlugin {
   static install(Render, globalOptions = {}) {
-    const isVue = (Render.name === 'Vue' || Render.name === 'VueComponent');
-
-    const defaultInstanceLocal = isVue ? Render.prototype : Window;
+    const defaultInstanceLocal = Render.prototype;
     const defaultTagId = 'a-toast';
     if (!globalOptions.InstanceLocal) Object.defineProperty(globalOptions, 'InstanceLocal', { value: defaultInstanceLocal });
     if (!globalOptions.tagId) Object.defineProperty(globalOptions, 'tagId', { value: defaultTagId });
