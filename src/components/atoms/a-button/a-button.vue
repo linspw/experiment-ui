@@ -9,7 +9,7 @@
       [`a-button--size-${size}`]: size,
     }"
     v-bind="$attrs"
-    @click="$emit('click')"
+    v-on="$listeners"
   >
     <AIcon
       v-if="icon"
