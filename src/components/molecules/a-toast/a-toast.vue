@@ -1,6 +1,6 @@
 <template>
   <transition-group
-    name="fade"
+    name="a-toast__fade"
     mode="out-in"
     class="a-toast"
     tag="div"
@@ -108,11 +108,13 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
+.a-toast__fade-enter-active,
+.a-toast__fade-leave-active {
   transition: all 500ms;
 }
 
-.fade-enter, .fade-leave-to {
+.a-toast__fade-enter,
+.a-toast__fade-leave-to {
   transform: translateX(100%);
 }
 </style>
