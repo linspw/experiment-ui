@@ -17,6 +17,7 @@ import {
   ASlider,
   AText,
   ATitle,
+  AToast,
   AToastPlugin,
   ATooltip,
   ATooltipPlugin,
@@ -42,6 +43,7 @@ const AuroraPlugin = {
     Vue.component('a-image', AImage);
     Vue.component('a-slider', ASlider);
     Vue.component('a-title', ATitle);
+    Vue.component('a-toast', AToast);
     Vue.component('a-tooltip', ATooltip);
 
     Vue.use(AToastPlugin);
