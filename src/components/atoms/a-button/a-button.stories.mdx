@@ -46,8 +46,9 @@ import AButton from './a-button.vue';
         components: { AButton },
         template: `
         <div>
-          <a-button @click="action" icon="fas fa-home">Hello Button</a-button>
-          <a-button @click="action" icon="fas fa-user">Hello Button</a-button>
+          <a-button @click="action" icon="fas fa-home">Default</a-button>
+          <a-button @click="action" icon="fas fa-user" icon-position="left">Left</a-button>
+          <a-button @click="action" icon="fas fa-user" icon-position="right">Right</a-button>
         </div>
         `,
         methods: { action: action("clicked") }

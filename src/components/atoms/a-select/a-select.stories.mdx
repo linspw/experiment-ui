@@ -30,6 +30,80 @@ import ASelect from './a-select.vue';
   </Story>
 </Canvas>
 
+### With listenners use:
+
+<Canvas>
+  <Story name="With listenners use">
+    {{
+        components: { ASelect },
+        data() {
+          return {
+            selected: 'blah',
+          };
+        },
+        template: `
+        <div style="height: 40vh;">
+          <a-select
+            @select="selected = $event"
+            :value="selected"
+            :options="['example1', 'Example 1']"
+          />
+          <a-select
+            @input="selected = $event"
+            :value="selected"
+            :options="['example1', 'Example 1']"
+          />
+          <a-select
+            @change="selected = $event"
+            :value="selected"
+            :options="['example1', 'Example 1']"
+          />
+          {{ selected }}
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Use with object with attrs, value and text:
+
+<Canvas>
+  <Story name="Use with object with attrs, value and text">
+    {{
+        components: { ASelect },
+        data() {
+          return {
+            selected: '',
+          };
+        },
+        template: `
+        <div style="height: 40vh;">
+          <a-select
+            v-model="selected"
+            :options="[{value: 'example1', text: 'EXAMPLE 1'}, { value: 'data1', text: 'DATA 1'}]"
+          />
+          {{ selected }}
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### placeholder:
+
+<Canvas>
+  <Story name="placeholder">
+    {{
+        components: { ASelect },
+        template: `
+        <div>
+          <a-select placeholder="placeholder" :options="['yes', 'no']" />
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
 ### Sizes:
 
 <Canvas>

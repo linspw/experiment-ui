@@ -12,10 +12,10 @@
     v-on="$listeners"
   >
     <AIcon
-      v-if="icon"
+      v-if="icon && iconPosition === 'left'"
       :icon="icon"
       :color="iconColor"
-      :class="{'a-button__icon': slotPassed}"
+      :class="{'a-button__icon a-button__icon--position-left': slotPassed}"
     />
     <AIcon
       v-if="isLoading"
@@ -28,6 +28,12 @@
     >
       <slot />
     </span>
+    <AIcon
+      v-if="icon && iconPosition === 'right'"
+      :icon="icon"
+      :color="iconColor"
+      :class="{'a-button__icon a-button__icon--position-right': slotPassed}"
+    />
   </button>
 </template>
 
@@ -40,6 +46,14 @@ export default {
   components: { AIcon },
   inheritAttrs: false,
   props: {
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator: shouldBeOneOf([
+        'left',
+        'right',
+      ]),
+    },
     behavior: {
       type: String,
       default: '',

@@ -28,6 +28,7 @@
     "core-js": "^3.6.5",
     "url-join": "^4.0.1",
     "vue": "^2.6.11",
+    "vue-click-outside": "^1.1.0",
     "vue-prop-validation-helper": "^3.0.0"
   },
   "devDependencies": {
@@ -53,13 +54,13 @@
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "sass-resources-loader": "^2.1.1",
+    "semantic-release": "^17.4.4",
     "storybook-design-token": "^1.2.0",
     "style-loader": "^2.0.0",
     "vue-cli-plugin-storybook": "~2.1.0",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^4.4.0",
-    "semantic-release": "^17.4.4"
+    "webpack-bundle-analyzer": "^4.4.0"
   },
   "eslintConfig": {
     "root": true,

@@ -120,7 +120,12 @@
     display: flex;
     height: 100%;
     width: 16px;
-    margin-right: var(--size-small);
+    &--position-left {
+      margin-right: var(--size-small);
+    }
+    &--position-right {
+      margin-left: var(--size-small);
+    }
   }
 
   &__text {
