@@ -156,22 +156,22 @@ export default {
 
   &--size {
     &-micro {
-      font-size: 10px;
+      font-size: 0.625rem;
     }
     &-extra-small {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
     &-small {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     &-medium {
-      font-size: 16px;
+      font-size: 1rem;
     }
     &-large {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
     &-extra-large {
-      font-size: 20px;
+      font-size: 1.25rem;
     }
   }
 
