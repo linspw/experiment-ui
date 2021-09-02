@@ -5,7 +5,6 @@
       'a-image': true,
       [`a-image--behavior-${behavior}`]: behavior,
     }"
-    :style="{width, height}"
   >
     <img
       :src="src"
@@ -36,14 +35,6 @@ export default {
     src: {
       type: String,
       required: true,
-    },
-    width: {
-      type: String,
-      default: 'auto',
-    },
-    height: {
-      type: String,
-      default: 'auto',
     },
   },
 };
