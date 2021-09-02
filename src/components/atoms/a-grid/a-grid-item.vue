@@ -5,6 +5,7 @@
       [`a-grid-item--behavior-${behavior}`]: behavior,
       [`a-grid-item--column-${column}`]: column,
       [`a-grid-item--row-${row}`]: row,
+      ['a-grid-item--responsive']: responsive,
     }"
     class="a-grid-item"
   >
@@ -30,6 +31,10 @@ export default {
     tag: {
       type: String,
       default: 'div',
+    },
+    responsive: {
+      type: Boolean,
+      default: true,
     },
   },
 };

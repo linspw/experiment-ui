@@ -4,20 +4,31 @@
   position: relative;
 }
 
+.a-grid-item--responsive {
+  @for $i from 1 through 12 {
+    &.a-grid-item--column-#{$i} {
+      grid-column: span #{$i};
+  
+      @include for-medium-desktop-down{
+        @if $i >= 6 {
+          grid-column: span 12;
+        } @else {
+          grid-column: span 6;
+        }
+      }
+      @include for-large-tablet-down {
+        grid-column: span 12;
+      }
+    }
+    &.a-grid-item--row-#{$i} {
+      grid-row: span #{$i};
+    }
+  }
+}
+
 @for $i from 1 through 12 {
   .a-grid-item--column-#{$i} {
     grid-column: span #{$i};
-
-    @include for-medium-desktop-down{
-      @if $i >= 6 {
-        grid-column: span 12;
-      } @else {
-        grid-column: span 6;
-      }
-    }
-    @include for-large-tablet-down {
-      grid-column: span 12;
-    }
   }
   .a-grid-item--row-#{$i} {
     grid-row: span #{$i};
