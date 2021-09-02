@@ -1,15 +1,15 @@
 .a-input {
-  --a-input-border-color: var(--colors-scale-grey-medium);
+  --a-input-border-color: var(--color-theme-primary);
   --a-input-border-radius: var(--border-radius-normal);
   --a-input-border-style:  solid;
   --a-input-border-width: var(--size-micro);
-  --a-input-color: var(--colors-scale-grey-medium);
+  --a-input-color: var(--color-theme-primary);
   --a-input-width: auto;
 
   --a-input__field-background-color: none;
   --a-input__field-border-radius: var(--border-radius-normal);
-  --a-input__field-color--placeholder: var(--colors-scale-grey-medium);
-  --a-input__field-color: var(--colors-scale-grey-dark);
+  --a-input__field-color--placeholder: var(--colors-scale-grey-dark);
+  --a-input__field-color: var(--color-theme-primary);
   --a-input__field-font-family: 'Red Hat Text', sans-serif;
   --a-input__field-font-size: inherit;
   --a-input__field-font-weight--placeholder: 500;
@@ -37,10 +37,8 @@
       --a-input-width: 100%;
     }
     &-has-value {
-      --a-input-border-color: var(--colors-scale-grey-dark);
-      --a-input-color: var(--colors-scale-grey-dark);
-
-      --a-input__field-background-color: var(--colors-scale-grey-lightest);
+      --a-input-border-color: var(--color-theme-primary);
+      --a-input__field-background-color: var(--colors-scale-grey-light);
     }
   }
 
