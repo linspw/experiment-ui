@@ -14,6 +14,7 @@
     >
       <option
         v-if="placeholder"
+        class="a-select__field-option a-select__field-option--placeholder"
         :value="placeholder"
         disabled
         hidden
@@ -25,6 +26,7 @@
       <option
         v-for="(option, index) in options"
         :key="option.value || index"
+        class="a-select__field-option"
         :value="option.value || option"
       >
         {{ option.text || option }}
@@ -83,9 +85,19 @@ export default {
 
 <style lang="scss">
 .a-select {
-  border-radius: var(--border-radius-normal);
-  border: var(--size-micro) solid var(--colors-scale-grey-medium);
-  color: var(--colors-scale-grey-medium);
+  --a-select--border-color: var(--color-theme-primary);
+  --a-select--border-radius: var(--border-radius-normal);
+  --a-select--border-style:  solid;
+  --a-select--border-width: var(--size-micro);
+  --a-select__field--color: var(--color-theme-primary);
+
+  --a-select__field--background-color: var(--colors-original-white);
+
+  border-color: var(--a-select--border-color);
+  border-radius: var(--a-select--border-radius);
+  border-style: var(--a-select--border-style);
+  border-width: var(--a-select--border-width);
+
   display: inline-flex;
   font-family: 'Red Hat Text', sans-serif;
   height: fit-content;
@@ -114,10 +126,10 @@ export default {
   }
 
   &__field {
-    background-color: var(--colors-original-white);
+    background-color: var(--a-select__field--background-color);
     border-radius: var(--border-radius-normal);
     border: none;
-    color: var(--colors-scale-grey-dark);
+    color: var(--a-select__field--color);
     flex: 1;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 500;
@@ -128,10 +140,12 @@ export default {
     top: 0;
     transition: background-color 250ms, color 250ms;
     width: 100%;
-    &::placeholder {
-      color: var(--colors-scale-grey-medium);
-      font-weight: 500;
-    }
   }
 }
+
+.a-select__field-option--placeholder {
+  color: var(--colors-scale-grey-medium);
+  font-weight: 500;
+}
+
 </style>
