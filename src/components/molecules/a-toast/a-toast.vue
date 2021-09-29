@@ -12,7 +12,8 @@
         ['a-toast__item--inverse']: item.variant
           && (item.variant !== 'warn')
           && (item.variant !== 'default')
-          && (item.variant !== 'tertiary'),
+          && (item.variant !== 'tertiary')
+          && (item.variant ),
         [`${item.variant}`]: item.variant
       }"
       :variant="item.variant"
@@ -72,28 +73,38 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/styles/utils/index';
+
 .a-toast {
   overflow: hidden;
   position: fixed;
   max-height: 100vh;
-  max-width: 380px;
-  padding-right: 24px;
   right: 0px;
-  top: 24px;
   width: 100%;
   z-index: 100;
+  top: 0;
+
+  @include for-mobile-up{
+    top: 24px;
+    max-width: 380px;
+    padding-right: 24px;
+  }
 
   &__item {
-    --a-card--padding: 16px;
-    margin: 4px;
+    --a-card--padding: 16px !important;
+
     align-items: center;
     display: flex;
     position: relative;
     width: 100%;
-    margin-bottom: 8px;
+
+    @include for-mobile-up {
+      margin: 4px;
+      margin-bottom: 8px;
+    }
 
     &--inverse {
-      color: var(--color-theme-inverse);
+      color: var(--color-theme-inverse) !important;
     }
   }
 

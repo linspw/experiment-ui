@@ -4,10 +4,11 @@
   --a-card--box-shadow: none;
   --a-card--padding: var(--size-large);
   --a-card--color: inherit;
+  --a-card--border-radius: var(--border-radius-normal);
 
   background-color: var(--a-card--background-color);
   border: var(--a-card--border);
-  border-radius: var(--border-radius-normal);
+  border-radius: var(--a-card--border-radius);
   box-shadow: var(--a-card--box-shadow);
   color: var(--a-card--color);
   padding: var(--a-card--padding);
