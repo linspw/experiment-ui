@@ -21,6 +21,7 @@ import {
   AToastPlugin,
   ATooltip,
   ATooltipPlugin,
+  AModal,
 } from '@/export';
 
 const AuroraPlugin = {
@@ -45,6 +46,7 @@ const AuroraPlugin = {
     Vue.component('a-title', ATitle);
     Vue.component('a-toast', AToast);
     Vue.component('a-tooltip', ATooltip);
+    Vue.component('a-modal', AModal);
 
     Vue.use(AToastPlugin);
     Vue.use(ATooltipPlugin);
