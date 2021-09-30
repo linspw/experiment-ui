@@ -82,10 +82,9 @@ export default {
   right: 0px;
   width: 100%;
   z-index: 100;
-  top: 0;
+  top: 24px;
 
   @include for-mobile-up{
-    top: 24px;
     max-width: 380px;
     padding-right: 24px;
   }
