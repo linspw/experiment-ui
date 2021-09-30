@@ -19,7 +19,7 @@
       :variant="item.variant"
       class="a-toast__item"
       tag="button"
-      @click.native="handleClick(index)"
+      @click="handleClick(index)"
     >
       <div class="a-toast__icon">
         <AIcon

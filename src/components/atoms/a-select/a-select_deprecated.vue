@@ -23,7 +23,7 @@
       :icon="icon"
       :color="iconColor"
       class="a-select__icon"
-      @click.native="open = !open"
+      @click="open = !open"
     />
 
     <ul
