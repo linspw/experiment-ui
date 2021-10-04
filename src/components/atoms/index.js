@@ -14,9 +14,11 @@ import { ASlider } from './a-slider';
 import { AText } from './a-text';
 import { ATitle } from './a-title';
 import { ATooltip } from './a-tooltip';
+import { ABadge } from './a-badge';
 
 export {
   AAvatar,
+  ABadge,
   AButton,
   ACard,
   ADisplay,

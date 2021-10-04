@@ -85,5 +85,6 @@
   &::placeholder {
     color: var(--a-input__field-color--placeholder);
     font-weight: var(--a-input__field-font-weight--placeholder);
+    font-style: italic;
   }
 }

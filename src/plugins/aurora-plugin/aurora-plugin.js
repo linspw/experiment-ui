@@ -22,11 +22,13 @@ import {
   ATooltip,
   ATooltipPlugin,
   AModal,
+  ABadge,
 } from '@/export';
 
 const AuroraPlugin = {
   install(Vue) {
     Vue.component('a-avatar', AAvatar);
+    Vue.component('a-badge', ABadge);
     Vue.component('a-breadcrumb', ABreadcrumb);
     Vue.component('a-button', AButton);
     Vue.component('a-card', ACard);

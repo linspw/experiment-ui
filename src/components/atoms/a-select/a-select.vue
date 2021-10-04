@@ -3,6 +3,7 @@
     :class="{
       'a-select': true,
       [`a-select--behavior-${behavior}`]: behavior != 'default',
+      [`a-select--behavior-has-value`]: hasValue,
       [`a-select--size-${size}`]: size,
     }"
   >
@@ -14,7 +15,7 @@
     >
       <option
         v-if="placeholder"
-        class="a-select__field-option a-select__field-option--placeholder"
+        class="a-select__field-option"
         :value="placeholder"
         disabled
         hidden
@@ -71,6 +72,9 @@ export default {
         change: this.handlerInput,
       };
     },
+    hasValue() {
+      return Boolean(this.$attrs.value);
+    },
   },
   methods: {
     handlerInput($event) {
@@ -123,6 +127,9 @@ export default {
     &-block {
       width: 100%;
     }
+    &-has-value {
+      --a-select__field--background-color: var(--colors-scale-grey-light);
+    }
   }
 
   &__field {
@@ -143,9 +150,10 @@ export default {
   }
 }
 
-.a-select__field-option--placeholder {
+.a-select__field--placeholder {
   color: var(--colors-scale-grey-medium);
   font-weight: 500;
+  font-style: italic;
 }
 
 </style>
