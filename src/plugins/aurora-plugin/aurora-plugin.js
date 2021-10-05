@@ -23,6 +23,7 @@ import {
   ATooltipPlugin,
   AModal,
   ABadge,
+  ADropdown,
 } from '@/export';
 
 const AuroraPlugin = {
@@ -30,6 +31,7 @@ const AuroraPlugin = {
     Vue.component('a-avatar', AAvatar);
     Vue.component('a-badge', ABadge);
     Vue.component('a-breadcrumb', ABreadcrumb);
+    Vue.component('a-dropdown', ADropdown);
     Vue.component('a-button', AButton);
     Vue.component('a-card', ACard);
     Vue.component('a-display', ADisplay);
