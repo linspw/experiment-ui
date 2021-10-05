@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - master
+  repository_dispatch:
+    types:
+      - manual-trigger
+
 jobs:
   test:
     runs-on: ubuntu-latest
