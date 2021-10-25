@@ -1,4 +1,4 @@
-import { AToastWrapper } from '@/components/molecules/a-toast';
+// import { AToastWrapper } from '@/components/molecules/a-toast';
 
 /* eslint-disable consistent-return */
 const AToastAPI = (Render, globalOptions) => {
@@ -29,7 +29,7 @@ const AToastAPI = (Render, globalOptions) => {
 
       const propsData = Render.observable({ ...globalOptions, ...options });
 
-      const ComponentClass = Render.extend(AToastWrapper);
+      const ComponentClass = Render.extend(/* blah */);
       InstanceLocal.$toastInstance = await new ComponentClass({
         el: `#${tagId}`,
         propsData,

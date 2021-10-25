@@ -19,7 +19,7 @@
       :variant="item.variant"
       class="a-toast__item"
       tag="button"
-      @click="handleClick(index)"
+      @click.stop="handleClick(index)"
     >
       <div class="a-toast__icon">
         <AIcon
@@ -123,7 +123,7 @@ export default {
   transition: all 500ms;
 }
 
-.a-toast__fade-enter,
+.a-toast__fade-enter-from,
 .a-toast__fade-leave-to {
   transform: translateX(100%);
 }

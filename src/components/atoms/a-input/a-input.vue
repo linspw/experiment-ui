@@ -21,7 +21,6 @@
       class="a-input__field"
       v-bind="$attrs"
       @input="handleInput"
-      v-on="listeners"
     >
   </div>
 </template>
@@ -100,13 +99,6 @@ export default {
     return {
       hasValue: Boolean(this.value),
     };
-  },
-  computed: {
-    listeners() {
-      const listeners = { ...this.$listeners };
-      delete listeners.input;
-      return listeners;
-    },
   },
   mounted() {
     this.handleHasValue(this.value);

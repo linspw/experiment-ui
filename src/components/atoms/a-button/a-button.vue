@@ -9,7 +9,6 @@
       [`a-button--size-${size}`]: size,
     }"
     v-bind="$attrs"
-    v-on="$listeners"
   >
     <AIcon
       v-if="icon && iconPosition === 'left'"

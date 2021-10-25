@@ -69,7 +69,7 @@ export default {
   transition: opacity 250ms;
 }
 
-.a-modal--fade-enter, .a-modal--fade-leave-to {
+.a-modal--fade-enter-from, .a-modal--fade-leave-to {
   opacity: 0;
 }
 </style>

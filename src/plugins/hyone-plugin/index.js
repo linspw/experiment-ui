@@ -1,5 +1,3 @@
 import { HyONEPlugin } from './hyone-plugin';
 
-export {
-  HyONEPlugin,
-};
+export { HyONEPlugin };

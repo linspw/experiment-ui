@@ -28,39 +28,39 @@ export const slotUse = () => ({
     <div style="height: 20vh;">
       <ATooltip>
         Direct content
-        <template slot="content">teste 1</template>
+        <template v-slot:content>teste 1</template>
       </ATooltip>
       <p />
       <ATooltip>
         <template>
           Simple template
         </template>
-        <template slot="content">teste 2</template>
+        <template v-slot:content>teste 2</template>
       </ATooltip>
     </div>
   `,
 });
 
-export const directiveUse = () => ({
-  components: {
-    AButton,
-  },
-  template: `
-    <div style="height: 20vh;">
-      <span v-tooltip="'Simple string'">teste1</span>
-      <strong v-tooltip="{content:'Or object'}">teste2</strong>
-      <AButton v-tooltip="{content:'Its ok'}">Button</AButton>
-    </div>
-  `,
-});
+// export const directiveUse = () => ({
+//   components: {
+//     AButton,
+//   },
+//   template: `
+//     <div style="height: 20vh;">
+//       <span v-tooltip="'Simple string'">teste1</span>
+//       <strong v-tooltip="{content:'Or object'}">teste2</strong>
+//       <AButton v-tooltip="{content:'Its ok'}">Button</AButton>
+//     </div>
+//   `,
+// });
 
-export const positionsUse = () => ({
-  template: `
-    <div style="height: 20vh; display: flex; justify-content: space-around; align-items: center;">
-      <span v-tooltip="{content:'Example', position:'bottom-center'}">bottom-center</span>
-      <span v-tooltip="{content:'Example', position:'top-center'}">top-center</span>
-      <span v-tooltip="{content:'Example', position:'left-center'}">top-center</span>
-      <span v-tooltip="{content:'Example', position:'right-center'}">top-center</span>
-    </div>
-  `,
-});
+// export const positionsUse = () => ({
+//   template: `
+//     <div style="height: 20vh; display: flex; justify-content: space-around; align-items: center;">
+//       <span v-tooltip="{content:'Example', position:'bottom-center'}">bottom-center</span>
+//       <span v-tooltip="{content:'Example', position:'top-center'}">top-center</span>
+//       <span v-tooltip="{content:'Example', position:'left-center'}">top-center</span>
+//       <span v-tooltip="{content:'Example', position:'right-center'}">top-center</span>
+//     </div>
+//   `,
+// });

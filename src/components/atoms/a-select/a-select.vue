@@ -10,8 +10,6 @@
     <select
       class="a-select__field"
       v-bind="$attrs"
-      v-on="listeners"
-      @select="handlerInput"
     >
       <option
         v-if="placeholder"
@@ -64,24 +62,17 @@ export default {
     },
   },
   computed: {
-    listeners() {
-      return {
-        ...this.$listeners,
-        input: this.handlerInput,
-        select: this.handlerInput,
-        change: this.handlerInput,
-      };
-    },
     hasValue() {
       return Boolean(this.$attrs.value);
     },
   },
   methods: {
     handlerInput($event) {
-      if (this.$listeners.input) return this.$emit('input', $event.target.value);
-      if (this.$listeners.change) return this.$emit('change', $event.target.value);
+      if (this.$attrs.onInput) return this.$emit('input', $event.target.value);
+      if (this.$attrs.onChange) return this.$emit('change', $event.target.value);
+      if (this.$attrs.onSelect) return this.$emit('select', $event.target.value);
 
-      return this.$emit('select', $event.target.value);
+      return null;
     },
   },
 };

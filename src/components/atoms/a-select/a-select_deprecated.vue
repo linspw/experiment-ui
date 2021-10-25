@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import { AIcon } from '@/components/atoms/a-icon';
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
+import { AIcon } from '@/components/atoms/a-icon';
 
 export default {
   components: {

@@ -1,21 +1,43 @@
 {
+  "root": true,
   "env": {
-    "browser": true,
-    "es6": true,
-    "node": true,
-    "jest/globals": true
+    "node": true
   },
-  "plugins": ["jest"],
-   "parserOptions": {
-      "parser": "babel-eslint"
-   },
   "extends": [
-    "airbnb-base",
-    "plugin:vue/recommended"
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/airbnb"
   ],
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
   "rules": {
-    "import/prefer-default-export": "off",
-    "import/no-unresolved": "off",
-    "no-console": "off"
-  }
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "ignorePatterns": [
+    "**.test.js"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

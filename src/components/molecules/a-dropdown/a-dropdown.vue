@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside';
+import vClickOutside from 'click-outside-vue3';
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { AButton } from '@/components/atoms/a-button';
 
@@ -50,7 +50,7 @@ export default {
     AButton,
   },
   directives: {
-    ClickOutside,
+    vClickOutside: vClickOutside.directive,
   },
   props: {
     position: {
@@ -123,8 +123,8 @@ export default {
   methods: {
     handleClick($event) {
       this.open = false;
-      if (this.$listeners.input) return this.$emit('input', $event);
-      if (this.$listeners.change) return this.$emit('change', $event);
+      if (this.$attrs.input) return this.$emit('input', $event);
+      if (this.$attrs.change) return this.$emit('change', $event);
 
       return this.$emit('select', $event);
     },
