@@ -1,24 +1,40 @@
-# hyone-ui
+<h1 align="center">Welcome to Aurora-Vue!</h1>
 
-## Project setup
-```
-yarn install
-```
+Aurora-Vue is UI - Library write in Vue.js that will assist you in your project, 
+providing visual components to facilitate the development of your application.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### Installation
 
-### Compiles and minifies for production
 ```
-yarn build
+# If you use npm: 
+npm i @hyone-labs/aurora-vue
+# Or if you use Yarn: 
+yarn add @hyone-labs/aurora-vue
 ```
 
-### Lints and fixes files
-```
-yarn lint
+### Use
+
+After installing, to use Aurora Vue, you will need to import the desired components to use them.
+
+- In Vue script:
+```js
+import { AButton } from '@hyone-labs/aurora-vue';
+export default {
+  components: { AButton }
+};
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- In template:
+
+```html
+<template>
+  <AButton>Foi</AButton>
+</template>
+```
+
+### Live documentation
+[Aurora-Vue Doc](https://aurora-vue.netlify.app/)
+### Contributing
+
+Guides:
+[Click here, and discovery how to develop](docs/CONTRIBUTING.md)
