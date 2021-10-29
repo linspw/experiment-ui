@@ -7,9 +7,9 @@ providing visual components to facilitate the development of your application.
 
 ```
 # If you use npm: 
-npm i @hyone-org/hyone-ui
+npm i @hyone/hyone-ui
 # Or if you use Yarn: 
-yarn add @hyone-org/hyone-ui
+yarn add @hyone/hyone-ui
 ```
 
 ### Use
@@ -18,7 +18,7 @@ After installing, to use HyONE Vue, you will need to import the desired componen
 
 - In Vue script:
 ```js
-import { AButton } from '@hyone-org/hyone-ui';
+import { AButton } from '@hyone/hyone-ui';
 export default {
   components: { AButton }
 };
