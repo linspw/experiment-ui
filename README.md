@@ -4,6 +4,7 @@ Aurora-Vue is UI - Library write in Vue.js that will assist you in your project,
 providing visual components to facilitate the development of your application.
 
 ### Installation
+Attemption this lib is for Vue 2.*!
 
 ```
 # If you use npm: 
