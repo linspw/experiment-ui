@@ -10,6 +10,7 @@
     <select
       class="a-select__field"
       v-bind="$attrs"
+      @change.stop="handlerChange"
     >
       <option
         v-if="placeholder"
@@ -63,14 +64,15 @@ export default {
   },
   computed: {
     hasValue() {
-      return Boolean(this.$attrs.value);
+      return Boolean(this.$attrs.value || this.$attrs.modelValue);
     },
   },
   methods: {
-    handlerInput($event) {
+    handlerChange($event) {
       if (this.$attrs.onInput) return this.$emit('input', $event.target.value);
       if (this.$attrs.onChange) return this.$emit('change', $event.target.value);
       if (this.$attrs.onSelect) return this.$emit('select', $event.target.value);
+      if (this.$attrs['onUpdate:modelValue']) return this.$emit('update:modelValue', $event.target.value);
 
       return null;
     },
@@ -146,5 +148,4 @@ export default {
   font-weight: 500;
   font-style: italic;
 }
-
 </style>
