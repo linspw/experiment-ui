@@ -2,8 +2,10 @@
   "name": "@hyone/hyone-ui",
   "version": "0.0.0-development",
   "private": false,
-  "description": "HyONE UI Library write in Vue.js 3",
+  "description": "HyONE UI - Library write for Vue 3",
   "author": "Jessé Correia Lins",
+  "license": "MIT",
+  "email": "linspw@live.com",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
