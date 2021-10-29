@@ -47,12 +47,12 @@ describe('AButton', () => {
       slots: {
         default: 'Event',
       },
-      listeners: {
-        click: handleClick,
+      attrs: {
+        onClick: handleClick,
       },
     });
 
-    await fireEvent.click(screen.getByText('Event'));
+    await fireEvent.click(screen.getByText('Event').closest('button'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });

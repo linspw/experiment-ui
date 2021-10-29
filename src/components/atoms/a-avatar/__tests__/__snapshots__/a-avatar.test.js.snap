@@ -2,14 +2,12 @@
 
 exports[`AAvatar render correctly with caption 1`] = `
 "<figure class=\\"a-avatar a-avatar--size-colossal a-avatar--behavior-rounded\\"><img src=\\"https://hyone-backend-homolog.herokuapp.com/public/images/undraw/avatar_male.svg\\" class=\\"a-avatar__image\\">
-  <figcaption class=\\"a-avatar__figcaption\\">
-    My caption
-  </figcaption>
+  <figcaption class=\\"a-avatar__figcaption\\">My caption</figcaption>
 </figure>"
 `;
 
 exports[`AAvatar render correctly with default props 1`] = `
 "<figure class=\\"a-avatar a-avatar--size-colossal a-avatar--behavior-rounded\\"><img src=\\"https://hyone-backend-homolog.herokuapp.com/public/images/undraw/avatar_male.svg\\" class=\\"a-avatar__image\\">
-  <!---->
+  <!--v-if-->
 </figure>"
 `;

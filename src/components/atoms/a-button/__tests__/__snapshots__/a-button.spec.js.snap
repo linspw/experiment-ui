@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AButton render correctly with attrs 1`] = `
-"<button id=\\"my-first-component\\" data-test-id=\\"secondary\\" class=\\"a-button a-button--behavior-is-rounded a-button--variant-primary a-button--size-small\\">
-  <!---->
-  <!----> <span class=\\"a-button__text\\">With many Itens</span>
-  <!----></button>"
+"<button class=\\"a-button a-button--behavior-is-rounded a-button--variant-primary a-button--size-small\\" id=\\"my-first-component\\" data-test-id=\\"secondary\\">
+  <!--v-if-->
+  <!--v-if--><span class=\\"a-button__text\\">With many Itens</span>
+  <!--v-if-->
+</button>"
 `;
 
 exports[`AButton render correctly with default props 1`] = `
 "<button class=\\"a-button a-button--behavior-is-rounded a-button--variant-primary a-button--size-small\\">
-  <!---->
-  <!----> <span class=\\"a-button__text\\">My first test</span>
-  <!----></button>"
+  <!--v-if-->
+  <!--v-if--><span class=\\"a-button__text\\">My first test</span>
+  <!--v-if-->
+</button>"
 `;
 
 exports[`AButton render correctly with different props 1`] = `
 "<button class=\\"a-button a-button--behavior-block a-button--variant-secondary a-button--size-small\\">
   <div class=\\"a-icon a-icon--size-inherit a-icon--color-primary a-button__icon a-button__icon--position-left\\"><i class=\\"fas fa-circle\\"></i></div>
-  <!----> <span class=\\"a-button__text\\">With many Itens</span>
-  <!---->
+  <!--v-if--><span class=\\"a-button__text\\">With many Itens</span>
+  <!--v-if-->
 </button>"
 `;
