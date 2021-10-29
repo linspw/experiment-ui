@@ -1,5 +1,5 @@
 {
-  "name": "hyone-ui",
+  "name": "@hyone-org/hyone-ui",
   "version": "0.0.0-development",
   "private": false,
   "description": "HyONE UI Library write in Vue.js 3",

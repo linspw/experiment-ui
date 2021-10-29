@@ -17,6 +17,6 @@ export const parameters = {
     },
   },
   designToken: {
-    files: tokenFiles
+    files: tokenFiles,
   },
 }
