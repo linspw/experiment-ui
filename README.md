@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to Aurora-Vue!</h1>
+<h1 align="center">Welcome to HyONE-UI!</h1>
 
-Aurora-Vue is UI - Library write in Vue.js that will assist you in your project, 
+HyONE-UI - Library write in Vue 3 that will assist you in your project, 
 providing visual components to facilitate the development of your application.
 
 ### Installation
@@ -8,20 +8,18 @@ Attemption this lib is for Vue 2.*!
 
 ```
 # If you use npm: 
-npm i @hyone-labs/aurora-vue
-
+npm i @hyone-org/hyone-ui
 # Or if you use Yarn: 
-yarn add @hyone-labs/aurora-vue
+yarn add @hyone-org/hyone-ui
 ```
 
 ### Use
 
-After installing, to use Aurora Vue, you will need to import the desired components to use them.
+After installing, to use HyONE Vue, you will need to import the desired components to use them.
 
 - In Vue script:
 ```js
-import { AButton } from '@hyone-labs/aurora-vue';
-
+import { AButton } from '@hyone-org/hyone-ui';
 export default {
   components: { AButton }
 };
@@ -36,7 +34,7 @@ export default {
 ```
 
 ### Live documentation
-[Aurora-Vue Doc](https://aurora-vue.netlify.app/)
+[HyONE-UI Doc](https://hyone-ui.netlify.app/)
 ### Contributing
 
 Guides:

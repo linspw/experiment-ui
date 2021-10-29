@@ -10,11 +10,10 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
   },
   moduleNameMapper: {
-    '^vue$': 'vue/dist/vue.esm.js',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   setupFilesAfterEnv: [
-    '<rootDir>/src/tests/setup.js',
+    '<rootDir>/src/config/tests/setup.js',
   ],
   transformIgnorePatterns: [
     'node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)',
@@ -24,5 +23,5 @@ module.exports = {
     'json',
     'vue',
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom-fifteen',
 };

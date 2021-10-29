@@ -1,22 +1,22 @@
 {
-  "name": "@hyone-labs/aurora-vue",
+  "name": "@hyone-org/hyone-ui",
   "version": "0.0.0-development",
   "private": false,
-  "description": "Aurora-Vue is UI - Library write in Vue.js",
+  "description": "HyONE UI Library write in Vue.js 3",
   "author": "Jessé Correia Lins",
-  "homepage": "https://github.com/hyone-labs/aurora-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test": "vue-cli-service test",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name aurora-vue ./src/export.js",
-    "publish:new": "npm publish --access=public",
-    "storybook:build": "vue-cli-service storybook:build -c .storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c .storybook",
-    "test": "jest",
-    "semantic-release": "semantic-release"
+    "build-lib": "vue-cli-service build --target lib --name hyone-ui ./src/export.js",
+    "build-storybook": "build-storybook",
+    "build:storybook": "vue-cli-service storybook:build -c .storybook",
+    "semantic-release": "semantic-release",
+    "serve:storybook": "vue-cli-service storybook:serve -p 6006 -c .storybook"
   },
-  "main": "./dist/aurora-vue.common.js",
+  "main": "./dist/hyone-ui.common.js",
   "files": [
     "dist/*",
     "src/*",
@@ -25,76 +25,56 @@
     "*.js"
   ],
   "dependencies": {
+    "click-outside-vue3": "^4.0.1",
     "core-js": "^3.6.5",
     "url-join": "^4.0.1",
-    "vue": "^2.6.11",
-    "vue-click-outside": "^1.1.0",
+    "vue": "^3.0.0",
     "vue-prop-validation-helper": "^3.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-controls": "^6.3.6",
-    "@storybook/addon-essentials": "^6.3.6",
-    "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addon-links": "^6.3.6",
-    "@storybook/vue": "^6.3.6",
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/vue3": "^6.3.12",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/vue": "^5.8.2",
+    "@testing-library/vue": "^6.4.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
-    "babel-core": "^7.0.0-bridge.0",
+    "@vue/test-utils": "^2.0.0-0",
     "babel-eslint": "^10.1.0",
-    "css-loader": "^5.0.1",
-    "eslint": "^7.32.0",
+    "babel-loader": "^8.2.3",
+    "cli-plugin-test": "^1.0.0",
+    "css-loader": "^6.4.0",
+    "dart-sass": "^1.25.0",
+    "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^24.4.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "jest": "^27.0.6",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.0",
-    "sass-resources-loader": "^2.1.1",
-    "semantic-release": "^17.4.4",
-    "storybook-design-token": "^1.2.0",
-    "style-loader": "^2.0.0",
+    "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.43.3",
+    "sass-loader": "10.1.1",
+    "semantic-release": "^18.0.0",
+    "storybook-design-token": "^1.2.3",
+    "style-loader": "^3.3.1",
+    "typescript": "~3.9.3",
     "vue-cli-plugin-storybook": "~2.1.0",
-    "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^4.4.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/airbnb"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+    "vue-cli-plugin-test": "~1.0.2",
+    "vue-jest": "^5.0.0-0",
+    "vue-loader": "^16.8.1"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
   ],
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hyone-labs/aurora-vue.git"
-  },
   "keywords": [
     "vue",
     "ui",
     "lib",
     "design",
     "system"
-  ],
-  "bugs": {
-    "url": "https://github.com/hyone-labs/aurora-vue/issues"
-  }
+  ]
 }

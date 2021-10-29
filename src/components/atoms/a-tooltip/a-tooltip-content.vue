@@ -69,7 +69,8 @@ export default {
   transition: opacity 250ms;
 }
 
-.a-tooltip-content--fade-enter, .a-tooltip-content--fade-leave-to {
+.a-tooltip-content--fade-enter-from,
+.a-tooltip-content--fade-leave-to {
   opacity: 0;
 }
 </style>

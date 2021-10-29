@@ -1,7 +1,7 @@
-import { AButton } from "@/components/atoms/a-button";
+import { AButton } from '@/components/atoms/a-button';
 
 export default {
-  title: "Design System/Plugins/AToast",
+  title: 'Design System/Plugins/AToast',
   decorators: [
     () => ({ template: '<div style="transform: scale(1); height: 40vh;"><story/></div>' }),
   ],
@@ -10,7 +10,7 @@ export default {
 export const withText = () => ({
   components: { AButton },
   data: () => ({
-    items: [{ title: "Home", icon: "fas fa-location-arrow" }],
+    items: [{ title: 'Home', icon: 'fas fa-location-arrow' }],
     variants: [
       'success',
       'info',
@@ -46,7 +46,7 @@ export const withText = () => ({
 export const withDuration = () => ({
   components: { AButton },
   data: () => ({
-    items: [{ title: "Home", icon: "fas fa-location-arrow" }],
+    items: [{ title: 'Home', icon: 'fas fa-location-arrow' }],
     variants: [
       'success',
       'info',
@@ -79,4 +79,3 @@ export const withDuration = () => ({
     },
   },
 });
-

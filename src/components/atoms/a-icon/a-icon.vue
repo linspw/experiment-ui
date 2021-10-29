@@ -8,7 +8,6 @@
       [`a-icon--wrapper-${wrapper}`]: wrapper !== 'default',
     }"
     v-bind="$attrs"
-    v-on="$listeners"
   >
     <i :class="icon" />
   </component>

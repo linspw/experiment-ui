@@ -27,9 +27,6 @@ export default {
     timer: [],
     counter: 0,
   }),
-  beforeDestroy() {
-    this.$off('click');
-  },
   methods: {
     addItem(itemOptions) {
       this.items.push(itemOptions);

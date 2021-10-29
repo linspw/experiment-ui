@@ -51,7 +51,11 @@ import AButton from './a-button.vue';
           <a-button @click="action" icon="fas fa-user" icon-position="right">Right</a-button>
         </div>
         `,
-        methods: { action: action("clicked") }
+        methods: { 
+          action() {
+            console.log("Ativou")
+          },
+        },
     }}
   </Story>
 </Canvas>

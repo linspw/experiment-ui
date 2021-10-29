@@ -6,7 +6,6 @@
       [`a-card--variant-${variant}`]: variant,
       [`a-card--elevation-${elevation}`]: elevation,
     }"
-    v-on="$listeners"
   >
     <slot />
   </component>

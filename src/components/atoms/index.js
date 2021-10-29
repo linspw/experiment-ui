@@ -1,38 +1,17 @@
-import { AAvatar } from './a-avatar';
-import { AButton } from './a-button';
-import { ACard } from './a-card';
-import { ADisplay } from './a-display';
-import { ADivider } from './a-divider';
-import { AGridContainer, AGridItem } from './a-grid';
-import { AIcon } from './a-icon';
-import { AImage } from './a-image';
-import { AInput } from './a-input';
-import { ALink } from './a-link';
-import { ALogo } from './a-logo';
-import { ASelect } from './a-select';
-import { ASlider } from './a-slider';
-import { AText } from './a-text';
-import { ATitle } from './a-title';
-import { ATooltip } from './a-tooltip';
-import { ABadge } from './a-badge';
-
-export {
-  AAvatar,
-  ABadge,
-  AButton,
-  ACard,
-  ADisplay,
-  ADivider,
-  AGridContainer,
-  AGridItem,
-  AIcon,
-  AImage,
-  AInput,
-  ALink,
-  ALogo,
-  ASelect,
-  ASlider,
-  AText,
-  ATitle,
-  ATooltip,
-};
+export * from './a-avatar';
+export * from './a-button';
+export * from './a-card';
+export * from './a-display';
+export * from './a-divider';
+export * from './a-grid';
+export * from './a-icon';
+export * from './a-image';
+export * from './a-input';
+export * from './a-link';
+export * from './a-logo';
+export * from './a-select';
+export * from './a-slider';
+export * from './a-text';
+export * from './a-title';
+export * from './a-tooltip';
+export * from './a-badge';
