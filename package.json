@@ -18,7 +18,7 @@
     "semantic-release": "semantic-release",
     "serve:storybook": "vue-cli-service storybook:serve -p 6006 -c .storybook"
   },
-  "main": "./dist/hyone-ui.common.js",
+  "main": "./dist/hyone-ui.umd.js",
   "files": [
     "dist/*",
     "src/*",
