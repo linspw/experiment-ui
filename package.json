@@ -12,7 +12,7 @@
     "test": "vue-cli-service test",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "build-lib": "vue-cli-service build --target lib --name hyone-ui ./src/export.js",
+    "build:lib": "vue-cli-service build --target lib --name hyone-ui ./src/export.js",
     "build-storybook": "build-storybook",
     "build:storybook": "vue-cli-service storybook:build -c .storybook",
     "semantic-release": "semantic-release",

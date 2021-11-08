@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { HyONEPlugin } from '@/plugins';
+import { Plugin } from '../dist/hyone-ui.umd';
+import '../dist/hyone-ui.css';
 
 createApp(App)
-  .use(HyONEPlugin)
+  .use(Plugin.HyONEPlugin)
   .mount('#app');
