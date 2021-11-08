@@ -1,7 +1,7 @@
 import * as Component from '@/components';
-import * as Plugin from '@/plugins';
+import { HyONEPlugin } from '@/plugins';
 
 export {
   Component,
-  Plugin,
+  HyONEPlugin,
 };
