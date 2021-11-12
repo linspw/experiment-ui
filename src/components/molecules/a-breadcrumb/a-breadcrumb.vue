@@ -8,11 +8,9 @@
       class="a-breadcrumb__item"
       :size="(index === 0) ? 'small' : 'extra-small'"
       tag="a"
-      :weight="(index === 0) ? 'extra-bold' : 'bold'"
+      :weight="(index === 0) ? 'bold' : 'medium'"
     >
-      <template>
-        {{ item.text }}
-      </template>
+      {{ item.text }}
     </ATitle>
   </nav>
 </template>

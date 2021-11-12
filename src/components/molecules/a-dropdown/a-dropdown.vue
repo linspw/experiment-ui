@@ -1,6 +1,5 @@
 <template>
   <div
-    v-click-outside="handleClickOutside"
     class="a-dropdown"
   >
     <AButton
@@ -41,16 +40,12 @@
 </template>
 
 <script>
-import vClickOutside from 'click-outside-vue3';
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { AButton } from '@/components/atoms/a-button';
 
 export default {
   components: {
     AButton,
-  },
-  directives: {
-    vClickOutside: vClickOutside.directive,
   },
   props: {
     position: {

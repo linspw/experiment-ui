@@ -27,7 +27,6 @@
     "*.js"
   ],
   "dependencies": {
-    "click-outside-vue3": "^4.0.1",
     "core-js": "^3.6.5",
     "url-join": "^4.0.1",
     "vue": "^3.0.0",
