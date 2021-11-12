@@ -1,17 +1,22 @@
 <template>
   <nav class="a-breadcrumb">
-    <ATitle
+    <li
       v-for="(item, index) in items"
       :key="index"
-      :color="(index === 0) ? 'primary' : 'tertiary'"
-      :href="item.url"
       class="a-breadcrumb__item"
-      :size="(index === 0) ? 'small' : 'extra-small'"
-      tag="a"
-      :weight="(index === 0) ? 'bold' : 'medium'"
     >
-      {{ item.text }}
-    </ATitle>
+      <ATitle
+        :color="(index === items.length-1) ? 'secondary' : 'primary'"
+        :href="item.url"
+        size="extra-small"
+        tag="a"
+        weight="medium"
+      >
+        {{ item.text }}
+      </ATitle>
+
+      <div v-if="!(index === items.length-1)" class="a-breadcrumb__item-divider">/</div>
+    </li>
   </nav>
 </template>
 
@@ -34,6 +39,9 @@ export default {
 <style lang="scss">
 .a-breadcrumb {
   display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   &__item {
     align-items: center;
@@ -41,8 +49,12 @@ export default {
     white-space: nowrap;
 
     &:not(:first-child) {
-      margin-left: var(--size-scalable-jumbo);
+      margin-left: var(--size-scalable-medium);
     }
   }
+}
+
+.a-breadcrumb__item-divider {
+  margin-left: var(--size-scalable-medium);
 }
 </style>
