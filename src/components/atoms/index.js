@@ -15,3 +15,4 @@ export * from './a-text';
 export * from './a-title';
 export * from './a-tooltip';
 export * from './a-badge';
+export * from './h-text';

@@ -1,0 +1,90 @@
+import { ref } from "vue";
+import { Meta, ArgsTable, Story, Canvas } from "@storybook/addon-docs";
+import { AButton } from "@/components/atoms/a-button";
+import AToast from "./a-toast.vue";
+
+<Meta
+  title="Design System/Atoms/AToast"
+  component={AToast}
+  decorators={[
+    () => ({
+      template:
+        '<div style="transform: scale(1); height: 40vh;"><story/></div>',
+    }),
+  ]}
+/>
+
+## AToast
+
+### With variants:
+
+<Canvas>
+  <Story name="With variants">
+    {{
+      components: { AToast },
+      data: () => ({
+        items: [
+          {
+            title: "success",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "success",
+          },
+          {
+            title: "info",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "info",
+          },
+          {
+            title: "danger",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "danger",
+          },
+          {
+            title: "warn",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "warn",
+          },
+          {
+            title: "primary",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "primary",
+          },
+          {
+            title: "secondary",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "secondary",
+          },
+          {
+            title: "tertiary",
+            text: "name",
+            icon: "fas fa-location-arrow",
+            variant: "tertiary",
+          },
+        ],
+        variants: [
+          "success",
+          "info",
+          "danger",
+          "warn",
+          "primary",
+          "secondary",
+          "tertiary",
+          "",
+        ],
+      }),
+      template: `
+        <div>
+          <a-toast :items="items" />
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AToast} />

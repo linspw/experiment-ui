@@ -1,0 +1,43 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import ATooltip from './a-tooltip.vue';
+
+<Meta title="Design System/Atoms/ATooltip" component={ATooltip} />
+
+## ATooltip
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { ATooltip },
+        template: `
+          <div style="height: 20vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <a-tooltip content="pure component">Pure Content</a-tooltip>
+            <p />
+            <a-tooltip content="is a test" position="top-center">Pure Content with position</a-tooltip>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Slot use:
+
+<Canvas>
+  <Story name="Slot use">
+    {{
+        components: { ATooltip },
+        template: `
+          <div style="height: 20vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <ATooltip>
+              Direct content
+              <template v-slot:content>teste 1</template>
+            </ATooltip>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ATooltip} />
