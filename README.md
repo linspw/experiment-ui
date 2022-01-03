@@ -3,6 +3,7 @@
 Core UI - Library write in Vue 3 that will assist you in your project, 
 providing visual components to facilitate the development of your application.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eacbad6b-41f2-4919-9f67-0f6c4dedfaf8/deploy-status)](https://app.netlify.com/sites/hyone-core-ui/deploys)
 ### Installation
 
 ```
@@ -19,12 +20,11 @@ After installing, add HyONEPlugin to your vue instance.
 - In main js:
 ```js
 import { createApp } from 'vue';
-import '@hyone/core-ui/dist/lib/core-ui.css';
-import { HyONEPlugin } from '@hyone/core-ui';
+import HyOneCoreUI from '@hyone/core-ui';
 import App from './app.vue'
 
 createApp
-  .use(HyONEPlugin)
+  .use(HyOneCoreUI)
   .mount('#root');
 ```
 
@@ -37,7 +37,7 @@ createApp
 ```
 
 ### Live documentation
-[Core UI Doc](https://core-ui.netlify.app/)
+[Core UI Doc](https://hyone-core-ui.netlify.app/)
 ### Contributing
 
 Guides:
