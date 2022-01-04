@@ -1,0 +1,92 @@
+.h-avatar {
+  --h-avatar-width: none;
+  --h-avatar-height: none;
+  --h-avatar-border-radius: none;
+  --h-avatar-overflow: hidden;
+  --h-avatar-marging: 0;
+  --a-avatar__figcaption-background-color: black;
+  --a-avatar__figcaption-color: white;
+  --a-avatar__figcaption-text-align: center;
+  
+  border-radius: var(--h-avatar-border-radius);
+  height: var(--h-avatar-height);
+  margin: var(--h-avatar-marging);
+  overflow: var(--h-avatar-overflow);
+  position: relative;
+  width: var(--h-avatar-width);
+
+  &__image {
+    height:100%;
+    width:100%;
+  }
+
+  &__figcaption {
+    background-color: var(--a-avatar__figcaption-background-color);
+    bottom: 0;
+    color: var(--a-avatar__figcaption-color);
+    left: 0;
+    position: absolute;
+    text-align: var(--a-avatar__figcaption-text-align);
+    width: 100%;
+  }
+
+  &--behavior {
+    &-rounded {
+      --h-avatar-border-radius: var(--border-radius-circle);
+    }
+    &-square {
+      --h-avatar-border-radius: none;
+    }
+  }
+
+  &--size {
+    &-medium {
+      --h-avatar-width: var(--size-medium);
+      --h-avatar-height: var(--size-medium);
+    }
+    &-large {
+      --h-avatar-width: var(--size-large);
+      --h-avatar-height: var(--size-large);
+    }
+    &-extra-large {
+      --h-avatar-width: var(--size-extra-large);
+      --h-avatar-height: var(--size-extra-large);
+    }
+    &-jumbo {
+      --h-avatar-width: var(--size-jumbo);
+      --h-avatar-height: var(--size-jumbo);
+    }
+    &-extra-jumbo {
+      --h-avatar-width: var(--size-extra-jumbo);
+      --h-avatar-height: var(--size-extra-jumbo);
+    }
+    &-giant {
+      --h-avatar-width: var(--size-giant);
+      --h-avatar-height: var(--size-giant);
+    }
+    &-extra-giant {
+      --h-avatar-width: var(--size-extra-giant);
+      --h-avatar-height: var(--size-extra-giant);
+    }
+    &-colossal {
+      --h-avatar-width: var(--size-colossal);
+      --h-avatar-height: var(--size-colossal);
+    }
+    &-extra-colossal {
+      --h-avatar-width: var(--size-extra-colossal);
+      --h-avatar-height: var(--size-extra-colossal);
+    }
+    &-mega {
+      --h-avatar-width: var(--size-mega);
+      --h-avatar-height: var(--size-mega);
+    }
+    &-extra-mega {
+      --h-avatar-width: var(--size-extra-mega);
+      --h-avatar-height: var(--size-extra-mega);
+    }
+    &-immense {
+      --h-avatar-width: var(--size-immense);
+      --h-avatar-height: var(--size-immense);
+    }
+  }
+}

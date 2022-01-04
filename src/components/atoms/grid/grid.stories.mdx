@@ -1,0 +1,82 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import HGridContainer from './grid-container.vue';
+import HGridItem from './grid-item.vue';
+
+<Meta title="Design System/Atoms/Grid" />
+
+## Grid
+The layout is divided in two components, HGridContainer and HGridItem.
+HGridContainer is responsible for wrapper the items wich you want to organize in grid layout.
+HGridItem is where you control the item wrapper in layout.
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HGridContainer, HGridItem },
+        template: `
+        <h-grid-container style="background-color:blue;">
+          <h-grid-item style="background-color:yellow;" column="4">yellow</h-grid-item>
+          <h-grid-item style="background-color:red;" column="6">red</h-grid-item>
+          <h-grid-item style="background-color:orange;" column="2">orange</h-grid-item>
+          <h-grid-item style="background-color:green;" row="4">green</h-grid-item>
+        </h-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Responsive use:
+
+<Canvas>
+  <Story name="Responsive use">
+    {{
+        components: { HGridContainer, HGridItem },
+        template: `
+        <h-grid-container style="background-color:blue;">
+          <h-grid-item style="background-color:yellow;" column="4" :responsive="true">yellow</h-grid-item>
+          <h-grid-item style="background-color:red;" column="6" :responsive="true">red</h-grid-item>
+          <h-grid-item style="background-color:orange;" column="4" :responsive="false">orange</h-grid-item>
+          <h-grid-item style="background-color:green;" column="6" :responsive="false">green</h-grid-item>
+        </h-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### With padding:
+
+<Canvas>
+  <Story name="Padding">
+    {{
+        components: { HGridContainer, HGridItem },
+        template: `
+        <h-grid-container style="background-color:blue;" padding>
+          <h-grid-item style="background-color:yellow;" column="4">yellow</h-grid-item>
+        </h-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Dense use:
+The order of grid has a priority to fill all blank spaceship
+
+<Canvas>
+  <Story name="Dense">
+    {{
+        components: { HGridContainer, HGridItem },
+        template: `
+        <h-grid-container style="background-color:blue;" dense>
+          <h-grid-item style="background-color:yellow;" column="4">yellow</h-grid-item>
+          <h-grid-item style="background-color:red;" column="6">red</h-grid-item>
+          <h-grid-item style="background-color:red;" column="6">red</h-grid-item>
+          <h-grid-item style="background-color:green;" column="2">green</h-grid-item>
+        </h-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HGridContainer} />
