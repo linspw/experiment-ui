@@ -1,9 +1,8 @@
-import * as Components from '@components';
-import { CoreUIPlugin } from '@plugins/core-ui-plugin';
+import { createApp } from 'vue';
+import App from './App.vue';
+import { HyONEPlugin } from '../dist/hyone-ui.umd';
+import '../dist/hyone-ui.css';
 
-export {
-  Components,
-  CoreUIPlugin,
-};
-
-export default CoreUIPlugin;
+createApp(App)
+  .use(HyONEPlugin)
+  .mount('#app');

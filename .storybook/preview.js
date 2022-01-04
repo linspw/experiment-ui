@@ -1,5 +1,3 @@
-import '!style-loader!css-loader!sass-loader!../src/styles/_index.scss';
-
 const tokenContext = require.context(
   '!!raw-loader!../src',
   true,

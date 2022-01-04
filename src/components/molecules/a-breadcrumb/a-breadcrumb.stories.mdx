@@ -1,0 +1,43 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import ABreadcrumb from './a-breadcrumb.vue';
+
+<Meta title="Design System/Molecules/ABreadcrumb" component={ABreadcrumb} />
+
+## ABreadcrumb
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { ABreadcrumb },
+        template: `
+          <div>
+            <a-breadcrumb :items="[{ text: 'Default use', url: '/' }]" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Items use:
+
+<Canvas>
+  <Story name="Items use">
+    {{
+        components: { ABreadcrumb },
+        template: `
+          <div>
+            <a-breadcrumb :items="[{ text: 'Home', url: '/' }]" />
+            <p />
+            <a-breadcrumb :items="[{ text: 'Home', url: '/' }, { text: 'Subpage', url: '/#' }]" />
+            <p />
+            <a-breadcrumb :items="[{ text: 'Home', url: '/' }, { text: 'Subpage', url: '/#' }, { text: 'Subpage2', url: '/#' }]" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ABreadcrumb} />

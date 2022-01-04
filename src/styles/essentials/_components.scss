@@ -1,14 +1,12 @@
-// Core UI Componentes
+// Aurora Componentes
 
 // Atoms
-@import '@components/atoms/avatar/avatar.scss';
-@import '@components/atoms/button/button.scss';
-@import '@components/atoms/card/card.scss';
-@import '@components/atoms/icon/icon.scss';
-@import '@components/atoms/input/input.scss';
-@import '@components/atoms/grid/grid-container.scss';
-@import '@components/atoms/grid/grid-item.scss';
-@import '@components/atoms/text/text.scss';
+@import '@/components/atoms/a-avatar/a-avatar.scss';
+@import '@/components/atoms/a-button/a-button.scss';
+@import '@/components/atoms/a-card/a-card.scss';
+@import '@/components/atoms/a-input/a-input.scss';
+@import '@/components/atoms/a-grid/a-grid-container.scss';
+@import '@/components/atoms/a-grid/a-grid-item.scss';
 
 // Molecules
-@import '@components/molecules/input-field/input-field.scss';
+@import '@/components/molecules/a-input-field/a-input-field.scss';
