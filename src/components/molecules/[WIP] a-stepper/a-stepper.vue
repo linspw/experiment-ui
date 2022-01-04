@@ -1,15 +1,15 @@
 <template>
   <div>
-    <ABadge :value="stepCount" />
+    <HBadge :value="stepCount" />
   </div>
 </template>
 
 <script>
-import { ABadge } from '@/components/atoms/a-badge';
+import { HBadge } from '@components/atoms/badge';
 
 export default {
   components: {
-    ABadge,
+    HBadge,
   },
 };
 </script>
