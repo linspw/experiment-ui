@@ -6,7 +6,6 @@ export * from './grid';
 export * from './icon';
 export * from './image';
 export * from './input';
-export * from './logo';
 export * from './select';
 export * from './slider';
 export * from './tooltip';

@@ -1,3 +1,3 @@
-import HBreadcrumb from 'breadcrumb.vue';
+import HBreadcrumb from './breadcrumb.vue';
 
 export { HBreadcrumb };
