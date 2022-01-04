@@ -1,0 +1,85 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ABadge from './a-badge.vue';
+
+<Meta title="Design System/Atoms/ABadge" component={ABadge} />
+
+## ABadge
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { ABadge },
+        template: '<a-badge value="JC" />',
+    }}
+  </Story>
+</Canvas>
+
+### Number use:
+
+<Canvas>
+  <Story name="Number use">
+    {{
+        components: { ABadge },
+        template: '<a-badge :value="1" />',
+    }}
+  </Story>
+</Canvas>
+
+### Icon use:
+
+<Canvas>
+  <Story name="Icon use">
+    {{
+        components: { ABadge },
+        template: '<a-badge :value="123" icon="fas fa-plus"/>',
+    }}
+  </Story>
+</Canvas>
+
+### Size use:
+
+<Canvas>
+  <Story name="Size use">
+    {{
+        components: { ABadge },
+        template: `<div>
+          <a-badge value="JC" size="medium" />
+          <a-badge value="JC" size="large" />
+          <a-badge value="JC" size="extra-large" />
+          <a-badge value="JC" size="jumbo" />
+          <a-badge value="JC" size="extra-jumbo" />
+          <a-badge value="JC" size="giant" />
+          <a-badge value="JC" size="extra-giant" />
+          <a-badge value="JC" size="colossal" />
+          <a-badge value="JC" size="extra-colossal" />
+          <a-badge value="JC" size="mega" />
+          <a-badge value="JC" size="extra-mega" />
+          <a-badge value="JC" size="immense" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Variants use:
+
+<Canvas>
+  <Story name="Variants use">
+    {{
+        components: { ABadge },
+        template: `<div>
+          <a-badge value="JC" variant="default" />
+          <a-badge value="JC" variant="success" />
+          <a-badge value="JC" variant="info" />
+          <a-badge value="JC" variant="danger" />
+          <a-badge value="JC" variant="warn" />
+          <a-badge value="JC" variant="primary" />
+          <a-badge value="JC" variant="secondary" />
+          <a-badge value="JC" variant="tertiary" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={ABadge} />

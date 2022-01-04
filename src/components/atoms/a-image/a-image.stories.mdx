@@ -1,0 +1,34 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import AImage from './a-image.vue';
+
+<Meta title="Design System/Atoms/AImage" component={AImage} />
+
+## AImage
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { AImage },
+        template: '<a-image src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />',
+    }}
+  </Story>
+</Canvas>
+
+### Tag use:
+
+<Canvas>
+  <Story name="Tag use">
+    {{
+        components: { AImage },
+        template: `<div>
+          <a-image tag="button" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+
+<ArgsTable of={AImage} />

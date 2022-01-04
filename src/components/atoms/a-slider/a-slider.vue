@@ -1,0 +1,74 @@
+<template>
+  <input
+    :max="max"
+    :min="min"
+    :step="step"
+    :style="style"
+    :value="value"
+    class="a-slider"
+    type="range"
+    v-bind="$attrs"
+    @input="handleSlider"
+  >
+</template>
+
+<script>
+export default {
+  props: {
+    value: {
+      type: [String, Number],
+      required: true,
+    },
+    max: {
+      type: Number,
+      required: true,
+    },
+    min: {
+      type: Number,
+      required: true,
+    },
+    step: {
+      type: [String, Number],
+      default: 1,
+    },
+  },
+  computed: {
+    style() {
+      return {
+        background: `linear-gradient(to right, var(--color-theme-secondary) 0%, var(--color-theme-secondary) ${this.value}%, #fff ${this.value}%, #fff 100%)`,
+      };
+    },
+  },
+  methods: {
+    handleSlider(event) {
+      this.$emit('change', parseInt(event.target.value, 10));
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+input[type=range].a-slider {
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  // background-color: blue;
+  border-radius: 5px;
+  border-width: var(--size-nano);
+  border-style: solid;
+  border-color: var(--colors-scale-grey-medium);
+  height: 8px;
+  outline: none;
+  transition: opacity .2s;
+  width: 100%;
+}
+
+input[type=range].a-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--size-medium);
+  width: var(--size-medium);
+  border-radius: 50%;
+  background: var(--color-theme-secondary);
+  cursor: pointer;
+}
+</style>

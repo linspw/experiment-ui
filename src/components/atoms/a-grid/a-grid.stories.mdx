@@ -1,0 +1,82 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs/blocks';
+import AGridContainer from './a-grid-container.vue';
+import AGridItem from './a-grid-item.vue';
+
+<Meta title="Design System/Atoms/AGrid" />
+
+## AGrid
+The layout is divided in two components, AGridContainer and AGridItem.
+AGridContainer is responsible for wrapper the items wich you want to organize in grid layout.
+AGridItem is where you control the item wrapper in layout.
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { AGridContainer, AGridItem },
+        template: `
+        <a-grid-container style="background-color:blue;">
+          <a-grid-item style="background-color:yellow;" column="4">yellow</a-grid-item>
+          <a-grid-item style="background-color:red;" column="6">red</a-grid-item>
+          <a-grid-item style="background-color:orange;" column="2">orange</a-grid-item>
+          <a-grid-item style="background-color:green;" row="4">green</a-grid-item>
+        </a-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Responsive use:
+
+<Canvas>
+  <Story name="Responsive use">
+    {{
+        components: { AGridContainer, AGridItem },
+        template: `
+        <a-grid-container style="background-color:blue;">
+          <a-grid-item style="background-color:yellow;" column="4" :responsive="true">yellow</a-grid-item>
+          <a-grid-item style="background-color:red;" column="6" :responsive="true">red</a-grid-item>
+          <a-grid-item style="background-color:orange;" column="4" :responsive="false">orange</a-grid-item>
+          <a-grid-item style="background-color:green;" column="6" :responsive="false">green</a-grid-item>
+        </a-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### With padding:
+
+<Canvas>
+  <Story name="Padding">
+    {{
+        components: { AGridContainer, AGridItem },
+        template: `
+        <a-grid-container style="background-color:blue;" padding>
+          <a-grid-item style="background-color:yellow;" column="4">yellow</a-grid-item>
+        </a-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Dense use:
+The order of grid has a priority to fill all blank spaceship
+
+<Canvas>
+  <Story name="Dense">
+    {{
+        components: { AGridContainer, AGridItem },
+        template: `
+        <a-grid-container style="background-color:blue;" dense>
+          <a-grid-item style="background-color:yellow;" column="4">yellow</a-grid-item>
+          <a-grid-item style="background-color:red;" column="6">red</a-grid-item>
+          <a-grid-item style="background-color:red;" column="6">red</a-grid-item>
+          <a-grid-item style="background-color:green;" column="2">green</a-grid-item>
+        </a-grid-container>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AGridContainer} />

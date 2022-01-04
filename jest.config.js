@@ -7,15 +7,10 @@ module.exports = {
   },
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '^.+\\.vue$': '@vue/vue3-jest',
+    '^.+\\.vue$': 'vue-jest',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
-    '^@styles/(.*)$': '<rootDir>/src/styles/$1',
-    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-    '^@plugins/(.*)$': '<rootDir>/src/plugins/$1',
-    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
   },
   setupFilesAfterEnv: [
     '<rootDir>/src/config/tests/setup.js',
@@ -28,5 +23,5 @@ module.exports = {
     'json',
     'vue',
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom-fifteen',
 };
