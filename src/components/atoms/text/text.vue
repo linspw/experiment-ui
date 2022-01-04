@@ -1,0 +1,119 @@
+<template>
+  <component
+    :is="tag"
+    :class="{
+      ['h-text']: true,
+      [`h-text--size-${size}`]: size != 'inherit',
+      [`h-text--color-${color}`]: color != 'inherit',
+      [`h-text--align-${align}`]: align != 'inherit',
+      [`h-text--weight-${weight}`]: weight != 'inherit',
+      [`h-text--behavior-italic`]: italic,
+      [`h-text--behavior-link`]: link,
+    }"
+  >
+    <slot />
+  </component>
+</template>
+
+<script>
+import { shouldBeOneOf } from 'vue-prop-validation-helper';
+
+export default {
+  name: 'HText',
+  props: {
+    size: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'nano',
+        'micro',
+        'extra-small',
+        'small',
+        'medium',
+        'large',
+        'extra-large',
+        'jumbo',
+        'extra-jumbo',
+        'giant',
+        'extra-giant',
+        'colossal',
+        'extra-colossal',
+        'mega',
+        'extra-mega',
+        'immense',
+      ]),
+    },
+    color: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'primary',
+        'secondary',
+        'tertiary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
+      ]),
+    },
+    tag: {
+      type: String,
+      default: 'p',
+      validator: shouldBeOneOf([
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'p',
+        'span',
+        'div',
+        'a',
+        'strong',
+        'caption'
+      ]),
+    },
+    align: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'left',
+        'right',
+        'center',
+        'justify',
+      ]),
+    },
+    weight: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'black',
+        'extra-bold',
+        'bold',
+        'semi-bold',
+        'medium',
+        'regular',
+        'light',
+        'extra-light',
+        'thin',
+      ]),
+    },
+    italic: {
+      type: Boolean,
+      default: false,
+    },
+    link: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>

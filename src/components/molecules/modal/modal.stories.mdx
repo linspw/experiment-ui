@@ -1,0 +1,27 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import { HButton } from "@components/atoms/button";
+import HModal from './modal.vue';
+
+<Meta title="Design System/Molecules/Modal" component={HModal} />
+
+## Modal
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+      components: { HModal, HButton },
+      data() {
+        return { isOpen: false };
+      },
+      template: `<div>
+        <h-button @click="isOpen = !isOpen">Activing</h-button>
+        <h-modal :is-open="isOpen" @closing="isOpen = false">HModal</h-modal>
+      </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HModal} />

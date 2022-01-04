@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ACard render correctly with default props 1`] = `"<div class=\\"a-card a-card--variant-default a-card--elevation-medium\\">My first test</div>"`;
