@@ -1,0 +1,20 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HDivider from './divider.vue';
+
+<Meta title="Design System/Atoms/Divider" component={HDivider} />
+
+## Divider
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HDivider },
+        template: '<h-divider />',
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HDivider} />

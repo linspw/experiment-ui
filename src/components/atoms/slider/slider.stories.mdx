@@ -1,0 +1,35 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HSlider from './slider.vue';
+
+<Meta title="Design System/Atoms/Slider" component={HSlider} />
+
+## Slider
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+      components: { HSlider },
+      data() {
+        return {
+          value: 10,
+        };
+      },
+      methods: {
+        handleSlider(value) {
+          this.value = value;
+        },
+      },
+      template: `
+      <div>
+        {{ value }}
+        <h-slider :value="value" :min="0" :max="100" :step="1" @change="handleSlider" />
+      </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HSlider} />
