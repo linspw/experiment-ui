@@ -32,7 +32,7 @@ createApp
 
 ```html
 <template>
-  <AButton>Foi</AButton>
+  <h-button>My Button</h-button>
 </template>
 ```
 

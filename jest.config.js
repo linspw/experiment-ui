@@ -15,6 +15,7 @@ module.exports = {
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@plugins/(.*)$': '<rootDir>/src/plugins/$1',
+    '^@assets/(.*)$': '<rootDir>/src/assets/$1',
   },
   setupFilesAfterEnv: [
     '<rootDir>/src/config/tests/setup.js',

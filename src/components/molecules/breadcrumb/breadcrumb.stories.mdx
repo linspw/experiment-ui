@@ -1,0 +1,43 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HBreadcrumb from './breadcrumb.vue';
+
+<Meta title="Design System/Molecules/Breadcrumb" component={HBreadcrumb} />
+
+## Breadcrumb
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HBreadcrumb },
+        template: `
+          <div>
+            <h-breadcrumb :items="[{ text: 'Default use', url: '/' }]" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Items use:
+
+<Canvas>
+  <Story name="Items use">
+    {{
+        components: { HBreadcrumb },
+        template: `
+          <div>
+            <h-breadcrumb :items="[{ text: 'Home', url: '/' }]" />
+            <p />
+            <h-breadcrumb :items="[{ text: 'Home', url: '/' }, { text: 'Subpage', url: '/#' }]" />
+            <p />
+            <h-breadcrumb :items="[{ text: 'Home', url: '/' }, { text: 'Subpage', url: '/#' }, { text: 'Subpage2', url: '/#' }]" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HBreadcrumb} />

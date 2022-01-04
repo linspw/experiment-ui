@@ -1,0 +1,110 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HAvatar from './avatar.vue';
+
+<Meta title="Design System/Atoms/Avatar" component={HAvatar} />
+
+## Avatar
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HAvatar },
+        template: '<h-avatar />',
+    }}
+  </Story>
+</Canvas>
+
+### Caption use:
+
+<Canvas>
+  <Story name="Caption">
+    {{
+        components: { HAvatar },
+        template: '<h-avatar caption="Male" />',
+    }}
+  </Story>
+</Canvas>
+
+
+### Gender variation:
+
+<Canvas>
+  <Story name="Gender variation">
+    {{
+        components: { HAvatar },
+        template: `<div>
+          <h-avatar gender="male" />
+          <h-avatar gender="female" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Src use:
+
+<Canvas>
+  <Story name="Src use">
+    {{
+        components: { HAvatar },
+        template: `<div>
+          <h-avatar src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Tag use:
+
+<Canvas>
+  <Story name="Tag use">
+    {{
+        components: { HAvatar },
+        template: `<div>
+          <h-avatar tag="button" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Behavior:
+
+<Canvas>
+  <Story name="Behavior">
+    {{
+        components: { HAvatar },
+        template: `<div>
+          <h-avatar tag="button" behavior="rounded" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+          <h-avatar tag="button" behavior="square" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-avatar-107.jpg" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Size variation:
+
+<Canvas>
+  <Story name="Size variation">
+    {{
+        components: { HAvatar },
+        template: `<div>
+          <h-avatar size="medium" />
+          <h-avatar size="large" />
+          <h-avatar size="extra-large" />
+          <h-avatar size="jumbo" />
+          <h-avatar size="extra-jumbo" />
+          <h-avatar size="giant" />
+          <h-avatar size="extra-giant" />
+          <h-avatar size="colossal" />
+          <h-avatar size="extra-colossal" />
+          <h-avatar size="mega" />
+          <h-avatar size="extra-mega" />
+          <h-avatar size="immense" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HAvatar} />

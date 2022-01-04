@@ -1,13 +1,13 @@
-import { ABreadcrumb } from './a-breadcrumb';
-import { AInputField } from './a-input-field';
-import { AToast } from './a-toast';
-import { AModal } from './a-modal';
-import { ADropdown } from './a-dropdown';
+import { HBreadcrumb } from './breadcrumb';
+import { HInputField } from './input-field';
+import { HToast } from './toast';
+import { HModal } from './modal';
+import { HDropdown } from './dropdown';
 
 export {
-  ABreadcrumb,
-  ADropdown,
-  AInputField,
-  AToast,
-  AModal,
+  HBreadcrumb,
+  HDropdown,
+  HInputField,
+  HToast,
+  HModal,
 };

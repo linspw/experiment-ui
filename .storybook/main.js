@@ -7,13 +7,13 @@ const alias = {
   '@styles': path.resolve(__dirname, '..', 'src', 'styles'),
   '@utils': path.resolve(__dirname, '..', 'src', 'utils'),
   '@plugins': path.resolve(__dirname, '..', 'src', 'plugins'),
-  '@utils': path.resolve(__dirname, '..', 'src', 'utils'),
+  '@assets': path.resolve(__dirname, '..', 'src', 'assets'),
 };
 
 module.exports = {
   stories: [
+    "../src/docs/*.stories.mdx",
     "../src/**/*.stories.mdx", 
-    // "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials", "storybook-design-token"],
   framework: "@storybook/vue3",
@@ -34,10 +34,6 @@ module.exports = {
       exclude: /node_modules/,
       use: [{
         loader: 'babel-loader',
-        options: {
-          sourceType: 'unambiguous',
-          babelrc: false,
-        },
       }],
     });
 

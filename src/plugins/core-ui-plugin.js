@@ -1,30 +1,26 @@
 import {
-  AAvatar,
-  AButton,
-  ACard,
-  ADisplay,
-  ADivider,
-  AGridContainer,
-  AGridItem,
-  AIcon,
-  AImage,
-  AInput,
-  ALink,
-  ALogo,
-  ASelect,
-  ASlider,
-  AText,
-  ATitle,
-  ATooltip,
-  ABadge,
+  HAvatar,
+  HButton,
+  HCard,
+  HDivider,
+  HGridContainer,
+  HGridItem,
+  HIcon,
+  HImage,
+  HInput,
+  HSelect,
+  HSlider,
+  HTooltip,
+  HBadge,
+  HText,
 } from '@components/atoms';
 
 import {
-  ABreadcrumb,
-  ADropdown,
-  AInputField,
-  AModal,
-  AToast,
+  HBreadcrumb,
+  HDropdown,
+  HInputField,
+  HModal,
+  HToast,
 } from '@components/molecules';
 
 import '@styles/_index.scss';
@@ -35,31 +31,27 @@ const CoreUIPlugin = {
     this.installMolecules(Vue);
   },
   installAtoms(Vue) {
-    Vue.component('h-avatar', AAvatar);
-    Vue.component('h-badge', ABadge);
-    Vue.component('h-button', AButton);
-    Vue.component('h-card', ACard);
-    Vue.component('h-display', ADisplay);
-    Vue.component('h-divider', ADivider);
-    Vue.component('h-grid-container', AGridContainer);
-    Vue.component('h-grid-item', AGridItem);
-    Vue.component('h-icon', AIcon);
-    Vue.component('h-input', AInput);
-    Vue.component('h-link', ALink);
-    Vue.component('h-logo', ALogo);
-    Vue.component('h-select', ASelect);
-    Vue.component('h-text', AText);
-    Vue.component('h-image', AImage);
-    Vue.component('h-slider', ASlider);
-    Vue.component('h-title', ATitle);
-    Vue.component('h-tooltip', ATooltip);
+    Vue.component('h-avatar', HAvatar);
+    Vue.component('h-badge', HBadge);
+    Vue.component('h-button', HButton);
+    Vue.component('h-card', HCard);
+    Vue.component('h-divider', HDivider);
+    Vue.component('h-grid-container', HGridContainer);
+    Vue.component('h-grid-item', HGridItem);
+    Vue.component('h-icon', HIcon);
+    Vue.component('h-input', HInput);
+    Vue.component('h-select', HSelect);
+    Vue.component('h-image', HImage);
+    Vue.component('h-slider', HSlider);
+    Vue.component('h-tooltip', HTooltip);
+    Vue.component('h-text', HText);
   },
   installMolecules(Vue) {
-    Vue.component('h-breadcrumb', ABreadcrumb);
-    Vue.component('h-toast', AToast);
-    Vue.component('h-input-field', AInputField);
-    Vue.component('h-modal', AModal);
-    Vue.component('h-dropdown', ADropdown);
+    Vue.component('h-breadcrumb', HBreadcrumb);
+    Vue.component('h-toast', HToast);
+    Vue.component('h-input-field', HInputField);
+    Vue.component('h-modal', HModal);
+    Vue.component('h-dropdown', HDropdown);
   },
 };
 

@@ -7,6 +7,7 @@ const alias = {
   "@styles": path.resolve(__dirname, "src", "styles"),
   "@utils": path.resolve(__dirname, "src", "utils"),
   "@plugins": path.resolve(__dirname, "src", "plugins"),
+  "@assets": path.resolve(__dirname, "src", "assets"),
 };
 
 module.exports = (_env, _argv) => {
