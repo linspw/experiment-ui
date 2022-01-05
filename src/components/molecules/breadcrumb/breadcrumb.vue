@@ -37,26 +37,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.h-breadcrumb {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  &__item {
-    align-items: center;
-    display: flex;
-    white-space: nowrap;
-
-    &:not(:first-child) {
-      margin-left: var(--size-scalable-medium);
-    }
-  }
-}
-
-.h-breadcrumb__item-divider {
-  margin-left: var(--size-scalable-medium);
-}
-</style>

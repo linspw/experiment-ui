@@ -25,6 +25,7 @@ import { shouldBeOneOf } from 'vue-prop-validation-helper';
 import { getOurImageUrl } from '@/utils';
 
 export default {
+  name: 'HAvatar',
   props: {
     gender: {
       type: String,

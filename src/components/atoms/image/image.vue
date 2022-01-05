@@ -19,6 +19,7 @@
 <script>
 
 export default {
+  name: 'HImage',
   props: {
     tag: {
       type: String,

@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'HGridItem',
   props: {
     behavior: {
       type: String,

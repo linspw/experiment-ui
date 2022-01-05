@@ -39,6 +39,7 @@
 import { shouldBeOneOf } from 'vue-prop-validation-helper';
 
 export default {
+  name: 'HSelect',
   inheritAttrs: false,
   props: {
     behavior: {

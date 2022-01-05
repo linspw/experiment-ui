@@ -32,9 +32,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.?js$/,
       exclude: /node_modules/,
-      use: [{
-        loader: 'babel-loader',
-      }],
+      use: ['babel-loader'],
     });
 
     config.module.rules.push({
