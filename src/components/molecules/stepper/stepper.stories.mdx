@@ -1,0 +1,44 @@
+import { Meta, ArgsTable, Story, Canvas } from "@storybook/addon-docs";
+import { action } from "@storybook/addon-actions";
+import HStepper from "./stepper.vue";
+
+<Meta title="Design System/Molecules/Stepper" component={HStepper} />
+
+## Stepper
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+      components: { HStepper },
+      template: `
+          <div>
+            <h-stepper :currentActive="2" :items="['Default use', 'Example', 'other']" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### With listenner and clickable:
+
+<Canvas>
+  <Story name="With listenner and clickable">
+    {{
+      components: { HStepper },
+      methods: {
+        handleClick(index) {
+          console.log(index);
+        },
+      },
+      template: `
+          <div>
+            <h-stepper :currentActive="2" :items="['Default use', 'Example', 'other']" @click="handleClick" :isClickable="true" />
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HStepper} />

@@ -21,6 +21,7 @@ import {
   HInputField,
   HModal,
   HToast,
+  HStepper,
 } from '@components/molecules';
 
 import '@styles/_index.scss';
@@ -52,6 +53,7 @@ const CoreUIPlugin = {
     Vue.component('h-input-field', HInputField);
     Vue.component('h-modal', HModal);
     Vue.component('h-dropdown', HDropdown);
+    Vue.component('h-stepper', HStepper);
   },
 };
 
