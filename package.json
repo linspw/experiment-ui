@@ -15,6 +15,9 @@
     "semantic-release": "semantic-release"
   },
   "main": "./dist/lib/main.js",
+  "files": [
+    "./dist/**"
+  ],
   "dependencies": {
     "url-join": "^4.0.1",
     "vue": "^3.2.26",
