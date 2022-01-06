@@ -16,7 +16,7 @@
   },
   "main": "./dist/lib/main.js",
   "files": [
-    "./dist/**"
+    "dist/lib*"
   ],
   "dependencies": {
     "url-join": "^4.0.1",
