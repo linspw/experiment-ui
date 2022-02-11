@@ -1,9 +1,4 @@
-import * as Components from '@components';
-import { CoreUIPlugin } from '@plugins/core-ui-plugin';
+import { Components as CoreUIComponents } from "@components";
+import { CoreUIPlugin as CoreUI } from "@plugins/core-ui-plugin";
 
-export {
-  Components,
-  CoreUIPlugin,
-};
-
-export default CoreUIPlugin;
+export { CoreUIComponents, CoreUI };
