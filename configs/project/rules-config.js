@@ -5,6 +5,15 @@ if (process.env.npm_lifecycle_event.search('storybook') < 0) {
     test: /\.vue$/,
     loader: 'vue-loader',
   });
+  rules.push({
+    test: /\.(png|jp(e*)g|svg|gif)$/,
+    use: ['file-loader'],
+  });
+} else {
+  rules.push({
+    test: /\.svg$/,
+    use: ["@svgr/webpack", "url-loader"],
+  });
 }
 
 rules.push({
@@ -20,11 +29,6 @@ rules.push({
     'css-loader',
     'sass-loader',
   ],
-});
-
-rules.push({
-  test: /\.(png|jp(e*)g|svg|gif)$/,
-  use: ['file-loader'],
 });
 
 exports.rules = rules;

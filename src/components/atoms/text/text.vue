@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from 'vue-prop-validation-helper';
+import { shouldBeOneOf } from '@utils/validations';
 
 export default {
   name: 'HText',

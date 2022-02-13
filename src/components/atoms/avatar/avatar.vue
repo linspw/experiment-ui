@@ -21,8 +21,9 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from 'vue-prop-validation-helper';
-import { getOurImageUrl } from '@/utils';
+import { shouldBeOneOf } from '@utils/validations';
+import MaleSVG from '@assets/images/avatar_male.svg';
+import FemaleSVG from '@assets/images/avatar_female.svg';
 
 export default {
   name: 'HAvatar',
@@ -44,7 +45,6 @@ export default {
       default: 'svg',
       validator: shouldBeOneOf([
         'svg',
-        'png',
       ]),
     },
     caption: {
@@ -84,7 +84,12 @@ export default {
   },
   computed: {
     defaultImage() {
-      return getOurImageUrl(`/undraw/avatar_${this.gender}.${this.type}`);
+      const genderDictionary = {
+        male: MaleSVG,
+        female: FemaleSVG,
+      }
+      console.log(genderDictionary);
+      return genderDictionary[this.gender];
     },
     srcParsed() {
       return this.src || this.defaultImage;

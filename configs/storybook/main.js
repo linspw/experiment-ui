@@ -1,5 +1,5 @@
-const { rules } = require("../webpack/rules-config");
-const { alias } = require("../webpack/alias-config");
+const { rules } = require("../project/rules-config");
+const { alias } = require("../project/alias-config");
 
 module.exports = {
   stories: [
@@ -17,6 +17,11 @@ module.exports = {
     builder: "webpack5",
   },
   webpackFinal: async (config) => {
+    const fileLoaderRule = config.module.rules.find(
+      (rule) => !Array.isArray(rule.test) && rule.test.test(".svg"),
+    );
+    fileLoaderRule.exclude = /\.svg$/;
+
     config.module.rules = [...config.module.rules, ...rules];
 
     config.resolve.alias = { ...config.resolve.alias, ...alias };

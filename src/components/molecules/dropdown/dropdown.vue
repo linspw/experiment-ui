@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { shouldBeOneOf } from 'vue-prop-validation-helper';
+import { shouldBeOneOf } from '@utils/validations';
 import { HButton } from '@components/atoms/button';
 
 export default {

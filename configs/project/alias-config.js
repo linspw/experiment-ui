@@ -6,6 +6,7 @@ exports.alias = {
   '@': path.resolve(baseUrl, 'src'),
   '@root': path.resolve(baseUrl),
   '@api': path.resolve(baseUrl, 'src/api'),
+  '@assets': path.resolve(baseUrl, 'src/assets'),
   '@styles': path.resolve(baseUrl, 'src/styles'),
   '@components': path.resolve(baseUrl, 'src/components'),
   '@layouts': path.resolve(baseUrl, 'src/layouts'),
