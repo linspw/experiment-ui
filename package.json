@@ -7,7 +7,7 @@
   "license": "MIT",
   "email": "linspw@live.com",
   "scripts": {
-    "build": "rollup -c",
+    "build:lib": "rollup -c",
     "test:unit": "jest",
     "dev:storybook": "start-storybook -p 6006 -c configs/.storybook",
     "build:storybook": "build-storybook -o dist/storybook",
