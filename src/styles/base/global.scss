@@ -1,0 +1,12 @@
+:focus {
+  outline: none;
+  box-shadow: #ffffffcc 0px 0px 0px var(--size-base-micro), #4b4a64 0px 0px 0px var(--size-base-extra-small) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+}

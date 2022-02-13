@@ -23,7 +23,7 @@
   display: inline-flex;
   font-weight: var(--h-button-font-weight);
   justify-content: center;
-  padding: var(--size-small) var(--size-large);
+  padding: var(--size-base-small) var(--size-base-large);
   position: relative;
   text-decoration: var(--h-button-text-decoration);
   transition: background-color 250ms, opacity 250ms;
@@ -50,11 +50,11 @@
 
   &--size {
     &-small {
-      --h-button-min-height: var(--size-extra-large);
+      --h-button-min-height: var(--size-base-extra-large);
       --h-button__text-font-size: 14px;
     }
     &-medium {
-      --h-button-min-height: var(--size-jumbo);
+      --h-button-min-height: var(--size-base-jumbo);
       --h-button__text-font-size: 18px;
     }
   }
@@ -70,7 +70,7 @@
     }
     &-tertiary {
       --h-button-background-color: var(--colors-original-white);
-      --h-button-border: var(--size-micro) solid var(--color-theme-secondary);
+      --h-button-border: var(--size-base-micro) solid var(--color-theme-secondary);
       --h-button-color: var(--color-theme-secondary);
     }
     &-quaternary {
@@ -121,10 +121,10 @@
     height: 100%;
     width: 16px;
     &--position-left {
-      margin-right: var(--size-small);
+      margin-right: var(--size-base-small);
     }
     &--position-right {
-      margin-left: var(--size-small);
+      margin-left: var(--size-base-small);
     }
   }
 

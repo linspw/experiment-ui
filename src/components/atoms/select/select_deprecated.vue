@@ -124,7 +124,7 @@ export default {
 <style scoped lang="scss">
 .h-select {
   border-radius: var(--border-radius-normal);
-  border: var(--size-micro) solid var(--colors-scale-grey-medium);
+  border: var(--size-base-micro) solid var(--colors-scale-grey-medium);
   color: var(--colors-scale-grey-medium);
   display: inline-flex;
   font-family: 'Red Hat Text', sans-serif;
@@ -135,13 +135,13 @@ export default {
   &--size {
     &-small {
       & > .h-select__field {
-        min-height: var(--size-extra-large);
+        min-height: var(--size-base-extra-large);
         font-size: var(--size-scalable-micro);
       }
     }
     &-medium {
       & > .h-select__field {
-        min-height: var(--size-jumbo);
+        min-height: var(--size-base-jumbo);
         font-size: var(--size-scalable-extra-small);
       }
     }
@@ -167,8 +167,8 @@ export default {
   font-weight: 500;
   height: 100%;
   left: 0;
-  padding-left: var(--size-medium);
-  padding-right: var(--size-medium);
+  padding-left: var(--size-base-medium);
+  padding-right: var(--size-base-medium);
   position: relative;
   top: 0;
   transition: background-color 250ms, color 250ms;
@@ -179,7 +179,7 @@ export default {
 .h-select__icon {
   color: var(--colors-scale-grey-dark);
   position: absolute;
-  right: var(--size-extra-small);
+  right: var(--size-base-extra-small);
   display: flex;
   align-items: center;
   height: 100%;
@@ -188,7 +188,7 @@ export default {
 .h-select__list-items {
   background-color: var(--colors-original-white);
   border-radius: var(--border-radius-normal);
-  border: var(--size-micro) solid var(--color-theme-primary);
+  border: var(--size-base-micro) solid var(--color-theme-primary);
   color: var(--color-theme-secondary);
   overflow: hidden;
   position: absolute;
@@ -204,14 +204,14 @@ export default {
 
 .h-select__item {
   color: var(--color-theme-secondary);
-  padding: var(--size-small) var(--size-medium);
+  padding: var(--size-base-small) var(--size-base-medium);
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 500;
   cursor: pointer;
   user-select: none;
 
   &:not(:last-child) {
-    border-bottom: var(--size-micro) solid var(--colors-scale-grey-medium);
+    border-bottom: var(--size-base-micro) solid var(--colors-scale-grey-medium);
   }
 
   &:hover {

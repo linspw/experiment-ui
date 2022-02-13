@@ -1,6 +1,6 @@
 .h-grid-container {
-  --grid-column-gap: var(--size-large);
-  --grid-row-gap: var(--size-large);
+  --grid-column-gap: var(--size-base-large);
+  --grid-row-gap: var(--size-base-large);
   --grid-padding: 0;
   --grid-auto-flow: row;
 
@@ -14,7 +14,7 @@
 }
 
 .h-grid-container--padding {
-  --grid-padding: var(--size-large);
+  --grid-padding: var(--size-base-large);
 }
 
 .h-grid-container--dense {

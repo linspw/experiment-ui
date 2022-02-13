@@ -1,10 +1,8 @@
 import { app } from "@storybook/vue3";
-import { BuserPartnersUIPlugin } from "@plugins/buser-partners-ui-plugin";
-import Maska from "maska";
-import "@assets/styles/index.scss";
+import { CoreUIPlugin } from "@plugins/core-ui-plugin";
 import { transformSource, tokenFiles } from "./helper";
 
-app.use(BuserPartnersUIPlugin).use(Maska);
+app.use(CoreUIPlugin);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

@@ -1,0 +1,145 @@
+:root {
+
+  /**
+  * @tokens Colors - Basic
+  * @presenter Color
+  */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /**
+  * @tokens Colors - Social
+  * @presenter Color
+  */
+  --color-social-media-facebook: #4267B2;
+  --color-social-media-google: #4688f1;  
+
+  /**
+  * @tokens Colors - Pink Scale
+  * @presenter Color
+  */
+  --color-pink-scale-050: #fce4ec;
+  --color-pink-scale-100: #f8bbd0;
+  --color-pink-scale-200: #f48fb1;
+  --color-pink-scale-300: #f06292;
+  --color-pink-scale-400: #ec407a;
+  --color-pink-scale-500: #e91e63;
+  --color-pink-scale-600: #d81b60;
+  --color-pink-scale-700: #c2185b;
+  --color-pink-scale-800: #ad1457;
+  --color-pink-scale-900: #880e4f;
+  --color-pink-scale-alpha-100: #ff80ab;
+  --color-pink-scale-alpha-200: #ff4081;
+  --color-pink-scale-alpha-400: #f50057;
+  --color-pink-scale-alpha-700: #c51162;
+  
+  /**
+  * @tokens Colors - Purple Scale
+  * @presenter Color
+  */
+  --color-purple-scale-050: #f3e5f5;
+  --color-purple-scale-100: #e1bee7;
+  --color-purple-scale-200: #ce93d8;
+  --color-purple-scale-300: #ba68c8;
+  --color-purple-scale-400: #ab47bc;
+  --color-purple-scale-500: #9c27b0;
+  --color-purple-scale-600: #8e24aa;
+  --color-purple-scale-700: #7b1fa2;
+  --color-purple-scale-800: #6a1b9a;
+  --color-purple-scale-900: #4a148c;
+  --color-purple-scale-alpha-100: #ea80fc;
+  --color-purple-scale-alpha-200: #e040fb;
+  --color-purple-scale-alpha-400: #d500f9;
+  --color-purple-scale-alpha-700: #aa00ff;
+
+  /**
+  * @tokens Colors - Red Scale
+  * @presenter Color
+  */
+  --color-red-scale-050: #ffebee;
+  --color-red-scale-100: #ffcdd2;
+  --color-red-scale-200: #ef9a9a;
+  --color-red-scale-300: #e57373;
+  --color-red-scale-400: #ef5350;
+  --color-red-scale-500: #f44336;
+  --color-red-scale-600: #e53935;
+  --color-red-scale-700: #d32f2f;
+  --color-red-scale-800: #c62828;
+  --color-red-scale-900: #b71c1c;
+  --color-red-scale-alpha-100: #ff8a80;
+  --color-red-scale-alpha-200: #ff5252;
+  --color-red-scale-alpha-400: #ff1744;
+  --color-red-scale-alpha-700: #d50000;
+
+  /**
+  * @tokens Colors - Blue Scale
+  * @presenter Color
+  */
+  --color-blue-scale-050: #e3f2fd;
+  --color-blue-scale-100: #bbdefb;
+  --color-blue-scale-200: #90caf9;
+  --color-blue-scale-300: #64b5f6;
+  --color-blue-scale-400: #42a5f5;
+  --color-blue-scale-500: #2196f3;
+  --color-blue-scale-600: #1e88e5;
+  --color-blue-scale-700: #1976d2;
+  --color-blue-scale-800: #1565c0;
+  --color-blue-scale-900: #0d47a1;
+  --color-blue-scale-alpha-100: #82b1ff;
+  --color-blue-scale-alpha-200: #448aff;
+  --color-blue-scale-alpha-400: #2979ff;
+  --color-blue-scale-alpha-700: #2962ff;
+
+  /**
+  * @tokens Colors - Green Scale
+  * @presenter Color
+  */
+  --color-green-scale-050: #e8f5e9;
+  --color-green-scale-100: #c8e6c9;
+  --color-green-scale-200: #a5d6a7;
+  --color-green-scale-300: #81c784;
+  --color-green-scale-400: #66bb6a;
+  --color-green-scale-500: #4caf50;
+  --color-green-scale-600: #43a047;
+  --color-green-scale-700: #388e3c;
+  --color-green-scale-800: #2e7d32;
+  --color-green-scale-900: #1b5e20;
+  --color-green-scale-alpha-100: #b9f6ca;
+  --color-green-scale-alpha-200: #69f0ae;
+  --color-green-scale-alpha-400: #00e676;
+  --color-green-scale-alpha-700: #00c853;
+
+  /**
+  * @tokens Colors - Yellow Scale
+  * @presenter Color
+  */
+  --color-yellow-scale-050: #fffde7;
+  --color-yellow-scale-100: #fff9c4;
+  --color-yellow-scale-200: #fff59d;
+  --color-yellow-scale-300: #fff176;
+  --color-yellow-scale-400: #ffee58;
+  --color-yellow-scale-500: #ffeb3b;
+  --color-yellow-scale-600: #fdd835;
+  --color-yellow-scale-700: #fbc02d;
+  --color-yellow-scale-800: #f9a825;
+  --color-yellow-scale-900: #f57f17;
+  --color-yellow-scale-alpha-100: #ffff8d;
+  --color-yellow-scale-alpha-200: #ffff00;
+  --color-yellow-scale-alpha-400: #ffea00;
+  --color-yellow-scale-alpha-700: #ffd600;
+
+  /**
+  * @tokens Colors - Grey Scale
+  * @presenter Color
+  */
+  --color-grey-scale-050: #fafafa;
+  --color-grey-scale-100: #f5f5f5;
+  --color-grey-scale-200: #eeeeee;
+  --color-grey-scale-300: #e0e0e0;
+  --color-grey-scale-400: #bdbdbd;
+  --color-grey-scale-500: #9e9e9e;
+  --color-grey-scale-600: #757575;
+  --color-grey-scale-700: #616161;
+  --color-grey-scale-800: #424242;
+  --color-grey-scale-900: #212121;
+}

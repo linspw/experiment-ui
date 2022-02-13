@@ -33,7 +33,7 @@
 .h-stepper__item-badge {
   --h-badge--background-color: var(--color-theme-tertiary);
 
-  margin-bottom: var(--size-small);
+  margin-bottom: var(--size-base-small);
   z-index: 10;
 
   &--active {

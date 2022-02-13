@@ -2,7 +2,7 @@
   --h-input-border-color: var(--color-theme-primary);
   --h-input-border-radius: var(--border-radius-normal);
   --h-input-border-style:  solid;
-  --h-input-border-width: var(--size-micro);
+  --h-input-border-width: var(--size-base-micro);
   --h-input-color: var(--color-theme-primary);
   --h-input-width: auto;
 
@@ -15,8 +15,8 @@
   --h-input__field-font-weight--placeholder: 500;
   --h-input__field-font-weight: 500;
   --h-input__field-min-height: auto;
-  --h-input__field-padding-left: var(--size-medium);
-  --h-input__field-padding-right: var(--size-medium);
+  --h-input__field-padding-left: var(--size-base-medium);
+  --h-input__field-padding-right: var(--size-base-medium);
 
   border-color: var(--h-input-border-color);
   border-radius: var(--h-input-border-radius);
@@ -29,7 +29,7 @@
   position: relative;
 
   &--icon {
-    --h-input__field-padding-left: var(--size-jumbo);
+    --h-input__field-padding-left: var(--size-base-jumbo);
   }
 
   &--behavior {
@@ -45,11 +45,11 @@
   &--size {
     &-small {
       --h-input__field-font-size: var(--size-scalable-micro);
-      --h-input__field-min-height: var(--size-extra-large);
+      --h-input__field-min-height: var(--size-base-extra-large);
     }
     &-medium {
       --h-input__field-font-size: var(--size-scalable-extra-small);
-      --h-input__field-min-height: var(--size-jumbo);
+      --h-input__field-min-height: var(--size-base-jumbo);
     }
   }
 }
@@ -59,8 +59,8 @@
   display: flex;
   height: 100%;
   justify-content: center;
-  padding-left: var(--size-medium);
-  padding-right: var(--size-medium);
+  padding-left: var(--size-base-medium);
+  padding-right: var(--size-base-medium);
   position: absolute;
   z-index: 10;
 }

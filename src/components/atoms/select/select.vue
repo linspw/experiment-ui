@@ -86,7 +86,7 @@ export default {
   --h-select--border-color: var(--color-theme-primary);
   --h-select--border-radius: var(--border-radius-normal);
   --h-select--border-style:  solid;
-  --h-select--border-width: var(--size-micro);
+  --h-select--border-width: var(--size-base-micro);
   --h-select__field--color: var(--color-theme-primary);
 
   --h-select__field--background-color: var(--colors-original-white);
@@ -105,13 +105,13 @@ export default {
   &--size {
     &-small {
       & > .h-select__field {
-        min-height: var(--size-extra-large);
+        min-height: var(--size-base-extra-large);
         font-size: var(--size-scalable-micro);
       }
     }
     &-medium {
       & > .h-select__field {
-        min-height: var(--size-jumbo);
+        min-height: var(--size-base-jumbo);
         font-size: var(--size-scalable-extra-small);
       }
     }
@@ -136,8 +136,8 @@ export default {
     font-weight: 500;
     height: 100%;
     left: 0;
-    padding-left: var(--size-medium);
-    padding-right: var(--size-medium);
+    padding-left: var(--size-base-medium);
+    padding-right: var(--size-base-medium);
     top: 0;
     transition: background-color 250ms, color 250ms;
     width: 100%;

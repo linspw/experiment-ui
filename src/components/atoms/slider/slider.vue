@@ -56,7 +56,7 @@ input[type=range].h-slider {
   -webkit-transition: opacity .2s;
   // background-color: blue;
   border-radius: 5px;
-  border-width: var(--size-nano);
+  border-width: var(--size-base-nano);
   border-style: solid;
   border-color: var(--colors-scale-grey-medium);
   height: 8px;
@@ -67,8 +67,8 @@ input[type=range].h-slider {
 
 input[type=range].h-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: var(--size-medium);
-  width: var(--size-medium);
+  height: var(--size-base-medium);
+  width: var(--size-base-medium);
   border-radius: 50%;
   background: var(--color-theme-secondary);
   cursor: pointer;

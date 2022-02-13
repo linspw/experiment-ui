@@ -146,7 +146,7 @@ export default {
 
 .a-dropdown__list-items {
   border-radius: var(--border-radius-normal);
-  border: var(--size-micro) solid var(--color-theme-primary);
+  border: var(--size-base-micro) solid var(--color-theme-primary);
   color: var(--color-theme-secondary);
   overflow: hidden;
   position: absolute;
@@ -170,7 +170,7 @@ export default {
 
 .a-dropdown__item {
   color: var(--color-theme-secondary);
-  padding: var(--size-small) var(--size-medium);
+  padding: var(--size-base-small) var(--size-base-medium);
   font-weight: 500;
   cursor: pointer;
   user-select: none;
@@ -178,7 +178,7 @@ export default {
   white-space: nowrap;
 
   &:not(:last-child) {
-    border-bottom: var(--size-micro) solid var(--colors-scale-grey-medium);
+    border-bottom: var(--size-base-micro) solid var(--colors-scale-grey-medium);
   }
 
   &:hover {
