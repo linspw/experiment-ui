@@ -43,7 +43,7 @@ describe('HAvatar', () => {
         size: 'medium',
       },
     });
-    expect(screen.getByRole('figure').classList.contains('h-avatar--size-base-medium')).toBe(true);
+    expect(screen.getByRole('figure').classList.contains('h-avatar--size-medium')).toBe(true);
   });
 
   it('render correctly with behavior', async () => {

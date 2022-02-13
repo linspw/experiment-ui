@@ -9,11 +9,11 @@
   >
     <img
       :src="srcParsed"
-      class="a-avatar__image"
+      class="h-avatar__image"
     >
     <figcaption
       v-if="caption"
-      class="a-avatar__figcaption"
+      class="h-avatar__figcaption"
     >
       {{ caption }}
     </figcaption>
