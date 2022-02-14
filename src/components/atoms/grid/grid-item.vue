@@ -40,3 +40,53 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '@/styles/utils/index';
+
+.h-grid-item {
+  position: relative;
+}
+
+.h-grid-item--responsive {
+  @for $i from 1 through 12 {
+    &.h-grid-item--column-#{$i} {
+      grid-column: span #{$i};
+  
+      @include for-medium-desktop-down{
+        @if $i >= 6 {
+          grid-column: span 12;
+        } @else {
+          grid-column: span 6;
+        }
+      }
+      @include for-large-tablet-down {
+        grid-column: span 12;
+      }
+    }
+    &.h-grid-item--row-#{$i} {
+      grid-row: span #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .h-grid-item--column-#{$i} {
+    grid-column: span #{$i};
+  }
+  .h-grid-item--row-#{$i} {
+    grid-row: span #{$i};
+  }
+}
+
+.h-grid-item--behavior-horizontal {
+  align-items: flex-start;
+  display: flex;
+}
+
+.h-grid-item--behavior-vertical {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+</style>
