@@ -12,6 +12,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@root/(.*)$': '<rootDir>/$1',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
@@ -19,7 +20,7 @@ module.exports = {
     '^@assets/(.*)$': '<rootDir>/src/assets/$1',
   },
   setupFilesAfterEnv: [
-    '<rootDir>/src/config/tests/setup.js',
+    '<rootDir>/configs/tests/setup.js',
   ],
   transformIgnorePatterns: [
     'node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)',

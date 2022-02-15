@@ -30,7 +30,7 @@ describe('HAvatar', () => {
   it('render correctly with type', async () => {
     render(HAvatar, {
       props: {
-        type: 'png',
+        type: 'svg',
       },
     });
     expect(screen.getByRole('img').hasAttribute('src')).toBe(true);
