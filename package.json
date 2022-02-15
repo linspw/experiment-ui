@@ -7,20 +7,24 @@
   "license": "MIT",
   "email": "linspw@live.com",
   "scripts": {
-    "build:lib": "rollup -c",
+    "build:lib": "vite build",
     "test:unit": "jest",
     "dev:storybook": "start-storybook -p 6006 -c configs/storybook",
     "build:storybook": "build-storybook -o dist/storybook",
     "semantic-release": "semantic-release"
   },
-  "main": "dist/lib/core-ui.js",
-  "module": "dist/lib/core-ui.mjs",
+  "main": "dist/lib/core-ui.umd.js",
+  "module": "dist/lib/core-ui.es.js",
   "files": [
     "dist/lib/*"
   ],
-  "dependencies": {
-    "vue-prop-validation-helper": "^3.0.0"
+  "exports": {
+    ".": {
+      "import": "./dist/lib/core-ui.es.js",
+      "require": "./dist/lib/core-ui.umd.js"
+    }
   },
+  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.2.26"
   },
@@ -30,9 +34,6 @@
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
-    "@rollup/plugin-alias": "^3.1.9",
-    "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-node-resolve": "^13.1.3",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
@@ -43,6 +44,7 @@
     "@svgr/webpack": "^6.1.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/vue": "^6.4.2",
+    "@vitejs/plugin-vue": "^2.2.0",
     "@vue/compiler-sfc": "^3.2.26",
     "@vue/eslint-config-airbnb": "^6.0.0",
     "@vue/test-utils": "^1.3.0",
@@ -60,16 +62,13 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.5",
     "param-case": "^3.0.4",
-    "rollup": "^2.67.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-scss": "3",
-    "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.46.0",
     "sass-loader": "^12.4.0",
     "semantic-release": "^18.0.1",
     "storybook-design-token": "^1.4.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
+    "vite": "^2.8.2",
     "vue": "^3.2.26",
     "vue-loader": "^17.0.0",
     "vue-style-loader": "^4.1.3",

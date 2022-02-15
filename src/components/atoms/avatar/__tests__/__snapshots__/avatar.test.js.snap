@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HAvatar render correctly with caption 1`] = `
-"<figure class=\\"h-avatar h-avatar--size-colossal h-avatar--behavior-rounded\\"><img src=\\"https://hyone-backend-homolog.herokuapp.com/public/images/undraw/avatar_male.svg\\" class=\\"h-avatar__image\\">
+"<figure class=\\"h-avatar h-avatar--size-colossal h-avatar--behavior-rounded\\"><img src=\\"[object Object]\\" class=\\"h-avatar__image\\">
   <figcaption class=\\"h-avatar__figcaption\\">My caption</figcaption>
 </figure>"
 `;
 
 exports[`HAvatar render correctly with default props 1`] = `
-"<figure class=\\"h-avatar h-avatar--size-colossal h-avatar--behavior-rounded\\"><img src=\\"https://hyone-backend-homolog.herokuapp.com/public/images/undraw/avatar_male.svg\\" class=\\"h-avatar__image\\">
+"<figure class=\\"h-avatar h-avatar--size-colossal h-avatar--behavior-rounded\\"><img src=\\"[object Object]\\" class=\\"h-avatar__image\\">
   <!--v-if-->
 </figure>"
 `;

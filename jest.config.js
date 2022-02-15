@@ -8,6 +8,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
     '^.+\\.vue$': '@vue/vue3-jest',
+    '^.+\\.svg$': '<rootDir>/configs/tests/svgTransform.js',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
