@@ -22,6 +22,10 @@
     ".": {
       "import": "./dist/lib/core-ui.es.js",
       "require": "./dist/lib/core-ui.umd.js"
+    },
+    "./dist/lib/style.css": {
+      "import": "./dist/lib/style.css",
+      "require": "./dist/lib/style.css"
     }
   },
   "dependencies": {},
