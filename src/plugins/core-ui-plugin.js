@@ -13,6 +13,7 @@ import {
   HTooltip,
   HBadge,
   HText,
+  HSuspense,
 } from '@components/atoms';
 
 import {
@@ -44,6 +45,7 @@ const CoreUIPlugin = {
     Vue.component('h-slider', HSlider);
     Vue.component('h-tooltip', HTooltip);
     Vue.component('h-text', HText);
+    Vue.component('h-suspense', HSuspense);
   },
   installMolecules(Vue) {
     Vue.component('h-breadcrumb', HBreadcrumb);

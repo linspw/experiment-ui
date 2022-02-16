@@ -11,3 +11,4 @@ export * from './slider';
 export * from './tooltip';
 export * from './badge';
 export * from './text';
+export * from './suspense';

@@ -1,0 +1,24 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HSuspense from './suspense.vue';
+
+<Meta title="Design System/Atoms/Suspense" component={HSuspense} />
+
+## Text
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HSuspense },
+        template: `
+          <div>
+            <h-suspense>Example of paragraph.</h-suspense>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HSuspense} />

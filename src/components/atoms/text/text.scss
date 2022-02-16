@@ -1,20 +1,10 @@
-@use 'sass:math';
-@import '@/styles/utils/index.scss';
-
-@function pxToRem($pxValue) {
-  @return math.div($pxValue, 16px) * 1rem; 
-}
 
 .h-text {
-  --h-text--color: inherit;
-  --h-text--font-size: inherit;
-  --h-text--font-style: inherit;
-  --h-text--font-weight: inherit;
-
   color: var(--h-text--color);
   font-size: var(--h-text--font-size);
   font-style: var(--h-text--font-style);
   font-weight: var(--h-text--font-weight);
+  word-wrap: break-word;
 
   &--weight {
     &-black {
@@ -82,54 +72,135 @@
     }
   }
 
-  &--size {
-    &-nano {
-      --h-text--font-size: var(--size-scalable-nano);
-    }
-    &-micro {
-      --h-text--font-size: var(--size-scalable-micro);
-    }
-    &-extra-small {
-      --h-text--font-size: var(--size-scalable-extra-small);
-    }
-    &-small {
-      --h-text--font-size: var(--size-scalable-small);
+  &--emphasis {
+    &-high {
+      opacity: 0.87;
     }
     &-medium {
-      --h-text--font-size: var(--size-scalable-medium);
+      opacity: 0.60;
+    }
+    &-low {
+      opacity: 0.38;
+    }
+  }
+
+  &--variant {
+    &-h1 {
+      --h-text--font-size: 96px;
+      letter-spacing: -1.5px;
+      --h-text--font-weight: 100;
+    }
+    &-h2 {
+      --h-text--font-size: 60px;
+      letter-spacing: -0.5px;
+      --h-text--font-weight: 100;
+    }
+    &-h3 {
+      --h-text--font-size: 48px;
+      letter-spacing: 0px;
+      --h-text--font-weight: 400;
+    }
+    &-h4 {
+      --h-text--font-size: 34px;
+      letter-spacing: 0.25px;
+      --h-text--font-weight: 400;
+    }
+    &-h5 {
+      --h-text--font-size: 24px;
+      letter-spacing: 0px;
+      --h-text--font-weight: 400;
+    }
+    &-h6 {
+      --h-text--font-size: 20px;
+      letter-spacing: 0.15px;
+      --h-text--font-weight: 500;
+    }
+    &-subtitle1 {
+      --h-text--font-size: 16px;
+      letter-spacing: 0.15px;
+      --h-text--font-weight: 400;
+    }
+    &-subtitle2 {
+      --h-text--font-size: 14px;
+      letter-spacing: 0.1px;
+      --h-text--font-weight: 500;
+    }
+    &-body1 {
+      --h-text--font-size: 16px;
+      letter-spacing: 0.5px;
+      --h-text--font-weight: 400;
+    }
+    &-body2 {
+      --h-text--font-size: 14px;
+      letter-spacing: 0.25px;
+      --h-text--font-weight: 400;
+    }
+    &-button {
+      --h-text--font-size: 14px;
+      letter-spacing: 1.25px;
+      --h-text--font-weight: 400;
+      text-transform: uppercase;
+    }
+    &-caption {
+      --h-text--font-size: 12px;
+      letter-spacing: 0.4px;
+      --h-text--font-weight: 400;
+    }
+    &-overline {
+      --h-text--font-size: 10px;
+      letter-spacing: 1.5px;
+      --h-text--font-weight: 400;
+    }
+  }
+
+  &--size {
+    &-nano {
+      --h-text--font-size: var(--size-base-nano);
+    }
+    &-micro {
+      --h-text--font-size: var(--size-base-micro);
+    }
+    &-extra-small {
+      --h-text--font-size: var(--size-base-extra-small);
+    }
+    &-small {
+      --h-text--font-size: var(--size-base-small);
+    }
+    &-medium {
+      --h-text--font-size: var(--size-base-medium);
     }
     &-large {
-      --h-text--font-size: var(--size-scalable-large);
+      --h-text--font-size: var(--size-base-large);
     }
     &-extra-large {
-      --h-text--font-size: var(--size-scalable-extra-large);
+      --h-text--font-size: var(--size-base-extra-large);
     }
     &-jumbo {
-      --h-text--font-size: var(--size-scalable-jumbo);
+      --h-text--font-size: var(--size-base-jumbo);
     }
     &-extra-jumbo {
-      --h-text--font-size: var(--size-scalable-extra-jumbo);
+      --h-text--font-size: var(--size-base-extra-jumbo);
     }
     &-giant {
-      --h-text--font-size: var(--size-scalable-giant);
+      --h-text--font-size: var(--size-base-giant);
     }
     &-extra-giant {
-      --h-text--font-size: var(--size-scalable-extra-giant);
+      --h-text--font-size: var(--size-base-extra-giant);
     }
     &-colossal {
-      --h-text--font-size: var(--size-scalable-colossal);
+      --h-text--font-size: var(--size-base-colossal);
     }
     &-extra-colossal {
-      --h-text--font-size: var(--size-scalable-extra-colossal);
+      --h-text--font-size: var(--size-base-extra-colossal);
     }
     &-mega {
-      --h-text--font-size: var(--size-scalable-mega);
+      --h-text--font-size: var(--size-base-mega);
     }
     &-extra-mega {
-      --h-text--font-size: var(--size-scalable-extra-mega);
+      --h-text--font-size: var(--size-base-extra-mega);
     }
     &-immense {
-      --h-text--font-size: var(--size-scalable-immense);
+      --h-text--font-size: var(--size-base-immense);
     }
   }
 
@@ -152,16 +223,6 @@
   &--behavior {
     &-italic {
       --h-text--font-style: italic;
-    }
-    &-link {
-      --h-text--color: var(--color-theme-secondary);
-      --h-text--font-weight: 500;
-      transition: color 250ms;
-    
-      &:hover {
-        --h-text--color: var(--color-theme-info);
-        text-decoration: underline;
-      }
     }
   }
 }
