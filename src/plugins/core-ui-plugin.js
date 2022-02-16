@@ -24,8 +24,6 @@ import {
   HStepper,
 } from '@components/molecules';
 
-import '@styles/index.scss';
-
 const CoreUIPlugin = {
   install(Vue) {
     this.installAtoms(Vue);

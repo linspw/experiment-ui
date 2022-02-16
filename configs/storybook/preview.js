@@ -1,6 +1,7 @@
 import { app } from "@storybook/vue3";
 import { CoreUIPlugin } from "@plugins/core-ui-plugin";
 import { transformSource, tokenFiles } from "./helper";
+import '@styles/index.scss';
 
 app.use(CoreUIPlugin);
 
