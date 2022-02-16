@@ -22,8 +22,7 @@
 
 <script>
 import { shouldBeOneOf } from '@utils/validations';
-import MaleSVG from '@assets/images/avatar_male.svg';
-import FemaleSVG from '@assets/images/avatar_female.svg';
+import { genderDictionary } from './gender-dictionary.js'
 
 export default {
   name: 'HAvatar',
@@ -84,11 +83,6 @@ export default {
   },
   computed: {
     defaultImage() {
-      const genderDictionary = {
-        male: MaleSVG,
-        female: FemaleSVG,
-      }
-      console.log(genderDictionary);
       return genderDictionary[this.gender];
     },
     srcParsed() {

@@ -1,14 +1,14 @@
 const path = require('path');
 const { alias } = require("./configs/project/alias-config");
 import { defineConfig } from 'vite'
-// import vue from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve:{
     alias,
   },
-  // plugins: [vue()],
+  plugins: [vue()],
   build: {
     outDir: 'dist/lib',
     lib: {
