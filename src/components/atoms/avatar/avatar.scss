@@ -4,9 +4,9 @@
   --h-avatar-border-radius: none;
   --h-avatar-overflow: hidden;
   --h-avatar-marging: 0;
-  --a-avatar__figcaption-background-color: black;
-  --a-avatar__figcaption-color: white;
-  --a-avatar__figcaption-text-align: center;
+  --h-avatar__figcaption-background-color: black;
+  --h-avatar__figcaption-color: white;
+  --h-avatar__figcaption-text-align: center;
   
   border-radius: var(--h-avatar-border-radius);
   height: var(--h-avatar-height);
@@ -21,12 +21,12 @@
   }
 
   &__figcaption {
-    background-color: var(--a-avatar__figcaption-background-color);
+    background-color: var(--h-avatar__figcaption-background-color);
     bottom: 0;
-    color: var(--a-avatar__figcaption-color);
+    color: var(--h-avatar__figcaption-color);
     left: 0;
     position: absolute;
-    text-align: var(--a-avatar__figcaption-text-align);
+    text-align: var(--h-avatar__figcaption-text-align);
     width: 100%;
   }
 

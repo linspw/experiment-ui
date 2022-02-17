@@ -57,9 +57,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.h-tooltip {
-  position: relative;
-}
-</style>

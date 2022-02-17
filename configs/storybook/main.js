@@ -3,6 +3,7 @@ const { alias } = require("../project/alias-config");
 
 module.exports = {
   stories: [
+    "../../src/docs/0.welcome.stories.mdx",
     "../../src/**/*.stories.mdx",
     "../../src/**/*.stories.@(js|jsx|ts|tsx)",
   ],

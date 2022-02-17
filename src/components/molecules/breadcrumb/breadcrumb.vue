@@ -9,7 +9,7 @@
         :href="item.url"
         :link="(index === items.length-1)"
         color="primary"
-        size="extra-small"
+        size="small"
         tag="a"
         weight="medium"
       >
@@ -37,27 +37,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.h-breadcrumb {
-  --h-breadcrumb--margin-left: var(--size-scalable-medium);
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  &__item {
-    align-items: center;
-    display: flex;
-    white-space: nowrap;
-
-    &:not(:first-child) {
-      margin-left: var(--h-breadcrumb--margin-left);
-    }
-  }
-}
-
-.h-breadcrumb__item-divider {
-  margin-left: var(--h-breadcrumb--margin-left);
-}
-</style>

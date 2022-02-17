@@ -18,19 +18,19 @@ import HButton from './button.vue';
   </Story>
 </Canvas>
 
-### Variants:
+### Cores:
 
 <Canvas>
-  <Story name="Variants">
+  <Story name="Colors">
     {{
         components: { HButton },
         template: `
         <div>
-          <h-button variant="primary">primary</h-button>
-          <h-button variant="secondary">secondary</h-button>
-          <h-button variant="tertiary">tertiary</h-button>
-          <h-button variant="quaternary">quaternary</h-button>
-          <h-button variant="quintenary">quintenary</h-button>
+          <h-button color="primary">primary</h-button>
+          <h-button color="secondary">secondary</h-button>
+          <h-button color="tertiary">tertiary</h-button>
+          <h-button color="quaternary">quaternary</h-button>
+          <h-button color="quintenary">quintenary</h-button>
         </div>
         `,
         methods: { action: action("clicked") }
@@ -46,9 +46,9 @@ import HButton from './button.vue';
         components: { HButton },
         template: `
         <div>
-          <h-button @click="action" icon="fas fa-home">Default</h-button>
-          <h-button @click="action" icon="fas fa-user" icon-position="left">Left</h-button>
-          <h-button @click="action" icon="fas fa-user" icon-position="right">Right</h-button>
+          <h-button @click="action" icon-left="fas fa-home">icon-left</h-button>
+          <h-button @click="action" icon-right="fas fa-user">icon-right</h-button>
+          <h-button @click="action" icon-left="fas fa-home" icon-right="fas fa-user">icon-left and icon-right</h-button>
         </div>
         `,
         methods: { 
@@ -118,7 +118,7 @@ import HButton from './button.vue';
         components: { HButton },
         template: `
         <div>
-          <h-button @click="action" icon="fas fa-user" />
+          <h-button @click="action" icon-right="fas fa-user" />
         </div>
         `,
         methods: { action: action("clicked") }

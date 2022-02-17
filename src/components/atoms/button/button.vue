@@ -5,15 +5,15 @@
       [`h-button--behavior-${behavior}`]: behavior,
       ['h-button--behavior-is-rounded']: isRounded,
       [`h-button--behavior-is-loading`]: isLoading,
-      [`h-button--variant-${variant}`]: variant,
+      [`h-button--color-${color}`]: color,
       [`h-button--size-${size}`]: size,
     }"
     v-bind="$attrs"
   >
     <HIcon
-      v-if="icon && iconPosition === 'left'"
-      :icon="icon"
-      :color="iconColor"
+      v-if="iconLeft"
+      :icon="iconLeft"
+      :color="iconLeftColor"
       :class="{'h-button__icon h-button__icon--position-left': slotPassed}"
     />
     <HIcon
@@ -28,9 +28,9 @@
       <slot />
     </span>
     <HIcon
-      v-if="icon && iconPosition === 'right'"
-      :icon="icon"
-      :color="iconColor"
+      v-if="iconRight"
+      :icon="iconRight"
+      :color="iconRightColor"
       :class="{'h-button__icon h-button__icon--position-right': slotPassed}"
     />
   </button>
@@ -45,19 +45,11 @@ export default {
   components: { HIcon },
   inheritAttrs: false,
   props: {
-    iconPosition: {
-      type: String,
-      default: 'left',
-      validator: shouldBeOneOf([
-        'left',
-        'right',
-      ]),
-    },
     behavior: {
       type: String,
       default: '',
     },
-    variant: {
+    color: {
       type: String,
       default: 'primary',
       validator: shouldBeOneOf([
@@ -76,13 +68,27 @@ export default {
         'medium',
       ]),
     },
-    icon: {
+    iconLeft: {
       type: String,
-      default: '',
+      default: null,
     },
-    iconColor: {
+    iconLeftColor: {
       type: String,
       default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+      ]),
+    },
+    iconRight: {
+      type: String,
+      default: null,
+    },
+    iconRightColor: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+      ]),
     },
     isLoading: {
       type: Boolean,
@@ -90,7 +96,7 @@ export default {
     },
     isRounded: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   computed: {
