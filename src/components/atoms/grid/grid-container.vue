@@ -27,6 +27,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    responsive: {
+      type: Boolean,
+      default: null,
+    }
+  },
+  provide() {
+    return {
+      responsive: this.responsive,
+    };
   },
 };
 </script>

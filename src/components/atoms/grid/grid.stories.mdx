@@ -34,9 +34,9 @@ HGridItem is where you control the item wrapper in layout.
     {{
         components: { HGridContainer, HGridItem },
         template: `
-        <h-grid-container style="background-color:blue;">
-          <h-grid-item style="background-color:yellow;" column="4" :responsive="true">yellow</h-grid-item>
-          <h-grid-item style="background-color:red;" column="6" :responsive="true">red</h-grid-item>
+        <h-grid-container style="background-color:blue;" :responsive="true">
+          <h-grid-item style="background-color:yellow;" column="4">yellow</h-grid-item>
+          <h-grid-item style="background-color:red;" column="6">red</h-grid-item>
           <h-grid-item style="background-color:orange;" column="4" :responsive="false">orange</h-grid-item>
           <h-grid-item style="background-color:green;" column="6" :responsive="false">green</h-grid-item>
         </h-grid-container>

@@ -38,5 +38,16 @@ export default {
       default: true,
     },
   },
+  inject: {
+    responsiveFromParent: {
+      from: 'responsive',
+      default: null,
+    },
+  },
+  computed: {
+    isResponsive() {
+      return this.responsive || this.responsiveFromParent;
+    },
+  },
 };
 </script>
