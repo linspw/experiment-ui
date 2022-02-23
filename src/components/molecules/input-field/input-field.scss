@@ -1,7 +1,9 @@
 .h-input-field {
-  --h-input-field__label-color: var(--colors-scale-grey-dark);
+  --h-input-field__label-color: var(--color-black);
   --h-input-field__label-margin-bottom: var(--size-base-micro);
-  --h-input-field__error-label-margin-top: var(--size-base-micro);
+
+  --h-input-field__helper-text-margin-top: var(--size-base-micro);
+  --h-input-field__helper-text-height: var(--size-base-medium);
 
   display: block;
 
@@ -9,7 +11,8 @@
     color: var(--h-input-field__label-color);
     margin-bottom: var(--h-input-field__label-margin-bottom);
   }
-  &__error-label {
-    margin-top: var(--h-input-field__error-label-margin-top);
+  &__helper-text {
+    margin-top: var(--h-input-field__helper-text-margin-top);
+    height: var(--h-input-field__helper-text-height);
   }
 }

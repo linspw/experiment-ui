@@ -40,6 +40,9 @@
       --h-input-border-color: var(--color-theme-primary);
       --h-input__field-background-color: var(--colors-scale-grey-light);
     }
+    &-has-error {
+      --h-input-border-color: var(--color-pink-scale-alpha-400);
+    }
   }
 
   &--size {

@@ -4,7 +4,7 @@
     :class="{
       ['h-input']: true,
       [`h-input--behavior-${behavior}`]: behavior != 'default',
-      [`h-input--behavior-${shadow}`]: shadow,
+      [`h-input--behavior-has-error`]: _hasError,
       [`h-input--icon`]: icon,
       [`h-input--size-${size}`]: size,
     }"
@@ -17,7 +17,7 @@
     />
     <input
       :type="type"
-      :value="value"
+      :value="modelValue || value"
       class="h-input__field"
       v-bind="$attrs"
       @input="handleInput"
@@ -35,6 +35,13 @@ export default {
     HIcon,
   },
   inheritAttrs: false,
+  emits: ['input', 'update:modelValue'],
+  inject: {
+    hasErrorFromValidate: {
+      from: 'hasErrorFromValidate',
+      default: null,
+    },
+  },
   props: {
     size: {
       type: String,
@@ -62,8 +69,12 @@ export default {
       default: true,
     },
     value: {
-      type: String,
-      default: '',
+      type: [String, Number],
+      default: null,
+    },
+    modelValue: {
+      type: [String, Number],
+      default: null,
     },
     icon: {
       type: String,
@@ -90,15 +101,20 @@ export default {
       type: String,
       default: 'text',
     },
-    shadow: {
-      type: String,
-      default: '',
-    },
+    hasError: {
+      type: Boolean,
+      default: null,
+    }
   },
   data() {
     return {
       hasValue: Boolean(this.value),
     };
+  },
+  computed: {
+    _hasError() {
+      return this.hasError || this.hasErrorFromValidate;
+    },
   },
   mounted() {
     this.handleHasValue(this.value);
@@ -117,7 +133,10 @@ export default {
 
       this.handleHasValue(targetValue);
 
-      this.$emit('input', this.type === 'number' ? Number(targetValue) : targetValue);
+      const newValue = this.type === 'number' ? Number(targetValue) : targetValue;
+
+      this.$emit('input', newValue);
+      this.$emit('update:modelValue', newValue);
     },
   },
 };

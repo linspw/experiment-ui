@@ -8,6 +8,21 @@
   --color-black: #000000;
 
   /**
+  * @tokens Colors - Grey Scale
+  * @presenter Color
+  */
+  --color-grey-scale-050: #fafafa;
+  --color-grey-scale-100: #f5f5f5;
+  --color-grey-scale-200: #eeeeee;
+  --color-grey-scale-300: #e0e0e0;
+  --color-grey-scale-400: #bdbdbd;
+  --color-grey-scale-500: #9e9e9e;
+  --color-grey-scale-600: #757575;
+  --color-grey-scale-700: #616161;
+  --color-grey-scale-800: #424242;
+  --color-grey-scale-900: #212121;
+
+  /**
   * @tokens Colors - Social
   * @presenter Color
   */
@@ -127,19 +142,4 @@
   --color-yellow-scale-alpha-200: #ffff00;
   --color-yellow-scale-alpha-400: #ffea00;
   --color-yellow-scale-alpha-700: #ffd600;
-
-  /**
-  * @tokens Colors - Grey Scale
-  * @presenter Color
-  */
-  --color-grey-scale-050: #fafafa;
-  --color-grey-scale-100: #f5f5f5;
-  --color-grey-scale-200: #eeeeee;
-  --color-grey-scale-300: #e0e0e0;
-  --color-grey-scale-400: #bdbdbd;
-  --color-grey-scale-500: #9e9e9e;
-  --color-grey-scale-600: #757575;
-  --color-grey-scale-700: #616161;
-  --color-grey-scale-800: #424242;
-  --color-grey-scale-900: #212121;
 }

@@ -13,9 +13,12 @@ import HInputField from './input-field.vue';
   <Story name="Default use">
     {{
         components: { HInputField, HInput },
-        template: `<h-input-field label="Example" :has-error="true" error-message="Esse campo está com error">
+        template: `
+        <h-input-field label="Example" :has-error="true" helper-text="Error message">
           <h-input type="text" v-model="example" />  
-        </h-input-field>`,
+        </h-input-field>
+        {{ example }}
+        `,
         data(){
           return {
             example: 'Validation',

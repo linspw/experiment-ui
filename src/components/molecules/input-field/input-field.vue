@@ -11,22 +11,21 @@
     >
       {{ label }}
     </HText>
-    <slot
-      v-bind="{hasError}"
-    />
+    <slot />
     <HText
-      v-if="Boolean(hasError && errorMessage)"
-      color="danger"
-      class="h-input-field__error-label"
-      size="small"
+      v-if="helperTextActive"
+      :color="finalHasError ? 'danger' : 'grey'"
+      class="h-input-field__helper-text"
+      size="micro"
     >
-      {{ errorMessage }}
+      {{ helperText }}
     </HText>
   </label>
 </template>
 
 <script>
 import { HText } from '@components/atoms/text';
+import { provide, reactive, computed } from 'vue';
 
 export default {
   name: 'HInputField',
@@ -46,10 +45,21 @@ export default {
       type: Boolean,
       default: false,
     },
-    errorMessage: {
+    helperText: {
       type: String,
-      default: '',
+      default: null,
     },
+    helperTextActive: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  setup(props) {
+    const $state = reactive({ _hasError: false });
+    const finalHasError = computed(() => props.hasError || $state._hasError);
+    provide('hasErrorFromValidate', finalHasError.value);
+
+    return { finalHasError };
   },
 };
 </script>
