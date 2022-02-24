@@ -76,7 +76,6 @@ export default {
         'inherit',
         'primary',
         'secondary',
-        'tertiary',
         'interactive',
         'grey',
         'success',

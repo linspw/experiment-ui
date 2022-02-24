@@ -21,16 +21,55 @@ import HButton from './button.vue';
 ### Cores:
 
 <Canvas>
-  <Story name="Colors">
+  <Story name="Cores">
     {{
         components: { HButton },
         template: `
         <div>
           <h-button color="primary">primary</h-button>
           <h-button color="secondary">secondary</h-button>
-          <h-button color="tertiary">tertiary</h-button>
-          <h-button color="quaternary">quaternary</h-button>
-          <h-button color="quintenary">quintenary</h-button>
+          <h-button color="success">success</h-button>
+          <h-button color="error">error</h-button>
+          <h-button color="warn">warn</h-button>
+          <h-button color="info">info</h-button>
+        </div>
+        `,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Variantes:
+
+<Canvas>
+  <Story name="Variantes">
+    {{
+        components: { HButton },
+        template: `
+        <div>
+          <h-button variant="contained" color="primary">contained</h-button>
+          <h-button variant="outlined" color="primary">outlined</h-button>
+          <h-button variant="text" color="primary">text</h-button>
+          <br>
+          <h-button variant="contained" color="secondary">contained</h-button>
+          <h-button variant="outlined" color="secondary">outlined</h-button>
+          <h-button variant="text" color="secondary">text</h-button>
+          <br>
+          <h-button variant="contained" color="success">contained</h-button>
+          <h-button variant="outlined" color="success">outlined</h-button>
+          <h-button variant="text" color="success">text</h-button>
+          <br>
+          <h-button variant="contained" color="error">contained</h-button>
+          <h-button variant="outlined" color="error">outlined</h-button>
+          <h-button variant="text" color="error">text</h-button>
+          <br>
+          <h-button variant="contained" color="warn">contained</h-button>
+          <h-button variant="outlined" color="warn">outlined</h-button>
+          <h-button variant="text" color="warn">text</h-button>
+          <br>
+          <h-button variant="contained" color="info">contained</h-button>
+          <h-button variant="outlined" color="info">outlined</h-button>
+          <h-button variant="text" color="info">text</h-button>
         </div>
         `,
         methods: { action: action("clicked") }

@@ -7,6 +7,7 @@
       [`h-button--behavior-is-loading`]: isLoading,
       [`h-button--color-${color}`]: color,
       [`h-button--size-${size}`]: size,
+      [`h-button--variant-${variant}`]: variant,
     }"
     v-bind="$attrs"
   >
@@ -55,10 +56,15 @@ export default {
       validator: shouldBeOneOf([
         'primary',
         'secondary',
-        'tertiary',
-        'quaternary',
-        'quintenary',
+        'success',
+        'error',
+        'warn',
+        'info',
       ]),
+    },
+    variant: {
+      type: String,
+      default: 'contained',
     },
     size: {
       type: String,

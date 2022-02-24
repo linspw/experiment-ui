@@ -36,7 +36,6 @@ export default {
         'default',
         'primary',
         'secondary',
-        'tertiary',
         'warn',
         'success',
         'danger',

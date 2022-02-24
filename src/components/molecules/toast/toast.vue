@@ -12,7 +12,6 @@
         ['h-toast__item--inverse']: item.variant
           && (item.variant !== 'warn')
           && (item.variant !== 'default')
-          && (item.variant !== 'tertiary')
           && (item.variant ),
         [`${item.variant}`]: item.variant
       }"

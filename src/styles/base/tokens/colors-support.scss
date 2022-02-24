@@ -1,0 +1,42 @@
+:root {
+
+  /**
+  * @tokens Colors Support - Success
+  * @presenter Color
+  */
+
+  --color-support-success-scale-100: var(--color-green-scale-200);
+  --color-support-success-scale-200: var(--color-green-scale-400);
+  --color-support-success-scale-300: var(--color-green-scale-700);
+  --color-support-success: var(--color-support-success-scale-200);
+
+  /**
+  * @tokens Colors Support - Error
+  * @presenter Color
+  */
+
+  --color-support-error-scale-100: var(--color-red-scale-200);
+  --color-support-error-scale-200: var(--color-red-scale-400);
+  --color-support-error-scale-300: var(--color-red-scale-700);
+  --color-support-error: var(--color-support-error-scale-200);
+
+  /**
+  * @tokens Colors Support - Warn
+  * @presenter Color
+  */
+
+  --color-support-warn-scale-100: var(--color-yellow-scale-200);
+  --color-support-warn-scale-200: var(--color-yellow-scale-400);
+  --color-support-warn-scale-300: var(--color-yellow-scale-700);
+  --color-support-warn: var(--color-support-warn-scale-200);
+
+  /**
+  * @tokens Colors Support - Info
+  * @presenter Color
+  */
+
+  --color-support-info-scale-100: var(--color-light-blue-scale-200);
+  --color-support-info-scale-200: var(--color-light-blue-scale-400);
+  --color-support-info-scale-300: var(--color-light-blue-scale-700);
+  --color-support-info: var(--color-support-info-scale-200);
+}

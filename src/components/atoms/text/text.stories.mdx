@@ -6,7 +6,7 @@ import HText from './text.vue';
 
 ## Text
 
-### Default use:
+### Uso normal:
 
 <Canvas>
   <Story name="Default use">
@@ -21,23 +21,66 @@ import HText from './text.vue';
   </Story>
 </Canvas>
 
-### Color use:
+### Variantes:
 
 <Canvas>
-  <Story name="Color use">
+  <Story name="Variantes">
+    {{
+        components: { HText },
+        template: `
+          <div>
+            <h-text variant="h1">h1</h-text>
+            <h-text variant="h2">h2</h-text>
+            <h-text variant="h3">h3</h-text>
+            <h-text variant="h4">h4</h-text>
+            <h-text variant="h5">h5</h-text>
+            <h-text variant="h6">h6</h-text>
+            <h-text variant="subtitle1">subtitle1</h-text>
+            <h-text variant="subtitle2">subtitle2</h-text>
+            <h-text variant="body1">body1</h-text>
+            <h-text variant="body2">body2</h-text>
+            <h-text variant="button">button</h-text>
+            <h-text variant="caption">caption</h-text>
+            <h-text variant="overline">overline</h-text>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Cores:
+
+<Canvas>
+  <Story name="Cores">
     {{
         components: { HText },
         template: `
           <div>
             <h-text color="primary">Primary</h-text>
             <h-text color="secondary">Secondary</h-text>
-            <h-text color="tertiary">Tertiary</h-text>
             <h-text color="interactive">Interactive</h-text>
             <h-text color="grey">Grey</h-text>
             <h-text color="success">Success</h-text>
             <h-text color="danger">Danger</h-text>
             <h-text color="warn">Warn</h-text>
             <h-text color="info">Info</h-text>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Ênfase:
+
+<Canvas>
+  <Story name="Ênfase">
+    {{
+        components: { HText },
+        template: `
+          <div>
+            <h-text emphasis="low">low</h-text>
+            <h-text emphasis="medium">medium</h-text>
+            <h-text emphasis="high">high</h-text>
           </div>
         `,
     }}

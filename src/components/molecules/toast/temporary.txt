@@ -12,7 +12,6 @@
           'warn',
           'primary',
           'secondary',
-          'tertiary',
           'default',
         ];
 
