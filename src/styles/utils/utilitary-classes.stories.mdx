@@ -1,0 +1,195 @@
+import { Meta, ArgsTable, Story, Canvas, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+<Meta title="Utils/Classes/Padding e Margin" />
+
+## Classes
+
+### Em todas as direções:
+
+Os tamanhos seguem a escala "Size base".
+
+<Canvas>
+  <Story name="Padding">
+    {{
+      data() {
+        return {
+          sizeList: [
+          'nano',
+          'micro',
+          'extra-small',
+          'small',
+          'medium',
+          'large',
+          'extra-large',
+          'jumbo',
+          'extra-jumbo',
+          'giant',
+          'extra-giant',
+          'colossal',
+          'extra-colossal',
+          'mega',
+          'extra-mega',
+          'immense',
+        ]};
+      },
+      methods: {
+        createClass(type, variant, size) {
+          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
+        }
+      },
+      template: `
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('padding', null, size)" style="background-color: blue;">{{ createClass('padding', null, size) }}</div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+   <Story name="Margin">
+    {{
+      data() {
+        return {
+          sizeList: [
+          'nano',
+          'micro',
+          'extra-small',
+          'small',
+          'medium',
+          'large',
+          'extra-large',
+          'jumbo',
+          'extra-jumbo',
+          'giant',
+          'extra-giant',
+          'colossal',
+          'extra-colossal',
+          'mega',
+          'extra-mega',
+          'immense',
+        ]};
+      },
+      methods: {
+        createClass(type, variant, size) {
+          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
+        }
+      },
+      template: `
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('margin', null, size)" style="background-color: blue;">margin {{ size }}</div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+### Uso específico
+
+#### Padding
+
+<Canvas>
+  <Story name="Padding específico">
+    {{
+      data() {
+        return {
+          sizeList: [
+          'nano',
+          'micro',
+          'extra-small',
+          'small',
+          'medium',
+          'large',
+          'extra-large',
+          'jumbo',
+          'extra-jumbo',
+          'giant',
+          'extra-giant',
+          'colossal',
+          'extra-colossal',
+          'mega',
+          'extra-mega',
+          'immense',
+        ]};
+      },
+      methods: {
+        createClass(type, variant, size) {
+          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
+        }
+      },
+      template: `
+        <p style="background-color: black; color: white; padding: 16px;">Top</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('padding', 'top', size)" style="background-color: blue;">{{ createClass('padding', 'top', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Bottom</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('padding', 'bottom', size)" style="background-color: blue;">{{ createClass('padding', 'bottom', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Left</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('padding', 'left', size)" style="background-color: blue;">{{ createClass('padding', 'left', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Right</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: flex-end;">
+          <div v-for="(size, index) in sizeList" :class="createClass('padding', 'right', size)" style="background-color: blue;">{{ createClass('padding', 'right', size) }}</div> 
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+
+#### Margin
+
+<Canvas>
+  <Story name="Margin específico">
+    {{
+      data() {
+        return {
+          sizeList: [
+          'nano',
+          'micro',
+          'extra-small',
+          'small',
+          'medium',
+          'large',
+          'extra-large',
+          'jumbo',
+          'extra-jumbo',
+          'giant',
+          'extra-giant',
+          'colossal',
+          'extra-colossal',
+          'mega',
+          'extra-mega',
+          'immense',
+        ]};
+      },
+      methods: {
+        createClass(type, variant, size) {
+          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
+        }
+      },
+      template: `
+        <p style="background-color: black; color: white; padding: 16px;">Top</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('margin', 'top', size)" style="background-color: blue;">{{ createClass('margin', 'top', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Bottom</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('margin', 'bottom', size)" style="background-color: blue;">{{ createClass('margin', 'bottom', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Left</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: baseline;">
+          <div v-for="(size, index) in sizeList" :class="createClass('margin', 'left', size)" style="background-color: blue;">{{ createClass('margin', 'left', size) }}</div>
+        </div>
+        <p style="background-color: black; color: white; padding: 16px;">Right</p>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: flex-end;">
+          <div v-for="(size, index) in sizeList" :class="createClass('margin', 'right', size)" style="background-color: blue;">{{ createClass('margin', 'right', size) }}</div> 
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+

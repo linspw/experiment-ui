@@ -8,7 +8,7 @@
 
   --h-input__field-background-color: var(--colors-original-white);
   --h-input__field-border-radius: var(--border-radius-normal);
-  --h-input__field-color--placeholder: var(--colors-scale-grey-dark);
+  --h-input__field-color--placeholder: var(--color-blue-grey-scale-400);
   --h-input__field-color: var(--color-theme-primary);
   --h-input__field-font-family: 'Red Hat Text', sans-serif;
   --h-input__field-font-size: inherit;
@@ -38,7 +38,7 @@
     }
     &-has-value {
       --h-input-border-color: var(--color-theme-primary);
-      --h-input__field-background-color: var(--colors-scale-grey-light);
+      --h-input__field-background-color: var(--color-blue-grey-scale-100);
     }
     &-has-error {
       --h-input-border-color: var(--color-pink-scale-alpha-400);

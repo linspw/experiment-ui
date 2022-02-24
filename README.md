@@ -17,13 +17,13 @@ yarn add @hyone/core-ui
 
 ### Use
 
-After installing, add HyONEPlugin to your vue instance.
+After installing, add CoreUI to your vue instance.
 
 - In main js:
 ```js
 import { createApp } from 'vue';
 import { CoreUI } from '@hyone/core-ui';
-import App from './app.vue'
+import App from './app.vue';
 
 createApp
   .use(CoreUI)
@@ -34,7 +34,7 @@ createApp
 
 ```html
 <template>
-  <HButton>Foi</HButton>
+  <h-button>My button</h-button>
 </template>
 ```
 

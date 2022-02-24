@@ -7,8 +7,8 @@
 
   --h-button-border-radius: var(--border-radius-normal);
   --h-button-background-color: transparent;
-  --h-button-background-color--hover: var(--colors-scale-grey-light);
-  --h-button-background-color--active: var(--colors-scale-grey-superior);
+  --h-button-background-color--hover: var(--color-blue-grey-scale-400);
+  --h-button-background-color--active: var(--color-blue-grey-scale-500);
   --h-button-text-decoration: none;
   --h-button-text-decoration--hover: none;
   --h-button-text-decoration--active: none;
@@ -47,8 +47,9 @@
     --h-button-text-decoration: var(--h-button-text-decoration--active);
   }
   &:disabled {
-    --h-button-background-color: var(--colors-scale-grey-superior);
-    pointer-events: none;
+    --h-button-background-color: var(--color-blue-grey-scale-200);
+    --h-button-border: var(--size-base-micro) solid var(--color-blue-grey-scale-200);
+    // pointer-events: none;
     cursor: not-allowed;
   }
 

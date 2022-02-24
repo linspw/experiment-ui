@@ -123,8 +123,8 @@ export default {
 <style scoped lang="scss">
 .h-select {
   border-radius: var(--border-radius-normal);
-  border: var(--size-base-micro) solid var(--colors-scale-grey-medium);
-  color: var(--colors-scale-grey-medium);
+  border: var(--size-base-micro) solid var(--color-blue-grey-scale-300);
+  color: var(--color-blue-grey-scale-300);
   display: inline-flex;
   font-family: 'Red Hat Text', sans-serif;
   height: fit-content;
@@ -158,7 +158,7 @@ export default {
   background-color: var(--colors-original-white);
   border-radius: var(--border-radius-normal);
   border: none;
-  color: var(--colors-scale-grey-dark);
+  color: var(--color-blue-grey-scale-700);
   cursor: pointer;
   display: flex;
   flex: 1;
@@ -176,7 +176,7 @@ export default {
 }
 
 .h-select__icon {
-  color: var(--colors-scale-grey-dark);
+  color: var(--color-blue-grey-scale-700);
   position: absolute;
   right: var(--size-base-extra-small);
   display: flex;
@@ -210,11 +210,11 @@ export default {
   user-select: none;
 
   &:not(:last-child) {
-    border-bottom: var(--size-base-micro) solid var(--colors-scale-grey-medium);
+    border-bottom: var(--size-base-micro) solid var(--color-blue-grey-scale-300);
   }
 
   &:hover {
-    background-color: var(--colors-scale-grey-light);
+    background-color: var(--color-blue-grey-scale-100);
   }
 }
 

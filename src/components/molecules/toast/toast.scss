@@ -1,5 +1,3 @@
-@import '@/styles/utils/index';
-
 .h-toast {
   overflow: hidden;
   position: fixed;
@@ -7,15 +5,15 @@
   right: 0px;
   width: 100%;
   z-index: 100;
-  top: 24px;
+  top: var(--size-base-large);
 
   @include for-mobile-up{
     max-width: 380px;
-    padding-right: 24px;
+    padding-right: var(--size-base-large);
   }
 
   &__item {
-    --h-card--padding: 16px !important;
+    --h-card--padding: var(--size-base-medium) !important;
 
     align-items: center;
     display: flex;
@@ -23,8 +21,8 @@
     width: 100%;
 
     @include for-mobile-up {
-      margin: 4px;
-      margin-bottom: 8px;
+      margin: var(--size-base-extra-small);
+      margin-bottom: var(--size-base-small);
     }
 
     &--inverse {
@@ -33,7 +31,7 @@
   }
 
   &__icon {
-    margin-right: 24px;
+    margin-right: var(--size-base-large);
     height: 100%;
   }
 

@@ -38,7 +38,7 @@
       width: 100%;
     }
     &-has-value {
-      --h-select__field--background-color: var(--colors-scale-grey-light);
+      --h-select__field--background-color: var(--color-blue-grey-scale-100);
     }
   }
 
@@ -61,7 +61,7 @@
 }
 
 .h-select__field--placeholder {
-  color: var(--colors-scale-grey-medium);
+  color: var(--color-blue-grey-scale-300);
   font-weight: 500;
   font-style: italic;
 }

@@ -133,6 +133,7 @@ export default {
 .h-dropdown {
   --h-dropdown-width: fit-content;
   --h-button-width: var(--h-dropdown-width);
+
   position: relative;
   width: var(--h-dropdown-width);
 }
@@ -177,11 +178,11 @@ export default {
   white-space: nowrap;
 
   &:not(:last-child) {
-    border-bottom: var(--size-base-micro) solid var(--colors-scale-grey-medium);
+    border-bottom: var(--size-base-micro) solid var(--color-blue-grey-scale-300);
   }
 
   &:hover {
-    background-color: var(--colors-scale-grey-light);
+    background-color: var(--color-blue-grey-scale-100);
   }
 }
 

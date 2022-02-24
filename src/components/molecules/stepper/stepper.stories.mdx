@@ -28,13 +28,13 @@ import HStepper from "./stepper.vue";
     {{
       components: { HStepper },
       methods: {
-        handleClick(index) {
-          console.log(index);
+        handleClick(step) {
+          console.log(step);
         },
       },
       template: `
           <div>
-            <h-stepper :currentActive="2" :items="['Default use', 'Example', 'other']" @click="handleClick" :isClickable="true" />
+            <h-stepper :currentActive="3" :items="['Default use', 'Example', 'other']" @click="handleClick" :isClickable="true" />
           </div>
         `,
     }}

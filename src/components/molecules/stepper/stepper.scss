@@ -7,7 +7,7 @@
 }
 
 .h-stepper__item {
-  --h-stepper__item-line: var(--colors-scale-grey-medium);
+  --h-stepper__item-line: var(--color-blue-grey-scale-300);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   }
 }
 .h-stepper__item-badge {
-  --h-badge--background-color: var(--colors-scale-grey-superior);
+  --h-badge--background-color: var(--color-blue-grey-scale-500);
 
   margin-bottom: var(--size-base-small);
   z-index: 10;

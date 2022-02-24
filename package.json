@@ -11,7 +11,7 @@
     "test:unit": "jest --verbose ./src",
     "test:package": "jest --verbose ./configs",
     "dev:storybook": "start-storybook -p 6006 -c configs/storybook",
-    "build:storybook": "build-storybook -o dist/storybook",
+    "build:storybook": "build-storybook -c configs/storybook -o dist/storybook",
     "semantic-release": "semantic-release"
   },
   "main": "dist/lib/core-ui.umd.js",
