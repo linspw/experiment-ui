@@ -149,6 +149,24 @@ import HButton from './button.vue';
   </Story>
 </Canvas>
 
+### Acessibilidade:
+
+Items acessíveis tem margens automaticas.
+
+<Canvas>
+  <Story name="Acessibilidade">
+    {{
+        components: { HButton },
+        template: `
+        <div>
+          <h-button :is-accessible="true">is-accessible</h-button>
+        </div>
+        `,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
 ### Only Icon:
 
 <Canvas>

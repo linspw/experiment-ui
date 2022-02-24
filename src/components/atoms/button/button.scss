@@ -136,6 +136,10 @@
         margin: 0;
       }
     }
+    &-is-accessible {
+      margin-top: var(--size-base-extra-small);
+      margin-bottom: var(--size-base-extra-small);
+    }
   }
 
   &__icon {

@@ -7,17 +7,36 @@ import HInputField from './input-field.vue';
 
 ## InputField
 
-### Default use:
+### Uso normal:
 
 <Canvas>
-  <Story name="Default use">
+  <Story name="Uso normal">
+    {{
+        components: { HInputField, HInput },
+        template: `
+        <h-input-field label="Example" helper-text="Message">
+          <h-input type="text" v-model="example" />  
+        </h-input-field>
+        `,
+        data(){
+          return {
+            example: 'Text',
+          };
+        },
+    }}
+  </Story>
+</Canvas>
+
+### Mensagem de error:
+
+<Canvas>
+  <Story name="Mensagem de error">
     {{
         components: { HInputField, HInput },
         template: `
         <h-input-field label="Example" :has-error="true" helper-text="Error message">
           <h-input type="text" v-model="example" />  
         </h-input-field>
-        {{ example }}
         `,
         data(){
           return {
@@ -27,5 +46,6 @@ import HInputField from './input-field.vue';
     }}
   </Story>
 </Canvas>
+
 
 <ArgsTable of={HInputField} />

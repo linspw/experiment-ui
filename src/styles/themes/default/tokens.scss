@@ -9,7 +9,7 @@
   */
   --color-theme-primary: #1C1C1C;
   --color-theme-secondary: #0B39FF;
-  --color-theme-grey: #AAB9D4;
+  --color-theme-grey: var(--color-blue-grey-scale-500);
   --color-theme-success: #4BB587;
   --color-theme-danger: #F25355;
   --color-theme-warn: #FFF03C;

@@ -107,7 +107,7 @@ export default {
   },
   data() {
     return {
-      hasValue: Boolean(this.value),
+      hasValue: Boolean(this.value || this.modelValue),
     };
   },
   computed: {
@@ -116,7 +116,7 @@ export default {
     },
   },
   mounted() {
-    this.handleHasValue(this.value);
+    this.handleHasValue(this.value || this.modelValue);
   },
   methods: {
     handleHasValue(value) {

@@ -5,6 +5,7 @@
       [`h-button--behavior-${behavior}`]: behavior,
       ['h-button--behavior-is-rounded']: isRounded,
       [`h-button--behavior-is-loading`]: isLoading,
+      [`h-button--behavior-is-accessible`]: isAccessible,
       [`h-button--color-${color}`]: color,
       [`h-button--size-${size}`]: size,
       [`h-button--variant-${variant}`]: variant,
@@ -101,6 +102,10 @@ export default {
       default: false,
     },
     isRounded: {
+      type: Boolean,
+      default: false,
+    },
+    isAccessible: {
       type: Boolean,
       default: false,
     },
