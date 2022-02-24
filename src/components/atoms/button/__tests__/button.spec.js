@@ -18,9 +18,9 @@ describe('HButton', () => {
       },
       props: {
         behavior: 'block',
-        variant: 'secondary',
+        color: 'secondary',
         size: 'small',
-        icon: 'fas fa-circle',
+        iconLeft: 'fas fa-circle',
         iconColor: 'primary',
         isRounded: false,
       },
