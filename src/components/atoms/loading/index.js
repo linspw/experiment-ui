@@ -1,3 +1,3 @@
-import HLoading from './loading';
+import HLoading from './loading.vue';
 
 export { HLoading };
