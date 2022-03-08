@@ -1,5 +1,11 @@
 
 .h-text {
+  /* HText */
+  --h-text--color: inherit;
+  --h-text--font-size: inherit;
+  --h-text--font-style: inherit;
+  --h-text--font-weight: inherit;
+
   color: var(--h-text--color);
   font-size: var(--h-text--font-size);
   font-style: var(--h-text--font-style);

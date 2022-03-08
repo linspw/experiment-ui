@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Core UI!</h1>
+<h1 align="center">Core UI</h1>
 
 Core UI - Library write in Vue 3 that will assist you in your project, 
 providing visual components to facilitate the development of your application.
@@ -20,6 +20,7 @@ yarn add @hyone/core-ui
 After installing, add CoreUI to your vue instance.
 
 - In main js:
+
 ```js
 import { createApp } from 'vue';
 import { CoreUI } from '@hyone/core-ui';

@@ -3,12 +3,12 @@
     :is="tag"
     :class="{
       ['h-text']: true,
+      [`h-text--variant-${variant}`]: variant != 'inherit',
       [`h-text--size-${size}`]: size != 'inherit',
-      [`h-text--color-${color}`]: color != 'inherit',
       [`h-text--align-${align}`]: align != 'inherit',
       [`h-text--weight-${weight}`]: weight != 'inherit',
       [`h-text--behavior-italic`]: italic,
-      [`h-text--variant-${variant}`]: variant != 'inherit',
+      [`h-text--color-${color}`]: color != 'inherit',
       [`h-text--emphasis-${emphasis}`]: emphasis != 'inherit',
     }"
   >

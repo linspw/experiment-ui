@@ -12,3 +12,4 @@ export * from './tooltip';
 export * from './badge';
 export * from './text';
 export * from './suspense';
+export * from './loading';

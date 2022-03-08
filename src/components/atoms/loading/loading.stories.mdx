@@ -1,0 +1,76 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HLoading from './loading.vue';
+
+<Meta title="Design System/Atoms/Loading" component={HLoading} />
+
+## Loading
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HLoading },
+        template: '<h-loading />',
+    }}
+  </Story>
+</Canvas>
+
+### Color use:
+
+<Canvas>
+  <Story name="Color use">
+    {{
+        components: { HLoading },
+        template: `<div>
+          <h-loading color="primary" />
+          <h-loading color="secondary" />
+          <h-loading color="rainbow" />
+          <div style="background-color: black;" >
+            <h-loading color="inverse" />
+          </div>
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Behavior:
+
+<Canvas>
+  <Story name="Behavior">
+    {{
+        components: { HLoading },
+        template: `<div>
+          <h-loading tag="button" behavior="rounded" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-Loading-107.jpg" />
+          <h-loading tag="button" behavior="square" src="https://veja.abril.com.br/wp-content/uploads/2018/09/filme-Loading-107.jpg" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Size variation:
+
+<Canvas>
+  <Story name="Size variation">
+    {{
+        components: { HLoading },
+        template: `<div>
+          <h-loading size="medium" />
+          <h-loading size="large" />
+          <h-loading size="extra-large" />
+          <h-loading size="jumbo" />
+          <h-loading size="extra-jumbo" />
+          <h-loading size="giant" />
+          <h-loading size="extra-giant" />
+          <h-loading size="colossal" />
+          <h-loading size="extra-colossal" />
+          <h-loading size="mega" />
+          <h-loading size="extra-mega" />
+          <h-loading size="immense" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HLoading} />
