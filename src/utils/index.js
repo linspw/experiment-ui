@@ -1,9 +1,2 @@
-import * as Validations from './validations';
-import * as SuspenseLoading from './suspense-loading';
-
-const Utilities = {
-  ...Validations,
-  ...SuspenseLoading,
-};
-
-export { Utilities };
+export * from './validations';
+export * from './suspense-loading';
