@@ -29,7 +29,9 @@
       "require": "./dist/lib/style.css"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "flush-promises": "^1.0.2"
+  },
   "peerDependencies": {
     "vue": "^3.2.26"
   },
