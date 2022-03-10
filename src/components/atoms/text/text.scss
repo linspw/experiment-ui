@@ -12,6 +12,75 @@
   font-weight: var(--h-text--font-weight);
   word-wrap: break-word;
 
+  &--variant {
+    &-h1 {
+      --h-text--font-size: 96px;
+      letter-spacing: -1.5px;
+      --h-text--font-weight: 100;
+    }
+    &-h2 {
+      --h-text--font-size: 60px;
+      letter-spacing: -0.5px;
+      --h-text--font-weight: 100;
+    }
+    &-h3 {
+      --h-text--font-size: 48px;
+      letter-spacing: 0px;
+      --h-text--font-weight: 400;
+    }
+    &-h4 {
+      --h-text--font-size: 34px;
+      letter-spacing: 0.25px;
+      --h-text--font-weight: 400;
+    }
+    &-h5 {
+      --h-text--font-size: 24px;
+      letter-spacing: 0px;
+      --h-text--font-weight: 400;
+    }
+    &-h6 {
+      --h-text--font-size: 20px;
+      letter-spacing: 0.15px;
+      --h-text--font-weight: 500;
+    }
+    &-subtitle1 {
+      --h-text--font-size: 16px;
+      letter-spacing: 0.15px;
+      --h-text--font-weight: 400;
+    }
+    &-subtitle2 {
+      --h-text--font-size: 14px;
+      letter-spacing: 0.1px;
+      --h-text--font-weight: 500;
+    }
+    &-body1 {
+      --h-text--font-size: 16px;
+      letter-spacing: 0.5px;
+      --h-text--font-weight: 400;
+    }
+    &-body2 {
+      --h-text--font-size: 14px;
+      letter-spacing: 0.25px;
+      --h-text--font-weight: 400;
+    }
+    &-button {
+      --h-text--font-size: 14px;
+      letter-spacing: 1.25px;
+      --h-text--font-weight: 400;
+      text-transform: uppercase;
+    }
+    &-caption {
+      --h-text--font-size: 12px;
+      letter-spacing: 0.4px;
+      --h-text--font-weight: 400;
+    }
+    &-overline {
+      --h-text--font-size: 10px;
+      letter-spacing: 1.5px;
+      --h-text--font-weight: 400;
+    }
+  }
+
   &--weight {
     &-black {
       --h-text--font-weight: 900;
@@ -84,75 +153,6 @@
     }
     &-low {
       opacity: 0.38;
-    }
-  }
-
-  &--variant {
-    &-h1 {
-      --h-text--font-size: 96px;
-      letter-spacing: -1.5px;
-      --h-text--font-weight: 100;
-    }
-    &-h2 {
-      --h-text--font-size: 60px;
-      letter-spacing: -0.5px;
-      --h-text--font-weight: 100;
-    }
-    &-h3 {
-      --h-text--font-size: 48px;
-      letter-spacing: 0px;
-      --h-text--font-weight: 400;
-    }
-    &-h4 {
-      --h-text--font-size: 34px;
-      letter-spacing: 0.25px;
-      --h-text--font-weight: 400;
-    }
-    &-h5 {
-      --h-text--font-size: 24px;
-      letter-spacing: 0px;
-      --h-text--font-weight: 400;
-    }
-    &-h6 {
-      --h-text--font-size: 20px;
-      letter-spacing: 0.15px;
-      --h-text--font-weight: 500;
-    }
-    &-subtitle1 {
-      --h-text--font-size: 16px;
-      letter-spacing: 0.15px;
-      --h-text--font-weight: 400;
-    }
-    &-subtitle2 {
-      --h-text--font-size: 14px;
-      letter-spacing: 0.1px;
-      --h-text--font-weight: 500;
-    }
-    &-body1 {
-      --h-text--font-size: 16px;
-      letter-spacing: 0.5px;
-      --h-text--font-weight: 400;
-    }
-    &-body2 {
-      --h-text--font-size: 14px;
-      letter-spacing: 0.25px;
-      --h-text--font-weight: 400;
-    }
-    &-button {
-      --h-text--font-size: 14px;
-      letter-spacing: 1.25px;
-      --h-text--font-weight: 400;
-      text-transform: uppercase;
-    }
-    &-caption {
-      --h-text--font-size: 12px;
-      letter-spacing: 0.4px;
-      --h-text--font-weight: 400;
-    }
-    &-overline {
-      --h-text--font-size: 10px;
-      letter-spacing: 1.5px;
-      --h-text--font-weight: 400;
     }
   }
 
