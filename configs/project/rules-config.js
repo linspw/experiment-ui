@@ -12,7 +12,7 @@ if (process.env.npm_lifecycle_event.search('storybook') < 0) {
 } else {
   rules.push({
     test: /\.svg$/,
-    use: ["@svgr/webpack", "url-loader"],
+    use: ['@svgr/webpack', 'url-loader'],
   });
 }
 

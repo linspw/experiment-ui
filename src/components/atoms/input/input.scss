@@ -66,6 +66,13 @@
   padding-right: var(--size-base-medium);
   position: absolute;
   z-index: 10;
+
+  &--left {
+    left: 0;
+  }
+  &--right {
+    right: 0;
+  }
 }
 
 .h-input__field {

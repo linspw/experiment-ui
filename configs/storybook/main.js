@@ -1,25 +1,27 @@
-const { rules } = require("../project/rules-config");
-const { alias } = require("../project/alias-config");
+const { rules } = require('../project/rules-config');
+const { alias } = require('../project/alias-config');
 
 module.exports = {
   stories: [
-    "../../src/docs/0.welcome.stories.mdx",
-    "../../src/**/*.stories.mdx",
-    "../../src/**/*.stories.@(js|jsx|ts|tsx)",
+    '../../src/docs/0.welcome.stories.mdx',
+    '../../src/**/*.stories.mdx',
+    '../../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-viewport",
-    "storybook-design-token",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-viewport',
+    'storybook-design-token',
   ],
-  framework: "@storybook/vue3",
+  framework: '@storybook/vue3',
   core: {
-    builder: "webpack5",
+    builder: 'webpack5',
   },
   webpackFinal: async (config) => {
+    config.devtool = 'inline-source-map';
+
     const fileLoaderRule = config.module.rules.find(
-      (rule) => !Array.isArray(rule.test) && rule.test.test(".svg"),
+      (rule) => !Array.isArray(rule.test) && rule.test.test('.svg'),
     );
     fileLoaderRule.exclude = /\.svg$/;
 

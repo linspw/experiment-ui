@@ -15,6 +15,6 @@ exports.alias = {
   '@plugins': path.resolve(baseUrl, 'src/plugins'),
   '@router': path.resolve(baseUrl, 'src/router'),
   '@services': path.resolve(baseUrl, 'src/services'),
-  '@settings': path.resolve(baseUrl, 'config', 'settings'),
+  '@settings': path.resolve(baseUrl, 'configs', 'settings'),
   '@utils': path.resolve(baseUrl, 'src/utils'),
 };

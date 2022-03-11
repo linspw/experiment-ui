@@ -32,30 +32,30 @@ const CoreUIPlugin = {
     this.installMolecules(Vue);
   },
   installAtoms(Vue) {
-    Vue.component('h-avatar', HAvatar);
-    Vue.component('h-badge', HBadge);
-    Vue.component('h-button', HButton);
-    Vue.component('h-card', HCard);
-    Vue.component('h-divider', HDivider);
-    Vue.component('h-grid-container', HGridContainer);
-    Vue.component('h-grid-item', HGridItem);
-    Vue.component('h-icon', HIcon);
-    Vue.component('h-input', HInput);
-    Vue.component('h-select', HSelect);
-    Vue.component('h-image', HImage);
-    Vue.component('h-slider', HSlider);
-    Vue.component('h-tooltip', HTooltip);
-    Vue.component('h-text', HText);
-    Vue.component('h-suspense', HSuspense);
-    Vue.component('h-loading', HLoading);
+    Vue.component('HAvatar', HAvatar);
+    Vue.component('HBadge', HBadge);
+    Vue.component('HButton', HButton);
+    Vue.component('HCard', HCard);
+    Vue.component('HDivider', HDivider);
+    Vue.component('HGridContainer', HGridContainer);
+    Vue.component('HGridItem', HGridItem);
+    Vue.component('HIcon', HIcon);
+    Vue.component('HInput', HInput);
+    Vue.component('HSelect', HSelect);
+    Vue.component('HImage', HImage);
+    Vue.component('HSlider', HSlider);
+    Vue.component('HTooltip', HTooltip);
+    Vue.component('HText', HText);
+    Vue.component('HSuspense', HSuspense);
+    Vue.component('HLoading', HLoading);
   },
   installMolecules(Vue) {
-    Vue.component('h-breadcrumb', HBreadcrumb);
-    Vue.component('h-toast', HToast);
-    Vue.component('h-input-field', HInputField);
-    Vue.component('h-modal', HModal);
-    Vue.component('h-dropdown', HDropdown);
-    Vue.component('h-stepper', HStepper);
+    Vue.component('HBreadcrumb', HBreadcrumb);
+    Vue.component('HToast', HToast);
+    Vue.component('HInputField', HInputField);
+    Vue.component('HModal', HModal);
+    Vue.component('HDropdown', HDropdown);
+    Vue.component('HStepper', HStepper);
   },
 };
 

@@ -35,7 +35,7 @@ describe('HCard', () => {
     expect(container.firstChild.classList.contains('h-card--elevation-high')).toBe(true);
   });
 
-  it('render correctly with elevation', () => {
+  it('render correctly with tag', () => {
     const { container } = render(HCard, {
       props: {
         tag: 'section',

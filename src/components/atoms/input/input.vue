@@ -10,10 +10,10 @@
     }"
   >
     <HIcon
-      v-if="icon"
-      :color="iconColor"
-      :icon="icon"
-      class="h-input__icon"
+      v-if="iconLeft"
+      :color="iconLeftColor"
+      :icon="iconLeft"
+      class="h-input__icon h-input__icon--left"
     />
     <input
       :type="type"
@@ -22,6 +22,12 @@
       v-bind="$attrs"
       @input="handleInput"
     >
+    <HIcon
+      v-if="iconRight"
+      :color="iconRightColor"
+      :icon="iconRight"
+      class="h-input__icon h-input__icon--right"
+    />
   </div>
 </template>
 
@@ -76,11 +82,31 @@ export default {
       type: [String, Number],
       default: null,
     },
-    icon: {
+    iconLeft: {
       type: String,
-      default: '',
+      default: null,
     },
-    iconColor: {
+    iconRight: {
+      type: String,
+      default: null,
+    },
+    iconLeftColor: {
+      type: String,
+      default: 'inherit',
+      validator: shouldBeOneOf([
+        'inherit',
+        'primary',
+        'secondary',
+        'interactive',
+        'grey',
+        'success',
+        'danger',
+        'warn',
+        'info',
+        'inverse',
+      ]),
+    },
+    iconRightColor: {
       type: String,
       default: 'inherit',
       validator: shouldBeOneOf([

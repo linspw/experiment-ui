@@ -11,14 +11,14 @@
   --color-support-success: var(--color-support-success-scale-200);
 
   /**
-  * @tokens Colors Support - Error
+  * @tokens Colors Support - Danger
   * @presenter Color
   */
 
-  --color-support-error-scale-100: var(--color-red-scale-200);
-  --color-support-error-scale-200: var(--color-red-scale-400);
-  --color-support-error-scale-300: var(--color-red-scale-700);
-  --color-support-error: var(--color-support-error-scale-200);
+  --color-support-danger-scale-100: var(--color-red-scale-200);
+  --color-support-danger-scale-200: var(--color-red-scale-400);
+  --color-support-danger-scale-300: var(--color-red-scale-700);
+  --color-support-danger: var(--color-support-danger-scale-200);
 
   /**
   * @tokens Colors Support - Warn

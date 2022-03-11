@@ -1,11 +1,12 @@
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+
 const path = require('path');
-const { alias } = require("./configs/project/alias-config");
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+const { alias } = require('./configs/project/alias-config');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  resolve:{
+  resolve: {
     alias,
   },
   plugins: [vue()],
@@ -14,7 +15,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/main.js'),
       name: 'CoreUI',
-      fileName: (format) => `core-ui.${format}.js`
+      fileName: (format) => `core-ui.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
@@ -24,9 +25,9 @@ export default defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
-      }
+          vue: 'Vue',
+        },
+      },
     },
   },
-})
+});

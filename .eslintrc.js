@@ -1,33 +1,38 @@
 module.exports = {
-  root: true,
   env: {
+    browser: true,
+    es6: true,
     node: true,
+    'vue/setup-compiler-macros': true,
+    'jest/globals': true,
   },
   extends: [
-    "plugin:storybook/recommended",
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/airbnb",
+    'airbnb-base',
+    'plugin:vue/base',
+    'plugin:vue/vue3-recommended',
+    'plugin:storybook/recommended',
+    'plugin:jest/recommended',
   ],
-  parserOptions: {
-    parser: "babel-eslint",
-  },
   rules: {
-    "import/prefer-default-export": "off",
+    'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'off',
+    'no-unused-vars': ['error', {
+      argsIgnorePattern: '^_',
+    }],
+    'no-param-reassign': 'off',
+    'max-len': ['error', {
+      code: 120,
+      tabWidth: 2,
+      ignoreUrls: true,
+    }],
   },
-  settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-      },
-    },
-  },
-  ignorePatterns: ["**.test.js"],
+  ignorePatterns: ['**.test.js'],
   overrides: [
     {
       files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
       ],
       env: {
         jest: true,

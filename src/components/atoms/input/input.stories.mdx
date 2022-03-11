@@ -60,8 +60,10 @@ import HInput from './input.vue';
         components: { HInput },
         template: `
         <div>
-          <h-input type="text" icon="fas fa-user" />
-          <h-input type="text" icon="fas fa-user" icon-color="success" />
+          <h-input type="text" icon-left="fas fa-user" />
+          <h-input type="text" icon-right="fas fa-user" />
+          <h-input type="text" icon-left="fas fa-user" icon-right="fas fa-user" />
+          <h-input type="text" icon="fas fa-user" icon-left-color="success" />
         </div>
         `,
         methods: { action: action("clicked") }
