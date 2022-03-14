@@ -5,7 +5,8 @@
       ['h-input']: true,
       [`h-input--behavior-${behavior}`]: behavior != 'default',
       [`h-input--behavior-has-error`]: _hasError,
-      [`h-input--icon`]: icon,
+      [`h-input--icon-left`]: iconLeft,
+      [`h-input--icon-right`]: iconRight,
       [`h-input--size-${size}`]: size,
     }"
   >
@@ -14,6 +15,8 @@
       :color="iconLeftColor"
       :icon="iconLeft"
       class="h-input__icon h-input__icon--left"
+      :tag="iconLeftTag"
+      @click="$emit('click-icon-left')"
     />
     <input
       :type="type"
@@ -27,11 +30,14 @@
       :color="iconRightColor"
       :icon="iconRight"
       class="h-input__icon h-input__icon--right"
+      :tag="iconRightTag"
+      @click="$emit('click-icon-right')"
     />
   </div>
 </template>
 
 <script>
+/* eslint-disable no-underscore-dangle */
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
 
@@ -40,14 +46,13 @@ export default {
   components: {
     HIcon,
   },
-  inheritAttrs: false,
-  emits: ['input', 'update:modelValue'],
   inject: {
     hasErrorFromValidate: {
       from: 'hasErrorFromValidate',
       default: null,
     },
   },
+  inheritAttrs: false,
   props: {
     size: {
       type: String,
@@ -122,6 +127,14 @@ export default {
         'inverse',
       ]),
     },
+    iconLeftTag: {
+      type: String,
+      default: 'div',
+    },
+    iconRightTag: {
+      type: String,
+      default: 'div',
+    },
     type: {
       type: String,
       default: 'text',
@@ -129,8 +142,9 @@ export default {
     hasError: {
       type: Boolean,
       default: null,
-    }
+    },
   },
+  emits: ['input', 'update:modelValue', 'click-icon-left', 'click-icon-right'],
   data() {
     return {
       hasValue: Boolean(this.value || this.modelValue),

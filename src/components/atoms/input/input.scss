@@ -28,8 +28,12 @@
   width: var(--h-input-width);
   position: relative;
 
-  &--icon {
+  &--icon-left {
     --h-input__field-padding-left: var(--size-base-jumbo);
+  }
+
+  &--icon-right {
+    --h-input__field-padding-right: var(--size-base-jumbo);
   }
 
   &--behavior {
@@ -62,8 +66,8 @@
   display: flex;
   height: 100%;
   justify-content: center;
-  padding-left: var(--size-base-medium);
-  padding-right: var(--size-base-medium);
+  margin-left: var(--size-base-medium);
+  margin-right: var(--size-base-medium);
   position: absolute;
   z-index: 10;
 

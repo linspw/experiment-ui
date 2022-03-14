@@ -55,7 +55,7 @@ import HInput from './input.vue';
 ### Icons:
 
 <Canvas>
-  <Story name="Attributdsades">
+  <Story name="Icons">
     {{
         components: { HInput },
         template: `
@@ -63,10 +63,11 @@ import HInput from './input.vue';
           <h-input type="text" icon-left="fas fa-user" />
           <h-input type="text" icon-right="fas fa-user" />
           <h-input type="text" icon-left="fas fa-user" icon-right="fas fa-user" />
-          <h-input type="text" icon="fas fa-user" icon-left-color="success" />
+          <h-input type="text" icon-left="fas fa-user" icon-left-color="success" icon-right="fas fa-user" icon-right-color="success" />
+          <h-input type="text" icon-left="fas fa-user" icon-left-color="success" @click-icon-left="action" icon-left-tag="button" />
         </div>
         `,
-        methods: { action: action("clicked") }
+        methods: { action: () => { console.log('clicked') } }
     }}
   </Story>
 </Canvas>

@@ -10,16 +10,17 @@ const mountSuspense = async ({
   const slots = {};
 
   const mainComponent = transitionComponent
-    ? () => h(transitionComponent, null, () => h(component))
-    : () => h(component);
+    ? (props) => h(transitionComponent, null, () => h(component, props))
+    : (props) => h(component, props);
 
   if (mainComponent) slots.default = mainComponent;
-  if (loadingComponent) slots.loading = () => h(loadingComponent);
-  if (errorComponent) slots.error = () => h(errorComponent);
+  if (loadingComponent) slots.loading = (props) => h(loadingComponent, props);
+  if (errorComponent) slots.error = (props) => h(errorComponent, props);
 
   const wrapper = defineComponent({
-    render() {
-      return h(HSuspense, null, slots);
+    setup(props, { attrs }) {
+      const toBind = { ...attrs, ...props };
+      return () => h(HSuspense, toBind, slots);
     },
   });
 

@@ -3,15 +3,19 @@
     v-if="errorMsg"
     name="error"
     :error-msg="errorMsg"
+    v-bind="attrs"
   />
 
   <Suspense v-else>
     <template #default>
-      <slot />
+      <slot v-bind="attrs" />
     </template>
 
     <template #fallback>
-      <slot name="loading" />
+      <slot
+        name="loading"
+        v-bind="attrs"
+      />
     </template>
   </Suspense>
 </template>
@@ -22,16 +26,15 @@ import { ref, onErrorCaptured } from 'vue';
 export default {
   name: 'HSuspense',
   inheritAttrs: false,
-  setup(_, { slots }) {
+  setup(_props, { slots, attrs }) {
     const errorMsg = ref(null);
 
-    onErrorCaptured((_error) => {
+    onErrorCaptured((error) => {
       const hasErrorSlot = Boolean(slots.error);
-      if (hasErrorSlot) errorMsg.value = 'Uh oh. Something went wrong!';
+      if (hasErrorSlot) errorMsg.value = error;
       return !hasErrorSlot;
     });
-
-    return { errorMsg };
+    return { errorMsg, attrs };
   },
 };
 </script>
