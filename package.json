@@ -18,7 +18,8 @@
   "main": "dist/lib/core-ui.umd.js",
   "module": "dist/lib/core-ui.es.js",
   "files": [
-    "dist/lib/*"
+    "dist/lib/*",
+    "src/styles/*"
   ],
   "exports": {
     ".": {
