@@ -90,7 +90,7 @@ import HText from './text.vue';
 
 ### Tag use:
 
-Exemplo: normal html tags ou router link.
+Exemplo: normal html tags ou router link(href).
 
 <Canvas>
   <Story name="Tag use">
@@ -98,6 +98,7 @@ Exemplo: normal html tags ou router link.
         components: { HText },
         template: `
           <div>
+            <h-text tag="router-link">router-link</h-text>
             <h-text tag="h1">H1</h-text>
             <h-text tag="h2">H2</h-text>
             <h-text tag="h3">H3</h-text>
@@ -174,6 +175,9 @@ Exemplo: normal html tags ou router link.
             <h-text weight="regular">Regular</h-text>
             <h-text weight="medium">Medium</h-text>
             <h-text weight="bold">Bold</h-text>
+            <h-text uppercase>uppercase</h-text>
+            <h-text lowercase>LOWERCASE</h-text>
+            <h-text capitalize>capitalize</h-text>
             <h-text italic>Italic</h-text>
             <h-text ellipsis-nowrap style="width: 150px;">ellipsisNowrap example</h-text>
             <h-text dynamic><b>Italic</b> <i>italic</i> <a>link</a></h-text>

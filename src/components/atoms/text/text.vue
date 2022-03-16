@@ -7,6 +7,9 @@
       [`h-text--size-${size}`]: size != 'inherit',
       [`h-text--align-${align}`]: align != 'inherit',
       [`h-text--weight-${weight}`]: weight != 'inherit',
+      [`h-text--behavior-uppercase`]: uppercase,
+      [`h-text--behavior-lowercase`]: lowercase,
+      [`h-text--behavior-capitalize`]: capitalize,
       [`h-text--behavior-italic`]: italic,
       [`h-text--behavior-ellipsis-nowrap`]: ellipsisNowrap,
       [`h-text--behavior-link`]: link,
@@ -141,6 +144,18 @@ export default {
         'medium',
         'high',
       ]),
+    },
+    uppercase: {
+      type: Boolean,
+      default: false,
+    },
+    lowercase: {
+      type: Boolean,
+      default: false,
+    },
+    capitalize: {
+      type: Boolean,
+      default: false,
     },
     italic: {
       type: Boolean,
