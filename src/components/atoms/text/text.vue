@@ -8,9 +8,14 @@
       [`h-text--align-${align}`]: align != 'inherit',
       [`h-text--weight-${weight}`]: weight != 'inherit',
       [`h-text--behavior-italic`]: italic,
+      [`h-text--behavior-ellipsis-nowrap`]: ellipsisNowrap,
+      [`h-text--behavior-link`]: link,
+      [`h-text--behavior-dynamic`]: dynamic,
       [`h-text--color-${color}`]: color != 'inherit',
       [`h-text--emphasis-${emphasis}`]: emphasis != 'inherit',
     }"
+    :href="href"
+    :to="href"
   >
     <slot />
   </component>
@@ -97,6 +102,7 @@ export default {
         'a',
         'strong',
         'caption',
+        'router-link',
       ]),
     },
     align: {
@@ -137,6 +143,22 @@ export default {
       ]),
     },
     italic: {
+      type: Boolean,
+      default: false,
+    },
+    href: {
+      type: String,
+      default: null,
+    },
+    ellipsisNowrap: {
+      type: Boolean,
+      default: false,
+    },
+    link: {
+      type: Boolean,
+      default: false,
+    },
+    dynamic: {
       type: Boolean,
       default: false,
     },

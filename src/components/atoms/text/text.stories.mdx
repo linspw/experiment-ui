@@ -90,6 +90,8 @@ import HText from './text.vue';
 
 ### Tag use:
 
+Exemplo: normal html tags ou router link.
+
 <Canvas>
   <Story name="Tag use">
     {{
@@ -173,7 +175,9 @@ import HText from './text.vue';
             <h-text weight="medium">Medium</h-text>
             <h-text weight="bold">Bold</h-text>
             <h-text italic>Italic</h-text>
-            <h-text link tag="a" href="https://hyone-core-ui.netlify.app/">Link</h-text>
+            <h-text ellipsis-nowrap style="width: 150px;">ellipsisNowrap example</h-text>
+            <h-text dynamic><b>Italic</b> <i>italic</i> <a>link</a></h-text>
+            <h-text link tag="a" href="#">Link</h-text>
           </div>
         `,
     }}

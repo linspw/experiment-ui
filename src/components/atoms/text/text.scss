@@ -227,5 +227,37 @@
     &-italic {
       --h-text--font-style: italic;
     }
+    &-ellipsis-nowrap {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &-link {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-dynamic {
+      & > a {
+        cursor: pointer;
+        color: var(--color-theme-secondary);
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & > i {
+        font-style: italic;
+      }
+      & > strong,
+      & > b {
+        font-weight: 700;
+      }
+    }
   }
 }
