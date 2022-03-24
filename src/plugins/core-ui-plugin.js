@@ -1,3 +1,4 @@
+import VWave from 'v-wave';
 import {
   HAvatar,
   HButton,
@@ -28,6 +29,7 @@ import {
 
 const CoreUIPlugin = {
   install(Vue) {
+    Vue.use(VWave);
     this.installAtoms(Vue);
     this.installMolecules(Vue);
   },

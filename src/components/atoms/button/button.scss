@@ -4,11 +4,15 @@
   */
   --h-button-color-first: none;
   --h-button-color-second: none;
+  --h-button-color-third: none;
+  --h-button-color-quarter: none;
+  --h-button-color-quintenary: none;
+
 
   --h-button-border-radius: var(--border-radius-normal);
   --h-button-background-color: transparent;
-  --h-button-background-color--hover: var(--color-blue-grey-scale-400);
-  --h-button-background-color--active: var(--color-blue-grey-scale-500);
+  --h-button-background-color--hover: initial;
+  --h-button-background-color--active: initial;
   --h-button-text-decoration: none;
   --h-button-text-decoration--hover: none;
   --h-button-text-decoration--active: none;
@@ -68,27 +72,44 @@
     &-primary {
       --h-button-color-first: var(--color-theme-primary);
       --h-button-color-second: var(--colors-original-white);
+      --h-button-color-third: var(--color-theme-primary-800);
+      --h-button-color-quarter: var(--color-theme-primary-600);
+      --h-button-color-quintenary: var(--color-theme-primary-100);
     }
     &-secondary {
       --h-button-color-first: var(--color-theme-secondary);
       --h-button-color-second: var(--colors-original-white);
+      --h-button-color-third: var(--color-theme-secondary-300);
+      --h-button-color-quarter: var(--color-theme-secondary-100);
+      --h-button-color-quintenary: var(--color-theme-secondary-050);
     }
-
     &-success {
-      --h-button-color-first: var(--color-support-success);
+      --h-button-color-first: var(--color-support-success-scale-400);
       --h-button-color-second: var(--colors-original-white);
+      --h-button-color-third: var(--color-support-success-scale-300);
+      --h-button-color-quarter: var(--color-support-success-scale-200);
+      --h-button-color-quintenary: var(--color-support-success-scale-100);
     }
-    &-error {
-      --h-button-color-first: var(--color-support-danger);
-      --h-button-color-second: var(--colors-original-black);
+    &-danger {
+      --h-button-color-first: var(--color-support-danger-scale-400);
+      --h-button-color-second: var(--colors-original-white);
+      --h-button-color-third: var(--color-support-danger-scale-300);
+      --h-button-color-quarter: var(--color-support-danger-scale-200);
+      --h-button-color-quintenary: var(--color-support-danger-scale-100);
     }
     &-warn {
-      --h-button-color-first: var(--color-support-warn);
+      --h-button-color-first: var(--color-support-warn-scale-400);
       --h-button-color-second: var(--colors-original-black);
+      --h-button-color-third: var(--color-support-warn-scale-300);
+      --h-button-color-quarter: var(--color-support-warn-scale-200);
+      --h-button-color-quintenary: var(--color-support-warn-scale-100);
     }
     &-info {
-      --h-button-color-first: var(--color-support-info);
+      --h-button-color-first: var(--color-support-info-scale-400);
       --h-button-color-second: var(--colors-original-white);
+      --h-button-color-third: var(--color-support-info-scale-300);
+      --h-button-color-quarter: var(--color-support-info-scale-200);
+      --h-button-color-quintenary: var(--color-support-info-scale-100);
     }
   }
 
@@ -98,11 +119,15 @@
       --h-button-background-color: var(--h-button-color-first);
       --h-button-color: var(--h-button-color-second);
       --h-button-border: var(--size-base-micro) solid var(--h-button-color-first);
+      --h-button-background-color--hover: var(--h-button-color-third);
+      --h-button-background-color--active: var(--h-button-color-quarter);
     }
     &-outlined {
       --h-button-background-color: transparent;
       --h-button-color: var(--h-button-color-first);
       --h-button-border: var(--size-base-micro) solid var(--h-button-color-first);
+      --h-button-background-color--hover: var(--h-button-color-quintenary);
+      --h-button-background-color--active: var(--h-button-color-quarter);
     }
     &-text {
       --h-button-border: var(--size-base-micro) solid transparent;

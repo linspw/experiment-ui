@@ -1,10 +1,33 @@
 :root {
+  --color-theme-primary-050: #f9f9f9;
+  --color-theme-primary-100: #f3f3f3;
+  --color-theme-primary-200: #eaeaea;
+  --color-theme-primary-300: #dadada;
+  --color-theme-primary-400: #b7b7b7;
+  --color-theme-primary-500: #979797;
+  --color-theme-primary-600: #6f6f6f;
+  --color-theme-primary-700: #5b5b5b;
+  --color-theme-primary-800: #3c3c3c;
+  --color-theme-primary-900: #1c1c1c;
+
+  --color-theme-secondary-050: #e9e8ff;
+  --color-theme-secondary-100: #c7c6ff;
+  --color-theme-secondary-200: #9ea1ff;
+  --color-theme-secondary-300: #717bff;
+  --color-theme-secondary-400: #4a5bff;
+  --color-theme-secondary-500: #0B39FF;
+  --color-theme-secondary-600: #062ef3;
+  --color-theme-secondary-700: #001fe6;
+  --color-theme-secondary-800: #0007dc;
+  --color-theme-secondary-900: #0000cd;
+
+
   /**
   * @tokens Colors - Theme default
   * @presenter Color
   */
-  --color-theme-primary: #1C1C1C;
-  --color-theme-secondary: #0B39FF;
+  --color-theme-primary: var(--color-theme-primary-900);
+  --color-theme-secondary: var(--color-theme-secondary-500);
   --color-theme-grey: var(--color-blue-grey-scale-500);
   --color-theme-success: var(--color-support-success);
   --color-theme-danger: var(--color-support-danger);

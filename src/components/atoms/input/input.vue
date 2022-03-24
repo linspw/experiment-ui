@@ -1,6 +1,7 @@
 <template>
   <div
     ref="input"
+    v-wave
     :class="{
       ['h-input']: true,
       [`h-input--behavior-${behavior}`]: behavior != 'default',

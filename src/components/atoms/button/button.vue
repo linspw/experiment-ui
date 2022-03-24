@@ -1,5 +1,6 @@
 <template>
   <button
+    v-wave
     :class="{
       [`h-button`]: true,
       [`h-button--behavior-${behavior}`]: behavior,
@@ -58,7 +59,7 @@ export default {
         'primary',
         'secondary',
         'success',
-        'error',
+        'danger',
         'warn',
         'info',
       ]),
