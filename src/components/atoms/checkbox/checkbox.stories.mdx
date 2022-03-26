@@ -1,0 +1,64 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HCheckbox from './checkbox.vue';
+
+<Meta title="Design System/Atoms/Checkbox" component={HCheckbox} />
+
+## Checkbox
+
+### Uso normal:
+
+<Canvas>
+  <Story name="Uso normal">
+    {{
+        components: { HCheckbox },
+        data() {
+          return {
+            status: null,
+          };
+        },
+        template: '<h-checkbox label="Checkbox" v-model="status" />',
+    }}
+  </Story>
+</Canvas>
+
+### Com eventos e v-model:
+
+<Canvas>
+  <Story name="Com eventos e v-model">
+    {{
+        components: { HCheckbox },
+        data() {
+          return {
+            status1: null,
+            status2: null,
+          };
+        },
+        template: `<div>
+          <h-checkbox label="Checkbox" v-model="status1" />
+          <h-checkbox label="Checkbox" @change="status2=$event" :checked="status2" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Comportamentos:
+
+<Canvas>
+  <Story name="Comportamentos">
+    {{
+        components: { HCheckbox },
+        data() {
+          return {
+            status: null,
+          };
+        },
+        template: `<div>
+          <h-checkbox label="Checkbox" checked is-disabled />
+          <h-checkbox label="Checkbox" is-disabled />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HCheckbox} />

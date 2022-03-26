@@ -5,6 +5,7 @@
       ['h-input']: true,
       [`h-input--behavior-${behavior}`]: behavior != 'default',
       [`h-input--behavior-has-error`]: _hasError,
+      [`h-input--behavior-is-disabled`]: isDisabled,
       [`h-input--icon-left`]: iconLeft,
       [`h-input--icon-right`]: iconRight,
       [`h-input--size-${size}`]: size,
@@ -138,10 +139,21 @@ export default {
     type: {
       type: String,
       default: 'text',
+      validator: shouldBeOneOf([
+        'text',
+        'date',
+        'number',
+        'email',
+        'password',
+      ]),
     },
     hasError: {
       type: Boolean,
       default: null,
+    },
+    isDisabled: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ['input', 'update:modelValue', 'click-icon-left', 'click-icon-right'],

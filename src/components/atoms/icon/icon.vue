@@ -8,7 +8,7 @@
       [`h-icon--wrapper-${wrapper}`]: wrapper !== 'default',
     }"
   >
-    <i :class="icon" />
+    <i :class="internalIcon" />
   </component>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     },
     size: {
       type: String,
-      default: 'inherit',
+      default: 'large',
       validator: shouldBeOneOf([
         'inherit',
         'medium',
@@ -59,6 +59,7 @@ export default {
         'span',
         'button',
         'a',
+        'router-link',
       ]),
     },
     color: {
@@ -76,6 +77,11 @@ export default {
         'info',
         'inverse',
       ]),
+    },
+  },
+  computed: {
+    internalIcon() {
+      return `${this.icon} fa-fw`;
     },
   },
 };

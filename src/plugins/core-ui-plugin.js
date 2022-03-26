@@ -15,6 +15,7 @@ import {
   HText,
   HSuspense,
   HLoading,
+  HCheckbox,
 } from '@components/atoms';
 
 import {
@@ -48,6 +49,7 @@ const CoreUIPlugin = {
     Vue.component('HText', HText);
     Vue.component('HSuspense', HSuspense);
     Vue.component('HLoading', HLoading);
+    Vue.component('HCheckbox', HCheckbox);
   },
   installMolecules(Vue) {
     Vue.component('HBreadcrumb', HBreadcrumb);

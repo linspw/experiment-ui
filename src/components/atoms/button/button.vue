@@ -1,5 +1,6 @@
 <template>
-  <button
+  <component
+    :is="tag"
     :class="{
       [`h-button`]: true,
       [`h-button--behavior-${behavior}`]: behavior,
@@ -35,7 +36,7 @@
       :color="iconRightColor"
       :class="{'h-button__icon h-button__icon--position-right': slotPassed}"
     />
-  </button>
+  </component>
 </template>
 
 <script>
@@ -47,6 +48,15 @@ export default {
   components: { HIcon },
   inheritAttrs: false,
   props: {
+    tag: {
+      type: String,
+      default: 'button',
+      validator: shouldBeOneOf([
+        'button',
+        'a',
+        'router-link',
+      ]),
+    },
     behavior: {
       type: String,
       default: '',

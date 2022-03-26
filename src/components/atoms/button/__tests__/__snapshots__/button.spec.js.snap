@@ -18,7 +18,7 @@ exports[`HButton render correctly with default props 1`] = `
 
 exports[`HButton render correctly with different props 1`] = `
 "<button class=\\"h-button h-button--behavior-block h-button--color-secondary h-button--size-small h-button--variant-contained\\" iconcolor=\\"primary\\">
-  <div class=\\"h-icon h-icon--size-inherit h-button__icon h-button__icon--position-left\\"><i class=\\"fas fa-circle\\"></i></div>
+  <div class=\\"h-icon h-icon--size-large h-button__icon h-button__icon--position-left\\"><i class=\\"fas fa-circle fa-fw\\"></i></div>
   <!--v-if--><span class=\\"h-button__text\\">With many Itens</span>
   <!--v-if-->
 </button>"

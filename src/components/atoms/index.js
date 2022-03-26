@@ -13,3 +13,4 @@ export * from './badge';
 export * from './text';
 export * from './suspense';
 export * from './loading';
+export * from './checkbox';
