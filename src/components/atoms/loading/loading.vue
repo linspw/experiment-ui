@@ -70,7 +70,6 @@ $duration: 1.4s;
   width: var(--h-spinner-width);
   height: var(--h-spinner-height);
 
-
   &--size {
     &-medium {
       --h-spinner-width: var(--size-base-medium);
