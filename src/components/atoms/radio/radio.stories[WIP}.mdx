@@ -1,0 +1,25 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HRadio from './radio.vue';
+
+<Meta title="Design System/Atoms/Radio" component={HRadio} />
+
+## Checkbox
+
+### Uso normal:
+
+<Canvas>
+  <Story name="Uso normal">
+    {{
+        components: { HRadio },
+        data() {
+          return {
+            status: null,
+          };
+        },
+        template: '<h-radio label="Checkbox" v-model="status" />',
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HRadio} />

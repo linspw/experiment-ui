@@ -16,6 +16,7 @@
   --h-button-text-decoration: none;
   --h-button-text-decoration--hover: none;
   --h-button-text-decoration--active: none;
+  --h-button-padding: var(--size-base-small) var(--size-base-large);
   --h-button-color: inherit;
   --h-button-font-weight: 500;
   --h-button-border: none;
@@ -30,7 +31,7 @@
   display: inline-flex;
   font-weight: var(--h-button-font-weight);
   justify-content: center;
-  padding: var(--size-base-small) var(--size-base-large);
+  padding: var(--h-button-padding);
   position: relative;
   text-decoration: var(--h-button-text-decoration);
   transition: background-color 250ms, opacity 250ms;
@@ -164,6 +165,9 @@
     &-is-accessible {
       margin-top: var(--size-base-extra-small);
       margin-bottom: var(--size-base-extra-small);
+    }
+    &-only-icon {
+      --h-button-padding: var(--size-base-small);
     }
   }
 

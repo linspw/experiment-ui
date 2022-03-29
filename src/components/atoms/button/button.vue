@@ -7,6 +7,7 @@
       ['h-button--behavior-is-rounded']: isRounded,
       [`h-button--behavior-is-loading`]: isLoading,
       [`h-button--behavior-is-accessible`]: isAccessible,
+      [`h-button--behavior-only-icon`]: onlyIcon,
       [`h-button--color-${color}`]: color,
       [`h-button--size-${size}`]: size,
       [`h-button--variant-${variant}`]: variant,
@@ -116,6 +117,10 @@ export default {
       default: false,
     },
     isAccessible: {
+      type: Boolean,
+      default: false,
+    },
+    onlyIcon: {
       type: Boolean,
       default: false,
     },
