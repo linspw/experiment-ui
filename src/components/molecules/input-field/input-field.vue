@@ -11,7 +11,9 @@
     >
       {{ label }}
     </HText>
+
     <slot />
+
     <HText
       v-if="helperTextActive"
       :color="finalHasError ? 'danger' : 'grey'"
@@ -55,8 +57,8 @@ export default {
     },
   },
   setup(props) {
-    const $state = reactive({ _hasError: false });
-    const finalHasError = computed(() => props.hasError || $state._hasError);
+    const $state = reactive({ hasError: false });
+    const finalHasError = computed(() => props.hasError || $state.hasError);
     provide('hasErrorFromValidate', finalHasError.value);
 
     return { finalHasError };

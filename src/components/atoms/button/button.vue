@@ -20,17 +20,20 @@
       :color="iconLeftColor"
       :class="{'h-button__icon h-button__icon--position-left': slotPassed}"
     />
+
     <HIcon
       v-if="isLoading"
       icon="fas fa-circle-notch fa-spin"
       class="h-button__icon h-button__icon--is-loading"
     />
+
     <span
-      v-if="slotPassed"
+      v-if="slotPassed && !onlyIcon"
       :class="{ 'h-button__text': true }"
     >
       <slot />
     </span>
+
     <HIcon
       v-if="iconRight"
       :icon="iconRight"
@@ -77,6 +80,11 @@ export default {
     variant: {
       type: String,
       default: 'contained',
+      validator: shouldBeOneOf([
+        'contained',
+        'outlined',
+        'text',
+      ]),
     },
     size: {
       type: String,
