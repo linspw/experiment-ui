@@ -6,6 +6,7 @@
       [`h-input--behavior-${behavior}`]: behavior != 'default',
       [`h-input--behavior-has-error`]: _hasError,
       [`h-input--behavior-is-disabled`]: isDisabled,
+      [`h-input--behavior-block`]: block,
       [`h-input--icon-left`]: iconLeft,
       [`h-input--icon-right`]: iconRight,
       [`h-input--size-${size}`]: size,
@@ -75,6 +76,10 @@ export default {
         'default',
         'block',
       ]),
+    },
+    block: {
+      type: Boolean,
+      default: false,
     },
     value: {
       type: [String, Number],
