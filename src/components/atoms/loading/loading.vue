@@ -22,36 +22,20 @@
 
 <script setup>
 import { shouldBeOneOf } from '@utils/validations';
+import {
+  loadingSizes, loadingColors,
+} from '@assets/constants';
 
 const $props = defineProps({
   size: {
     type: String,
     default: 'colossal',
-    validator: shouldBeOneOf([
-      'medium',
-      'large',
-      'extra-large',
-      'jumbo',
-      'extra-jumbo',
-      'giant',
-      'extra-giant',
-      'colossal',
-      'extra-colossal',
-      'mega',
-      'extra-mega',
-      'immense',
-    ]),
+    validator: shouldBeOneOf(loadingSizes),
   },
   color: {
     type: String,
     default: 'default',
-    validator: shouldBeOneOf([
-      'default',
-      'primary',
-      'secondary',
-      'tertiary',
-      'inverse',
-    ]),
+    validator: shouldBeOneOf(loadingColors),
   },
 });
 </script>

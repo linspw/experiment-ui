@@ -1,0 +1,105 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { ref } from 'vue';
+import { action } from '@storybook/addon-actions'
+import HTextField from './text-field.vue';
+
+<Meta title="Design System/Atoms/TextField" component={HTextField} />
+
+## Card
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HTextField },
+        setup () {
+          const value = ref(null);
+          return { value };
+        },
+        template: `<div>
+          <h-text-field label="Default use" v-model="value" />
+          {{ value }}
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Helper text:
+
+<Canvas>
+  <Story name="Helper text">
+    {{
+        components: { HTextField },
+        template: `<div>
+          <h-text-field label="Helper text" helper-text="Helper text" />
+          <h-text-field label="Helper text" helper-text="Helper text" :invalid="true" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Icon:
+
+<Canvas>
+  <Story name="Icon">
+    {{
+        components: { HTextField },
+        template: `<div>
+          <h-text-field label="Helper text" icon-left="fas fa-home" icon-right="fas fa-home" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Types:
+
+<Canvas>
+  <Story name="Types">
+    {{
+        components: { HTextField },
+        template: `<div>
+          <h-text-field type="text" />
+          <h-text-field type="number" />
+          <h-text-field type="date" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Masked:
+
+<Canvas>
+  <Story name="Masked">
+    {{
+        components: { HTextField },
+        data() {
+          return { data1: '', data2: '' };
+        },
+        template: `<div>
+          <h-text-field :label="data1" type="text" v-model="data1" mask="##-###-##" maxlength="9" />
+          <h-text-field :label="data2" type="text" v-model="data2" mask="##-###-##" maxlength="9" :unmasked="true"/>
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+
+### Disabled, Invalid, acessible and placeholder:
+
+<Canvas>
+  <Story name="Disabled and Invalid">
+    {{
+        components: { HTextField },
+        template: `<div>
+          <h-text-field invalid value="invalid" />
+          <h-text-field acessible value="acessible" />
+          <h-text-field disabled value="disabled" />
+          <h-text-field placeholder="placeholder" />
+          <h-text-field placeholder="maxlength minlength" maxlength="4" minlength="2" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HTextField} />

@@ -124,8 +124,8 @@ import HButton from './button.vue';
         components: { HButton },
         template: `
         <div>
-          <h-button @click="action" :is-rounded="true">Rounded</h-button>
-          <h-button @click="action" :is-rounded="false">Not rounded</h-button>
+          <h-button @click="action" rounded>Rounded</h-button>
+          <h-button @click="action" :rounded="false">Not rounded</h-button>
         </div>
         `,
         methods: { action: action("clicked") }
@@ -141,7 +141,7 @@ import HButton from './button.vue';
         components: { HButton },
         template: `
         <div>
-          <h-button @click="action" :is-loading="true">Loading</h-button>
+          <h-button @click="action" loading>Loading</h-button>
         </div>
         `,
         methods: { action: action("clicked") }
@@ -159,7 +159,7 @@ Items acessíveis tem margens automaticas.
         components: { HButton },
         template: `
         <div>
-          <h-button :is-accessible="true">is-accessible</h-button>
+          <h-button accessible>is-accessible</h-button>
         </div>
         `,
         methods: { action: action("clicked") }
@@ -191,7 +191,7 @@ Items acessíveis tem margens automaticas.
         components: { HButton },
         template: `
         <div>
-          <h-button @click="action" behavior="block">Behavior</h-button>
+          <h-button @click="action" block>Behavior</h-button>
         </div>
         `,
         methods: { action: action("clicked") }

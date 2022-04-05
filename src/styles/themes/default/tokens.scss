@@ -21,6 +21,12 @@
   --color-theme-secondary-800: #0007dc;
   --color-theme-secondary-900: #0000cd;
 
+  /**
+  * @tokens Colors - Original
+  * @presenter Color
+  */
+  --color-theme-black: var(--color-black);
+  --color-theme-white: var(--color-white);
 
   /**
   * @tokens Colors - Theme default
@@ -29,16 +35,9 @@
   --color-theme-primary: var(--color-theme-primary-900);
   --color-theme-secondary: var(--color-theme-secondary-500);
   --color-theme-grey: var(--color-blue-grey-scale-500);
-  --color-theme-success: var(--color-support-success);
-  --color-theme-danger: var(--color-support-danger);
-  --color-theme-warn: var(--color-support-warn);
-  --color-theme-info: var(--color-support-info);
-  --color-theme-inverse: var(--color-white);
-
-  /**
-  * @tokens Colors - Original
-  * @presenter Color
-  */
-  --colors-original-black: var(--color-black);
-  --colors-original-white: var(--color-white);
+  --color-theme-success: var(--color-support-success-scale-300);
+  --color-theme-danger: var(--color-support-danger-scale-300);
+  --color-theme-warn: var(--color-support-warn-scale-300);
+  --color-theme-info: var(--color-support-info-scale-300);
+  --color-theme-inverse: var(--color-theme-white);
 }

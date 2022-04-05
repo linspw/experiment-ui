@@ -9,6 +9,7 @@
 import HToast from './toast.vue';
 
 export default {
+  name: 'HToastWrapper',
   components: {
     HToast,
   },

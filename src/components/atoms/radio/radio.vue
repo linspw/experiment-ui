@@ -28,7 +28,7 @@ export default {
   --h-radio-main-color: var(--color-theme-secondary);
   --h-radio-background-color: transparent;
   --h-radio-border-color: var(--color-theme-primary);
-  --h-radio-color: var(--colors-original-white);
+  --h-radio-color: var(--color-theme-white);
   --h-radio__label--color: inherit;
 }
 </style>

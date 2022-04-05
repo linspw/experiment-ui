@@ -88,6 +88,21 @@ import HText from './text.vue';
 </Canvas>
 
 
+### Dynamic:
+
+<Canvas>
+  <Story name="Dynamic">
+    {{
+        components: { HText },
+        template: `
+          <div>
+            <h-text dynamic><b>Bold</b> <a>Link</a> <i>italic</i></h-text>
+          </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
 ### Tag use:
 
 Exemplo: normal html tags ou router link(href).

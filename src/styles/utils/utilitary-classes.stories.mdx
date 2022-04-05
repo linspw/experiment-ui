@@ -1,4 +1,11 @@
-import { Meta, ArgsTable, Story, Canvas, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import {
+  Meta,
+  ArgsTable,
+  Story,
+  Canvas,
+  ColorPalette,
+  ColorItem,
+} from "@storybook/addon-docs";
 
 <Meta title="Utils/Classes/Padding e Margin" />
 
@@ -14,28 +21,29 @@ Os tamanhos seguem a escala "Size base".
       data() {
         return {
           sizeList: [
-          'nano',
-          'micro',
-          'extra-small',
-          'small',
-          'medium',
-          'large',
-          'extra-large',
-          'jumbo',
-          'extra-jumbo',
-          'giant',
-          'extra-giant',
-          'colossal',
-          'extra-colossal',
-          'mega',
-          'extra-mega',
-          'immense',
-        ]};
+            "nano",
+            "micro",
+            "extra-small",
+            "small",
+            "medium",
+            "large",
+            "extra-large",
+            "jumbo",
+            "extra-jumbo",
+            "giant",
+            "extra-giant",
+            "colossal",
+            "extra-colossal",
+            "mega",
+            "extra-mega",
+            "immense",
+          ],
+        };
       },
       methods: {
         createClass(type, variant, size) {
-          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
-        }
+          return `h-${type}${variant ? "-" + variant : ""}--${size}`;
+        },
       },
       template: `
         <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
@@ -47,33 +55,34 @@ Os tamanhos seguem a escala "Size base".
 </Canvas>
 
 <Canvas>
-   <Story name="Margin">
+  <Story name="Margin">
     {{
       data() {
         return {
           sizeList: [
-          'nano',
-          'micro',
-          'extra-small',
-          'small',
-          'medium',
-          'large',
-          'extra-large',
-          'jumbo',
-          'extra-jumbo',
-          'giant',
-          'extra-giant',
-          'colossal',
-          'extra-colossal',
-          'mega',
-          'extra-mega',
-          'immense',
-        ]};
+            "nano",
+            "micro",
+            "extra-small",
+            "small",
+            "medium",
+            "large",
+            "extra-large",
+            "jumbo",
+            "extra-jumbo",
+            "giant",
+            "extra-giant",
+            "colossal",
+            "extra-colossal",
+            "mega",
+            "extra-mega",
+            "immense",
+          ],
+        };
       },
       methods: {
         createClass(type, variant, size) {
-          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
-        }
+          return `h-${type}${variant ? "-" + variant : ""}--${size}`;
+        },
       },
       template: `
         <div style="display: flex; flex-wrap: wrap; align-items: baseline;">
@@ -94,28 +103,29 @@ Os tamanhos seguem a escala "Size base".
       data() {
         return {
           sizeList: [
-          'nano',
-          'micro',
-          'extra-small',
-          'small',
-          'medium',
-          'large',
-          'extra-large',
-          'jumbo',
-          'extra-jumbo',
-          'giant',
-          'extra-giant',
-          'colossal',
-          'extra-colossal',
-          'mega',
-          'extra-mega',
-          'immense',
-        ]};
+            "nano",
+            "micro",
+            "extra-small",
+            "small",
+            "medium",
+            "large",
+            "extra-large",
+            "jumbo",
+            "extra-jumbo",
+            "giant",
+            "extra-giant",
+            "colossal",
+            "extra-colossal",
+            "mega",
+            "extra-mega",
+            "immense",
+          ],
+        };
       },
       methods: {
         createClass(type, variant, size) {
-          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
-        }
+          return `h-${type}${variant ? "-" + variant : ""}--${size}`;
+        },
       },
       template: `
         <p style="background-color: black; color: white; padding: 16px;">Top</p>
@@ -139,7 +149,6 @@ Os tamanhos seguem a escala "Size base".
   </Story>
 </Canvas>
 
-
 #### Margin
 
 <Canvas>
@@ -148,28 +157,29 @@ Os tamanhos seguem a escala "Size base".
       data() {
         return {
           sizeList: [
-          'nano',
-          'micro',
-          'extra-small',
-          'small',
-          'medium',
-          'large',
-          'extra-large',
-          'jumbo',
-          'extra-jumbo',
-          'giant',
-          'extra-giant',
-          'colossal',
-          'extra-colossal',
-          'mega',
-          'extra-mega',
-          'immense',
-        ]};
+            "nano",
+            "micro",
+            "extra-small",
+            "small",
+            "medium",
+            "large",
+            "extra-large",
+            "jumbo",
+            "extra-jumbo",
+            "giant",
+            "extra-giant",
+            "colossal",
+            "extra-colossal",
+            "mega",
+            "extra-mega",
+            "immense",
+          ],
+        };
       },
       methods: {
         createClass(type, variant, size) {
-          return `h-${type}${variant ? '-' + variant : ''}--${size}`;
-        }
+          return `h-${type}${variant ? "-" + variant : ""}--${size}`;
+        },
       },
       template: `
         <p style="background-color: black; color: white; padding: 16px;">Top</p>
@@ -192,4 +202,3 @@ Os tamanhos seguem a escala "Size base".
     }}
   </Story>
 </Canvas>
-

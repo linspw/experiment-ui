@@ -14,14 +14,58 @@ import HModal from './modal.vue';
     {{
       components: { HModal, HButton },
       data() {
-        return { isOpen: false };
+        return { active: false };
       },
       template: `<div>
-        <h-button @click="isOpen = !isOpen">Activing</h-button>
-        <h-modal :is-open="isOpen" @closing="isOpen = false">HModal</h-modal>
+        <h-button @click="active = !active">Activing</h-button>
+        <h-modal :active="active" @deactivating="active = false">HModal</h-modal>
       </div>`,
     }}
   </Story>
 </Canvas>
+
+### Has close button:
+
+<Canvas>
+  <Story name="Has close button">
+    {{
+      components: { HModal, HButton },
+      data() {
+        return { active: false };
+      },
+      template: `<div>
+        <h-button @click="active = !active">Activing</h-button>
+        <h-modal :active="active" @deactivating="active = false" :has-close-button="false">HModal</h-modal>
+      </div>`,
+    }}
+  </Story>
+</Canvas>
+
+### Sizes:
+
+<Canvas>
+  <Story name="Sizes">
+    {{
+      components: { HModal, HButton },
+      data() {
+        return { active: false, size: 'default' };
+      },
+      methods: {
+        handleClick(size) {
+          this.active = true;
+          this.size = size;
+        },
+      },
+      template: `<div>
+        <h-button @click="handleClick('default')">default</h-button>
+        <h-button @click="handleClick('small')">small</h-button>
+        <h-button @click="handleClick('medium')">medium</h-button>
+        <h-button @click="handleClick('large')">large</h-button>
+        <h-modal :active="active" @deactivating="active = false" :size="size">HModal</h-modal>
+      </div>`,
+    }}
+  </Story>
+</Canvas>
+
 
 <ArgsTable of={HModal} />

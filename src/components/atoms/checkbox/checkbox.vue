@@ -87,7 +87,7 @@ export default {
   --h-checkbox-main-color: var(--color-theme-secondary);
   --h-checkbox-background-color: transparent;
   --h-checkbox-border-color: var(--color-theme-primary);
-  --h-checkbox-color: var(--colors-original-white);
+  --h-checkbox-color: var(--color-theme-white);
   --h-checkbox__label--color: inherit;
 }
 

@@ -37,7 +37,9 @@ export default {
   computed: {
     style() {
       return {
-        background: `linear-gradient(to right, var(--color-theme-secondary) 0%, var(--color-theme-secondary) ${this.value}%, #fff ${this.value}%, #fff 100%)`,
+        background: `linear-gradient(to right, var(--color-theme-secondary) 0%,
+        var(--color-theme-secondary) ${this.value}%, 
+        #fff ${this.value}%, #fff 100%)`,
       };
     },
   },
@@ -48,3 +50,30 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+input[type=range].h-slider {
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  // background-color: blue;
+  border-radius: 5px;
+  border-width: var(--size-base-nano);
+  border-style: solid;
+  border-color: var(--color-blue-grey-scale-400);
+  height: 8px;
+  outline: none;
+  transition: opacity .2s;
+  width: 100%;
+}
+
+input[type=range].h-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--size-base-medium);
+  width: var(--size-base-medium);
+  border-radius: 50%;
+  background: var(--color-theme-secondary);
+  cursor: pointer;
+}
+
+</style>

@@ -2,7 +2,7 @@
   <div
     :class="{
       'h-select': true,
-      [`h-select--behavior-${behavior}`]: behavior != 'default',
+      [`h-select--behavior-block`]: block,
       [`h-select--behavior-has-value`]: hasValue,
       [`h-select--size-${size}`]: size,
     }"
@@ -10,7 +10,8 @@
     <select
       class="h-select__field"
       v-bind="$attrs"
-      @change.stop="handlerChange"
+      :value="internalValue"
+      @change.stop="handlerChange($event?.target?.value)"
     >
       <option
         v-if="placeholder"
@@ -37,20 +38,22 @@
 
 <script>
 import { shouldBeOneOf } from '@utils/validations';
+import {
+  selectSizes,
+} from '@assets/constants';
 
 export default {
   name: 'HSelect',
   inheritAttrs: false,
   props: {
-    behavior: {
-      type: String,
-      default: 'default',
-      validator: shouldBeOneOf(['default', 'block']),
+    block: {
+      type: Boolean,
+      default: false,
     },
     size: {
       default: 'medium',
       type: String,
-      validator: shouldBeOneOf(['small', 'medium']),
+      validator: shouldBeOneOf(selectSizes),
     },
     options: {
       default() {
@@ -59,24 +62,106 @@ export default {
       type: Array,
     },
     placeholder: {
-      default: '',
+      default: null,
       type: String,
     },
+    value: {
+      type: [Object, String],
+      default: null,
+    },
+    modelValue: {
+      type: [Object, String],
+      default: null,
+    },
   },
+  emits: ['input', 'change', 'select', 'update:modelValue'],
   computed: {
+    internalValue() {
+      return this.value || this.modelValue;
+    },
     hasValue() {
-      return Boolean(this.$attrs.value || this.$attrs.modelValue);
+      return Boolean(this.internalValue);
     },
   },
   methods: {
-    handlerChange($event) {
-      if (this.$attrs.onInput) return this.$emit('input', $event.target.value);
-      if (this.$attrs.onChange) return this.$emit('change', $event.target.value);
-      if (this.$attrs.onSelect) return this.$emit('select', $event.target.value);
-      if (this.$attrs['onUpdate:modelValue']) return this.$emit('update:modelValue', $event.target.value);
-
-      return null;
+    handlerChange(value) {
+      this.$emit('input', value);
+      this.$emit('change', value);
+      this.$emit('select', value);
+      this.$emit('update:modelValue', value);
     },
   },
 };
 </script>
+
+<style lang="scss">
+:root {
+  --h-select--border-color: var(--color-theme-primary);
+  --h-select--border-radius: var(--border-radius-normal);
+  --h-select--border-style:  solid;
+  --h-select--border-width: var(--size-base-micro);
+  --h-select__field--color: var(--color-theme-primary);
+  --h-select__field--background-color: var(--color-theme-white);
+}
+
+.h-select {
+  border-color: var(--h-select--border-color);
+  border-radius: var(--h-select--border-radius);
+  border-style: var(--h-select--border-style);
+  border-width: var(--h-select--border-width);
+
+  display: inline-flex;
+  font-family: 'Red Hat Text', sans-serif;
+  height: fit-content;
+  position: relative;
+  width: 303px;
+
+  &--size {
+    &-small {
+      & > .h-select__field {
+        min-height: var(--size-base-extra-large);
+        font-size: var(--size-scalable-micro);
+      }
+    }
+    &-medium {
+      & > .h-select__field {
+        min-height: var(--size-base-jumbo);
+        font-size: var(--size-scalable-extra-small);
+      }
+    }
+  }
+
+  &--behavior {
+    &-block {
+      width: 100%;
+    }
+    &-has-value {
+      --h-select__field--background-color: var(--color-blue-grey-scale-100);
+    }
+  }
+
+  &__field {
+    background-color: var(--h-select__field--background-color);
+    border-radius: var(--border-radius-normal);
+    border: none;
+    color: var(--h-select__field--color);
+    flex: 1;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+    height: 100%;
+    left: 0;
+    padding-left: var(--size-base-medium);
+    padding-right: var(--size-base-medium);
+    top: 0;
+    transition: background-color 250ms, color 250ms;
+    width: 100%;
+  }
+}
+
+.h-select__field--placeholder {
+  color: var(--color-blue-grey-scale-300);
+  font-weight: 500;
+  font-style: italic;
+}
+
+</style>

@@ -32,7 +32,8 @@
     }
   },
   "dependencies": {
-    "flush-promises": "^1.0.2"
+    "flush-promises": "^1.0.2",
+    "mask-imp": "^1.0.8"
   },
   "peerDependencies": {
     "vue": "^3.2.26"

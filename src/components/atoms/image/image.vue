@@ -3,7 +3,7 @@
     :is="tag"
     :class="{
       'h-image': true,
-      [`h-image--behavior-${behavior}`]: behavior,
+      [`h-image--bounds-${bounds}`]: bounds,
     }"
   >
     <img
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { shouldBeOneOf } from '@utils/validations';
+import { imageTypes, imageFormats } from '@assets/constants';
 
 export default {
   name: 'HImage',
@@ -24,14 +26,16 @@ export default {
     tag: {
       type: String,
       default: 'figure',
+      validator: shouldBeOneOf(imageTypes),
     },
     caption: {
       type: String,
-      default: '',
+      default: null,
     },
-    behavior: {
+    bounds: {
       type: String,
       default: 'default',
+      validator: shouldBeOneOf(imageFormats),
     },
     src: {
       type: String,
@@ -40,3 +44,24 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.h-image {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  &--bounds {
+    &-rounded {
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}
+</style>

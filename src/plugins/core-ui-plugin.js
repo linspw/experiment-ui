@@ -17,6 +17,8 @@ import {
   HLoading,
   HCheckbox,
   HRadio,
+  HMenu,
+  HMenuItem,
 } from '@components/atoms';
 
 import {
@@ -28,10 +30,13 @@ import {
   HStepper,
 } from '@components/molecules';
 
+import { ClickOutsidePlugin } from './click-outside-plugin';
+
 const CoreUIPlugin = {
   install(Vue) {
     this.installAtoms(Vue);
     this.installMolecules(Vue);
+    this.installPlugins(Vue);
   },
   installAtoms(Vue) {
     Vue.component('HAvatar', HAvatar);
@@ -41,6 +46,8 @@ const CoreUIPlugin = {
     Vue.component('HDivider', HDivider);
     Vue.component('HGridContainer', HGridContainer);
     Vue.component('HGridItem', HGridItem);
+    Vue.component('HRow', HGridContainer);
+    Vue.component('HColumn', HGridItem);
     Vue.component('HIcon', HIcon);
     Vue.component('HInput', HInput);
     Vue.component('HSelect', HSelect);
@@ -52,6 +59,8 @@ const CoreUIPlugin = {
     Vue.component('HLoading', HLoading);
     Vue.component('HCheckbox', HCheckbox);
     Vue.component('HRadio', HRadio);
+    Vue.component('HMenu', HMenu);
+    Vue.component('HMenuItem', HMenuItem);
   },
   installMolecules(Vue) {
     Vue.component('HBreadcrumb', HBreadcrumb);
@@ -60,6 +69,9 @@ const CoreUIPlugin = {
     Vue.component('HModal', HModal);
     Vue.component('HDropdown', HDropdown);
     Vue.component('HStepper', HStepper);
+  },
+  installPlugins(Vue) {
+    Vue.use(ClickOutsidePlugin);
   },
 };
 

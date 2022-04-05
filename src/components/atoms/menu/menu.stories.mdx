@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+import { ref } from "vue";
+import HMenu from "./menu.vue";
+
+<Meta
+  title="Design System/Atoms/Menu"
+  decorators={[
+    () => ({
+      template:
+        '<div style="min-height: 20vh"><story /></div>',
+    }),
+  ]}
+/>
+
+## Menu
+
+Componente visual para o botão
+
+### Uso normal
+
+<Canvas>
+  <Story
+    name="Uso normal"
+    parameters={{
+      layout: "centered",
+    }}
+  >
+    {{
+      setup() {
+        const click = () => console.log("Clickado");
+        return { click };
+      },
+      template: `<h-menu position="none">
+        <template #trigger={handleTrigger}><h-button @click="handleTrigger">Open</h-button></template>
+        <h-menu-item @click="click">First Element</h-menu-item> 
+        <h-menu-item active>Second Element</h-menu-item>
+      </h-menu>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HMenu} />

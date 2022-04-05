@@ -65,3 +65,26 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+:root {
+  --h-input-field__label-color: var(--color-black);
+  --h-input-field__label-margin-bottom: var(--size-base-micro);
+
+  --h-input-field__helper-text-margin-top: var(--size-base-micro);
+  --h-input-field__helper-text-height: var(--size-base-medium);
+}
+
+.h-input-field {
+  display: block;
+
+  &__label {
+    color: var(--h-input-field__label-color);
+    margin-bottom: var(--h-input-field__label-margin-bottom);
+  }
+  &__helper-text {
+    margin-top: var(--h-input-field__helper-text-margin-top);
+    height: var(--h-input-field__helper-text-height);
+  }
+}
+</style>

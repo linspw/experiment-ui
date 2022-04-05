@@ -174,7 +174,7 @@ export default {
   font-weight: 500;
   cursor: pointer;
   user-select: none;
-  background-color: var(--colors-original-white);
+  background-color: var(--color-theme-white);
   white-space: nowrap;
 
   &:not(:last-child) {
