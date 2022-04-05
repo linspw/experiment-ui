@@ -30,6 +30,7 @@ export const cardTypes = [
   'header',
   'footer',
   'span',
+  'section',
 ];
 
 export const gridContainerTypes = cardTypes;

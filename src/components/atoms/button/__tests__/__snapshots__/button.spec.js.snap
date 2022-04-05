@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HButton render correctly with attrs 1`] = `
-"<button class=\\"h-button h-button--color-primary h-button--size-small h-button--variant-contained\\" id=\\"my-first-component\\" data-test-id=\\"secondary\\">
+"<button class=\\"h-button h-button--color-default h-button--size-small h-button--variant-contained\\" id=\\"my-first-component\\" data-test-id=\\"secondary\\">
   <!--v-if-->
   <!--v-if--><span class=\\"h-button__text\\">With many Itens</span>
   <!--v-if-->
@@ -9,7 +9,7 @@ exports[`HButton render correctly with attrs 1`] = `
 `;
 
 exports[`HButton render correctly with default props 1`] = `
-"<button class=\\"h-button h-button--color-primary h-button--size-small h-button--variant-contained\\">
+"<button class=\\"h-button h-button--color-default h-button--size-small h-button--variant-contained\\">
   <!--v-if-->
   <!--v-if--><span class=\\"h-button__text\\">My first test</span>
   <!--v-if-->
@@ -17,7 +17,7 @@ exports[`HButton render correctly with default props 1`] = `
 `;
 
 exports[`HButton render correctly with different props 1`] = `
-"<button class=\\"h-button h-button--behavior-block h-button--color-secondary h-button--size-small h-button--variant-contained\\" iconcolor=\\"primary\\">
+"<button class=\\"h-button h-button--color-secondary h-button--size-small h-button--variant-contained\\" behavior=\\"block\\" iconcolor=\\"primary\\" isrounded=\\"false\\">
   <div class=\\"h-icon h-icon--size-large h-button__icon h-button__icon--position-left\\"><i class=\\"fas fa-circle fa-fw\\"></i></div>
   <!--v-if--><span class=\\"h-button__text\\">With many Itens</span>
   <!--v-if-->
