@@ -10,6 +10,8 @@
 
     <HMenuContainer
       :active="$state.active"
+      v-bind="$attrs"
+      :position="$props.position"
       @click="handleClose"
     >
       <slot />
@@ -18,12 +20,21 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
+import { reactive, useAttrs } from 'vue';
 import HMenuContainer from './menu-container.vue';
+
+const $props = defineProps({
+  position: {
+    type: String,
+    default: 'bottom-center',
+  },
+});
 
 const $state = reactive({
   active: false,
 });
+
+const $attrs = useAttrs();
 
 const handleClose = () => {
   $state.active = false;

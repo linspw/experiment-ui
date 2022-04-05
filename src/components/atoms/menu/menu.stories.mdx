@@ -30,7 +30,7 @@ Componente visual para o botão
         const click = () => console.log("Clickado");
         return { click };
       },
-      template: `<h-menu position="none">
+      template: `<h-menu position="bottom-right">
         <template #trigger={handleTrigger}><h-button @click="handleTrigger">Open</h-button></template>
         <h-menu-item @click="click">First Element</h-menu-item> 
         <h-menu-item active>Second Element</h-menu-item>
