@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Lib Test when builded attach plugin correctly 1`] = `
-"<button class=\\"h-button h-button--color-primary h-button--size-small h-button--variant-contained\\" data-testid=\\"example\\">
+"<button class=\\"h-button h-button--color-default h-button--size-small h-button--variant-contained\\" data-testid=\\"example\\">
   <!---->
   <!----><span class=\\"h-button__text\\">Event</span>
   <!---->
