@@ -302,10 +302,10 @@ export default {
     display: flex;
     height: 100%;
     width: 16px;
-    &--position-left {
+    &--position-left:not(:only-child) {
       margin-right: var(--size-base-small);
     }
-    &--position-right {
+    &--position-right:not(:only-child) {
       margin-left: var(--size-base-small);
     }
   }
