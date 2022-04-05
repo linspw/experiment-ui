@@ -14,7 +14,8 @@
       "@molecules/*": ["./src/components/molecules/*"],
       "@organism/*": ["./src/components/organism/*"],
       "@plugins/*": ["./src/plugins/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "exclude": ["node_modules"]
