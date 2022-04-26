@@ -22,7 +22,7 @@ module.exports = {
     }],
     'no-param-reassign': 'off',
     'max-len': ['error', {
-      code: 120,
+      code: 140,
       tabWidth: 2,
       ignoreUrls: true,
     }],

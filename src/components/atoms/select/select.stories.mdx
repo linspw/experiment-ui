@@ -20,6 +20,7 @@ import HSelect from './select.vue';
         template: `
         <div style="height: 40vh;">
           <h-select
+            label="Exemplo"
             v-model="selected"
             :options="['example1', 'Example 1']"
           />
@@ -90,6 +91,23 @@ import HSelect from './select.vue';
   </Story>
 </Canvas>
 
+### HelperText:
+
+<Canvas>
+  <Story name="HelperText">
+    {{
+        components: { HSelect },
+        template: `
+        <div>
+          <h-select helper-text="Helper text" :options="['yes', 'no']" />
+          <h-select helper-text="Invalid" invalid :options="['yes', 'no']" />
+        </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+
 ### placeholder:
 
 <Canvas>
@@ -132,7 +150,9 @@ import HSelect from './select.vue';
         <div>
           <h-select placeholder="default" behavior="default" />
           <p />
-          <h-select placeholder="block" behavior="block" />
+          <h-select invalid />
+          <p />
+          <h-select placeholder="block" block />
         </div>
         `,
     }}

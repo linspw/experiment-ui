@@ -32,8 +32,8 @@ import HTextField from './text-field.vue';
     {{
         components: { HTextField },
         template: `<div>
-          <h-text-field label="Helper text" helper-text="Helper text" />
-          <h-text-field label="Helper text" helper-text="Helper text" :invalid="true" />
+          <h-text-field label="Helper text" helper-text="Helper text" :helper-text-active="true" />
+          <h-text-field label="Helper text" helper-text="Helper text" :helper-text-active="true" :invalid="true" />
         </div>`,
     }}
   </Story>
@@ -74,15 +74,54 @@ import HTextField from './text-field.vue';
     {{
         components: { HTextField },
         data() {
-          return { data1: '', data2: '' };
+          return { data1: '', data2: '12321', data3: '' };
+        },
+        methods: {
+          random() {
+            this.data2 = Math.floor(Math.random() * 10000);
+          },
         },
         template: `<div>
-          <h-text-field :label="data1" type="text" v-model="data1" mask="##-###-##" maxlength="9" />
-          <h-text-field :label="data2" type="text" v-model="data2" mask="##-###-##" maxlength="9" :unmasked="true"/>
+          {{ data2 }}
+          <h-text-field :label="data1?.toString()" type="text" v-model="data1" mask="##-###-##" />
+          <h-text-field :label="data2?.toString()" type="text" v-model="data2" mask="##-###-##" />
+          <h-text-field :label="data3?.toString()" type="text" v-model="data3" mask="##-###-##" :unmasked="true"/>
+          <h-button @click="random">change value</h-button>
         </div>`,
     }}
   </Story>
 </Canvas>
+
+### Rules:
+
+<Canvas>
+  <Story name="Rules">
+    {{
+        components: { HTextField },
+        data() {
+          return { data: '' };
+        },
+        computed: {
+          rules1: () => ({
+            type: String,
+            required: true,
+            length: { min: 3, max: 6 },
+          }),
+          rules2: () => ({
+            type: String,
+            required: true,
+            length: { min: 3, max: 6 },
+            startValidating: false,
+          })
+        },
+        template: `<div>
+          <h-text-field :label="data" type="text" v-model="data" :rules="rules1" :helper-text-active="true" />
+          <h-text-field :label="data" type="text" v-model="data" :rules="rules2" :helper-text-active="true" />
+        </div>`,
+    }}
+  </Story>
+</Canvas>
+
 
 
 ### Disabled, Invalid, acessible and placeholder:

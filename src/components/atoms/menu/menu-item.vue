@@ -58,6 +58,7 @@ const handleClick = () => {
   align-items: center;
   transition: background-color 0.25s;
   background-color: var(--h-menu-item-background-color);
+  white-space: nowrap;
 
   &:hover {
     --h-menu-item-background-color: var(--h-menu-item-background-color--hover);

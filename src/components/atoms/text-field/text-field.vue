@@ -3,7 +3,7 @@
     ref="textFieldWrapper"
     class="h-text-field"
     :class="{
-      [`h-text-field--behavior-invalid`]: invalid,
+      [`h-text-field--behavior-invalid`]: state.internalInvalid,
       [`h-text-field--behavior-disabled`]: disabled,
       [`h-text-field--behavior-acessible`]: acessible,
       [`h-text-field--with-icon-left`]: iconLeft,
@@ -28,10 +28,13 @@
       />
 
       <component
-        :is="tag"
-        :type="type"
-        :value="state.internalValue"
         v-bind="$attrs"
+        :is="tag"
+        ref="textField"
+        :type="type"
+        :value="state.valueFromProp"
+        :maxlength="state.internalMaxLength"
+        :name="state.name"
         class="h-text-field__input"
         @input="handleInput"
       />
@@ -47,13 +50,15 @@
     </div>
 
     <h-text
-      v-if="helperText"
+      v-if="helperTextActive"
       class="h-text-field__helper-text"
       size="extra-small"
       weight="medium"
       emphasis="high"
     >
-      {{ helperText }}
+      <template v-if="state.helperTextVisible">
+        {{ state.internalTextValue }}
+      </template>
     </h-text>
   </div>
 </template>
@@ -61,10 +66,18 @@
 <script>
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
+import { HFormKey } from '@components/molecules/form';
 import {
-  computed, reactive, ref, onMounted,
+  computed,
+  reactive,
+  ref,
+  onMounted,
+  watch,
+  inject,
+  toRef,
 } from 'vue';
 import { Mask } from '@utils/formats/mask';
+import { Validate } from '@utils/validations/validate';
 import { iconColors, textFieldTypes } from '@assets/constants';
 
 export default {
@@ -75,6 +88,10 @@ export default {
   inheritAttrs: false,
   props: {
     label: {
+      type: String,
+      default: null,
+    },
+    name: {
       type: String,
       default: null,
     },
@@ -141,9 +158,25 @@ export default {
       type: Boolean,
       default: true,
     },
+    helperTextActive: {
+      type: Boolean,
+      default: true,
+    },
     helperText: {
       type: String,
       default: null,
+    },
+    rules: {
+      type: Object,
+      default: null,
+    },
+    maxlength: {
+      type: [String, Number],
+      default: null,
+    },
+    autoUseMaxLength: {
+      type: Boolean,
+      default: true,
     },
   },
   emits: [
@@ -151,24 +184,58 @@ export default {
     'update:modelValue',
     'click-icon-left',
     'click-icon-right',
+    'validate-input',
   ],
   setup($props, { emit: $emit }) {
     const textFieldWrapper = ref();
-    const state = reactive({
-      returnMasked: computed(() => Boolean($props.mask && $props.unmasked)),
-      maskInstance: computed(() => $props.mask && new Mask($props.mask)),
-      internalValue: computed(() => {
-        const value = $props.modelValue || $props.value;
-        const newValue = $props.mask
-          ? value && state.maskInstance.masked(state.maskInstance.unmasked(value))
-          : value;
+    const textField = ref();
+    const HForm = inject(HFormKey, undefined);
 
-        return newValue;
-      }),
+    const mask = reactive({
+      instance: computed(() => $props.mask && Mask($props.mask)),
+      length: computed(() => mask?.instance?.getPatternLength()),
     });
+
+    const state = reactive({
+      validationMessages: null,
+      validationActive: true,
+      valueFromProp: computed(() => ($props.modelValue || $props.value)?.toString?.()),
+      valueMasked: computed(() => (mask.instance ? mask.instance.masked(state.valueFromProp) : state.valueFromProp)),
+      valueUnmasked: computed(() => (mask.instance ? mask.instance.unmasked(state.valueFromProp) : state.valueFromProp)),
+      internalValue: computed(() => (mask.instance ? state.valueMasked : state.valueUnmasked)),
+      maxLengthFromMaskOrRules: computed(() => (
+        $props.autoUseMaxLength && (mask?.length || $props.rules?.length?.max)
+      )),
+      helperTextVisible: computed(() => $props.helperText || state.invalid),
+      invalid: computed(() => Boolean(state.validationActive && state.validationMessages?.length)),
+      internalInvalid: computed(() => $props.invalid || state.invalid),
+      internalTextValue: computed(() => state.validationMessages?.[0]?.message || $props.helperText),
+      internalMaxLength: computed(() => (
+        $props.maxlength
+        || state.maxLengthFromMaskOrRules
+        || undefined
+      )),
+      name: computed(() => $props.name || $props.label || 'Campo'),
+      currentValidation: computed(() => ({
+        name: state.name,
+        value: state.internalValue,
+        tag: $props.tag,
+        type: $props.type,
+        messages: state.validationMessages,
+      })),
+    });
+
+    const currentValidation = toRef(state, 'currentValidation');
+
+    const checkValidation = (validationActive) => {
+      if (!$props.rules) return;
+      state.validationActive = Boolean(validationActive);
+      state.validationMessages = Validate(state.valueFromProp, $props.rules);
+    };
 
     const handleHasValue = (value) => {
       if (!textFieldWrapper.value) return;
+
       if (value) {
         textFieldWrapper.value.classList.add('h-text-field--behavior-has-value');
       } else {
@@ -176,25 +243,66 @@ export default {
       }
     };
 
+    const fixInputSelection = (el, position, digit) => {
+      while (position && position < el.value.length && el.value.charAt(position - 1) !== digit) {
+        position += 1;
+      }
+
+      const selectionRange = el.type ? el.type.match(/^(text|search|password|tel|url)$/i) : !el.type;
+      if (selectionRange && el === document.activeElement) {
+        el.setSelectionRange(position, position);
+        setTimeout(() => {
+          el.setSelectionRange(position, position);
+        }, 0);
+      }
+    };
+
     const handleInput = ($event) => {
-      const targetValue = $event.target.value;
-      const newValue = (state.returnMasked)
-        ? state.maskInstance.unmasked(targetValue)
-        : targetValue;
+      let newValue;
+      const oldValue = $event.target.value;
+      // const position = $event.target.selectionEnd;
+      // const digit = oldValue[position];
+
+      if ($props.mask && $props.unmasked) {
+        newValue = mask.instance.unmasked(oldValue);
+      } else if ($props.mask) {
+        newValue = mask.instance.masked(oldValue);
+      } else {
+        newValue = oldValue;
+      }
+
+      newValue = $props.type === 'number' ? Number(newValue) : newValue;
 
       $emit('input', newValue);
       $emit('update:modelValue', newValue);
-      handleHasValue(targetValue);
+      handleHasValue(newValue);
+      // fixInputSelection($event.target, position, digit);
     };
 
+    // const fixSelectionPosition = () => {
+    //   console.log('fixSelectionPosition', textField.value?.selectionStart, textField.value?.selectionEnd);
+    // };
+
+    // const handleSelectionChange = () => {
+    //   console.log('FOi');
+    //   console.log('handleSelectionChange', textField.value);
+    // };
+
+    watch(() => state.valueFromProp, () => {
+      checkValidation(true);
+    });
+
     onMounted(() => {
-      handleHasValue($props.value || $props.modelValue);
+      handleHasValue(state.valueFromProp);
+      if ($props.rules) checkValidation($props?.rules?.startValidating);
+      if (HForm) HForm.registerField(currentValidation);
     });
 
     return {
       state,
       handleInput,
       textFieldWrapper,
+      textField,
     };
   },
 };
@@ -207,10 +315,11 @@ export default {
   --h-text-field-border-style:  solid;
   --h-text-field-border-width: var(--size-base-micro);
   --h-text-field-height: 44px;
-  --h-text-field-width: 400px;
+  --h-text-field-width: 250px;
 
   --h-text-field__helper-text-color: var(--color-theme-grey);
   --h-text-field__helper-text-color--invalid: var(--color-theme-danger);
+  --h-text-field__helper-text-height: var(--size-base-medium);
 
   --h-text-field__label-font-weight: 500;
   --h-text-field__label-margin-bottom: var(--size-base-small);
@@ -320,9 +429,10 @@ export default {
 }
 
 .h-text-field__helper-text {
+  --h-text--color: var(--h-text-field__helper-text-color);
   margin-top: var(--size-base-extra-small);
-  color: var(--h-text-field__helper-text-color);
   padding-left: var(--size-base-small);
   padding-right: var(--size-base-small);
+  min-height: var(--h-text-field__helper-text-height);
 }
 </style>

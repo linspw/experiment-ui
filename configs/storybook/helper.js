@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-restricted-syntax */
 import dedent from 'ts-dedent';
-import { paramCase } from 'param-case';
+import { paramCase } from 'change-case';
 
 const templateSourceCode = (
   templateSource,

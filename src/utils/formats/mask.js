@@ -1,23 +1,46 @@
-import MaskImp from 'mask-imp';
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-class-assign */
+import { mask, tokens } from 'maska';
+import { maskDictionary } from './mask-dictionary';
 
-class Mask {
+class MaskClass {
   constructor(pattern, options) {
-    this.pattern = pattern;
+    this.pattern = this.getPatternFromDictionary(pattern);
     this.options = options;
-    this.maskInstance = MaskImp(pattern, options);
   }
 
   masked(value) {
-    if (value) return this.maskInstance.masked(value);
+    if (!value) return undefined;
+    const result = mask(value, this.pattern?.mask, tokens, true);
 
-    return '';
+    return result;
   }
 
   unmasked(value) {
-    if (value) return this.maskInstance.unmasked(value);
+    if (!value) return undefined;
 
-    return '';
+    const result = mask(value, this.pattern?.mask, tokens, false);
+
+    return result;
+  }
+
+  getPattern() {
+    return this.pattern;
+  }
+
+  getPatternLength() {
+    return this.pattern?.maskLength;
+  }
+
+  getPatternFromDictionary(value) {
+    return maskDictionary[value] || { mask: value, maskLength: value.length };
   }
 }
 
-export { Mask };
+const Mask = new Proxy(MaskClass, {
+  apply(Target, _thisArg, argumentsList) {
+    return new Target(...argumentsList);
+  },
+});
+
+export { Mask, MaskClass };

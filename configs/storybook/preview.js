@@ -1,8 +1,10 @@
 import { app } from '@storybook/vue3';
 import { CoreUIPlugin } from '@plugins/core-ui-plugin';
+import { MaskPlugin } from '@plugins/mask-plugin';
 import { transformSource, tokenFiles } from './helper';
 import '@styles/index.scss';
 
+app.use(MaskPlugin);
 app.use(CoreUIPlugin);
 
 export const parameters = {

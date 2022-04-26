@@ -1,0 +1,84 @@
+import { Meta, ArgsTable, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions'
+import HForm from './form.vue';
+import { HTextField } from '@components/atoms';
+
+<Meta title="Design System/Molecules/Form" component={HForm} />
+
+## Form
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+        components: { HForm, HTextField },
+        data() {
+          return {
+            name: null,
+            username: null,
+          };
+        },
+        computed: {
+          rules: () => ({
+            type: String,
+            required: true,
+            length: { min: 3, max: 6 },
+            startValidating: true,
+          })
+        },
+        template: `<h-form name="text">
+          <h-text-field label="Name" v-model="name" :rules="rules" />
+          <h-text-field label="Username" v-model="username" :rules="rules" />
+        </h-form>`,
+    }}
+  </Story>
+</Canvas>
+
+### Multi form use:
+
+<Canvas>
+  <Story name="Multi form use">
+    {{
+        components: { HForm, HTextField },
+        data() {
+          return {
+            name: null,
+            username: null,
+            selected: null,
+          };
+        },
+        computed: {
+          inputRules: () => ({
+            type: String,
+            required: true,
+            length: { min: 3, max: 6 },
+          }),
+          selectRules: () => ({
+            required: true,
+          }),
+          selectOptions: () => ([
+            { text: '', value: '' },
+            { text: 'São Paulo', value: 'sp' },
+            { text: 'Rio de Janeiro', value: 'rj' },
+          ]),
+        },
+        template: `
+        <h-form name="Parent" #default={invalid}>
+          <h-card>
+            Parent - invalid - {{ invalid }}
+            <h-text-field label="Username" v-model="username" :rules="inputRules" />
+            <h-form name="SubSection" #default={invalid}>
+              <h-card>
+                SubSection - invalid - {{ invalid }}
+                <h-text-field label="Name" v-model="name" :rules="inputRules" />
+                <h-select label="State" v-model="selected" :options="selectOptions" :rules="selectRules" />
+              </h-card>
+            </h-form>
+          </h-card>
+        </h-form>`,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HForm} />

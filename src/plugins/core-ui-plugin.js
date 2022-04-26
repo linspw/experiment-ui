@@ -19,6 +19,7 @@ import {
   HRadio,
   HMenu,
   HMenuItem,
+  HTextField,
 } from '@components/atoms';
 
 import {
@@ -28,6 +29,7 @@ import {
   HModal,
   HToast,
   HStepper,
+  HForm,
 } from '@components/molecules';
 
 import { ClickOutsidePlugin } from './click-outside-plugin';
@@ -61,6 +63,7 @@ const CoreUIPlugin = {
     Vue.component('HRadio', HRadio);
     Vue.component('HMenu', HMenu);
     Vue.component('HMenuItem', HMenuItem);
+    Vue.component('HTextField', HTextField);
   },
   installMolecules(Vue) {
     Vue.component('HBreadcrumb', HBreadcrumb);
@@ -69,6 +72,7 @@ const CoreUIPlugin = {
     Vue.component('HModal', HModal);
     Vue.component('HDropdown', HDropdown);
     Vue.component('HStepper', HStepper);
+    Vue.component('HForm', HForm);
   },
   installPlugins(Vue) {
     Vue.use(ClickOutsidePlugin);

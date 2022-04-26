@@ -1,3 +1,3 @@
-import TextField from './text-field.vue';
+import HTextField from './text-field.vue';
 
-export { TextField };
+export { HTextField };
