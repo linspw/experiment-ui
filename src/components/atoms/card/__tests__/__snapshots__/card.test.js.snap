@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HCard render correctly with default props 1`] = `"<div class=\\"h-card h-card--color-default h-card--elevation-medium\\">My first test</div>"`;
+exports[`HCard render correctly with default props 1`] = `"<div class=\\"h-card h-card--color-default h-card--variant-default h-card--elevation-medium\\">My first test</div>"`;
