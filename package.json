@@ -29,6 +29,10 @@
     "./dist/lib/style.css": {
       "import": "./dist/lib/style.css",
       "require": "./dist/lib/style.css"
+    },
+    "./src/styles/index.css": {
+      "import": "./src/styles/index.scss",
+      "require": "./src/styles/index.css"
     }
   },
   "dependencies": {
