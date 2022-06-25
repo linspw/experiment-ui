@@ -68,19 +68,26 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
+:root {
+  --h-tabs--border-radius: var(--border-radius-normal);
+  --h-tabs--box-shadow: var(--shadow-e-002);
+  --h-tabs__line-height: var(--size-base-micro);
+}
+
 .h-tabs {
-  box-shadow: var(--shadow-e-002);
+  box-shadow: var(--h-tabs--box-shadow);
   width: 100%;
   min-height: 48px;
   display: flex;
   position: relative;
   overflow-x: auto;
+  border-radius: var(--h-tabs--border-radius);
 }
 
 .h-tabs__line {
   position: absolute;
   bottom: 0;
-  height: 2px;
+  height: var(--h-tabs__line-height);
   background-color: var(--color-white);
   width: v-bind('$state.lineWidth');
   transform: v-bind('$state.lineTranslateX');

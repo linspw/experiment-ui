@@ -25,19 +25,37 @@ import HCard from './card.vue';
         components: { HCard },
         template: `
         <div>
-          <h-card elevation="low" variant="default">default</h-card>
+          <h-card variant="default">default</h-card>
           <p />
-          <h-card elevation="low" variant="success">success</h-card>
+          <h-card variant="outlined">outlined</h-card>
+        </div>
+        `,
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Canvas>
+
+### Colors:
+
+<Canvas>
+  <Story name="Colors">
+    {{
+        components: { HCard },
+        template: `
+        <div>
+          <h-card color="default">default</h-card>
           <p />
-          <h-card elevation="low" variant="info">info</h-card>
+          <h-card color="success">success</h-card>
           <p />
-          <h-card elevation="low" variant="danger">danger</h-card>
+          <h-card color="info">info</h-card>
           <p />
-          <h-card elevation="low" variant="warn">warn</h-card>
+          <h-card color="danger">danger</h-card>
           <p />
-          <h-card elevation="low" variant="primary">primary</h-card>
+          <h-card color="warn">warn</h-card>
           <p />
-          <h-card elevation="low" variant="secondary">secondary</h-card>
+          <h-card color="primary">primary</h-card>
+          <p />
+          <h-card color="secondary">secondary</h-card>
           <p />
         </div>
         `,

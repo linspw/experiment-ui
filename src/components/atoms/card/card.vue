@@ -3,8 +3,9 @@
     :is="tag"
     :class="{
       [`h-card`]: true,
+      [`h-card--color-${color}`]: color,
       [`h-card--variant-${variant}`]: variant,
-      [`h-card--elevation-${elevation}`]: elevation,
+      [`h-card--elevation-${elevation}`]: elevation && variant != 'outlined',
     }"
   >
     <slot />
@@ -13,14 +14,16 @@
 
 <script>
 import {
-  cardColors, cardElevations, cardTypes,
+  cardColors,
+  cardElevations,
+  cardTypes,
 } from '@assets/constants';
 import { shouldBeOneOf } from '@utils/validations';
 
 export default {
   name: 'HCard',
   props: {
-    variant: {
+    color: {
       type: String,
       default: 'default',
       validator: shouldBeOneOf(cardColors),
@@ -34,6 +37,10 @@ export default {
       type: String,
       default: 'div',
       validator: shouldBeOneOf(cardTypes),
+    },
+    variant: {
+      type: String,
+      default: 'default',
     },
   },
 };
@@ -50,7 +57,6 @@ export default {
 }
 
 .h-card {
-
   background-color: var(--h-card--background-color);
   border: var(--h-card--border);
   border-radius: var(--h-card--border-radius);
@@ -59,21 +65,100 @@ export default {
   padding: var(--h-card--padding);
   position: relative;
 
-  &--elevation {
-    &-low {
-      --h-card--box-shadow: var(--shadow-elevation-01);
-    }
-
-    &-medium {
-      --h-card--box-shadow: var(--shadow-elevation-02);
-    }
-
-    &-high {
-      --h-card--box-shadow: var(--shadow-elevation-03);
+  &--variant {
+    &-outlined {
+      --h-card--border: var(--size-base-micro) solid var(--color-grey-scale-400);
     }
   }
 
-  &--variant {
+  &--elevation {
+    &-low {
+      --h-card--box-shadow: var(--shadow-s-002);
+    }
+    &-medium {
+      --h-card--box-shadow: var(--shadow-s-003);
+    }
+    &-high {
+      --h-card--box-shadow: var(--shadow-s-004);
+    }
+    &-000 {
+      --b-card--box-shadow: var(--shadow-e-000);
+    }
+    &-001 {
+      --b-card--box-shadow: var(--shadow-e-001);
+    }
+    &-002 {
+      --b-card--box-shadow: var(--shadow-e-002);
+    }
+    &-003 {
+      --b-card--box-shadow: var(--shadow-e-003);
+    }
+    &-004 {
+      --b-card--box-shadow: var(--shadow-e-004);
+    }
+    &-005 {
+      --b-card--box-shadow: var(--shadow-e-005);
+    }
+    &-006 {
+      --b-card--box-shadow: var(--shadow-e-006);
+    }
+    &-007 {
+      --b-card--box-shadow: var(--shadow-e-007);
+    }
+    &-008 {
+      --b-card--box-shadow: var(--shadow-e-008);
+    }
+    &-009 {
+      --b-card--box-shadow: var(--shadow-e-009);
+    }
+    &-010 {
+      --b-card--box-shadow: var(--shadow-e-010);
+    }
+    &-011 {
+      --b-card--box-shadow: var(--shadow-e-011);
+    }
+    &-012 {
+      --b-card--box-shadow: var(--shadow-e-012);
+    }
+    &-013 {
+      --b-card--box-shadow: var(--shadow-e-013);
+    }
+    &-014 {
+      --b-card--box-shadow: var(--shadow-e-014);
+    }
+    &-015 {
+      --b-card--box-shadow: var(--shadow-e-015);
+    }
+    &-016 {
+      --b-card--box-shadow: var(--shadow-e-016);
+    }
+    &-017 {
+      --b-card--box-shadow: var(--shadow-e-017);
+    }
+    &-018 {
+      --b-card--box-shadow: var(--shadow-e-018);
+    }
+    &-019 {
+      --b-card--box-shadow: var(--shadow-e-019);
+    }
+    &-020 {
+      --b-card--box-shadow: var(--shadow-e-020);
+    }
+    &-021 {
+      --b-card--box-shadow: var(--shadow-e-021);
+    }
+    &-022 {
+      --b-card--box-shadow: var(--shadow-e-022);
+    }
+    &-023 {
+      --b-card--box-shadow: var(--shadow-e-023);
+    }
+    &-024 {
+      --b-card--box-shadow: var(--shadow-e-024);
+    }
+  }
+
+  &--color {
     &-default {
       --h-card--background-color: var(--color-theme-white);
     }

@@ -14,13 +14,13 @@ describe('HCard', () => {
   it('render correctly with variant', () => {
     const { container } = render(HCard, {
       props: {
-        variant: 'primary',
+        color: 'primary',
       },
       slots: {
         default: 'My second test',
       },
     });
-    expect(container.firstChild.classList.contains('h-card--variant-primary')).toBe(true);
+    expect(container.firstChild.classList.contains('h-card--color-primary')).toBe(true);
   });
 
   it('render correctly with elevation', () => {

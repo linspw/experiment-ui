@@ -50,6 +50,13 @@ export const textTypes = [
   'a',
   'strong',
   'caption',
+  'section',
+  'article',
+  'i',
+  'em',
+  'ins',
+  'sup',
+  'mark',
   'router-link',
 ];
 

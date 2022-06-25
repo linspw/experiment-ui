@@ -7,15 +7,15 @@
   >
     <HCard
       v-for="(item, index) in items"
-      :key="item.text + item.title + item.variant + item.id"
+      :key="item.text + item.title + item.color + item.id"
       :class="{
-        ['h-toast__item--inverse']: item.variant
-          && (item.variant !== 'warn')
-          && (item.variant !== 'default')
-          && (item.variant ),
-        [`${item.variant}`]: item.variant
+        ['h-toast__item--inverse']: item.color
+          && (item.color !== 'warn')
+          && (item.color !== 'default')
+          && (item.color ),
+        [`${item.color}`]: item.color
       }"
-      :variant="item.variant"
+      :color="item.color"
       class="h-toast__item"
       tag="button"
       @click.stop="handleClick(index)"

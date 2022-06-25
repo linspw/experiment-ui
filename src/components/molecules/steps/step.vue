@@ -38,7 +38,6 @@ export default {
       <div class="h-step__text">
         <h-text
           class="h-step__text-title"
-          weight="semi-bold"
           @click="click"
         >
           <slot />{{ $props.title }}
@@ -102,7 +101,7 @@ const $props = defineProps({
 
 const $slots = useSlots();
 
-const $config = inject(HStepKey);
+const { $config, updatePosition } = inject(HStepKey);
 
 const isSelected = computed(() => $config.modelValue === $props.position);
 const isFilled = computed(() => $config.modelValue >= $props.position);
@@ -115,7 +114,10 @@ const showDescription = computed(() => {
 const $emit = defineEmits(['update:modelValue']);
 
 const click = () => {
-  if ($config.clickable || $props.clickable) $emit('update:modelValue', $props.position);
+  if ($config.clickable || $props.clickable) {
+    $emit('update:modelValue', $props.position);
+    updatePosition($props.position);
+  }
 };
 </script>
 
@@ -124,6 +126,7 @@ const click = () => {
   --h-step--margin: 0;
   --h-step--flex: 1;
   --h-step--flex-direction: column;
+  --h-step--align-items: stretch;
   --h-step__content--flex-direction: column;
   --h-step__badge-size: 28px;
   --h-step__line--spacing: 0rem;
@@ -141,14 +144,14 @@ const click = () => {
   --h-step__line--color--selected: var(--color-grey-scale-500);
   --h-step__line--color--filled: var(--color-grey-scale-500);
   --h-step__badge--background-color: var(--color-grey-scale-500);
-  --h-step__badge--background-color--selected: var(--color-blue-scale-800);
-  --h-step__badge--background-color--filled: var(--color-blue-scale-800);
+  --h-step__badge--background-color--selected: var(--color-theme-secondary);
+  --h-step__badge--background-color--filled: var(--color-theme-secondary);
   --h-step__badge-color: var(--color-white);
   --h-step__text--margin: 0;
   --h-step__text--color: var(--color-grey-scale-500);
   --h-step__text--color--filled: inherit;
   --h-step__text--color--selected: inherit;
-  --h-step--align-items: stretch;
+  --h-step__text-title--font-weight: 500;
   --h-step__content--align-items: stretch;
 }
 
@@ -286,6 +289,10 @@ const click = () => {
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+
+.h-step__text-title {
+  font-weight: var(--h-step__text-title--font-weight);
 }
 
 .h-step__text-description {

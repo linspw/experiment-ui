@@ -1,5 +1,12 @@
 <template>
-  <HStepsComponent />
+  <ul
+    :class="{
+      'h-steps': true,
+      [`h-steps--direction-${$config.direction}`]: $config.direction,
+    }"
+  >
+    <StepsComponent />
+  </ul>
 </template>
 
 <script>
@@ -14,12 +21,10 @@ import {
   provide,
   useSlots,
   computed,
-  TransitionGroup,
-  h,
 } from 'vue';
 import { HStepKey } from './step-key';
 
-const $props = defineProps({
+const $config = defineProps({
   direction: {
     type: String,
     default: 'horizontal',
@@ -61,10 +66,9 @@ const updatePosition = (index) => {
 const updateProps = (element, index) => {
   if (element?.type?.name === 'HStep') {
     if (!element.props) element.props = {};
-    if ($props.autoPosition) {
+    if ($config.autoPosition) {
       element.props.position = index + 1;
     }
-    element.props['onUpdate:modelValue'] = (stepIndex) => updatePosition(stepIndex);
     element.key = index;
   }
 
@@ -79,23 +83,16 @@ const getComponents = (element) => {
   return element;
 };
 
-const Steps = computed(() => {
+const StepsComponent = computed(() => {
   const result = $slots.default();
   result.flatMap(getComponents).map(updateProps);
-  return result;
+  return () => result;
 });
 
-const HStepsComponent = () => h(TransitionGroup, {
-  name: $props.hasAnimation ? 'h-steps__transition-list' : undefined,
-  tag: 'ul',
-  type: 'transition',
-  class: {
-    'h-steps': true,
-    [`h-steps--direction-${$props.direction}`]: $props.direction,
-  },
-}, () => Steps.value);
-
-provide(HStepKey, $props);
+provide(HStepKey, {
+  $config,
+  updatePosition,
+});
 </script>
 
 <style lang="scss">

@@ -1,14 +1,15 @@
 <template>
-  <div
+  <button
     class="h-tab"
     :class="{
       'h-tab--behavior-active': isCurrentTab,
       'h-tab--behavior-disabled': $props.disabled,
     }"
+    :disabled="$props.disabled"
     @click="handleChange"
   >
     {{ label }}<slot />
-  </div>
+  </button>
 </template>
 
 <script setup>
@@ -43,8 +44,10 @@ const isCurrentTab = computed(() => currentTab.value === $props.value);
 
 <style lang="scss">
 :root {
-  --h-tab--background-color: var(--color-theme-secondary-800);
+  --h-tab--background-color: var(--color-theme-primary-900);
+  --h-tab--background-color--active: var(--color-theme-primary-900);
   --h-tab--color: var(--color-theme-white);
+  --h-tab--color--active: var(--color-theme-white);
   --h-tab--font-weight: 500;
 }
 
@@ -57,11 +60,18 @@ const isCurrentTab = computed(() => currentTab.value === $props.value);
   background-color: var(--h-tab--background-color);
   color: var(--h-tab--color);
   font-weight: var(--h-tab--font-weight);
+  transition: background-color 0.125s;
 
   &--behavior {
+    &-active {
+      --h-tab--background-color: var(--h-tab--background-color--active);
+      --h-tab--color: var(--h-tab--color--active);
+    }
     &-disabled {
       --h-tab--background-color: var(--color-grey-scale-400);
       --h-tab--color: var(--color-grey-scale-700);
+      cursor: not-allowed;
+      pointer-events: all !important;
     }
   }
 
