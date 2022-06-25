@@ -55,8 +55,8 @@ export default {
       defaul: null,
     },
     modelValue: {
-      type: Boolean,
-      defaul: null,
+      type: [Boolean, Array, String, Number],
+      default: undefined,
     },
     isDisabled: {
       type: Boolean,
@@ -65,12 +65,12 @@ export default {
   },
   emits: ['change', 'update:modelValue'],
   setup($props, { emit: $emit }) {
-    const internalChecked = computed(() => $props.modelValue || $props.checked);
-    const internalValue = computed(() => $props.value || $props.label);
+    const internalChecked = computed(() => $props.modelValue === $props.value || $props.checked);
+    const internalValue = computed(() => $props.value);
     const handleChange = () => {
       if ($props.isDisabled) return;
       const newStatus = !internalChecked.value;
-      $emit('change', newStatus);
+      $emit('change', !internalChecked.value);
       $emit('update:modelValue', newStatus);
     };
     return { internalChecked, internalValue, handleChange };

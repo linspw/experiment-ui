@@ -18,5 +18,8 @@
       "@styles/*": ["./src/styles/*"]
     }
   },
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  },
   "exclude": ["node_modules"]
 }

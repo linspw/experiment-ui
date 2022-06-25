@@ -1,17 +1,8 @@
-import { HBreadcrumb } from './breadcrumb';
-import { HInputField } from './input-field';
-import { HToast } from './toast';
-import { HModal } from './modal';
-import { HDropdown } from './dropdown';
-import { HStepper } from './stepper';
-import { HForm } from './form';
-
-export {
-  HBreadcrumb,
-  HDropdown,
-  HInputField,
-  HToast,
-  HModal,
-  HStepper,
-  HForm,
-};
+export * from './breadcrumb';
+export * from './input-field';
+export * from './toast';
+export * from './modal';
+export * from './dropdown';
+export * from './stepper';
+export * from './form';
+export * from './steps';

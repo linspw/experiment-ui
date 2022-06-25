@@ -30,6 +30,8 @@ import {
   HToast,
   HStepper,
   HForm,
+  HSteps,
+  HStep,
 } from '@components/molecules';
 
 import { ClickOutsidePlugin } from './click-outside-plugin';
@@ -73,6 +75,8 @@ const CoreUIPlugin = {
     Vue.component('HDropdown', HDropdown);
     Vue.component('HStepper', HStepper);
     Vue.component('HForm', HForm);
+    Vue.component('HSteps', HSteps);
+    Vue.component('HStep', HStep);
   },
   installPlugins(Vue) {
     Vue.use(ClickOutsidePlugin);

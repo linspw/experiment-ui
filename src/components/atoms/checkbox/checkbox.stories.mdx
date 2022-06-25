@@ -30,11 +30,12 @@ import HCheckbox from './checkbox.vue';
         components: { HCheckbox },
         data() {
           return {
-            status1: null,
+            status1: [],
             status2: null,
           };
         },
         template: `<div>
+          {{ status1 }}
           <h-checkbox label="Checkbox" v-model="status1" />
           <h-checkbox label="Checkbox" @change="status2=$event" :checked="status2" />
         </div>`,

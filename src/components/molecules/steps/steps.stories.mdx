@@ -1,0 +1,189 @@
+import { Meta, ArgsTable, Story, Canvas } from "@storybook/addon-docs";
+import { HSteps, HStep } from "./index.js";
+
+<Meta
+  title="Design System/Molecules/Toast"
+  component={HSteps}
+  decorators={[
+    () => ({
+      template:
+        '<div style="transform: scale(1); height: 40vh;"><story /></div>',
+    }),
+  ]}
+/>
+
+## Step
+
+### Default use:
+
+- direction="horizontal"
+- text-direction="horizontal"
+
+<Canvas>
+  <Story name="Default use">
+    {{
+      data() {
+        return {
+          currentStep: 1,
+        };
+      },
+      template: `
+        <h-steps v-model="currentStep">
+          <h-step>
+            Exemplo 1
+          </h-step>
+          <h-step>
+            Exemplo 2
+            <template #description>
+              Descrição
+              <p>Linha 1</p>
+              <p>Linha 2</p>
+            </template>
+          </h-step>
+          <h-step>
+            Exemplo 3
+          </h-step>
+        </h-steps>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Text Direction - Vertical:
+
+- direction="horizontal"
+- text-direction="vertical"
+
+<Canvas>
+  <Story name="Text Direction - Vertical">
+    {{
+      data() {
+        return {
+          currentStep: 1,
+        };
+      },
+      template: `
+        <h-steps v-model="currentStep" text-direction="vertical">
+          <h-step>
+            Exemplo 1
+          </h-step>
+          <h-step>
+            Exemplo 2
+            <template #description>
+              Descrição
+              <p>Linha 1</p>
+              <p>Linha 2</p>
+            </template>
+          </h-step>
+          <h-step>
+            Exemplo 3
+          </h-step>
+        </h-steps>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Direction - Vertical:
+
+- direction="vertical"
+- text-direction="horizontal"
+
+<Canvas>
+  <Story name="Direction - Vertical">
+    {{
+      data() {
+        return {
+          currentStep: 1,
+        };
+      },
+      template: `
+        <h-steps v-model="currentStep" direction="vertical">
+          <h-step>
+            Exemplo 1
+          </h-step>
+          <h-step>
+            Exemplo 2
+            <template #description>
+              Descrição
+              <p>Linha 1</p>
+              <p>Linha 2</p>
+            </template>
+          </h-step>
+          <h-step>
+            Exemplo 3
+          </h-step>
+        </h-steps>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Direction - Vertical + Text Direction - Vertical:
+
+- direction="vertical"
+- text-direction="vertical"
+
+<Canvas>
+  <Story name="Direction - Vertical + Text Direction - Vertical">
+    {{
+      data() {
+        return {
+          currentStep: 1,
+        };
+      },
+      template: `
+        <h-steps v-model="currentStep" direction="vertical" text-direction="vertical">
+          <h-step>
+            Exemplo 1
+          </h-step>
+          <h-step>
+            Exemplo 2
+            <template #description>
+              Descrição
+              <p>Linha 1</p>
+              <p>Linha 2</p>
+            </template>
+          </h-step>
+          <h-step>
+            Exemplo 3
+          </h-step>
+        </h-steps>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+### Icon:
+
+<Canvas>
+  <Story name="Icon use">
+    {{
+      data() {
+        return {
+          currentStep: 1,
+        };
+      },
+      template: `
+        <h-steps v-model="currentStep">
+          <h-step icon="home" icon-size="medium">
+            Exemplo 1
+          </h-step>
+          <h-step icon="favorite" icon-size="medium">
+            Exemplo 2
+            <template #description>
+              Descrição
+              <p>Linha 1</p>
+              <p>Linha 2</p>
+            </template>
+          </h-step>
+          <h-step icon="star" icon-size="medium">
+            Exemplo 3
+          </h-step>
+        </h-steps>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={HSteps} />
