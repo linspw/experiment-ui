@@ -32,6 +32,8 @@ import {
   HForm,
   HSteps,
   HStep,
+  HTabs,
+  HTab,
 } from '@components/molecules';
 
 import { ClickOutsidePlugin } from './click-outside-plugin';
@@ -77,6 +79,8 @@ const CoreUIPlugin = {
     Vue.component('HForm', HForm);
     Vue.component('HSteps', HSteps);
     Vue.component('HStep', HStep);
+    Vue.component('HTabs', HTabs);
+    Vue.component('HTab', HTab);
   },
   installPlugins(Vue) {
     Vue.use(ClickOutsidePlugin);

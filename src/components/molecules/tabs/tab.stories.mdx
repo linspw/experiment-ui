@@ -1,0 +1,47 @@
+import { Meta, ArgsTable, Story, Canvas } from "@storybook/addon-docs";
+import { HTabs, HTab } from "./index.js";
+
+<Meta
+  title="Design System/Molecules/Tabs"
+  component={HTabs}
+  decorators={[
+    () => ({
+      template:
+        '<div style="transform: scale(1); height: 40vh;"><story /></div>',
+    }),
+  ]}
+/>
+
+## Tabs
+
+### Default use:
+
+<Canvas>
+  <Story name="Default use">
+    {{
+      data() {
+        return {
+          currentTab: 'first',
+        };
+      },
+      template: `
+          <h-tabs
+            v-model="currentTab"
+          >
+            <h-tab value="first">
+              first
+            </h-tab>
+            <h-tab value="second">
+              second
+            </h-tab>
+            <h-tab
+              value="third"
+              disabled
+            >
+              third
+            </h-tab>
+          </h-tabs>
+        `,
+    }}
+  </Story>
+</Canvas>

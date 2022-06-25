@@ -6,3 +6,4 @@ export * from './dropdown';
 export * from './stepper';
 export * from './form';
 export * from './steps';
+export * from './tabs';
