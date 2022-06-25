@@ -266,6 +266,8 @@ const click = () => {
 }
 
 .h-step__badge {
+  min-width: var(--h-step__badge-size);
+  min-height: var(--h-step__badge-size);
   width: var(--h-step__badge-size);
   height: var(--h-step__badge-size);
   background-color: var(--h-step__badge--background-color);
