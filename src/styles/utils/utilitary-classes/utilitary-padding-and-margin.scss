@@ -17,50 +17,50 @@ $sizes:
   'immense';
 
 @each $size in $sizes {
-  .b-padding--#{$size} {
+  .h-padding--#{$size} {
     padding: var(--size-scalable-#{$size});
   }
-  .b-padding-top--#{$size} {
+  .h-padding-top--#{$size} {
     padding-top: var(--size-scalable-#{$size});
   }
-  .b-padding-right--#{$size} {
+  .h-padding-right--#{$size} {
     padding-right: var(--size-scalable-#{$size});
   }
-  .b-padding-bottom--#{$size} {
+  .h-padding-bottom--#{$size} {
     padding-bottom: var(--size-scalable-#{$size});
   }
-  .b-padding-left--#{$size} {
+  .h-padding-left--#{$size} {
     padding-left: var(--size-scalable-#{$size});
   }
-  .b-padding-vertical--#{$size} {
+  .h-padding-vertical--#{$size} {
     padding-top: var(--size-scalable-#{$size});
     padding-bottom: var(--size-scalable-#{$size});
   }
-  .b-padding-horizontal--#{$size} {
+  .h-padding-horizontal--#{$size} {
     padding-right: var(--size-scalable-#{$size});
     padding-left: var(--size-scalable-#{$size});
   }
 
-  .b-margin--#{$size} {
+  .h-margin--#{$size} {
     margin: var(--size-scalable-#{$size});
   }
-  .b-margin-top--#{$size} {
+  .h-margin-top--#{$size} {
     margin-top: var(--size-scalable-#{$size});
   }
-  .b-margin-right--#{$size} {
+  .h-margin-right--#{$size} {
     margin-right: var(--size-scalable-#{$size});
   }
-  .b-margin-bottom--#{$size} {
+  .h-margin-bottom--#{$size} {
     margin-bottom: var(--size-scalable-#{$size});
   }
-  .b-margin-left--#{$size} {
+  .h-margin-left--#{$size} {
     margin-left: var(--size-scalable-#{$size});
   }
-  .b-margin-vertical--#{$size} {
+  .h-margin-vertical--#{$size} {
     margin-top: var(--size-scalable-#{$size});
     margin-bottom: var(--size-scalable-#{$size});
   }
-  .b-margin-horizontal--#{$size} {
+  .h-margin-horizontal--#{$size} {
     margin-right: var(--size-scalable-#{$size});
     margin-left: var(--size-scalable-#{$size});
   }
