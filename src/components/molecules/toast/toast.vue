@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@styles/utils';
+@import '@styles/utils/breakpoints';
 
 .h-toast {
   overflow: hidden;

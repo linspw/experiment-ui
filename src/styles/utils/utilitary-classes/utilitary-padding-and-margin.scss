@@ -40,7 +40,6 @@ $sizes:
     padding-right: var(--size-base-#{$size});
     padding-left: var(--size-base-#{$size});
   }
-
   .h-margin--#{$size} {
     margin: var(--size-base-#{$size});
   }
@@ -64,4 +63,28 @@ $sizes:
     margin-right: var(--size-base-#{$size});
     margin-left: var(--size-base-#{$size});
   }
+}
+
+.h-margin--auto {
+  margin: auto;
+}
+.h-margin-top--auto {
+  margin-top: auto;
+}
+.h-margin-right--auto {
+  margin-right: auto;
+}
+.h-margin-bottom--auto {
+  margin-bottom: auto;
+}
+.h-margin-left--auto {
+  margin-left: auto;
+}
+.h-margin-vertical--auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.h-margin-horizontal--auto {
+  margin-right: auto;
+  margin-left: auto;
 }
