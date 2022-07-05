@@ -6,6 +6,7 @@
       [`h-card--color-${color}`]: color,
       [`h-card--variant-${variant}`]: variant,
       [`h-card--elevation-${elevation}`]: elevation && variant != 'outlined',
+      [`h-card--behavior-rounded`]: rounded,
     }"
   >
     <slot />
@@ -42,6 +43,10 @@ export default {
       type: String,
       default: 'default',
     },
+    rounded: {
+      type: Boolean,
+      default: true,
+    },
   },
 };
 </script>
@@ -64,6 +69,12 @@ export default {
   color: var(--h-card--color);
   padding: var(--h-card--padding);
   position: relative;
+
+  &--behavior {
+    &-rounded {
+      --h-card--border-radius: var(--border-radius-high);
+    }
+  }
 
   &--variant {
     &-outlined {
