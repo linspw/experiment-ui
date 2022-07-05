@@ -52,12 +52,13 @@ export default {
 :root {
   --h-badge--width: fit-content;
   --h-badge--height: fit-content;
+  --h-badge--border-radius: 50%;
 }
 
 .h-badge {
   align-items: center;
   background-color: var(--h-badge--background-color);
-  border-radius: 50%;
+  border-radius: var(--h-badge--border-radius);
   color: var(--h-badge--color);
   display: flex;
   font-size: var(--h-badge--font-size);
