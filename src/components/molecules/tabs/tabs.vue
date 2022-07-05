@@ -2,6 +2,9 @@
   <div
     ref="tab"
     class="h-tabs"
+    :class="{
+      [`h-tabs--behavior-rounded`]: $props.rounded,
+    }"
   >
     <slot />
 
@@ -25,6 +28,10 @@ const $props = defineProps({
   modelValue: {
     type: [Number, String],
     default: undefined,
+  },
+  rounded: {
+    type: Boolean,
+    default: true,
   },
 });
 
@@ -82,6 +89,12 @@ onUnmounted(() => {
   position: relative;
   overflow-x: auto;
   border-radius: var(--h-tabs--border-radius);
+
+  &--behavior {
+    &-rounded {
+      --h-tabs--border-radius: var(--border-radius-high);
+    }
+  }
 }
 
 .h-tabs__line {
