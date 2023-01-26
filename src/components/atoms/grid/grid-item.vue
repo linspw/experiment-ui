@@ -1,11 +1,11 @@
 <template>
   <component
-    :is="tag"
+    :is="$props.tag"
     :class="{
-      [`h-grid-item--behavior-${behavior}`]: behavior,
-      [`h-grid-item--column-${column}`]: column,
-      [`h-grid-item--row-${row}`]: row,
-      ['h-grid-item--responsive']: responsive,
+      [`h-grid-item--behavior-${$props.behavior}`]: $props.behavior,
+      [`h-grid-item--column-${$props.column}`]: $props.column,
+      [`h-grid-item--row-${$props.row}`]: $props.row,
+      ['h-grid-item--responsive']: $state.isResponsive,
     }"
     class="h-grid-item"
   >
@@ -13,87 +13,81 @@
   </component>
 </template>
 
-<script>
+<script setup>
 import { shouldBeOneOf } from '@utils/validations';
-import {
-  gridItemTypes,
-} from '@assets/constants';
+import { reactive, computed, inject } from 'vue';
+import { useInterfaceContext } from '@composables/providers';
+import { GridContainerKey } from './grid-container-key';
 
-export default {
-  name: 'HGridItem',
-  inject: {
-    responsiveFromParent: {
-      from: 'responsive',
-      default: null,
-    },
+const $config = inject(GridContainerKey);
+const $interfaceState = useInterfaceContext();
+
+const $props = defineProps({
+  behavior: {
+    type: String,
+    default: null,
   },
-  props: {
-    behavior: {
-      type: String,
-      default: null,
-    },
-    column: {
-      type: [Number, String],
-      default: 12,
-    },
-    row: {
-      type: [Number, String],
-      default: 1,
-    },
-    tag: {
-      type: String,
-      default: 'div',
-      validator: shouldBeOneOf(gridItemTypes),
-    },
-    responsive: {
-      type: Boolean,
-      default: true,
-    },
+  column: {
+    type: [Number, String],
+    default: 12,
   },
-  computed: {
-    isResponsive() {
-      return this.responsive || this.responsiveFromParent;
-    },
+  row: {
+    type: [Number, String],
+    default: 1,
   },
-};
+  tag: {
+    type: String,
+    default: 'div',
+    validator: shouldBeOneOf([
+      'div',
+      'article',
+      'form',
+      'button',
+      'a',
+      'router-link',
+      'header',
+      'footer',
+      'span',
+    ]),
+  },
+  responsive: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+// const name = 'BGridItem';
+
+const $state = reactive({
+  isResponsive: computed(() => $props.responsive || $config.responsive),
+  gridConfig: computed(() => {
+    if (!$state.isResponsive) return { column: $props.column, row: $props.row };
+
+    let newColumnSize = $props.column;
+    const halfParentColumns = Math.floor($config.columns / 2);
+
+    if ($interfaceState.window.isSizeDown('largeTablet')) {
+      newColumnSize = $config.columns;
+    } else if ($interfaceState.window.isSizeDown('mediumDesktop')) {
+      newColumnSize = $props.column >= halfParentColumns ? $config.columns : halfParentColumns;
+    }
+
+    return {
+      column: newColumnSize,
+      row: $props.row,
+    };
+  }),
+});
 </script>
 
 <style lang="scss">
-@import '@styles/utils/breakpoints';
+@import '~@styles/utils/breakpoints';
 
 .h-grid-item {
   position: relative;
-}
 
-.h-grid-item--responsive {
-  @for $i from 1 through 12 {
-    &.h-grid-item--column-#{$i} {
-      grid-column: span #{$i};
-
-      @include for-medium-desktop-down {
-        @if $i >= 6 {
-          grid-column: span 12;
-        } @else {
-          grid-column: span 6;
-        }
-      }
-      @include for-large-tablet-down {
-        grid-column: span 12;
-      }
-    }
-    &.h-grid-item--row-#{$i} {
-      grid-row: span #{$i};
-    }
-  }
-}
-
-@for $i from 1 through 12 {
-  .h-grid-item--column-#{$i} {
-    grid-column: span #{$i};
-  }
-  .h-grid-item--row-#{$i} {
-    grid-row: span #{$i};
-  }
+  grid-column: span var(--h-grid-item--column-number, v-bind('$state.gridConfig.column'));
+  grid-row: span var(--h-grid-item--row-number, v-bind('$state.gridConfig.row'));
 }
 
 .h-grid-item--behavior-horizontal {

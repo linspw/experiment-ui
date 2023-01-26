@@ -17,6 +17,9 @@ $sizes:
   'immense';
 
 @each $size in $sizes {
+  .h-gap--#{$size} {
+    gap: var(--size-base-#{$size});
+  }
   .h-padding--#{$size} {
     padding: var(--size-base-#{$size});
   }
