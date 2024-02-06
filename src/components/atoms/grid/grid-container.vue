@@ -11,7 +11,7 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { provide } from 'vue';
 import { shouldBeOneOf } from '@utils/validations';
 import { GridContainerKey } from './grid-container-key';
@@ -50,7 +50,7 @@ const $props = defineProps({
   },
 });
 
-provide(GridContainerKey, $props);
+provide(GridContainerKey, {gridContainerProps: $props});
 </script>
 
 <style lang="scss">
@@ -81,3 +81,4 @@ provide(GridContainerKey, $props);
 }
 
 </style>
+@/utils/validations

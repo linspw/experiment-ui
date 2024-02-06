@@ -152,3 +152,4 @@ input:checked.h-checkbox__input ~ .h-checkbox__checkmark {
   }
 }
 </style>
+@/components/atoms/icon

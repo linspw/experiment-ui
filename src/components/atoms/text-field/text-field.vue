@@ -63,21 +63,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
-import { HFormKey } from '@components/molecules/form';
 import {
   computed,
   reactive,
   ref,
   onMounted,
-  watch,
-  inject,
-  toRef,
 } from 'vue';
-import { Mask } from '@utils/formats/mask';
-import { Validate } from '@utils/validations/validate';
 import { iconColors, textFieldTypes } from '@assets/constants';
 
 export default {
@@ -98,10 +92,6 @@ export default {
     tag: {
       type: String,
       default: 'input',
-    },
-    mask: {
-      type: [String, Array],
-      default: null,
     },
     unmasked: {
       type: Boolean,
@@ -189,23 +179,13 @@ export default {
   setup($props, { emit: $emit }) {
     const textFieldWrapper = ref();
     const textField = ref();
-    const HForm = inject(HFormKey, undefined);
 
-    const mask = reactive({
-      instance: computed(() => $props.mask && Mask($props.mask)),
-      length: computed(() => mask?.instance?.getPatternLength()),
-    });
 
-    const state = reactive({
+    const state: any = reactive({
       validationMessages: null,
       validationActive: true,
       valueFromProp: computed(() => ($props.modelValue || $props.value)?.toString?.()),
-      valueMasked: computed(() => (mask.instance ? mask.instance.masked(state.valueFromProp) : state.valueFromProp)),
-      valueUnmasked: computed(() => (mask.instance ? mask.instance.unmasked(state.valueFromProp) : state.valueFromProp)),
-      internalValue: computed(() => (mask.instance ? state.valueMasked : state.valueUnmasked)),
-      maxLengthFromMaskOrRules: computed(() => (
-        $props.autoUseMaxLength && (mask?.length || $props.rules?.length?.max)
-      )),
+      internalValue: computed(() => state.valueFromProp),
       helperTextVisible: computed(() => $props.helperText || state.invalid),
       invalid: computed(() => Boolean(state.validationActive && state.validationMessages?.length)),
       internalInvalid: computed(() => $props.invalid || state.invalid),
@@ -216,24 +196,12 @@ export default {
         || undefined
       )),
       name: computed(() => $props.name || $props.label || 'Campo'),
-      currentValidation: computed(() => ({
-        name: state.name,
-        value: state.internalValue,
-        tag: $props.tag,
-        type: $props.type,
-        messages: state.validationMessages,
-      })),
+
     });
 
-    const currentValidation = toRef(state, 'currentValidation');
 
-    const checkValidation = (validationActive) => {
-      if (!$props.rules) return;
-      state.validationActive = Boolean(validationActive);
-      state.validationMessages = Validate(state.valueFromProp, $props.rules);
-    };
 
-    const handleHasValue = (value) => {
+    const handleHasValue = (value: string) => {
       if (!textFieldWrapper.value) return;
 
       if (value) {
@@ -243,59 +211,27 @@ export default {
       }
     };
 
-    const fixInputSelection = (el, position, digit) => {
-      while (position && position < el.value.length && el.value.charAt(position - 1) !== digit) {
-        position += 1;
-      }
 
-      const selectionRange = el.type ? el.type.match(/^(text|search|password|tel|url)$/i) : !el.type;
-      if (selectionRange && el === document.activeElement) {
-        el.setSelectionRange(position, position);
-        setTimeout(() => {
-          el.setSelectionRange(position, position);
-        }, 0);
-      }
-    };
 
-    const handleInput = ($event) => {
+    const handleInput = ($event: InputEvent) => {
       let newValue;
-      const oldValue = $event.target.value;
+      const oldValue = ($event.target as any).value;
       // const position = $event.target.selectionEnd;
       // const digit = oldValue[position];
 
-      if ($props.mask && $props.unmasked) {
-        newValue = mask.instance.unmasked(oldValue);
-      } else if ($props.mask) {
-        newValue = mask.instance.masked(oldValue);
-      } else {
-        newValue = oldValue;
-      }
+      newValue = oldValue;
 
       newValue = $props.type === 'number' ? Number(newValue) : newValue;
 
       $emit('input', newValue);
       $emit('update:modelValue', newValue);
       handleHasValue(newValue);
-      // fixInputSelection($event.target, position, digit);
     };
 
-    // const fixSelectionPosition = () => {
-    //   console.log('fixSelectionPosition', textField.value?.selectionStart, textField.value?.selectionEnd);
-    // };
 
-    // const handleSelectionChange = () => {
-    //   console.log('FOi');
-    //   console.log('handleSelectionChange', textField.value);
-    // };
-
-    watch(() => state.valueFromProp, () => {
-      checkValidation(true);
-    });
 
     onMounted(() => {
       handleHasValue(state.valueFromProp);
-      if ($props.rules) checkValidation($props?.rules?.startValidating);
-      if (HForm) HForm.registerField(currentValidation);
     });
 
     return {

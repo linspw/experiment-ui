@@ -20,7 +20,7 @@
   </svg>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import {
   loadingSizes, loadingColors,
@@ -172,3 +172,4 @@ $duration: 1.4s;
   }
 }
 </style>
+@/utils/validations@/assets/constants

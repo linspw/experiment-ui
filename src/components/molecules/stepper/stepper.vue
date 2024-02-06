@@ -32,7 +32,7 @@
   </ul>
 </template>
 
-<script>
+<script lang="ts">
 import { HBadge } from '@components/atoms/badge';
 import { HText } from '@components/atoms/text';
 
@@ -58,7 +58,7 @@ export default {
   },
   emits: ['click'],
   setup(props, { emit }) {
-    const handleClick = (index) => {
+    const handleClick = (index: number) => {
       if (props.clickable) return emit('click', index + 1);
       return null;
     };

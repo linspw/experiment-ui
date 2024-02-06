@@ -39,9 +39,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { HButton } from '@components/atoms/button';
+import {PropType} from 'vue'
 
 export default {
   components: {
@@ -91,7 +92,7 @@ export default {
       validator: shouldBeOneOf(['default', 'block']),
     },
     options: {
-      type: Array,
+      type: Array as PropType<any[]>,
       default: () => [],
     },
     value: {
@@ -115,7 +116,7 @@ export default {
     };
   },
   methods: {
-    handleClick($event) {
+    handleClick($event: Event) {
       this.open = false;
       if (this.$attrs.input) return this.$emit('input', $event);
       if (this.$attrs.change) return this.$emit('change', $event);

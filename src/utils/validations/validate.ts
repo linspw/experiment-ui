@@ -3,24 +3,26 @@ import Schema from 'validate';
 import { phoneRegex } from './phone';
 import { emailRegex } from './email';
 
+const typeDictionary = {
+  Number: 'número',
+  String: 'texto',
+  Array: 'lista',
+  Object: 'objeto',
+  Function: 'function',
+};
+
 const defaultMessages = {
-  required: (value) => `O ${value} é obrigatório.`,
-  match: function match(prop, _ctx, _regexp) {
+  required: (value: string) => `O ${value} é obrigatório.`,
+  match: function match(prop: string, _ctx: any, _regexp: string) {
     return `O ${prop} não é válido.`;
   },
-  type(prop, _ctx, type) {
-    const typeDictionary = {
-      Number: 'número',
-      String: 'texto',
-      Array: 'lista',
-      Object: 'objeto',
-      Function: 'function',
-    };
+  type(prop: string, _ctx: any, type: any) {
+
     if (typeof type === 'function') type = type.name;
 
-    return `O ${prop} precisa ser do tipo: ${typeDictionary[type] || type}.`;
+    return `O ${prop} precisa ser do tipo: ${(typeDictionary as any)[type] || type}.`;
   },
-  length(prop, _ctx, len) {
+  length(prop: string, _ctx: any, len: number | {min: number|undefined, max: number|undefined}){
     if (typeof len === 'number') return `O ${prop} precisa ter o tamanho de ${len}.`;
 
     const { min } = len;
@@ -34,7 +36,7 @@ const defaultMessages = {
 
     return `O ${prop} não tem o tamanho certo.`;
   },
-  size(prop, ctx, size) {
+  size(prop: string, _ctx: any, size: number | {min: number|undefined, max: number|undefined}) {
     if (typeof size === 'number') {
       return `O ${prop} must have a size of ${size}.`;
     }
@@ -57,7 +59,7 @@ const validationsDictionary = {
   email: emailRegex,
 };
 
-const createRules = (rules) => ({
+const createRules = (rules: any) => ({
   ...rules,
   message: {
     ...defaultMessages,
@@ -65,10 +67,10 @@ const createRules = (rules) => ({
   },
 });
 
-const Validate = (value, rules, name = 'campo') => {
+const Validate = (value: string, rules: any, name = 'campo') => {
   rules = JSON.parse(JSON.stringify(rules));
   if (Object.prototype.hasOwnProperty.call(rules, 'startValidating')) delete rules.startValidating;
-  if (rules.match) rules.match = (validationsDictionary[rules.match] || rules.match);
+  if (rules.match) rules.match = ((validationsDictionary as any)[rules.match] || rules.match);
 
   const Validator = new Schema({
     [name]: createRules(rules),

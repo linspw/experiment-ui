@@ -56,22 +56,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import {
   selectSizes,
 } from '@assets/constants';
-import { HFormKey } from '@components/molecules/form';
 import {
   computed,
   reactive,
-  ref,
-  onMounted,
-  watch,
-  inject,
-  toRef,
+  PropType,
 } from 'vue';
-import { Validate } from '@utils/validations/validate';
 
 export default {
   name: 'HSelect',
@@ -98,7 +92,7 @@ export default {
       default() {
         return [];
       },
-      type: Array,
+      type: Array as PropType<any[]>,
     },
     placeholder: {
       default: null,
@@ -131,9 +125,8 @@ export default {
   },
   emits: ['input', 'change', 'select', 'update:modelValue'],
   setup($props, { emit: $emit }) {
-    const HForm = inject(HFormKey, undefined);
 
-    const state = reactive({
+    const state: any = reactive({
       internalValue: computed(() => $props.value || $props.modelValue),
       hasValue: computed(() => Boolean(state.internalValue)),
       validationMessages: null,
@@ -143,42 +136,21 @@ export default {
       internalTextValue: computed(() => state.validationMessages?.[0]?.message || $props.helperText),
       internalInvalid: computed(() => $props.invalid || state.invalid),
       name: computed(() => $props.name || $props.label || 'Campo'),
-      currentValidation: computed(() => ({
-        name: state.name,
-        value: state.internalValue,
-        tag: 'select',
-        type: 'simple',
-        messages: state.validationMessages,
-      })),
     });
 
-    const checkValidation = (validationActive) => {
-      if (!$props.rules) return;
-      state.validationActive = Boolean(validationActive);
-      state.validationMessages = Validate(state.internalValue, $props.rules);
-    };
 
-    const getOption = (option, key) => (Object.prototype.hasOwnProperty.call(option, key)
-      ? option[key]
+
+    const getOption = (option: object | string, key: string) => (Object.prototype.hasOwnProperty.call(option, key)
+      ? option[key as keyof object]
       : option);
 
-    const handlerChange = ($event) => {
-      const value = $event?.target?.value;
-      console.log(value);
+    const handlerChange = ($event: Event) => {
+      const value = ($event?.target as any)?.value;
       $emit('input', value);
       $emit('change', value);
       $emit('select', value);
       $emit('update:modelValue', value);
     };
-
-    const currentValidation = toRef(state, 'currentValidation');
-
-    watch(() => state.internalValue, () => checkValidation(true));
-
-    onMounted(() => {
-      if ($props.rules) checkValidation($props?.rules?.startValidating);
-      if (HForm) HForm.registerField(currentValidation);
-    });
 
     return {
       state,
@@ -268,3 +240,4 @@ export default {
   min-height: var(--h-select__helper-text-height);
 }
 </style>
+@/utils/validations@/utils/validations/validate@/assets/constants

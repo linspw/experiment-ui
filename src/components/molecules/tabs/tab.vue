@@ -12,7 +12,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { inject, computed } from 'vue';
 import { BTabsKey } from './tabs-key';
 
@@ -31,7 +31,7 @@ const $props = defineProps({
   },
 });
 
-const { currentTab, handleTabsChange } = inject(BTabsKey);
+const { currentTab, handleTabsChange }: any = inject(BTabsKey);
 const $emits = defineEmits(['change']);
 
 const handleChange = () => {

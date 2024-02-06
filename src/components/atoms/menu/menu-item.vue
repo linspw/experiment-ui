@@ -13,7 +13,7 @@
   </li>
 </template>
 
-<script setup>
+<script setup lang="ts">
 /* eslint-disable no-new */
 import { ref, inject } from 'vue';
 
@@ -32,7 +32,7 @@ const $props = defineProps({
 
 const $emit = defineEmits(['click']);
 
-const handleClickFromParent = inject('handleClickFromParent');
+const handleClickFromParent: Function = inject('handleClickFromParent')!;
 
 const handleClick = () => {
   if ($props.clickable) {

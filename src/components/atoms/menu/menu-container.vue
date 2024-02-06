@@ -24,7 +24,7 @@
   </transition>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { HCard } from '@components/atoms';
 import { provide } from 'vue';
 
@@ -103,3 +103,4 @@ provide('handleClickFromParent', handleClickFromParent);
   opacity: 0;
 }
 </style>
+@/components/atoms

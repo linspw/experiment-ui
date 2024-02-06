@@ -1,4 +1,4 @@
-const notEmpty = (value) => value !== undefined
+const notEmpty = (value: any) => value !== undefined
   && value !== null
   && value !== '';
 

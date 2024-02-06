@@ -43,90 +43,90 @@
   </component>
 </template>
 
-<script>
+<script lang="ts" setup>
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
 import {
   iconColors, buttonColors, buttonTypes, buttonVariants, buttonSizes,
 } from '@assets/constants';
+import { useSlots, computed } from 'vue';
 
-export default {
+
+defineOptions({
   name: 'HButton',
-  components: { HIcon },
   inheritAttrs: false,
-  props: {
-    tag: {
-      type: String,
-      default: 'button',
-      validator: shouldBeOneOf(buttonTypes),
-    },
-    color: {
-      type: String,
-      default: 'default',
-      validator: shouldBeOneOf(buttonColors),
-    },
-    variant: {
-      type: String,
-      default: 'contained',
-      validator: shouldBeOneOf(buttonVariants),
-    },
-    size: {
-      type: String,
-      default: 'small',
-      validator: shouldBeOneOf(buttonSizes),
-    },
-    iconLeft: {
-      type: String,
-      default: null,
-    },
-    iconLeftColor: {
-      type: String,
-      default: 'inherit',
-      validator: shouldBeOneOf(iconColors),
-    },
-    iconRight: {
-      type: String,
-      default: null,
-    },
-    iconRightColor: {
-      type: String,
-      default: 'inherit',
-      validator: shouldBeOneOf(iconColors),
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    rounded: {
-      type: Boolean,
-      default: false,
-    },
-    accessible: {
-      type: Boolean,
-      default: false,
-    },
-    block: {
-      type: Boolean,
-      default: false,
-    },
-    onlyIcon: {
-      type: Boolean,
-      default: false,
-    },
+})
+
+defineProps({
+  tag: {
+    type: String,
+    default: 'button',
+    validator: shouldBeOneOf(buttonTypes),
   },
-  computed: {
-    slotPassed() {
-      return !!this.$slots.default;
-    },
+  color: {
+    type: String,
+    default: 'default',
+    validator: shouldBeOneOf(buttonColors),
   },
-};
+  variant: {
+    type: String,
+    default: 'contained',
+    validator: shouldBeOneOf(buttonVariants),
+  },
+  size: {
+    type: String,
+    default: 'small',
+    validator: shouldBeOneOf(buttonSizes),
+  },
+  iconLeft: {
+    type: String,
+    default: null,
+  },
+  iconLeftColor: {
+    type: String,
+    default: 'inherit',
+    validator: shouldBeOneOf(iconColors),
+  },
+  iconRight: {
+    type: String,
+    default: null,
+  },
+  iconRightColor: {
+    type: String,
+    default: 'inherit',
+    validator: shouldBeOneOf(iconColors),
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  rounded: {
+    type: Boolean,
+    default: false,
+  },
+  accessible: {
+    type: Boolean,
+    default: false,
+  },
+  block: {
+    type: Boolean,
+    default: false,
+  },
+  onlyIcon: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+const $slots = useSlots()
+
+const slotPassed = computed(() => {
+  return !!$slots.default;
+})
 </script>
 
 <styles lang="scss">
 .h-button {
-  /**
-  * @tokens HButton
-  */
   --h-button-color-first: none;
   --h-button-color-second: none;
   --h-button-color-third: none;

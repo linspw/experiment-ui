@@ -306,3 +306,4 @@ export default {
   }
 }
 </style>
+@/utils/validations@/components/atoms/icon

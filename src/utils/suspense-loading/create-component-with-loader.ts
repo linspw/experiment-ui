@@ -6,7 +6,7 @@ const createComponentWithLoader = ({
   loadingComponent,
   errorComponent,
   transitionComponent,
-}) => {
+} : any) => {
   if (!component || !loadingComponent) throw new Error('createAsyncComponent: component-loadingComponent is missing');
 
   const params = {

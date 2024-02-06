@@ -130,3 +130,4 @@ export default {
   transform: translateX(100%);
 }
 </style>
+@/components/atoms/icon@/components/atoms/card

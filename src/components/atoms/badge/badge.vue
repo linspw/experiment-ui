@@ -183,3 +183,4 @@ export default {
   margin-left: var(--size-base-extra-small);
 }
 </style>
+@/utils/validations@/components/atoms/icon@/assets/constants

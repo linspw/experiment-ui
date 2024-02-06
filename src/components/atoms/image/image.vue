@@ -16,7 +16,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { imageTypes, imageFormats } from '@assets/constants';
 
@@ -65,3 +65,4 @@ export default {
   }
 }
 </style>
+@/utils/validations@/assets/constants

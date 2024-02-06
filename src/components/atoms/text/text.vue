@@ -24,7 +24,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import {
   textWeights, textTypes, textSizes, textColors, textVariants, textAligns, textEmphasis,
@@ -380,3 +380,4 @@ export default {
   }
 }
 </style>
+@/utils/validations@/assets/constants

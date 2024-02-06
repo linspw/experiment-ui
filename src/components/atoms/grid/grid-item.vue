@@ -13,14 +13,14 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { reactive, computed, inject } from 'vue';
-import { useInterfaceContext } from '@composables/providers';
+import { useInterface } from '@composables';
 import { GridContainerKey } from './grid-container-key';
 
-const $config = inject(GridContainerKey);
-const $interfaceState = useInterfaceContext();
+const { gridContainerProps: $config} = inject(GridContainerKey)! ?? {};
+const $interfaceState = useInterface();
 
 const $props = defineProps({
   behavior: {
@@ -69,7 +69,7 @@ const $state = reactive({
     if ($interfaceState.window.isSizeDown('largeTablet')) {
       newColumnSize = $config.columns;
     } else if ($interfaceState.window.isSizeDown('mediumDesktop')) {
-      newColumnSize = $props.column >= halfParentColumns ? $config.columns : halfParentColumns;
+      newColumnSize = parseInt($props.column as string, 10) >= halfParentColumns ? $config.columns : halfParentColumns;
     }
 
     return {
@@ -81,7 +81,7 @@ const $state = reactive({
 </script>
 
 <style lang="scss">
-@import '~@styles/utils/breakpoints';
+@import '@styles/utils/breakpoints';
 
 .h-grid-item {
   position: relative;
@@ -101,3 +101,4 @@ const $state = reactive({
   flex-direction: column;
 }
 </style>
+@/utils/validations

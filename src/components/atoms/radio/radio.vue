@@ -32,3 +32,4 @@ export default {
   --h-radio__label--color: inherit;
 }
 </style>
+@/components/atoms/icon

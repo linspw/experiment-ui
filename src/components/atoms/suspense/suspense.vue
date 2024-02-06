@@ -20,14 +20,14 @@
   </Suspense>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, onErrorCaptured } from 'vue';
 
 export default {
   name: 'HSuspense',
   inheritAttrs: false,
   setup(_props, { slots, attrs }) {
-    const errorMsg = ref(null);
+    const errorMsg = ref<Error | null>(null);
 
     onErrorCaptured((error) => {
       const hasErrorSlot = Boolean(slots.error);

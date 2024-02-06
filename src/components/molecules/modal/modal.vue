@@ -141,3 +141,4 @@ export default {
   opacity: 0;
 }
 </style>
+@/utils/validations@/components/atoms/icon@/assets/constants@/components/atoms/card

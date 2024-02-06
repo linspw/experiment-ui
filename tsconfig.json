@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@root/*": ["./*"],
+      "@assets/*": ["./src/assets/*"],
+      "@constants/*": ["./src/assets/constants/*"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@composables/*": ["./src/composables/*"],
+      "@composables": ["./src/composables"],
+      "@atoms/*": ["./src/components/atoms/*"],
+      "@atoms": ["./src/components/atoms"],
+      "@molecules/*": ["./src/components/molecules/*"],
+      "@organism/*": ["./src/components/organism/*"],
+      "@plugins/*": ["./src/plugins/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@utils": ["./src/utils"],
+      "@styles/*": ["./src/styles/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "declaration": true,
+    "experimentalDecorators": true,    
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -20,7 +20,7 @@ import {
   HMenu,
   HMenuItem,
   HTextField,
-} from '@components/atoms';
+} from '@/components/atoms';
 
 import {
   HBreadcrumb,

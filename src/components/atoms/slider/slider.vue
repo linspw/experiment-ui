@@ -12,7 +12,7 @@
   >
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'HSlider',
   props: {
@@ -44,8 +44,8 @@ export default {
     },
   },
   methods: {
-    handleSlider(event) {
-      this.$emit('change', parseInt(event.target.value, 10));
+    handleSlider(event: Event): void {
+      this.$emit('change', parseInt((event.target as any).value, 10));
     },
   },
 };
