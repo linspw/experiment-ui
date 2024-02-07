@@ -44,7 +44,7 @@ createApp
 ```
 
 ### Documentation
-[Core UI Doc](https://hyone-core-ui.netlify.app/)
+[Experiment UI Doc](https://linspw.github.io/experiment-ui/)
 
 ### Contributing
 
