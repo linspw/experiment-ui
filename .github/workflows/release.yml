@@ -17,6 +17,8 @@ jobs:
       contents: write
       packages: write
       pull-requests: write
+      id-token: write
+      pages: write
 
     steps:
     - name: Checkout
