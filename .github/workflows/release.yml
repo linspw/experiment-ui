@@ -66,3 +66,14 @@ jobs:
     - name: Deploy
       id: deployment
       uses: actions/deploy-pages@v1
+
+    
+    - name: Create and Publish versions
+      uses: changesets/action@v1
+      with:
+        version: pnpm ci:version
+        publish: pnpm ci:publish
+        createGithubReleases: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

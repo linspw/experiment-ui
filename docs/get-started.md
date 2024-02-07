@@ -23,7 +23,7 @@ After installing, add ExperimentUI to your vue instance.
 
 ```js
 import { createApp } from 'vue';
-import { ExperimentUI } from '@linspw/experiment-ui';
+import { ExperimentUI } from 'experiment-ui';
 import App from './app.vue';
 
 createApp

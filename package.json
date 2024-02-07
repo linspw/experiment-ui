@@ -1,6 +1,6 @@
 {
-  "name": "@linspw/experiment-ui",
-  "version": "0.0.0-development",
+  "name": "experiment-ui",
+  "version": "0.0.0",
   "private": false,
   "description": "Experiment UI - UI Library write for Vue 3",
   "author": "Jessé Correia Lins",
@@ -15,6 +15,10 @@
     "dev": "pnpm run dev:playground",
     "dev:playground": "vite dev",
     "dev:storybook": "start-storybook -p 6006 -c configs/storybook",
+    "ci:version": "pnpm changeset version",
+    "ci:publish": "pnpm run build && pnpm changeset publish",
+    "ci:snapshot": "pnpm changeset version --snapshot beta",
+    "ci:prerelease": "pnpm run build && pnpm changeset publish --tag beta",
     "build:storybook": "build-storybook -c configs/storybook -o dist/storybook",
     "semantic-release": "semantic-release",
     "lint:eslint": "eslint --ext .ts,.js,.vue .",
@@ -26,23 +30,25 @@
     "docs:preview": "vitepress preview docs"
   },
   "main": "dist/lib/experiment-ui.umd.js",
-  "module": "dist/lib/experiment-ui.es.js",
+  "module": "dist/lib/experiment-ui.js",
+  "types": "./dist/main.d.ts",
   "files": [
     "dist/lib/*",
     "src/styles/*"
   ],
   "exports": {
     ".": {
-      "import": "./dist/lib/experiment-ui.es.js",
-      "require": "./dist/lib/experiment-ui.umd.js"
+      "types": "./dist/main.d.ts",
+      "require": "./dist/lib/experiment-ui.umd.js",
+      "import": "./dist/lib/experiment-ui.js"
     },
     "./dist/lib/style.css": {
-      "import": "./dist/lib/style.css",
-      "require": "./dist/lib/style.css"
+      "require": "./dist/lib/style.css",
+      "import": "./dist/lib/style.css"
     },
     "./src/styles/index.scss": {
-      "import": "./src/styles/index.scss",
-      "require": "./src/styles/index.scss"
+      "require": "./src/styles/index.scss",
+      "import": "./src/styles/index.scss"
     }
   },
   "dependencies": {
@@ -56,6 +62,8 @@
     "vue": "3.4.8"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.27.1",
     "@testing-library/vue": "^8.0.1",
     "@types/node": "^20.11.16",
     "@vitejs/plugin-vue": "^5.0.3",

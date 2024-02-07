@@ -14,7 +14,7 @@ export default defineConfig({
     outDir: "dist/lib",
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
-      name: "ExperimentUI",
+      name: "experiment-ui",
       fileName: "experiment-ui",
     },
     rollupOptions: {

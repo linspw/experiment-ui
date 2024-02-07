@@ -10,13 +10,13 @@ providing visual components to facilitate the development of your application.
 
 ```
 # If you use npm: 
-npm i @linspw/experiment-ui
+npm i experiment-ui
 
 # Or if you use Yarn: 
-yarn add @linspw/experiment-ui
+yarn add experiment-ui
 
 # Or if you use pnpm:
-pnpm add @linspw/experiment-ui
+pnpm add experiment-ui
 ```
 
 ### Use
@@ -27,7 +27,7 @@ After installing, add ExperimentUI to your vue instance.
 
 ```ts
 import { createApp } from 'vue';
-import { ExperimentUI } from '@linspw/experiment-ui';
+import { ExperimentUI } from 'experiment-ui';
 import App from './app.vue';
 
 createApp
