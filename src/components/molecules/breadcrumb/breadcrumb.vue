@@ -1,13 +1,9 @@
 <template>
   <nav class="h-breadcrumb">
-    <li
-      v-for="(item, index) in items"
-      :key="index"
-      class="h-breadcrumb__item"
-    >
+    <li v-for="(item, index) in items" :key="index" class="h-breadcrumb__item">
       <h-text
         :href="item.url"
-        :link="(index === items.length-1)"
+        :link="index === items.length - 1"
         color="primary"
         size="small"
         tag="a"
@@ -17,7 +13,7 @@
       </h-text>
 
       <div
-        v-if="!(index === items.length-1)"
+        v-if="!(index === items.length - 1)"
         class="h-breadcrumb__item-divider"
       >
         /
@@ -27,16 +23,16 @@
 </template>
 
 <script lang="ts">
-import type { PropType } from 'vue';
-import { HText } from '@components/atoms/text';
+import type { PropType } from "vue";
+import { HText } from "@components/atoms/text";
 
-interface Item {
+export interface Item {
   url: string;
   text: string;
 }
 
 export default {
-  name: 'HBreadcrumb',
+  name: "HBreadcrumb",
   components: {
     HText,
   },

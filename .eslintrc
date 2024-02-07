@@ -45,24 +45,7 @@
         "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true,
-        "packageDir": [
-          ".",
-          "./packages/shared",
-          "./packages/utils",
-          "./packages/whiteboard",
-          "./packages/agile-board",
-          "./packages/grid",
-          "./packages/views",
-          "./packages/docs",
-          "./packages/playground/frontend",
-          "./packages/playground/backend"
-        ]
-      }
-    ],
+    "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {

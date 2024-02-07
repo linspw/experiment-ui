@@ -10,22 +10,18 @@ providing visual components to facilitate the development of your application.
 
 ```
 # If you use npm: 
-npm i @linspw/experiment-ui
-
+npm i @hyone/core-ui
 # Or if you use Yarn: 
-yarn add @linspw/experiment-ui
-
-# Or if you use pnpm:
-pnpm add @linspw/experiment-ui
+yarn add @hyone/core-ui
 ```
 
 ### Use
 
 After installing, add ExperimentUI to your vue instance.
 
-- In main js/ts:
+- In main js:
 
-```ts
+```js
 import { createApp } from 'vue';
 import { ExperimentUI } from '@linspw/experiment-ui';
 import App from './app.vue';
@@ -37,7 +33,7 @@ createApp
 
 - In template:
 
-```vue
+```html
 <template>
   <h-button>My button</h-button>
 </template>
@@ -45,8 +41,3 @@ createApp
 
 ### Documentation
 [Core UI Doc](https://hyone-core-ui.netlify.app/)
-
-### Contributing
-
-Guides:
-[Click here, and discovery how to develop](CONTRIBUTING.md)

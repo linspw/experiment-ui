@@ -13,13 +13,16 @@
 </template>
 
 <script lang="ts">
-import { shouldBeOneOf } from '@utils/validations';
+import { shouldBeOneOf } from "@utils/validations";
 import {
-  iconColors, iconTypes, iconSizes, iconFormats,
-} from '@assets/constants';
+  iconColors,
+  iconTypes,
+  iconSizes,
+  iconFormats,
+} from "@assets/constants";
 
 export default {
-  name: 'HIcon',
+  name: "HIcon",
   props: {
     icon: {
       type: String,
@@ -27,22 +30,22 @@ export default {
     },
     bounds: {
       type: String,
-      default: 'default',
+      default: "default",
       validator: shouldBeOneOf(iconFormats),
     },
     size: {
       type: String,
-      default: 'large',
+      default: "medium",
       validator: shouldBeOneOf(iconSizes),
     },
     tag: {
       type: String,
-      default: 'div',
+      default: "div",
       validator: shouldBeOneOf(iconTypes),
     },
     color: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(iconColors),
     },
   },
@@ -213,6 +216,5 @@ export default {
     }
   }
 }
-
 </style>
 @/utils/validations@/assets/constants

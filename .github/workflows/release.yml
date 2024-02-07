@@ -1,27 +1,64 @@
-name: Release - CI
+name: Release
+
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:
-    types:
-      - manual-trigger
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions: write-all
 
 jobs:
-  release:
+  release:    
+    name: Job Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '16.13.1'
-          cache: 'yarn'
-      - run: yarn install
-      - run: yarn build:lib
-      - run: yarn test:unit
-      - run: yarn test:package
-      - name: Release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.15.0
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.6.12
+        run_install: false
+
+    - name: Get pnpm store directory
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - name: Setup pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      run: pnpm install
+  
+    - name: Build library
+      run: pnpm build
+
+    # Deploy Pages
+    - uses: actions/configure-pages@v2
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/.vitepress/dist
+    - name: Deploy
+      id: deployment
+      uses: actions/deploy-pages@v1

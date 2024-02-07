@@ -9,38 +9,28 @@
       v-for="(item, index) in items"
       :key="item.id"
       :class="{
-        ['h-toast__item--inverse']: item.color
-          && (item.color !== 'warn')
-          && (item.color !== 'default')
-          && (item.color ),
-        [`${item.color}`]: item.color
+        ['h-toast__item--inverse']:
+          item.color &&
+          item.color !== 'warn' &&
+          item.color !== 'default' &&
+          item.color,
+        [`${item.color}`]: item.color,
       }"
       :color="item.color ?? ''"
       class="h-toast__item"
       tag="button"
       @click.stop="handleClick(index)"
     >
-      <div class="h-toast__icon"
-       v-if="item.icon"
-      >
-        <HIcon
-          :icon="item.icon"
-          size="medium"
-        />
+      <div v-if="item.icon" class="h-toast__icon">
+        <HIcon :icon="item.icon" size="medium" />
       </div>
 
       <div class="h-toast__content">
-        <HText
-          v-if="item.title"
-          weight="bold"
-        >
+        <HText v-if="item.title" weight="bold">
           {{ item.title }}
         </HText>
 
-        <HText
-          v-if="item.text"
-          tag="span"
-        >
+        <HText v-if="item.text" tag="span">
           {{ item.text }}
         </HText>
       </div>
@@ -49,12 +39,12 @@
 </template>
 
 <script lang="ts">
-import { HText } from '@components/atoms/text';
-import { HIcon } from '@components/atoms/icon';
-import { HCard } from '@components/atoms/card';
-import type {PropType} from 'vue'
+import { HText } from "@components/atoms/text";
+import { HIcon } from "@components/atoms/icon";
+import { HCard } from "@components/atoms/card";
+import type { PropType } from "vue";
 
-interface Item {
+export interface Item {
   id: string;
   text?: string | null;
   title?: string | null;
@@ -63,7 +53,7 @@ interface Item {
 }
 
 export default {
-  name: 'HToast',
+  name: "HToast",
   components: {
     HCard,
     HIcon,
@@ -75,17 +65,17 @@ export default {
       default: () => [],
     },
   },
-  emits: ['click'],
+  emits: ["click"],
   methods: {
     handleClick(index: number) {
-      this.$emit('click', index);
+      this.$emit("click", index);
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import '@styles/utils/breakpoints';
+@import "@styles/utils/breakpoints";
 
 .h-toast {
   overflow: hidden;
@@ -96,7 +86,7 @@ export default {
   z-index: 100;
   top: var(--size-base-large);
 
-  @include for-mobile-up{
+  @include for-mobile-up {
     max-width: 380px;
     padding-right: var(--size-base-large);
   }

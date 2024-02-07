@@ -1,4 +1,4 @@
-import * as Atoms from './atoms';
-import * as Molecules from './molecules';
+import * as Atoms from "./atoms";
+import * as Molecules from "./molecules";
 
-export const Components = { ...Atoms, ...Molecules };
+export const components = { ...Atoms, ...Molecules };

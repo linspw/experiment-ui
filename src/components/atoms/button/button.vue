@@ -18,7 +18,7 @@
       v-if="iconLeft"
       :icon="iconLeft"
       :color="iconLeftColor"
-      :class="{'h-button__icon h-button__icon--position-left': slotPassed}"
+      :class="{ 'h-button__icon h-button__icon--position-left': slotPassed }"
     />
 
     <HIcon
@@ -27,10 +27,7 @@
       class="h-button__icon h-button__icon--is-loading"
     />
 
-    <span
-      v-if="slotPassed && !onlyIcon"
-      :class="{ 'h-button__text': true }"
-    >
+    <span v-if="slotPassed && !onlyIcon" :class="{ 'h-button__text': true }">
       <slot />
     </span>
 
@@ -38,44 +35,47 @@
       v-if="iconRight"
       :icon="iconRight"
       :color="iconRightColor"
-      :class="{'h-button__icon h-button__icon--position-right': slotPassed}"
+      :class="{ 'h-button__icon h-button__icon--position-right': slotPassed }"
     />
   </component>
 </template>
 
 <script lang="ts" setup>
-import { shouldBeOneOf } from '@utils/validations';
-import { HIcon } from '@components/atoms/icon';
+import { shouldBeOneOf } from "@utils/validations";
+import { HIcon } from "@components/atoms/icon";
 import {
-  iconColors, buttonColors, buttonTypes, buttonVariants, buttonSizes,
-} from '@assets/constants';
-import { useSlots, computed } from 'vue';
-
+  iconColors,
+  buttonColors,
+  buttonTypes,
+  buttonVariants,
+  buttonSizes,
+} from "@assets/constants";
+import { useSlots, computed } from "vue";
 
 defineOptions({
-  name: 'HButton',
+  name: "HButton",
   inheritAttrs: false,
-})
+});
 
 defineProps({
   tag: {
     type: String,
-    default: 'button',
+    default: "button",
     validator: shouldBeOneOf(buttonTypes),
   },
   color: {
     type: String,
-    default: 'default',
+    default: "default",
     validator: shouldBeOneOf(buttonColors),
   },
   variant: {
     type: String,
-    default: 'contained',
+    default: "contained",
     validator: shouldBeOneOf(buttonVariants),
   },
   size: {
     type: String,
-    default: 'small',
+    default: "small",
     validator: shouldBeOneOf(buttonSizes),
   },
   iconLeft: {
@@ -84,7 +84,7 @@ defineProps({
   },
   iconLeftColor: {
     type: String,
-    default: 'inherit',
+    default: "inherit",
     validator: shouldBeOneOf(iconColors),
   },
   iconRight: {
@@ -93,7 +93,7 @@ defineProps({
   },
   iconRightColor: {
     type: String,
-    default: 'inherit',
+    default: "inherit",
     validator: shouldBeOneOf(iconColors),
   },
   loading: {
@@ -116,13 +116,13 @@ defineProps({
     type: Boolean,
     default: false,
   },
-})
+});
 
-const $slots = useSlots()
+const $slots = useSlots();
 
 const slotPassed = computed(() => {
   return !!$slots.default;
-})
+});
 </script>
 
 <style lang="scss">
@@ -157,7 +157,9 @@ const slotPassed = computed(() => {
   padding: var(--h-button-padding);
   position: relative;
   text-decoration: var(--h-button-text-decoration);
-  transition: background-color 250ms, opacity 250ms;
+  transition:
+    background-color 250ms,
+    opacity 250ms;
   white-space: nowrap;
   background-color: var(--h-button-background-color);
   color: var(--h-button-color);
@@ -168,7 +170,7 @@ const slotPassed = computed(() => {
 
   &:hover {
     --h-button-background-color: var(--h-button-background-color--hover);
-    --h-button-text-decoration: var(--h-button-text-decoration--hover)
+    --h-button-text-decoration: var(--h-button-text-decoration--hover);
   }
   &:active {
     --h-button-background-color: var(--h-button-background-color--active);
@@ -176,7 +178,8 @@ const slotPassed = computed(() => {
   }
   &:disabled {
     --h-button-background-color: var(--color-blue-grey-scale-200);
-    --h-button-border: var(--size-base-micro) solid var(--color-blue-grey-scale-200);
+    --h-button-border: var(--size-base-micro) solid
+      var(--color-blue-grey-scale-200);
     // pointer-events: none;
     cursor: not-allowed;
   }
@@ -242,14 +245,16 @@ const slotPassed = computed(() => {
     &-contained {
       --h-button-background-color: var(--h-button-color-first);
       --h-button-color: var(--h-button-color-second);
-      --h-button-border: var(--size-base-micro) solid var(--h-button-color-first);
+      --h-button-border: var(--size-base-micro) solid
+        var(--h-button-color-first);
       --h-button-background-color--hover: var(--h-button-color-third);
       --h-button-background-color--active: var(--h-button-color-quarter);
     }
     &-outlined {
       --h-button-background-color: transparent;
       --h-button-color: var(--h-button-color-first);
-      --h-button-border: var(--size-base-micro) solid var(--h-button-color-first);
+      --h-button-border: var(--size-base-micro) solid
+        var(--h-button-color-first);
       --h-button-background-color--hover: var(--h-button-color-quintenary);
       --h-button-background-color--active: var(--h-button-color-quarter);
     }

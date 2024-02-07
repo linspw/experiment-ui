@@ -3,8 +3,8 @@ import * as Library from '@root/dist/lib/core-ui.umd';
 
 describe('Lib Test', () => {
   it('builded with correct objects', () => {
-    expect(Library).toHaveProperty('CoreUI');
-    expect(Library).toHaveProperty('CoreUIComponents');
+    expect(Library).toHaveProperty('ExperimentUI');
+    expect(Library).toHaveProperty('ExperimentUIComponents');
     // const { html } = render(Library);
     // expect(html()).toMatchSnapshot();
   });
@@ -25,7 +25,7 @@ describe('Lib Test', () => {
 
       const vueInstanceConfig = {
         global: {
-          plugins: [Library.CoreUI],
+          plugins: [Library.ExperimentUI],
         },
         container: document.body.appendChild(root),
       };
