@@ -25,7 +25,7 @@
   </label>
 </template>
 
-<script>
+<script lang="ts">
 import { HText } from '@components/atoms/text';
 import { provide, reactive, computed } from 'vue';
 

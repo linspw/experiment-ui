@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 /* eslint-disable no-underscore-dangle */
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
@@ -172,16 +172,16 @@ export default {
     this.handleHasValue(this.value || this.modelValue);
   },
   methods: {
-    handleHasValue(value) {
+    handleHasValue(value: number | string) {
       if (!this.$refs.input) return;
       if (value) {
-        this.$refs.input.classList.add('h-input--behavior-has-value');
+        (this.$refs.input as HTMLElement).classList.add('h-input--behavior-has-value');
       } else {
-        this.$refs.input.classList.remove('h-input--behavior-has-value');
+        (this.$refs.input as HTMLElement).classList.remove('h-input--behavior-has-value');
       }
     },
-    handleInput(event) {
-      const targetValue = event.target.value;
+    handleInput(event: Event) {
+      const targetValue = (event.target as any).value;
 
       this.handleHasValue(targetValue);
 

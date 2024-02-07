@@ -13,7 +13,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import {
   cardColors,
   cardElevations,

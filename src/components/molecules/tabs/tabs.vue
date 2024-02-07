@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
   provide,
   computed,
@@ -40,7 +40,8 @@ const $emits = defineEmits(['update:modelValue']);
 const tab = ref();
 
 const $state = reactive({
-  lineWidth: undefined,
+  lineWidth: '',
+  lineTranslateX: ''
 });
 
 const updatePositionLine = () => {
@@ -54,7 +55,7 @@ const updatePositionLine = () => {
   $state.lineTranslateX = `translateX(${tabActiveRect.left - tabsWrapperRect.left}px)`;
 };
 
-const handleTabsChange = (newValue) => {
+const handleTabsChange = (newValue: string | number) => {
   $emits('update:modelValue', newValue);
 };
 

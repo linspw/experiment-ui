@@ -12,7 +12,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import {
   iconColors, iconTypes, iconSizes, iconFormats,

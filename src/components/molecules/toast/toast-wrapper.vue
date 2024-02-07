@@ -5,8 +5,17 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import HToast from './toast.vue';
+
+interface Item {
+  id: string;
+  text?: string | null;
+  title?: string | null;
+  icon?: string | null;
+  color?: string | null;
+  duration?: number | null;
+}
 
 export default {
   name: 'HToastWrapper',
@@ -24,12 +33,12 @@ export default {
     },
   },
   data: () => ({
-    items: [],
-    timer: [],
+    items: [] as Item[],
+    timer: [] as any[],
     counter: 0,
   }),
   methods: {
-    addItem(itemOptions) {
+    addItem(itemOptions: Item) {
       this.items.push(itemOptions);
       if (!this.duration && !itemOptions.duration) return;
 
@@ -41,7 +50,7 @@ export default {
         }, itemOptions.duration || this.duration),
       );
     },
-    removeItemById(id) {
+    removeItemById(id: Item["id"]) {
       if (!this.items.length) return undefined;
       const index = this.items.findIndex((element) => element.id === id);
       if (index >= 0) return this.removeItem(index);
@@ -52,7 +61,7 @@ export default {
       this.items.splice(index, 1);
       return index;
     },
-    handleItemClick(index) {
+    handleItemClick(index: number) {
       this.$emit('click', index);
       if (this.onClickRemove) this.removeItem(index);
     },

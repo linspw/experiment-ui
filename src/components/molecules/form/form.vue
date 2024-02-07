@@ -13,7 +13,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import {
   provide,
   inject,
@@ -38,19 +38,19 @@ export default {
   },
   emits: ['submit'],
   setup($props) {
-    const getErrors = (formFields) => Object
+    const getErrors = (formFields: any) => Object
       .values(formFields)
-      .filter((field) => field?.messages?.length)
-      .flatMap((field) => field.messages);
+      .filter((field: any) => field?.messages?.length)
+      .flatMap((field: any) => field.messages);
 
-    const getChildErrors = (formChilds) => Object
+    const getChildErrors = (formChilds: any) => Object
       .values(formChilds)
-      .filter((form) => form?.messages?.length)
-      .flatMap((field) => field.messages);
+      .filter((form: any) => form?.messages?.length)
+      .flatMap((field: any) => field.messages);
 
     const formName = computed(() => pascalCase(`${$props.name}_form`));
-    const parentForm = inject(HFormKey, undefined);
-    const internalState = reactive({
+    const parentForm: any = inject(HFormKey, undefined);
+    const internalState: any = reactive({
       name: formName,
       childs: {},
       fields: {},
@@ -66,7 +66,7 @@ export default {
       parentForm.internalState.childs[formName.value] = internalState;
     }
 
-    const registerField = (inputState) => {
+    const registerField = (inputState: any) => {
       internalState.fields[inputState.value.name] = inputState;
     };
 

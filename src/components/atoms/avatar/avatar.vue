@@ -20,7 +20,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { avatarSizes, avatarFormats, avatarTypes } from '@assets/constants';
 import { genderDictionary } from './gender-dictionary';
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     defaultImage() {
-      return genderDictionary[this.gender];
+      return genderDictionary[this.gender as keyof typeof genderDictionary];
     },
     srcParsed() {
       return this.src || this.defaultImage;

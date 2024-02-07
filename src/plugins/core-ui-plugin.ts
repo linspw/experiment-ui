@@ -21,9 +21,9 @@ import {
   HMenuItem,
   HTextField,
 } from '@/components/atoms';
+import type {App} from 'vue'
 
 import {
-  HBreadcrumb,
   HDropdown,
   HInputField,
   HModal,
@@ -34,17 +34,18 @@ import {
   HStep,
   HTabs,
   HTab,
+  HBreadcrumb,
 } from '@components/molecules';
 
 import { ClickOutsidePlugin } from './click-outside-plugin';
 
 const CoreUIPlugin = {
-  install(Vue) {
+  install(Vue: App) {
     this.installAtoms(Vue);
     this.installMolecules(Vue);
     this.installPlugins(Vue);
   },
-  installAtoms(Vue) {
+  installAtoms(Vue: App) {
     Vue.component('HAvatar', HAvatar);
     Vue.component('HBadge', HBadge);
     Vue.component('HButton', HButton);
@@ -69,7 +70,7 @@ const CoreUIPlugin = {
     Vue.component('HMenuItem', HMenuItem);
     Vue.component('HTextField', HTextField);
   },
-  installMolecules(Vue) {
+  installMolecules(Vue: App) {
     Vue.component('HBreadcrumb', HBreadcrumb);
     Vue.component('HToast', HToast);
     Vue.component('HInputField', HInputField);
@@ -82,7 +83,7 @@ const CoreUIPlugin = {
     Vue.component('HTabs', HTabs);
     Vue.component('HTab', HTab);
   },
-  installPlugins(Vue) {
+  installPlugins(Vue: App) {
     Vue.use(ClickOutsidePlugin);
   },
 };

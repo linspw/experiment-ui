@@ -1,10 +1,3 @@
-<script>
-/* eslint-disable import/first, no-param-reassign */
-export default {
-  name: 'HStep',
-};
-</script>
-
 <template>
   <li
     class="h-step"
@@ -64,9 +57,13 @@ export default {
   </li>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { inject, computed, useSlots } from 'vue';
 import { HStepKey } from './step-key';
+
+defineOptions({
+  name: 'HStep'
+})
 
 const $props = defineProps({
   clickable: {
@@ -101,10 +98,10 @@ const $props = defineProps({
 
 const $slots = useSlots();
 
-const { $config, updatePosition } = inject(HStepKey);
+const { $config, updatePosition }: any = inject(HStepKey);
 
 const isSelected = computed(() => $config.modelValue === $props.position);
-const isFilled = computed(() => $config.modelValue >= $props.position);
+const isFilled = computed(() => $props.position && $config.modelValue >= $props.position);
 
 const showDescription = computed(() => {
   if (!$slots?.description) return false;

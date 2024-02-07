@@ -2,7 +2,7 @@
   <h-button>Welcome</h-button>
 </template>
 
-<script>
+<script lang="ts">
 
 export default {
   name: 'App',

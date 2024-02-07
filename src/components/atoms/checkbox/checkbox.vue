@@ -32,7 +32,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { HIcon } from '@components/atoms/icon';
 import { computed } from 'vue';
 

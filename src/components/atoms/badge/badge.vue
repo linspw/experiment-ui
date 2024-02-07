@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { shouldBeOneOf } from '@utils/validations';
 import { HIcon } from '@components/atoms/icon';
 import { badgeSizes, badgeColors } from '@assets/constants';

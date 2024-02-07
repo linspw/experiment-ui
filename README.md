@@ -1,6 +1,6 @@
-<h1 align="center">Core UI</h1>
+<h1 align="center">Experiment UI [WIP]</h1>
 
-Core UI - Library write in Vue 3 that will assist you in your project, 
+Experiment UI - Library write in Vue 3 that will assist you in your project, 
 providing visual components to facilitate the development of your application.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/eacbad6b-41f2-4919-9f67-0f6c4dedfaf8/deploy-status)](https://app.netlify.com/sites/hyone-core-ui/deploys)

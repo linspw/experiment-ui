@@ -7,7 +7,7 @@
   >
     <HCard
       v-for="(item, index) in items"
-      :key="item.text + item.title + item.color + item.id"
+      :key="item.id"
       :class="{
         ['h-toast__item--inverse']: item.color
           && (item.color !== 'warn')
@@ -15,14 +15,15 @@
           && (item.color ),
         [`${item.color}`]: item.color
       }"
-      :color="item.color"
+      :color="item.color ?? ''"
       class="h-toast__item"
       tag="button"
       @click.stop="handleClick(index)"
     >
-      <div class="h-toast__icon">
+      <div class="h-toast__icon"
+       v-if="item.icon"
+      >
         <HIcon
-          v-if="item.icon"
           :icon="item.icon"
           size="medium"
         />
@@ -47,10 +48,19 @@
   </transition-group>
 </template>
 
-<script>
+<script lang="ts">
 import { HText } from '@components/atoms/text';
 import { HIcon } from '@components/atoms/icon';
 import { HCard } from '@components/atoms/card';
+import type {PropType} from 'vue'
+
+interface Item {
+  id: string;
+  text?: string | null;
+  title?: string | null;
+  icon?: string | null;
+  color?: string | null;
+}
 
 export default {
   name: 'HToast',
@@ -61,13 +71,13 @@ export default {
   },
   props: {
     items: {
-      type: Array,
+      type: Array as PropType<Item[]>,
       default: () => [],
     },
   },
   emits: ['click'],
   methods: {
-    handleClick(index) {
+    handleClick(index: number) {
       this.$emit('click', index);
     },
   },

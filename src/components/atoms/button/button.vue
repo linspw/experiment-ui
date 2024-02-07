@@ -125,14 +125,13 @@ const slotPassed = computed(() => {
 })
 </script>
 
-<styles lang="scss">
+<style lang="scss">
 .h-button {
   --h-button-color-first: none;
   --h-button-color-second: none;
   --h-button-color-third: none;
   --h-button-color-quarter: none;
   --h-button-color-quintenary: none;
-
   --h-button-border-radius: var(--border-radius-normal);
   --h-button-background-color: transparent;
   --h-button-background-color--hover: initial;
@@ -322,4 +321,4 @@ const slotPassed = computed(() => {
 .h-button__text {
   font-size: var(--h-button__text-font-size);
 }
-</styles>
+</style>

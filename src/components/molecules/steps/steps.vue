@@ -9,20 +9,19 @@
   </ul>
 </template>
 
-<script>
-/* eslint-disable import/first, no-param-reassign */
-export default {
-  name: 'HSteps',
-};
-</script>
 
-<script setup>
+
+<script setup lang="ts">
 import {
   provide,
   useSlots,
   computed,
 } from 'vue';
 import { HStepKey } from './step-key';
+
+defineOptions({
+  name: 'HSteps',
+})
 
 const $config = defineProps({
   direction: {
@@ -59,11 +58,11 @@ const $emit = defineEmits(['update:modelValue']);
 
 const $slots = useSlots();
 
-const updatePosition = (index) => {
+const updatePosition = (index: number) => {
   $emit('update:modelValue', index);
 };
 
-const updateProps = (element, index) => {
+const updateProps = (element: any, index: number) => {
   if (element?.type?.name === 'HStep') {
     if (!element.props) element.props = {};
     if ($config.autoPosition) {
@@ -75,7 +74,7 @@ const updateProps = (element, index) => {
   return element;
 };
 
-const getComponents = (element) => {
+const getComponents = (element: any) => {
   if (element?.type?.name !== 'HStep' && element?.children?.forEach) {
     return element?.children?.map?.(getComponents);
   }
@@ -84,8 +83,8 @@ const getComponents = (element) => {
 };
 
 const StepsComponent = computed(() => {
-  const result = $slots.default();
-  result.flatMap(getComponents).map(updateProps);
+  const result = $slots.default?.();
+  result?.flatMap(getComponents).map(updateProps);
   return () => result;
 });
 

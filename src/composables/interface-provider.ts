@@ -1,8 +1,5 @@
 import {
-  provide,
-  inject,
   reactive,
-  computed,
 } from 'vue';
 import { useWindowSize } from '@vueuse/core';
 

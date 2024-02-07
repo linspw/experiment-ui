@@ -21,7 +21,7 @@
   </component>
 </template>
 
-<script>
+<script lang="ts">
 import ATooltipContent from './tooltip-content.vue';
 
 export default {

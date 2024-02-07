@@ -32,7 +32,7 @@
   </transition>
 </template>
 
-<script>
+<script lang="ts">
 import { HCard } from '@components/atoms/card';
 import { HIcon } from '@components/atoms/icon';
 import { shouldBeOneOf } from '@utils/validations';

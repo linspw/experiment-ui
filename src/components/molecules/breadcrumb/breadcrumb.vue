@@ -26,8 +26,14 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
+import type { PropType } from 'vue';
 import { HText } from '@components/atoms/text';
+
+interface Item {
+  url: string;
+  text: string;
+}
 
 export default {
   name: 'HBreadcrumb',
@@ -36,7 +42,7 @@ export default {
   },
   props: {
     items: {
-      type: Array,
+      type: Array as PropType<Item[]>,
       required: true,
     },
   },
