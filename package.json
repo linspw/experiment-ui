@@ -1,6 +1,6 @@
 {
   "name": "experiment-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "description": "Experiment UI - UI Library write for Vue 3",
   "author": "Jessé Correia Lins",
