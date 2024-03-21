@@ -14,7 +14,7 @@ hero:
       text: Components
       link: /components/index.md
   image:
-    src: /assets/logo-simple.svg
+    src: /logo-simple.svg
     alt: ExperimentUI
 
 features:

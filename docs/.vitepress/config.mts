@@ -17,8 +17,8 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: {
-      light: '/assets/logo-horizontal-lighter.svg',
-      dark: '/assets/logo-horizontal-darker.svg',
+      light: '/logo-horizontal-lighter.svg',
+      dark: '/logo-horizontal-darker.svg',
       alt: "Logo"
     },
     siteTitle: false,
