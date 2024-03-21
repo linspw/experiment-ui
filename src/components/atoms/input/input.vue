@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div
     ref="input"
@@ -26,7 +27,7 @@
       class="h-input__field"
       v-bind="$attrs"
       @input="handleInput"
-    >
+    />
     <HIcon
       v-if="iconRight"
       :color="iconRightColor"
@@ -40,17 +41,17 @@
 
 <script lang="ts">
 /* eslint-disable no-underscore-dangle */
-import { shouldBeOneOf } from '@utils/validations';
-import { HIcon } from '@components/atoms/icon';
+import { shouldBeOneOf } from "@utils/validations";
+import { HIcon } from "@components/atoms/icon";
 
 export default {
-  name: 'HInput',
+  name: "HInput",
   components: {
     HIcon,
   },
   inject: {
     hasErrorFromValidate: {
-      from: 'hasErrorFromValidate',
+      from: "hasErrorFromValidate",
       default: null,
     },
   },
@@ -58,24 +59,18 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'medium',
-      validator: shouldBeOneOf([
-        'small',
-        'medium',
-      ]),
+      default: "medium",
+      validator: shouldBeOneOf(["small", "medium"]),
     },
     variants: {
       type: String,
-      default: 'primary',
-      validator: shouldBeOneOf(['primary']),
+      default: "primary",
+      validator: shouldBeOneOf(["primary"]),
     },
     behavior: {
       type: String,
-      default: 'default',
-      validator: shouldBeOneOf([
-        'default',
-        'block',
-      ]),
+      default: "default",
+      validator: shouldBeOneOf(["default", "block"]),
     },
     block: {
       type: Boolean,
@@ -99,54 +94,48 @@ export default {
     },
     iconLeftColor: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf([
-        'inherit',
-        'primary',
-        'secondary',
-        'interactive',
-        'grey',
-        'success',
-        'danger',
-        'warn',
-        'info',
-        'inverse',
+        "inherit",
+        "primary",
+        "secondary",
+        "interactive",
+        "grey",
+        "success",
+        "danger",
+        "warn",
+        "info",
+        "inverse",
       ]),
     },
     iconRightColor: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf([
-        'inherit',
-        'primary',
-        'secondary',
-        'interactive',
-        'grey',
-        'success',
-        'danger',
-        'warn',
-        'info',
-        'inverse',
+        "inherit",
+        "primary",
+        "secondary",
+        "interactive",
+        "grey",
+        "success",
+        "danger",
+        "warn",
+        "info",
+        "inverse",
       ]),
     },
     iconLeftTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     iconRightTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     type: {
       type: String,
-      default: 'text',
-      validator: shouldBeOneOf([
-        'text',
-        'date',
-        'number',
-        'email',
-        'password',
-      ]),
+      default: "text",
+      validator: shouldBeOneOf(["text", "date", "number", "email", "password"]),
     },
     hasError: {
       type: Boolean,
@@ -157,7 +146,7 @@ export default {
       default: false,
     },
   },
-  emits: ['input', 'update:modelValue', 'click-icon-left', 'click-icon-right'],
+  emits: ["input", "update:modelValue", "click-icon-left", "click-icon-right"],
   data() {
     return {
       hasValue: Boolean(this.value || this.modelValue),
@@ -175,9 +164,13 @@ export default {
     handleHasValue(value: number | string) {
       if (!this.$refs.input) return;
       if (value) {
-        (this.$refs.input as HTMLElement).classList.add('h-input--behavior-has-value');
+        (this.$refs.input as HTMLElement).classList.add(
+          "h-input--behavior-has-value",
+        );
       } else {
-        (this.$refs.input as HTMLElement).classList.remove('h-input--behavior-has-value');
+        (this.$refs.input as HTMLElement).classList.remove(
+          "h-input--behavior-has-value",
+        );
       }
     },
     handleInput(event: Event) {
@@ -185,10 +178,11 @@ export default {
 
       this.handleHasValue(targetValue);
 
-      const newValue = this.type === 'number' ? Number(targetValue) : targetValue;
+      const newValue =
+        this.type === "number" ? Number(targetValue) : targetValue;
 
-      this.$emit('input', newValue);
-      this.$emit('update:modelValue', newValue);
+      this.$emit("input", newValue);
+      this.$emit("update:modelValue", newValue);
     },
   },
 };
@@ -198,7 +192,7 @@ export default {
 :root {
   --h-input-border-color: var(--color-theme-primary);
   --h-input-border-radius: var(--border-radius-normal);
-  --h-input-border-style:  solid;
+  --h-input-border-style: solid;
   --h-input-border-width: var(--size-base-micro);
   --h-input-color: var(--color-theme-primary);
   --h-input-width: auto;
@@ -207,7 +201,7 @@ export default {
   --h-input__field-border-radius: var(--border-radius-normal);
   --h-input__field-color--placeholder: var(--color-blue-grey-scale-400);
   --h-input__field-color: var(--color-theme-primary);
-  --h-input__field-font-family: 'Red Hat Text', sans-serif;
+  --h-input__field-font-family: "Red Hat Text", sans-serif;
   --h-input__field-font-size: inherit;
   --h-input__field-font-weight--placeholder: 500;
   --h-input__field-font-weight: 500;
@@ -249,7 +243,7 @@ export default {
     &-is-disabled {
       --h-input-color: var(--color-blue-grey-scale-200);
       --h-input-border-color: var(--color-blue-grey-scale-200);
-      pointer-events:none;
+      pointer-events: none;
     }
   }
 
@@ -296,7 +290,9 @@ export default {
   padding-left: var(--h-input__field-padding-left);
   padding-right: var(--h-input__field-padding-right);
   top: 0;
-  transition: background-color 250ms, color 250ms;
+  transition:
+    background-color 250ms,
+    color 250ms;
   width: 100%;
 
   &::placeholder {

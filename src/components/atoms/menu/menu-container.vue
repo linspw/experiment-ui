@@ -1,8 +1,5 @@
 <template>
-  <transition
-    name="h-menu-container__transition"
-    appear
-  >
+  <transition name="h-menu-container__transition" appear>
     <HCard
       v-if="$props.active"
       :class="{
@@ -25,13 +22,17 @@
 </template>
 
 <script setup lang="ts">
-import { HCard } from '@components/atoms';
-import { provide } from 'vue';
+import { HCard } from "@components/atoms";
+import { provide } from "vue";
+
+defineOptions({
+  name: "HMenuContainer",
+});
 
 const $props = defineProps({
   position: {
     type: String,
-    default: 'bottom-center',
+    default: "bottom-center",
   },
   active: {
     type: Boolean,
@@ -39,13 +40,13 @@ const $props = defineProps({
   },
 });
 
-const $emit = defineEmits(['click']);
+const $emit = defineEmits(["click"]);
 
 const handleClickFromParent = () => {
-  $emit('click');
+  $emit("click");
 };
 
-provide('handleClickFromParent', handleClickFromParent);
+provide("handleClickFromParent", handleClickFromParent);
 </script>
 
 <style lang="scss">

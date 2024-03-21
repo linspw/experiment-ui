@@ -21,20 +21,22 @@
 </template>
 
 <script setup lang="ts">
-import { shouldBeOneOf } from '@utils/validations';
-import {
-  loadingSizes, loadingColors,
-} from '@assets/constants';
+import { shouldBeOneOf } from "@utils/validations";
+import { loadingSizes, loadingColors } from "@assets/constants";
+
+defineOptions({
+  name: "HLoading",
+});
 
 const $props = defineProps({
   size: {
     type: String,
-    default: 'colossal',
+    default: "colossal",
     validator: shouldBeOneOf(loadingSizes),
   },
   color: {
     type: String,
-    default: 'default',
+    default: "default",
     validator: shouldBeOneOf(loadingColors),
   },
 });
@@ -117,7 +119,8 @@ $duration: 1.4s;
       --h-spinner-stroke: var(--color-white);
     }
     &-rainbow {
-      animation: dash $duration ease-in-out infinite,
+      animation:
+        dash $duration ease-in-out infinite,
         colors ($duration * 4) ease-in-out infinite;
     }
   }

@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <input
     :max="max"
@@ -9,12 +10,12 @@
     type="range"
     v-bind="$attrs"
     @input="handleSlider"
-  >
+  />
 </template>
 
 <script lang="ts">
 export default {
-  name: 'HSlider',
+  name: "HSlider",
   props: {
     value: {
       type: [String, Number],
@@ -33,7 +34,7 @@ export default {
       default: 1,
     },
   },
-  emits: ['change'],
+  emits: ["change"],
   computed: {
     style() {
       return {
@@ -45,17 +46,17 @@ export default {
   },
   methods: {
     handleSlider(event: Event): void {
-      this.$emit('change', parseInt((event.target as any).value, 10));
+      this.$emit("change", parseInt((event.target as any).value, 10));
     },
   },
 };
 </script>
 
 <style lang="scss">
-input[type=range].h-slider {
+input[type="range"].h-slider {
   -webkit-appearance: none;
-  -webkit-transition: .2s;
-  -webkit-transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  -webkit-transition: opacity 0.2s;
   // background-color: blue;
   border-radius: 5px;
   border-width: var(--size-base-nano);
@@ -63,11 +64,11 @@ input[type=range].h-slider {
   border-color: var(--color-blue-grey-scale-400);
   height: 8px;
   outline: none;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   width: 100%;
 }
 
-input[type=range].h-slider::-webkit-slider-thumb {
+input[type="range"].h-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: var(--size-base-medium);
   width: var(--size-base-medium);
@@ -75,5 +76,4 @@ input[type=range].h-slider::-webkit-slider-thumb {
   background: var(--color-theme-secondary);
   cursor: pointer;
 }
-
 </style>

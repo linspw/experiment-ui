@@ -1,10 +1,5 @@
 <template>
-  <slot
-    v-if="errorMsg"
-    name="error"
-    :error-msg="errorMsg"
-    v-bind="attrs"
-  />
+  <slot v-if="errorMsg" name="error" :error-msg="errorMsg" v-bind="attrs" />
 
   <Suspense v-else>
     <template #default>
@@ -12,19 +7,16 @@
     </template>
 
     <template #fallback>
-      <slot
-        name="loading"
-        v-bind="attrs"
-      />
+      <slot name="loading" v-bind="attrs" />
     </template>
   </Suspense>
 </template>
 
 <script lang="ts">
-import { ref, onErrorCaptured } from 'vue';
+import { ref, onErrorCaptured } from "vue";
 
 export default {
-  name: 'HSuspense',
+  name: "HSuspense",
   inheritAttrs: false,
   setup(_props, { slots, attrs }) {
     const errorMsg = ref<Error | null>(null);

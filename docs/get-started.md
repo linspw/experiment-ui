@@ -3,16 +3,19 @@
 Experiment UI - Library write in Vue 3 that will assist you in your project, 
 providing visual components to facilitate the development of your application.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/eacbad6b-41f2-4919-9f67-0f6c4dedfaf8/deploy-status)](https://app.netlify.com/sites/hyone-core-ui/deploys)
-[![Release - CI](https://github.com/hyone-org/core-ui/actions/workflows/release.yml/badge.svg)](https://github.com/hyone-org/core-ui/actions/workflows/release.yml)
+[![Release - CI](https://github.com/linspw/experiment-ui/actions/workflows/release.yml/badge.svg)](https://github.com/linspw/experiment-ui/actions/workflows/release.yml)
 
 ### Installation
 
 ```
-# If you use npm: 
-npm i @hyone/core-ui
+# If you use NPM: 
+npm i experiment-ui
+
 # Or if you use Yarn: 
-yarn add @hyone/core-ui
+yarn add experiment-ui
+
+# Or if you use PNPM: 
+pnpm add experiment-ui
 ```
 
 ### Use
@@ -40,4 +43,4 @@ createApp
 ```
 
 ### Documentation
-[Core UI Doc](https://hyone-core-ui.netlify.app/)
+[Experiment UI Doc](https://linspw.github.io/experiment-ui/)

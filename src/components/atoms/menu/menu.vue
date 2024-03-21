@@ -1,12 +1,6 @@
 <template>
-  <div
-    v-click-outside="handleClose"
-    class="b-menu"
-  >
-    <slot
-      name="trigger"
-      :handleTrigger="handleTrigger"
-    />
+  <div v-click-outside="handleClose" class="b-menu">
+    <slot name="trigger" :handle-trigger="handleTrigger" />
 
     <HMenuContainer
       :active="$state.active"
@@ -20,13 +14,17 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, useAttrs } from 'vue';
-import HMenuContainer from './menu-container.vue';
+import { reactive, useAttrs } from "vue";
+import HMenuContainer from "./menu-container.vue";
+
+defineOptions({
+  name: "HMenu",
+});
 
 const $props = defineProps({
   position: {
     type: String,
-    default: 'bottom-center',
+    default: "bottom-center",
   },
 });
 
@@ -43,7 +41,6 @@ const handleClose = () => {
 const handleTrigger = () => {
   $state.active = !$state.active;
 };
-
 </script>
 
 <style lang="scss">

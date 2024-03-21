@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div
     ref="textFieldWrapper"
@@ -10,10 +11,7 @@
       [`h-text-field--with-icon-right`]: iconRight,
     }"
   >
-    <label
-      v-if="label"
-      class="h-text-field__label"
-    >
+    <label v-if="label" class="h-text-field__label">
       {{ label }}
     </label>
 
@@ -64,18 +62,13 @@
 </template>
 
 <script lang="ts">
-import { shouldBeOneOf } from '@utils/validations';
-import { HIcon } from '@components/atoms/icon';
-import {
-  computed,
-  reactive,
-  ref,
-  onMounted,
-} from 'vue';
-import { iconColors, textFieldTypes } from '@assets/constants';
+import { shouldBeOneOf } from "@utils/validations";
+import { HIcon } from "@components/atoms/icon";
+import { computed, reactive, ref, onMounted } from "vue";
+import { iconColors, textFieldTypes } from "@assets/constants";
 
 export default {
-  name: 'HTextField',
+  name: "HTextField",
   components: {
     HIcon,
   },
@@ -91,7 +84,7 @@ export default {
     },
     tag: {
       type: String,
-      default: 'input',
+      default: "input",
     },
     unmasked: {
       type: Boolean,
@@ -115,25 +108,25 @@ export default {
     },
     iconLeftColor: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(iconColors),
     },
     iconRightColor: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(iconColors),
     },
     iconLeftTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     iconRightTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     type: {
       type: String,
-      default: 'text',
+      default: "text",
       validator: shouldBeOneOf(textFieldTypes),
     },
     invalid: {
@@ -170,48 +163,50 @@ export default {
     },
   },
   emits: [
-    'input',
-    'update:modelValue',
-    'click-icon-left',
-    'click-icon-right',
-    'validate-input',
+    "input",
+    "update:modelValue",
+    "click-icon-left",
+    "click-icon-right",
+    "validate-input",
   ],
   setup($props, { emit: $emit }) {
     const textFieldWrapper = ref();
     const textField = ref();
 
-
     const state: any = reactive({
       validationMessages: null,
       validationActive: true,
-      valueFromProp: computed(() => ($props.modelValue || $props.value)?.toString?.()),
+      valueFromProp: computed(() =>
+        ($props.modelValue || $props.value)?.toString?.(),
+      ),
       internalValue: computed(() => state.valueFromProp),
       helperTextVisible: computed(() => $props.helperText || state.invalid),
-      invalid: computed(() => Boolean(state.validationActive && state.validationMessages?.length)),
+      invalid: computed(() =>
+        Boolean(state.validationActive && state.validationMessages?.length),
+      ),
       internalInvalid: computed(() => $props.invalid || state.invalid),
-      internalTextValue: computed(() => state.validationMessages?.[0]?.message || $props.helperText),
-      internalMaxLength: computed(() => (
-        $props.maxlength
-        || state.maxLengthFromMaskOrRules
-        || undefined
-      )),
-      name: computed(() => $props.name || $props.label || 'Campo'),
-
+      internalTextValue: computed(
+        () => state.validationMessages?.[0]?.message || $props.helperText,
+      ),
+      internalMaxLength: computed(
+        () => $props.maxlength || state.maxLengthFromMaskOrRules || undefined,
+      ),
+      name: computed(() => $props.name || $props.label || "Campo"),
     });
-
-
 
     const handleHasValue = (value: string) => {
       if (!textFieldWrapper.value) return;
 
       if (value) {
-        textFieldWrapper.value.classList.add('h-text-field--behavior-has-value');
+        textFieldWrapper.value.classList.add(
+          "h-text-field--behavior-has-value",
+        );
       } else {
-        textFieldWrapper.value.classList.remove('h-text-field--behavior-has-value');
+        textFieldWrapper.value.classList.remove(
+          "h-text-field--behavior-has-value",
+        );
       }
     };
-
-
 
     const handleInput = ($event: InputEvent) => {
       let newValue;
@@ -221,14 +216,12 @@ export default {
 
       newValue = oldValue;
 
-      newValue = $props.type === 'number' ? Number(newValue) : newValue;
+      newValue = $props.type === "number" ? Number(newValue) : newValue;
 
-      $emit('input', newValue);
-      $emit('update:modelValue', newValue);
+      $emit("input", newValue);
+      $emit("update:modelValue", newValue);
       handleHasValue(newValue);
     };
-
-
 
     onMounted(() => {
       handleHasValue(state.valueFromProp);
@@ -248,7 +241,7 @@ export default {
 :root {
   --h-text-field-border-color: var(--color-theme-primary);
   --h-text-field-border-radius: var(--border-radius-normal);
-  --h-text-field-border-style:  solid;
+  --h-text-field-border-style: solid;
   --h-text-field-border-width: var(--size-base-micro);
   --h-text-field-height: 44px;
   --h-text-field-width: 250px;
@@ -264,7 +257,7 @@ export default {
   --h-text-field__field-border-radius: var(--border-radius-normal);
   --h-text-field__field-color--placeholder: var(--color-blue-grey-scale-400);
   --h-text-field__field-color: var(--color-theme-primary);
-  --h-text-field__field-font-family: 'Red Hat Text', sans-serif;
+  --h-text-field__field-font-family: "Red Hat Text", sans-serif;
   --h-text-field__field-font-size: inherit;
   --h-text-field__field-font-weight--placeholder: 500;
   --h-text-field__field-font-weight: 500;
@@ -295,7 +288,9 @@ export default {
     }
     &-invalid {
       --h-text-field-border-color: var(--color-pink-scale-alpha-400);
-      --h-text-field__helper-text-color: var(--h-text-field__helper-text-color--invalid);
+      --h-text-field__helper-text-color: var(
+        --h-text-field__helper-text-color--invalid
+      );
     }
     &-acessible {
       margin-top: 4px;
@@ -337,7 +332,9 @@ export default {
   min-height: var(--h-text-field__field-min-height);
   padding-left: var(--h-text-field__field-padding-left);
   padding-right: var(--h-text-field__field-padding-right);
-  transition: background-color 250ms, color 250ms;
+  transition:
+    background-color 250ms,
+    color 250ms;
 
   &::placeholder {
     color: var(--h-text-field__field-color--placeholder);

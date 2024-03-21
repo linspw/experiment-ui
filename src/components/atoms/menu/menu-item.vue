@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
   <li
     ref="menuItem"
@@ -7,7 +8,8 @@
       [`h-menu-item--behavior-active`]: $props.active,
     }"
     role="menuitem"
-    @click="handleClick"
+    tabindex="0"
+    @click="$props.clickable && handleClick"
   >
     <slot />
   </li>
@@ -15,7 +17,11 @@
 
 <script setup lang="ts">
 /* eslint-disable no-new */
-import { ref, inject } from 'vue';
+import { ref, inject } from "vue";
+
+defineOptions({
+  name: "HMenuItem",
+});
 
 const menuItem = ref();
 
@@ -30,17 +36,16 @@ const $props = defineProps({
   },
 });
 
-const $emit = defineEmits(['click']);
+const $emit = defineEmits(["click"]);
 
-const handleClickFromParent: Function = inject('handleClickFromParent')!;
+const handleClickFromParent: Function = inject("handleClickFromParent")!;
 
 const handleClick = () => {
   if ($props.clickable) {
-    $emit('click');
+    $emit("click");
     handleClickFromParent();
   }
 };
-
 </script>
 
 <style lang="scss">
@@ -69,7 +74,9 @@ const handleClick = () => {
       cursor: pointer;
     }
     &-active {
-      --h-menu-item-background-color: var(--h-menu-item-background-color--active);
+      --h-menu-item-background-color: var(
+        --h-menu-item-background-color--active
+      );
     }
   }
 }

@@ -25,47 +25,53 @@
 </template>
 
 <script lang="ts">
-import { shouldBeOneOf } from '@utils/validations';
+import { shouldBeOneOf } from "@utils/validations";
 import {
-  textWeights, textTypes, textSizes, textColors, textVariants, textAligns, textEmphasis,
-} from '@assets/constants';
+  textWeights,
+  textTypes,
+  textSizes,
+  textColors,
+  textVariants,
+  textAligns,
+  textEmphasis,
+} from "@assets/constants";
 
 export default {
-  name: 'HText',
+  name: "HText",
   props: {
     size: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textSizes),
     },
     color: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textColors),
     },
     variant: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textVariants),
     },
     tag: {
       type: String,
-      default: 'p',
+      default: "p",
       validator: shouldBeOneOf(textTypes),
     },
     align: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textAligns),
     },
     weight: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textWeights),
     },
     emphasis: {
       type: String,
-      default: 'inherit',
+      default: "inherit",
       validator: shouldBeOneOf(textEmphasis),
     },
     uppercase: {
@@ -105,7 +111,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 :root {
   /* HText */
   --h-text--color: inherit;
@@ -258,7 +263,7 @@ export default {
       opacity: 0.87;
     }
     &-medium {
-      opacity: 0.60;
+      opacity: 0.6;
     }
     &-low {
       opacity: 0.38;

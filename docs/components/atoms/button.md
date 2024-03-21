@@ -2,13 +2,13 @@
 import { HButton } from '@components/atoms'
 </script>
 
-## Button
+# Button
 
 ### Default use:
 
 <br>
 
-<HButton>Ola</HButton>
+<h-button>Ola</h-button>
 
 Example:
 ```vue

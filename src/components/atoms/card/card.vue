@@ -14,34 +14,30 @@
 </template>
 
 <script lang="ts">
-import {
-  cardColors,
-  cardElevations,
-  cardTypes,
-} from '@assets/constants';
-import { shouldBeOneOf } from '@utils/validations';
+import { cardColors, cardElevations, cardTypes } from "@assets/constants";
+import { shouldBeOneOf } from "@utils/validations";
 
 export default {
-  name: 'HCard',
+  name: "HCard",
   props: {
     color: {
       type: String,
-      default: 'default',
+      default: "default",
       validator: shouldBeOneOf(cardColors),
     },
     elevation: {
       type: String,
-      default: 'medium',
+      default: "medium",
       validator: shouldBeOneOf(cardElevations),
     },
     tag: {
       type: String,
-      default: 'div',
+      default: "div",
       validator: shouldBeOneOf(cardTypes),
     },
     variant: {
       type: String,
-      default: 'default',
+      default: "default",
     },
     rounded: {
       type: Boolean,
@@ -53,7 +49,7 @@ export default {
 
 <style lang="scss">
 :root {
-    --h-card--background-color: transparent;
+  --h-card--background-color: transparent;
   --h-card--border: none;
   --h-card--box-shadow: none;
   --h-card--padding: var(--size-base-large);
