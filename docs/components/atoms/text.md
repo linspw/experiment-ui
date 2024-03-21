@@ -20,31 +20,21 @@ import { HText } from '@components/atoms';
 
 
 ::: raw
-<h-text variant="h1">h1</h-text>
-
-<h-text variant="h2">h2</h-text>
-
-<h-text variant="h3">h3</h-text>
-
-<h-text variant="h4">h4</h-text>
-
-<h-text variant="h5">h5</h-text>
-
-<h-text variant="h6">h6</h-text>
-
-<h-text variant="subtitle1">subtitle1</h-text>
-
-<h-text variant="subtitle2">subtitle2</h-text>
-
-<h-text variant="body1">body1</h-text>
-
-<h-text variant="body2">body2</h-text>
-
-<h-text variant="button">button</h-text>
-
-<h-text variant="caption">caption</h-text>
-
-<h-text variant="overline">overline</h-text>
+| Variant | Result |
+| ------- | ------ |
+| H1 | <h-text variant="h1">h1</h-text> |
+| H2 | <h-text variant="h2">h2</h-text> |
+| H3 | <h-text variant="h3">h3</h-text> |
+| H4 | <h-text variant="h4">h4</h-text> |
+| H5 | <h-text variant="h5">h5</h-text> |
+| H6 | <h-text variant="h6">h6</h-text> |
+| Subtitle1 | <h-text variant="subtitle1">subtitle1</h-text> |
+| Subtitle2 | <h-text variant="subtitle2">subtitle2</h-text> |
+| Body1 | <h-text variant="body1">body1</h-text> |
+| Body2 | <h-text variant="body2">body2</h-text> |
+| Button | <h-text variant="button">button</h-text> |
+| Caption | <h-text variant="caption">caption</h-text> |
+| Overline | <h-text variant="overline">overline</h-text> |
 :::
 
 
