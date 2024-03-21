@@ -16,6 +16,12 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
+    logo: {
+      light: '/assets/logo-horizontal-lighter.svg',
+      dark: '/assets/logo-horizontal-darker.svg',
+      alt: "Logo"
+    },
+    siteTitle: false,
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },

@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Components
       link: /components/index.md
+  image:
+    src: /assets/logo-simple.svg
+    alt: ExperimentUI
 
 features:
   - title: UI Accessibility
@@ -23,3 +26,15 @@ features:
     details: Speeds up development with ready-to-use components and an intuitive API, enabling you to build your applications quickly.
 ---
 
+
+<style>
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #0153FF 30%, #41d1ff);
+
+  --vp-c-brand: #0153FF;
+  --vp-c-brand-light: #0153FF;
+  --vp-c-brand-lighter: #41d1ff;
+  --vp-button-brand-bg: #0153FF;
+}
+</style>
